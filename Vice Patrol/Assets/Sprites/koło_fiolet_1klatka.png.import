@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/car1_fioletowy_2chłopków.png-0ec82377b1303340fff110a968b30ef6.stex"
+path="res://.import/koło_fiolet_1klatka.png-44dc27fb17567edd0daeca86599f486c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/car1_fioletowy_2chłopków.png"
-dest_files=[ "res://.import/car1_fioletowy_2chłopków.png-0ec82377b1303340fff110a968b30ef6.stex" ]
+source_file="res://Assets/Sprites/koło_fiolet_1klatka.png"
+dest_files=[ "res://.import/koło_fiolet_1klatka.png-44dc27fb17567edd0daeca86599f486c.stex" ]
 
 [params]
 

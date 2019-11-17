@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/koło_fiolet_1klatka.png-abd08024f2eb1ceb69831434e083d425.stex"
+path="res://.import/terrain.png-262a93481fe4d2aba4889a2b4c473899.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/koło_fiolet_1klatka.png"
-dest_files=[ "res://.import/koło_fiolet_1klatka.png-abd08024f2eb1ceb69831434e083d425.stex" ]
+source_file="res://Assets/Sprites/terrain.png"
+dest_files=[ "res://.import/terrain.png-262a93481fe4d2aba4889a2b4c473899.stex" ]
 
 [params]
 

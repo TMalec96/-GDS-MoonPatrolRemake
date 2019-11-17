@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/terrain.png-666bf8bcd805c814d36df4a7eff035f8.stex"
+path="res://.import/icon.png-1ada42475fe106c59fb9885a73678c1a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/terrain.png"
-dest_files=[ "res://.import/terrain.png-666bf8bcd805c814d36df4a7eff035f8.stex" ]
+source_file="res://Assets/Sprites/icon.png"
+dest_files=[ "res://.import/icon.png-1ada42475fe106c59fb9885a73678c1a.stex" ]
 
 [params]
 
