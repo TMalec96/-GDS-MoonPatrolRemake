@@ -1,386 +1,120 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://graphics/car1_fioletowy_2chłopków.png" type="Texture" id=2]
+[ext_resource path="res://graphics/terrain.png" type="Texture" id=3]
+[ext_resource path="res://KinematicBody2D2.gd" type="Script" id=4]
+[ext_resource path="res://graphics/koło_fiolet_1klatka.png" type="Texture" id=5]
+[ext_resource path="res://graphics/koło_fiolet_2klatka.png" type="Texture" id=6]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+[sub_resource type="ArrayMesh" id=2]
+surfaces/0 = {
+"aabb": AABB( -250, 168, 0, 499, 131, 0 ),
+"array_data": PoolByteArray( 0, 0, 12, 195, 102, 102, 41, 67, 174, 71, 97, 62, 255, 70, 72, 63, 205, 204, 10, 195, 0, 0, 42, 67, 211, 188, 99, 62, 137, 136, 72, 63, 0, 0, 1, 195, 0, 0, 42, 67, 217, 206, 119, 62, 137, 136, 72, 63, 0, 0, 228, 194, 0, 0, 41, 67, 150, 67, 139, 62, 79, 27, 72, 63, 0, 0, 228, 194, 52, 51, 42, 67, 150, 67, 139, 62, 97, 158, 72, 63, 154, 153, 221, 194, 0, 0, 43, 67, 114, 138, 142, 62, 195, 245, 72, 63, 102, 102, 206, 194, 0, 0, 43, 67, 189, 82, 150, 62, 195, 245, 72, 63, 52, 51, 190, 194, 0, 0, 41, 67, 27, 158, 158, 62, 79, 27, 72, 63, 0, 0, 164, 194, 0, 0, 41, 67, 49, 8, 172, 62, 79, 27, 72, 63, 0, 0, 164, 194, 204, 76, 42, 67, 49, 8, 172, 62, 77, 169, 72, 63, 0, 0, 162, 194, 52, 179, 42, 67, 86, 14, 173, 62, 254, 212, 72, 63, 0, 0, 162, 194, 154, 25, 42, 67, 86, 14, 173, 62, 117, 147, 72, 63, 0, 0, 128, 194, 102, 230, 40, 67, 201, 118, 190, 62, 98, 16, 72, 63, 0, 0, 128, 194, 154, 25, 42, 67, 201, 118, 190, 62, 117, 147, 72, 63, 0, 0, 104, 194, 102, 230, 42, 67, 166, 155, 196, 62, 214, 234, 72, 63, 0, 0, 104, 194, 52, 51, 42, 67, 166, 155, 196, 62, 97, 158, 72, 63, 104, 102, 68, 194, 0, 0, 40, 67, 186, 184, 205, 62, 20, 174, 71, 63, 152, 153, 27, 194, 0, 0, 40, 67, 154, 42, 216, 62, 20, 174, 71, 63, 48, 51, 143, 193, 0, 0, 43, 67, 160, 171, 237, 62, 195, 245, 72, 63, 160, 153, 201, 192, 0, 0, 43, 67, 126, 140, 249, 62, 195, 245, 72, 63, 0, 102, 102, 63, 0, 0, 41, 67, 247, 117, 0, 63, 79, 27, 72, 63, 160, 153, 153, 65, 0, 0, 41, 67, 150, 212, 9, 63, 79, 27, 72, 63, 160, 153, 193, 65, 0, 0, 43, 67, 242, 99, 12, 63, 195, 245, 72, 63, 104, 102, 18, 66, 0, 0, 43, 67, 60, 189, 18, 63, 195, 245, 72, 63, 104, 102, 26, 66, 0, 0, 41, 67, 97, 195, 19, 63, 79, 27, 72, 63, 104, 102, 108, 66, 0, 0, 41, 67, 91, 66, 30, 63, 79, 27, 72, 63, 0, 0, 148, 66, 102, 230, 42, 67, 84, 227, 37, 63, 214, 234, 72, 63, 0, 0, 148, 66, 0, 0, 42, 67, 84, 227, 37, 63, 137, 136, 72, 63, 0, 0, 14, 67, 0, 0, 41, 67, 57, 180, 72, 63, 79, 27, 72, 63, 0, 0, 14, 67, 154, 25, 42, 67, 57, 180, 72, 63, 117, 147, 72, 63, 0, 0, 25, 67, 102, 230, 42, 67, 4, 86, 78, 63, 214, 234, 72, 63, 0, 0, 25, 67, 0, 0, 42, 67, 4, 86, 78, 63, 137, 136, 72, 63, 0, 0, 48, 67, 0, 0, 41, 67, 172, 28, 90, 63, 79, 27, 72, 63, 0, 0, 48, 67, 154, 25, 42, 67, 172, 28, 90, 63, 117, 147, 72, 63, 154, 153, 64, 67, 102, 230, 42, 67, 120, 156, 98, 63, 214, 234, 72, 63, 204, 204, 63, 67, 0, 128, 42, 67, 156, 51, 98, 63, 38, 191, 72, 63, 52, 51, 64, 67, 0, 0, 41, 67, 10, 104, 98, 63, 79, 27, 72, 63, 0, 0, 67, 67, 0, 0, 41, 67, 10, 215, 99, 63, 79, 27, 72, 63, 0, 0, 67, 67, 0, 0, 40, 67, 10, 215, 99, 63, 20, 174, 71, 63, 0, 0, 72, 67, 0, 0, 40, 67, 102, 102, 102, 63, 20, 174, 71, 63, 0, 0, 120, 67, 0, 0, 42, 67, 219, 249, 126, 63, 137, 136, 72, 63, 0, 0, 120, 67, 0, 0, 44, 67, 219, 249, 126, 63, 253, 98, 73, 63, 0, 0, 121, 67, 0, 128, 149, 67, 238, 124, 127, 63, 198, 146, 127, 63, 0, 0, 122, 195, 0, 128, 149, 67, 0, 0, 0, 0, 198, 146, 127, 63, 0, 0, 122, 195, 0, 0, 43, 67, 0, 0, 0, 0, 195, 245, 72, 63, 0, 0, 120, 195, 0, 0, 43, 67, 111, 18, 131, 59, 195, 245, 72, 63, 0, 0, 98, 195, 0, 0, 41, 67, 166, 155, 68, 61, 79, 27, 72, 63, 0, 0, 98, 195, 0, 0, 42, 67, 166, 155, 68, 61, 137, 136, 72, 63, 102, 102, 74, 195, 102, 230, 42, 67, 55, 248, 194, 61, 214, 234, 72, 63, 51, 51, 75, 195, 0, 128, 42, 67, 91, 177, 191, 61, 38, 191, 72, 63, 205, 204, 74, 195, 0, 0, 41, 67, 202, 84, 193, 61, 79, 27, 72, 63, 0, 0, 69, 195, 0, 0, 41, 67, 135, 22, 217, 61, 79, 27, 72, 63, 0, 0, 69, 195, 0, 0, 42, 67, 135, 22, 217, 61, 137, 136, 72, 63, 0, 0, 27, 195, 0, 0, 43, 67, 92, 143, 66, 62, 195, 245, 72, 63, 0, 0, 27, 195, 204, 76, 42, 67, 92, 143, 66, 62, 77, 169, 72, 63, 0, 0, 24, 195, 204, 76, 41, 67, 57, 180, 72, 62, 19, 60, 72, 63, 0, 0, 24, 195, 0, 0, 40, 67, 57, 180, 72, 62, 20, 174, 71, 63, 0, 0, 12, 195, 0, 0, 40, 67, 174, 71, 97, 62, 20, 174, 71, 63 ),
+"array_index_data": PoolByteArray( 2, 0, 3, 0, 4, 0, 6, 0, 7, 0, 8, 0, 10, 0, 11, 0, 12, 0, 14, 0, 15, 0, 16, 0, 16, 0, 17, 0, 18, 0, 19, 0, 20, 0, 21, 0, 23, 0, 24, 0, 25, 0, 26, 0, 27, 0, 28, 0, 30, 0, 31, 0, 32, 0, 34, 0, 35, 0, 36, 0, 37, 0, 38, 0, 39, 0, 39, 0, 40, 0, 41, 0, 41, 0, 42, 0, 43, 0, 43, 0, 44, 0, 45, 0, 45, 0, 46, 0, 47, 0, 48, 0, 49, 0, 50, 0, 50, 0, 51, 0, 52, 0, 53, 0, 54, 0, 55, 0, 55, 0, 56, 0, 57, 0, 1, 0, 2, 0, 4, 0, 6, 0, 8, 0, 9, 0, 10, 0, 12, 0, 13, 0, 14, 0, 16, 0, 18, 0, 19, 0, 21, 0, 22, 0, 23, 0, 25, 0, 26, 0, 26, 0, 28, 0, 29, 0, 30, 0, 32, 0, 33, 0, 34, 0, 36, 0, 37, 0, 37, 0, 39, 0, 41, 0, 41, 0, 43, 0, 45, 0, 45, 0, 47, 0, 48, 0, 48, 0, 50, 0, 52, 0, 53, 0, 55, 0, 57, 0, 1, 0, 4, 0, 5, 0, 6, 0, 9, 0, 10, 0, 10, 0, 13, 0, 14, 0, 26, 0, 29, 0, 30, 0, 30, 0, 33, 0, 34, 0, 34, 0, 37, 0, 41, 0, 41, 0, 45, 0, 48, 0, 48, 0, 52, 0, 53, 0, 53, 0, 57, 0, 0, 0, 6, 0, 10, 0, 14, 0, 23, 0, 26, 0, 30, 0, 30, 0, 34, 0, 41, 0, 41, 0, 48, 0, 53, 0, 53, 0, 0, 0, 1, 0, 6, 0, 14, 0, 18, 0, 23, 0, 30, 0, 41, 0, 53, 0, 1, 0, 5, 0, 22, 0, 23, 0, 41, 0, 41, 0, 53, 0, 5, 0, 19, 0, 22, 0, 41, 0, 41, 0, 5, 0, 6, 0, 18, 0, 19, 0, 41, 0, 41, 0, 6, 0, 18, 0 ),
+"blend_shape_data": [  ],
+"format": 262417,
+"index_count": 168,
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 58
+}
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32, 32 )
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "tires",
+"speed": 4.0
+} ]
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 13.4064
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 13.2997
 
 [node name="World" type="Node"]
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 288, 288 )
+position = Vector2( 94.1762, 222.566 )
+scale = Vector2( 2, 2 )
+collision_mask = 5
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+jump_speed = -600
 
 [node name="Sprite" type="Sprite" parent="Player"]
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 1 )
-
 [node name="Camera2D" type="Camera2D" parent="Player"]
-offset = Vector2( 300, -100 )
+offset = Vector2( 300, -250 )
 current = true
 drag_margin_left = 0.0
 drag_margin_top = 1.0
 drag_margin_right = 0.0
 drag_margin_bottom = 1.0
 
-[node name="Terrains" type="Node" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
+position = Vector2( -7.17957, -2.78207 )
+polygon = PoolVector2Array( 4.31238, -13.9864, 47.7249, 4.24236, 48.0057, 15.1579, 29.8815, 2.95919, 5.67263, 16.1092, -18.6441, 2.76595, -36.3037, 15.1579, -33.1112, -18.6531, -4.03388, -16.4095 )
 
-[node name="Terrain" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 480, 384 )
+[node name="Terrain2" type="StaticBody2D" parent="."]
+position = Vector2( 503.294, -82.5704 )
+scale = Vector2( 2, 2 )
+collision_layer = 4
+collision_mask = 4
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
+[node name="Sprite" type="MeshInstance2D" parent="Terrain2"]
+mesh = SubResource( 2 )
+texture = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain"]
-shape = SubResource( 2 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain2"]
+position = Vector2( -551.092, 600.076 )
+scale = Vector2( 60.6484, 35.8349 )
+polygon = PoolVector2Array( 4.95396, -8.4227, 4.96916, -11.965, 5.31045, -12.0052, 5.75531, -11.9832, 6.42651, -11.9656, 6.57219, -12.0316, 7.07689, -12.0228, 7.32404, -11.9479, 7.82353, -11.992, 8.35685, -12.014, 8.98902, -11.9744, 9.37144, -12.0272, 9.70375, -11.9913, 9.96459, -12.0184, 10.269, -11.97, 10.7815, -12.0272, 11.1743, -12.0008, 11.4423, -12.014, 11.7154, -12.0008, 12.0198, -11.9964, 12.3762, -12.036, 12.639, -12.0096, 12.7638, -12.0184, 13.1749, -11.9656, 13.1957, -8.42119 )
 
-[node name="Terrain5" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 672, 384 )
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+collision_layer = 2
+collision_mask = 6
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
+jump_speed = -600
 
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain5"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
+[node name="Tire1" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 94.1762, 220.166 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 3 )
+animation = "tires"
+playing = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain5"]
-shape = SubResource( 2 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 42.618, 237.381 )
+shape = SubResource( 4 )
 
-[node name="Terrain14" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 800, 384 )
+[node name="KinematicBody2D2" type="KinematicBody2D" parent="."]
+collision_layer = 2
+collision_mask = 6
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain14"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain14"]
-shape = SubResource( 2 )
-
-[node name="Terrain16" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 928, 384 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain16"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain16"]
-shape = SubResource( 2 )
-
-[node name="Terrain18" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 992, 448 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain18"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain18"]
-shape = SubResource( 2 )
-
-[node name="Terrain20" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 1120, 448 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain20"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain20"]
-shape = SubResource( 2 )
-
-[node name="Terrain22" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 1120, 384 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain22"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain22"]
-shape = SubResource( 2 )
-
-[node name="Terrain24" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 1248, 384 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain24"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain24"]
-shape = SubResource( 2 )
-
-[node name="Terrain27" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 1376, 384 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain27"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain27"]
-shape = SubResource( 2 )
-
-[node name="Terrain7" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 288, 384 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain7"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain7"]
-shape = SubResource( 2 )
-
-[node name="Terrain2" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 544, 448 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain2"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain2"]
-shape = SubResource( 2 )
-
-[node name="Terrain12" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 480, 448 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain12"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain12"]
-shape = SubResource( 2 )
-
-[node name="Terrain13" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 608, 448 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain13"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain13"]
-shape = SubResource( 2 )
-
-[node name="Terrain4" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 736, 384 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain4"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain4"]
-shape = SubResource( 2 )
-
-[node name="Terrain15" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 864, 384 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain15"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain15"]
-shape = SubResource( 2 )
-
-[node name="Terrain17" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 992, 384 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain17"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain17"]
-shape = SubResource( 2 )
-
-[node name="Terrain19" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 1056, 448 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain19"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain19"]
-shape = SubResource( 2 )
-
-[node name="Terrain21" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 1184, 448 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain21"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain21"]
-shape = SubResource( 2 )
-
-[node name="Terrain23" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 1184, 384 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain23"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain23"]
-shape = SubResource( 2 )
-
-[node name="Terrain25" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 1312, 384 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain25"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain25"]
-shape = SubResource( 2 )
-
-[node name="Terrain26" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 1440, 384 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain26"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain26"]
-shape = SubResource( 2 )
-
-[node name="Terrain9" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 352, 384 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain9"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain9"]
-shape = SubResource( 2 )
-
-[node name="Terrain10" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 160, 320 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain10"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain10"]
-shape = SubResource( 2 )
-
-[node name="Terrain11" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 160, 384 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain11"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain11"]
-shape = SubResource( 2 )
-
-[node name="Terrain3" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 416, 384 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain3"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain3"]
-shape = SubResource( 2 )
-
-[node name="Terrain6" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 672, 448 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain6"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain6"]
-shape = SubResource( 2 )
-
-[node name="Terrain8" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 224, 384 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain8"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrains/Terrain8"]
-shape = SubResource( 2 )
+jump_speed = -600
+
+[node name="Tire2" type="AnimatedSprite" parent="KinematicBody2D2"]
+position = Vector2( 189.882, 220.166 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 3 )
+animation = "tires"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D2"]
+position = Vector2( 138.507, 237.472 )
+shape = SubResource( 5 )
