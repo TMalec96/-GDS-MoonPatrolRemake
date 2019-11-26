@@ -1,12 +1,35 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/car1_fioletowy_2chłopków.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Sprites/terrain.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/KinematicBody2D.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Sprites/koło_fiolet_1klatka.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sprites/koło_fiolet_2klatka.png" type="Texture" id=6]
-[ext_resource path="res://Scenes/KinematicBody2D2.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Sprites/koło_fiolet_1klatka.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/koło_fiolet_2klatka.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/terrain.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/KSIEZYC_PIXEL_ART2.png" type="Texture" id=6]
+
+[sub_resource type="GDScript" id=5]
+script/source = "extends \"res://Assets/Scripts/Tires.gd\"
+
+"
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "tires",
+"speed": 4.0
+} ]
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 13.2997
+
+[sub_resource type="GDScript" id=6]
+script/source = "extends \"res://Assets/Scripts/Tires.gd\"
+
+"
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 13.4064
 
 [sub_resource type="ArrayMesh" id=1]
 surfaces/0 = {
@@ -21,19 +44,18 @@ surfaces/0 = {
 "vertex_count": 58
 }
 
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "tires",
-"speed": 4.0
-} ]
-
-[sub_resource type="CircleShape2D" id=3]
-radius = 13.4064
-
-[sub_resource type="CircleShape2D" id=4]
-radius = 13.2997
+[sub_resource type="ArrayMesh" id=7]
+surfaces/0 = {
+"aabb": AABB( -250, 166.8, 0, 500, 133.2, 0 ),
+"array_data": PoolByteArray( 0, 0, 210, 194, 52, 51, 40, 67, 225, 122, 148, 62, 237, 195, 71, 63, 0, 0, 210, 194, 204, 204, 41, 67, 225, 122, 148, 62, 176, 114, 72, 63, 0, 0, 197, 194, 0, 0, 45, 67, 209, 34, 155, 62, 55, 208, 73, 63, 154, 153, 180, 194, 0, 0, 45, 67, 101, 136, 163, 62, 55, 208, 73, 63, 0, 0, 164, 194, 154, 153, 43, 67, 49, 8, 172, 62, 76, 55, 73, 63, 0, 0, 164, 194, 204, 204, 45, 67, 49, 8, 172, 62, 152, 39, 74, 63, 0, 0, 155, 194, 0, 0, 48, 67, 215, 163, 176, 62, 229, 23, 75, 63, 104, 102, 122, 194, 0, 0, 48, 67, 201, 229, 191, 62, 229, 23, 75, 63, 104, 102, 94, 194, 0, 0, 43, 67, 203, 16, 199, 62, 195, 245, 72, 63, 104, 102, 60, 194, 0, 0, 43, 67, 4, 197, 207, 62, 195, 245, 72, 63, 0, 0, 8, 194, 102, 102, 39, 67, 27, 47, 221, 62, 139, 108, 71, 63, 0, 0, 8, 194, 154, 25, 41, 67, 27, 47, 221, 62, 59, 38, 72, 63, 0, 0, 144, 193, 154, 25, 42, 67, 104, 145, 237, 62, 117, 147, 72, 63, 0, 0, 144, 193, 0, 128, 43, 67, 104, 145, 237, 62, 96, 44, 73, 63, 192, 204, 20, 65, 0, 0, 52, 67, 248, 194, 4, 63, 205, 204, 76, 63, 160, 153, 57, 65, 0, 0, 52, 67, 112, 240, 5, 63, 205, 204, 76, 63, 48, 51, 127, 66, 0, 0, 41, 67, 100, 170, 32, 63, 79, 27, 72, 63, 204, 204, 132, 66, 0, 0, 41, 67, 46, 255, 33, 63, 79, 27, 72, 63, 152, 153, 156, 66, 0, 0, 46, 67, 240, 22, 40, 63, 113, 61, 74, 63, 0, 0, 187, 66, 0, 0, 46, 67, 59, 223, 47, 63, 113, 61, 74, 63, 0, 0, 205, 66, 0, 0, 41, 67, 225, 122, 52, 63, 79, 27, 72, 63, 0, 0, 248, 66, 0, 0, 41, 67, 238, 124, 63, 63, 79, 27, 72, 63, 0, 0, 248, 66, 0, 0, 42, 67, 238, 124, 63, 63, 137, 136, 72, 63, 0, 0, 6, 67, 0, 0, 42, 67, 166, 155, 68, 63, 137, 136, 72, 63, 0, 0, 6, 67, 102, 230, 43, 67, 166, 155, 68, 63, 16, 88, 73, 63, 0, 128, 11, 67, 0, 0, 47, 67, 139, 108, 71, 63, 171, 170, 74, 63, 0, 0, 23, 67, 0, 0, 47, 67, 223, 79, 77, 63, 171, 170, 74, 63, 154, 153, 38, 67, 0, 0, 40, 67, 153, 76, 85, 63, 20, 174, 71, 63, 52, 51, 52, 67, 0, 0, 40, 67, 45, 67, 92, 63, 20, 174, 71, 63, 102, 102, 66, 67, 0, 0, 43, 67, 101, 136, 99, 63, 195, 245, 72, 63, 204, 204, 79, 67, 0, 0, 43, 67, 195, 100, 106, 63, 195, 245, 72, 63, 0, 0, 89, 67, 204, 76, 40, 67, 160, 26, 111, 63, 217, 206, 71, 63, 0, 0, 89, 67, 102, 230, 42, 67, 160, 26, 111, 63, 214, 234, 72, 63, 0, 128, 94, 67, 0, 0, 46, 67, 133, 235, 113, 63, 113, 61, 74, 63, 154, 153, 95, 67, 0, 0, 46, 67, 179, 123, 114, 63, 113, 61, 74, 63, 0, 0, 122, 67, 0, 128, 40, 67, 0, 0, 128, 63, 177, 228, 71, 63, 0, 0, 122, 67, 0, 0, 150, 67, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 122, 195, 0, 0, 150, 67, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 122, 195, 0, 0, 42, 67, 0, 0, 0, 0, 137, 136, 72, 63, 0, 0, 116, 195, 0, 0, 42, 67, 166, 155, 68, 60, 137, 136, 72, 63, 0, 0, 63, 195, 102, 230, 43, 67, 252, 169, 241, 61, 16, 88, 73, 63, 0, 0, 63, 195, 52, 51, 43, 67, 252, 169, 241, 61, 155, 11, 73, 63, 0, 0, 32, 195, 204, 204, 39, 67, 236, 81, 56, 62, 60, 152, 71, 63, 0, 0, 32, 195, 102, 230, 41, 67, 236, 81, 56, 62, 156, 125, 72, 63, 0, 128, 24, 195, 0, 0, 46, 67, 20, 174, 71, 62, 113, 61, 74, 63, 0, 0, 12, 195, 0, 0, 46, 67, 174, 71, 97, 62, 113, 61, 74, 63, 0, 0, 12, 195, 102, 102, 45, 67, 174, 71, 97, 62, 231, 251, 73, 63, 0, 0, 240, 194, 0, 128, 40, 67, 184, 30, 133, 62, 177, 228, 71, 63, 0, 0, 240, 194, 204, 204, 38, 67, 184, 30, 133, 62, 2, 43, 71, 63 ),
+"array_index_data": PoolByteArray( 48, 0, 0, 0, 1, 0, 3, 0, 4, 0, 5, 0, 7, 0, 8, 0, 9, 0, 9, 0, 10, 0, 11, 0, 11, 0, 12, 0, 13, 0, 15, 0, 16, 0, 17, 0, 19, 0, 20, 0, 21, 0, 22, 0, 23, 0, 24, 0, 26, 0, 27, 0, 28, 0, 30, 0, 31, 0, 32, 0, 34, 0, 35, 0, 36, 0, 36, 0, 37, 0, 38, 0, 38, 0, 39, 0, 40, 0, 40, 0, 41, 0, 42, 0, 45, 0, 46, 0, 47, 0, 47, 0, 48, 0, 1, 0, 2, 0, 3, 0, 5, 0, 7, 0, 9, 0, 11, 0, 11, 0, 13, 0, 14, 0, 15, 0, 17, 0, 18, 0, 19, 0, 21, 0, 22, 0, 22, 0, 24, 0, 25, 0, 26, 0, 28, 0, 29, 0, 30, 0, 32, 0, 33, 0, 33, 0, 34, 0, 36, 0, 36, 0, 38, 0, 40, 0, 40, 0, 42, 0, 43, 0, 45, 0, 47, 0, 1, 0, 2, 0, 5, 0, 6, 0, 7, 0, 11, 0, 14, 0, 15, 0, 18, 0, 19, 0, 19, 0, 22, 0, 25, 0, 26, 0, 29, 0, 30, 0, 30, 0, 33, 0, 36, 0, 40, 0, 43, 0, 44, 0, 45, 0, 1, 0, 2, 0, 6, 0, 7, 0, 14, 0, 15, 0, 19, 0, 25, 0, 26, 0, 30, 0, 36, 0, 36, 0, 40, 0, 44, 0, 45, 0, 2, 0, 6, 0, 15, 0, 25, 0, 26, 0, 36, 0, 44, 0, 45, 0, 45, 0, 6, 0, 14, 0, 15, 0, 26, 0, 36, 0, 36, 0, 45, 0, 14, 0, 14, 0, 15, 0, 36, 0 ),
+"blend_shape_data": [  ],
+"format": 262417,
+"index_count": 141,
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 49
+}
 
 [node name="World" type="Node"]
 
@@ -45,6 +67,8 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+run_speed = 200
+jump_speed = -600
 
 [node name="Sprite" type="Sprite" parent="Player"]
 texture = ExtResource( 2 )
@@ -59,12 +83,53 @@ drag_margin_bottom = 1.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
 position = Vector2( -7.17957, -2.78207 )
-polygon = PoolVector2Array( -33.1236, -18.7175, -3.03839, -16.1014, 37.9868, -1.59393, 49.1647, 4.82741, 49.0458, 9.70287, 42.2677, 12.6757, 37.5112, 16.1242, 36.441, 5.89763, 31.2087, 1.85457, 24.5496, 1.97348, 20.8633, 8.75156, 20.8633, 15.8864, -9.45973, 15.8864, -11.3624, 4.58958, -18.0215, 0.189774, -23.8483, 2.33022, -26.94, 15.4107, -34.5505, 15.1729, -37.2855, 5.54089, -36.2153, -2.30742 )
+polygon = PoolVector2Array( -33.1236, -18.7175, -3.03839, -16.1014, 37.9868, -1.59393, 49.1647, 4.82741, 49.0458, 9.70287, 44.2363, 16.1013, 36.9058, 16.2564, 36.7019, 6.16304, 32.3179, 2.39075, 25.0791, 2.49271, 20.8633, 8.75156, 20.9649, 16.4402, -9.1976, 16.6661, -10.0949, 6.06108, -18.0215, 0.189774, -26.3055, 5.55132, -26.7076, 16.892, -34.5024, 16.892, -37.2855, 5.54089, -36.2153, -2.30742 )
 
 [node name="TurnAxis" type="Position2D" parent="Player"]
 
 [node name="CastPoint" type="Position2D" parent="Player/TurnAxis"]
 position = Vector2( 20, -4 )
+
+[node name="Tires" type="Node" parent="Player"]
+
+[node name="Tire_right" type="KinematicBody2D" parent="Player/Tires"]
+position = Vector2( 20.4337, -17.2074 )
+collision_layer = 2
+collision_mask = 6
+script = SubResource( 5 )
+run_speed = 200
+jump_speed = -600
+
+[node name="Tire_right_sprite" type="AnimatedSprite" parent="Player/Tires/Tire_right"]
+position = Vector2( 189.882, 220.166 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 2 )
+animation = "tires"
+playing = true
+
+[node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Player/Tires/Tire_right"]
+position = Vector2( 138.507, 237.472 )
+shape = SubResource( 4 )
+
+[node name="Tire_left" type="KinematicBody2D" parent="Player/Tires"]
+position = Vector2( 21.2494, -17.2074 )
+collision_layer = 2
+collision_mask = 6
+script = SubResource( 6 )
+run_speed = 200
+jump_speed = -600
+
+[node name="Tire_left_sprite" type="AnimatedSprite" parent="Player/Tires/Tire_left"]
+position = Vector2( 94.1762, 220.166 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 2 )
+animation = "tires"
+frame = 1
+playing = true
+
+[node name="Tire_left_collision_shape" type="CollisionShape2D" parent="Player/Tires/Tire_left"]
+position = Vector2( 42.618, 237.381 )
+shape = SubResource( 3 )
 
 [node name="Terrain2" type="StaticBody2D" parent="."]
 position = Vector2( 503.294, -82.5704 )
@@ -77,51 +142,45 @@ __meta__ = {
 
 [node name="Sprite" type="MeshInstance2D" parent="Terrain2"]
 mesh = SubResource( 1 )
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain2"]
 position = Vector2( -551.092, 600.076 )
 scale = Vector2( 60.6484, 35.8349 )
 polygon = PoolVector2Array( 4.95396, -8.4227, 4.96916, -11.965, 5.31045, -12.0052, 5.75531, -11.9832, 6.42651, -11.9656, 6.57219, -12.0316, 7.07689, -12.0228, 7.32404, -11.9479, 7.82353, -11.992, 8.35685, -12.014, 8.98902, -11.9744, 9.37144, -12.0272, 9.70375, -11.9913, 9.96459, -12.0184, 10.269, -11.97, 10.7815, -12.0272, 11.1743, -12.0008, 11.4423, -12.014, 11.7154, -12.0008, 12.0198, -11.9964, 12.3762, -12.036, 12.639, -12.0096, 12.7638, -12.0184, 13.1749, -11.9656, 13.1957, -8.42119 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-position = Vector2( 21.2494, -17.2074 )
-collision_layer = 2
-collision_mask = 6
-script = ExtResource( 4 )
+[node name="Terrain3" type="StaticBody2D" parent="."]
+position = Vector2( 1499.14, -83.1217 )
+scale = Vector2( 2, 2 )
+collision_layer = 4
+collision_mask = 4
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Tire1" type="AnimatedSprite" parent="KinematicBody2D"]
-position = Vector2( 94.1762, 220.166 )
+[node name="Sprite" type="MeshInstance2D" parent="Terrain3"]
+mesh = SubResource( 1 )
+texture = ExtResource( 5 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain3"]
+position = Vector2( -551.092, 600.076 )
+scale = Vector2( 60.6484, 35.8349 )
+polygon = PoolVector2Array( 4.95396, -8.4227, 4.96916, -11.965, 5.31045, -12.0052, 5.75531, -11.9832, 6.42651, -11.9656, 6.57219, -12.0316, 7.07689, -12.0228, 7.32404, -11.9479, 7.82353, -11.992, 8.35685, -12.014, 8.98902, -11.9744, 9.37144, -12.0272, 9.70375, -11.9913, 9.96459, -12.0184, 10.269, -11.97, 10.7815, -12.0272, 11.1743, -12.0008, 11.4423, -12.014, 11.7154, -12.0008, 12.0198, -11.9964, 12.3762, -12.036, 12.639, -12.0096, 12.7638, -12.0184, 13.1749, -11.9656, 13.1957, -8.42119 )
+
+[node name="Terrain4" type="StaticBody2D" parent="."]
+position = Vector2( 2496.68, -85.7 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 2 )
-animation = "tires"
-frame = 1
-playing = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( 42.618, 237.381 )
-shape = SubResource( 3 )
-
-[node name="KinematicBody2D2" type="KinematicBody2D" parent="."]
-position = Vector2( 20.4337, -17.2074 )
-collision_layer = 2
-collision_mask = 6
-script = ExtResource( 7 )
+collision_layer = 4
+collision_mask = 4
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Tire2" type="AnimatedSprite" parent="KinematicBody2D2"]
-position = Vector2( 189.882, 220.166 )
-scale = Vector2( 2, 2 )
-frames = SubResource( 2 )
-animation = "tires"
-frame = 1
-playing = true
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain4"]
+position = Vector2( -548.525, 601.103 )
+scale = Vector2( 60.6484, 35.8349 )
+polygon = PoolVector2Array( 4.93438, -8.40708, 4.92169, -11.9597, 5.40425, -11.8953, 5.74335, -11.869, 6.14619, -11.9139, 6.41479, -11.9253, 6.68339, -11.8117, 7.32404, -11.9479, 7.83767, -11.7444, 8.37092, -11.988, 8.94226, -11.8089, 9.35701, -11.6585, 9.74636, -11.7874, 10.0172, -11.945, 10.2458, -11.902, 10.5378, -11.7874, 11.1768, -11.9235, 11.4604, -11.7802, 11.7228, -11.9307, 12.0198, -11.9964, 12.383, -11.902, 12.6411, -11.9235, 12.7342, -11.7946, 13.1749, -11.9656, 13.1957, -8.42119 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D2"]
-position = Vector2( 138.507, 237.472 )
-shape = SubResource( 4 )
+[node name="Sprite" type="MeshInstance2D" parent="Terrain4"]
+mesh = SubResource( 7 )
+texture = ExtResource( 6 )
