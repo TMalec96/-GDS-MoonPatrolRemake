@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Sprites/Backgrounds/2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Scripts/Player.gd" type="Script" id=2]
@@ -8,7 +8,10 @@
 [ext_resource path="res://Assets/Sprites/KSIEZYC_PIXEL_ART2.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Scripts/Enemy.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Sprites/rock.png" type="Texture" id=8]
-[ext_resource path="res://Scenes/Interface.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Sprites/smaller_rock.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Interface.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Sprites/hole.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/holesmall.png" type="Texture" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -21,7 +24,7 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=2]
 radius = 13.2997
 
-[sub_resource type="ArrayMesh" id=4]
+[sub_resource type="ArrayMesh" id=3]
 surfaces/0 = {
 "aabb": AABB( -250, 166.8, 0, 500, 133.2, 0 ),
 "array_data": PoolByteArray( 0, 0, 210, 194, 52, 51, 40, 67, 225, 122, 148, 62, 237, 195, 71, 63, 0, 0, 210, 194, 204, 204, 41, 67, 225, 122, 148, 62, 176, 114, 72, 63, 0, 0, 197, 194, 0, 0, 45, 67, 209, 34, 155, 62, 55, 208, 73, 63, 154, 153, 180, 194, 0, 0, 45, 67, 101, 136, 163, 62, 55, 208, 73, 63, 0, 0, 164, 194, 154, 153, 43, 67, 49, 8, 172, 62, 76, 55, 73, 63, 0, 0, 164, 194, 204, 204, 45, 67, 49, 8, 172, 62, 152, 39, 74, 63, 0, 0, 155, 194, 0, 0, 48, 67, 215, 163, 176, 62, 229, 23, 75, 63, 104, 102, 122, 194, 0, 0, 48, 67, 201, 229, 191, 62, 229, 23, 75, 63, 104, 102, 94, 194, 0, 0, 43, 67, 203, 16, 199, 62, 195, 245, 72, 63, 104, 102, 60, 194, 0, 0, 43, 67, 4, 197, 207, 62, 195, 245, 72, 63, 0, 0, 8, 194, 102, 102, 39, 67, 27, 47, 221, 62, 139, 108, 71, 63, 0, 0, 8, 194, 154, 25, 41, 67, 27, 47, 221, 62, 59, 38, 72, 63, 0, 0, 144, 193, 154, 25, 42, 67, 104, 145, 237, 62, 117, 147, 72, 63, 0, 0, 144, 193, 0, 128, 43, 67, 104, 145, 237, 62, 96, 44, 73, 63, 192, 204, 20, 65, 0, 0, 52, 67, 248, 194, 4, 63, 205, 204, 76, 63, 160, 153, 57, 65, 0, 0, 52, 67, 112, 240, 5, 63, 205, 204, 76, 63, 48, 51, 127, 66, 0, 0, 41, 67, 100, 170, 32, 63, 79, 27, 72, 63, 204, 204, 132, 66, 0, 0, 41, 67, 46, 255, 33, 63, 79, 27, 72, 63, 152, 153, 156, 66, 0, 0, 46, 67, 240, 22, 40, 63, 113, 61, 74, 63, 0, 0, 187, 66, 0, 0, 46, 67, 59, 223, 47, 63, 113, 61, 74, 63, 0, 0, 205, 66, 0, 0, 41, 67, 225, 122, 52, 63, 79, 27, 72, 63, 0, 0, 248, 66, 0, 0, 41, 67, 238, 124, 63, 63, 79, 27, 72, 63, 0, 0, 248, 66, 0, 0, 42, 67, 238, 124, 63, 63, 137, 136, 72, 63, 0, 0, 6, 67, 0, 0, 42, 67, 166, 155, 68, 63, 137, 136, 72, 63, 0, 0, 6, 67, 102, 230, 43, 67, 166, 155, 68, 63, 16, 88, 73, 63, 0, 128, 11, 67, 0, 0, 47, 67, 139, 108, 71, 63, 171, 170, 74, 63, 0, 0, 23, 67, 0, 0, 47, 67, 223, 79, 77, 63, 171, 170, 74, 63, 154, 153, 38, 67, 0, 0, 40, 67, 153, 76, 85, 63, 20, 174, 71, 63, 52, 51, 52, 67, 0, 0, 40, 67, 45, 67, 92, 63, 20, 174, 71, 63, 102, 102, 66, 67, 0, 0, 43, 67, 101, 136, 99, 63, 195, 245, 72, 63, 204, 204, 79, 67, 0, 0, 43, 67, 195, 100, 106, 63, 195, 245, 72, 63, 0, 0, 89, 67, 204, 76, 40, 67, 160, 26, 111, 63, 217, 206, 71, 63, 0, 0, 89, 67, 102, 230, 42, 67, 160, 26, 111, 63, 214, 234, 72, 63, 0, 128, 94, 67, 0, 0, 46, 67, 133, 235, 113, 63, 113, 61, 74, 63, 154, 153, 95, 67, 0, 0, 46, 67, 179, 123, 114, 63, 113, 61, 74, 63, 0, 0, 122, 67, 0, 128, 40, 67, 0, 0, 128, 63, 177, 228, 71, 63, 0, 0, 122, 67, 0, 0, 150, 67, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 122, 195, 0, 0, 150, 67, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 122, 195, 0, 0, 42, 67, 0, 0, 0, 0, 137, 136, 72, 63, 0, 0, 116, 195, 0, 0, 42, 67, 166, 155, 68, 60, 137, 136, 72, 63, 0, 0, 63, 195, 102, 230, 43, 67, 252, 169, 241, 61, 16, 88, 73, 63, 0, 0, 63, 195, 52, 51, 43, 67, 252, 169, 241, 61, 155, 11, 73, 63, 0, 0, 32, 195, 204, 204, 39, 67, 236, 81, 56, 62, 60, 152, 71, 63, 0, 0, 32, 195, 102, 230, 41, 67, 236, 81, 56, 62, 156, 125, 72, 63, 0, 128, 24, 195, 0, 0, 46, 67, 20, 174, 71, 62, 113, 61, 74, 63, 0, 0, 12, 195, 0, 0, 46, 67, 174, 71, 97, 62, 113, 61, 74, 63, 0, 0, 12, 195, 102, 102, 45, 67, 174, 71, 97, 62, 231, 251, 73, 63, 0, 0, 240, 194, 0, 128, 40, 67, 184, 30, 133, 62, 177, 228, 71, 63, 0, 0, 240, 194, 204, 204, 38, 67, 184, 30, 133, 62, 2, 43, 71, 63 ),
@@ -34,17 +37,25 @@ surfaces/0 = {
 "vertex_count": 49
 }
 
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 13.4803
+height = 1.46686
+
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 25.6611, 23.6374 )
+extents = Vector2( 102.667, 62.6185 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 40.646, 26.0256 )
 
 [node name="World" type="Node"]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="Backgound" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Backgound"]
 motion_mirroring = Vector2( 1200, 0 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Sprite" type="Sprite" parent="Backgound/ParallaxLayer"]
 position = Vector2( 0, 199.19 )
 scale = Vector2( 2.4, 2 )
 texture = ExtResource( 1 )
@@ -59,7 +70,6 @@ __meta__ = {
 }
 run_speed = 400
 jump_speed = -600
-projectile_speed = 200
 
 [node name="Sprite" type="Sprite" parent="Player"]
 texture = ExtResource( 3 )
@@ -105,7 +115,6 @@ position = Vector2( 189.882, 220.166 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
-frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Player/Tire_left"]
@@ -127,6 +136,7 @@ position = Vector2( 189.882, 220.166 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
+frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Player/Tire_right"]
@@ -134,6 +144,7 @@ position = Vector2( 138.507, 237.472 )
 shape = SubResource( 2 )
 
 [node name="Terrains" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Terrain5" type="StaticBody2D" parent="Terrains"]
 scale = Vector2( 2.4, 2.4 )
@@ -149,7 +160,7 @@ scale = Vector2( 60.6484, 35.8349 )
 polygon = PoolVector2Array( 4.93438, -8.40708, 4.92169, -11.9597, 5.40425, -11.8953, 5.74335, -11.869, 6.14619, -11.9139, 6.41479, -11.9253, 6.68339, -11.8117, 7.32404, -11.9479, 7.83767, -11.7444, 8.37092, -11.988, 8.94226, -11.8089, 9.35701, -11.6585, 9.74636, -11.7874, 10.0172, -11.945, 10.2458, -11.902, 10.5378, -11.7874, 11.1768, -11.9235, 11.4604, -11.7802, 11.7228, -11.9307, 12.0198, -11.9964, 12.383, -11.902, 12.6411, -11.9235, 12.7342, -11.7946, 13.1749, -11.9656, 13.1957, -8.42119 )
 
 [node name="Sprite" type="MeshInstance2D" parent="Terrains/Terrain5"]
-mesh = SubResource( 4 )
+mesh = SubResource( 3 )
 texture = ExtResource( 6 )
 
 [node name="Terrain6" type="StaticBody2D" parent="Terrains"]
@@ -167,7 +178,7 @@ scale = Vector2( 60.6484, 35.8349 )
 polygon = PoolVector2Array( 4.93438, -8.40708, 4.92169, -11.9597, 5.40425, -11.8953, 5.74335, -11.869, 6.14619, -11.9139, 6.41479, -11.9253, 6.68339, -11.8117, 7.32404, -11.9479, 7.83767, -11.7444, 8.37092, -11.988, 8.94226, -11.8089, 9.35701, -11.6585, 9.74636, -11.7874, 10.0172, -11.945, 10.2458, -11.902, 10.5378, -11.7874, 11.1768, -11.9235, 11.4604, -11.7802, 11.7228, -11.9307, 12.0198, -11.9964, 12.383, -11.902, 12.6411, -11.9235, 12.7342, -11.7946, 13.1749, -11.9656, 13.1957, -8.42119 )
 
 [node name="Sprite" type="MeshInstance2D" parent="Terrains/Terrain6"]
-mesh = SubResource( 4 )
+mesh = SubResource( 3 )
 texture = ExtResource( 6 )
 
 [node name="Terrain7" type="StaticBody2D" parent="Terrains"]
@@ -185,35 +196,70 @@ scale = Vector2( 60.6484, 35.8349 )
 polygon = PoolVector2Array( 4.93438, -8.40708, 4.92169, -11.9597, 5.40425, -11.8953, 5.74335, -11.869, 6.14619, -11.9139, 6.41479, -11.9253, 6.68339, -11.8117, 7.32404, -11.9479, 7.83767, -11.7444, 8.37092, -11.988, 8.94226, -11.8089, 9.35701, -11.6585, 9.74636, -11.7874, 10.0172, -11.945, 10.2458, -11.902, 10.5378, -11.7874, 11.1768, -11.9235, 11.4604, -11.7802, 11.7228, -11.9307, 12.0198, -11.9964, 12.383, -11.902, 12.6411, -11.9235, 12.7342, -11.7946, 13.1749, -11.9656, 13.1957, -8.42119 )
 
 [node name="Sprite" type="MeshInstance2D" parent="Terrains/Terrain7"]
-mesh = SubResource( 4 )
+mesh = SubResource( 3 )
 texture = ExtResource( 6 )
 
 [node name="Rocks" type="Node" parent="."]
 
-[node name="Big_Rock_Enemy" type="RigidBody2D" parent="Rocks"]
-position = Vector2( -566.193, -11.6913 )
+[node name="BigRock_Enemy" type="StaticBody2D" parent="Rocks"]
+position = Vector2( 1690.98, 389.98 )
+scale = Vector2( 2, 2 )
 collision_layer = 16
 collision_mask = 21
-contacts_reported = 1
-contact_monitor = true
 script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Rocks/BigRock_Enemy"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rocks/BigRock_Enemy"]
+position = Vector2( -0.731506, -2.19453 )
+shape = SubResource( 6 )
+
+[node name="SmallRock_Enemy" type="StaticBody2D" parent="Rocks"]
+visible = false
+position = Vector2( 1773.37, 364.927 )
+scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Rocks/Big_Rock_Enemy"]
-position = Vector2( 1295.79, 237.895 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 8 )
+[node name="Sprite" type="Sprite" parent="Rocks/SmallRock_Enemy"]
+texture = ExtResource( 9 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rocks/Big_Rock_Enemy"]
-position = Vector2( 1292.79, 233.704 )
-shape = SubResource( 5 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rocks/SmallRock_Enemy"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Canvas" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
-[node name="Interface" parent="CanvasLayer" instance=ExtResource( 9 )]
+[node name="Interface" parent="Canvas" instance=ExtResource( 10 )]
 margin_left = -300.0
 margin_right = 900.0
 margin_bottom = 240.0
-[connection signal="body_entered" from="Rocks/Big_Rock_Enemy" to="Rocks/Big_Rock_Enemy" method="_on_Big_Rock_Enemy_body_entered"]
+
+[node name="Holes" type="Node" parent="."]
+
+[node name="BigHole_Enemy" type="StaticBody2D" parent="Holes"]
+position = Vector2( 1202.74, 464.211 )
+collision_layer = 16
+collision_mask = 21
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Holes/BigHole_Enemy"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Holes/BigHole_Enemy"]
+shape = SubResource( 5 )
+
+[node name="SmallHole_Enemy" type="StaticBody2D" parent="Holes"]
+position = Vector2( 615.497, 458.608 )
+scale = Vector2( 1.5, 1.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Holes/SmallHole_Enemy"]
+texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Holes/SmallHole_Enemy"]
+shape = SubResource( 7 )

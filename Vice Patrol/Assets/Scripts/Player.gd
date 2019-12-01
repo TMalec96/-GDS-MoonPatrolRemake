@@ -2,17 +2,19 @@ extends KinematicBody2D
 export (int) var run_speed = 100
 export (int) var jump_speed = -400
 export (int) var gravity = 1200
-export (int) var projectile_speed = 100
 
 var velocity = Vector2()
 var jumping = false
+
 
 var bullet1 = preload("res://Scenes/BulletFront.tscn")
 var bullet2 = preload("res://Scenes/BulletUp.tscn")
 var can_fire =true
 var rate_of_fire = 0.4
 
-
+export (int) var lifes = 3
+export (float) var respawn_time = 2.0
+export (int) var reversing_distance = 500
 var is_dead = false
 
 
@@ -37,11 +39,28 @@ func get_input():
 
 func _physics_process(delta):
 	
-    get_input()
-    velocity.y += gravity * delta
-    if jumping and is_on_floor():
-        jumping = false
-    velocity = move_and_slide(velocity, Vector2(0, -1),5,4,rad2deg(90))
+	get_input()
+	velocity.y += gravity * delta
+	if jumping and is_on_floor():
+		jumping = false
+	velocity = move_and_slide(velocity, Vector2(0, -1),5,4,rad2deg(90))
+	for i in range(get_slide_count() - 1):
+#		ZAMIENIC NA FUNKCJE
+		var collision = get_slide_collision(i)
+		if "Enemy" in collision.collider.name:
+			if lifes >= 1:
+				self.hide()
+				velocity.x=0
+				velocity.y=0
+				position.x -= reversing_distance
+				yield(get_tree().create_timer(respawn_time),"timeout")
+				self.show()
+				lifes -= 1
+				print(lifes)
+			elif lifes == 0:
+				collision.collider.dead()
+				queue_free()
+	
 
 func FireLoop():
 	if Input.is_action_pressed("Shoot") and can_fire:
@@ -59,5 +78,7 @@ func FireLoop():
 func dead():
 	is_dead = true
 	queue_free()
+
+	
 
 
