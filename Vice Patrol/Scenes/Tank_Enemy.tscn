@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Scripts/EnemyShooting.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/Enemies/Tanks/opponent(tank)_2.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 42.3516, 12.5578 )
+
+[node name="Tank_Enemy" type="StaticBody2D"]
+scale = Vector2( 2, 2 )
+collision_layer = 16
+collision_mask = 21
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -4.62132, 28.6082 )
+shape = SubResource( 1 )
+
+[node name="TurnAxis" type="Position2D" parent="."]
+position = Vector2( -3.78149, 28.6763 )
+
+[node name="CastPoint1" type="Position2D" parent="TurnAxis"]
+position = Vector2( -6.15755, -6.98565 )

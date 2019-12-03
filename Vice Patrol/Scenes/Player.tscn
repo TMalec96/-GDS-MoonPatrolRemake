@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/car1_fioletowy_2chłopków.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Sprites/koła_fiolet_1klatka.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Sprites/koła_fiolet_2klatka.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/Player/car1_fioletowy_2chłopków.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Player/koła_fiolet_1klatka.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Player/koła_fiolet_2klatka.png" type="Texture" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -23,7 +23,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-run_speed = 400
+run_speed = 600
 jump_speed = -600
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -37,15 +37,15 @@ drag_margin_top = 1.0
 
 [node name="Player_Collider" type="CollisionPolygon2D" parent="."]
 position = Vector2( -7.17957, -2.78207 )
-polygon = PoolVector2Array( -33.1236, -18.7175, -3.03839, -16.1014, 37.9868, -1.59393, 49.1647, 4.82741, 49.0458, 9.70287, 30.6403, 16.8817, -20.5342, 16.7687, -37.2855, 5.54089, -36.2153, -2.30742 )
+polygon = PoolVector2Array( -28.2462, -19.879, 5.07773, -14.2172, 37.9868, -1.59393, 49.1647, 4.82741, 49.0458, 9.70287, 30.6403, 16.8817, -20.5342, 16.7687, -38.2757, 6.65071, -39.0845, -0.790547 )
 
 [node name="TurnAxis" type="Position2D" parent="."]
 
 [node name="CastPoint1" type="Position2D" parent="TurnAxis"]
-position = Vector2( 20, -4 )
+position = Vector2( 18.8676, -3.83823 )
 
 [node name="CastPoint2" type="Position2D" parent="TurnAxis"]
-position = Vector2( -39.5052, -19.9229 )
+position = Vector2( -35.1375, -22.3494 )
 
 [node name="TiresPosition" type="Position2D" parent="."]
 
@@ -68,7 +68,6 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
-frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_left"]
@@ -87,7 +86,6 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
-frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_right"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/koła_fiolet_2klatka.png-648958d067e08069b9f24abf343f384f.stex"
+path="res://.import/hole.png-c2940d63b9a759fecb36f05a0c4e22c1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/koła_fiolet_2klatka.png"
-dest_files=[ "res://.import/koła_fiolet_2klatka.png-648958d067e08069b9f24abf343f384f.stex" ]
+source_file="res://Assets/Sprites/Enemies/Holes/hole.png"
+dest_files=[ "res://.import/hole.png-c2940d63b9a759fecb36f05a0c4e22c1.stex" ]
 
 [params]
 

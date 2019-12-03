@@ -17,7 +17,6 @@ _global_script_class_icons={
 
 config/name="Vice Patrol"
 run/main_scene="res://Scenes/World.tscn"
-config/icon="res://Assets/Sprites/icon.png"
 
 [display]
 

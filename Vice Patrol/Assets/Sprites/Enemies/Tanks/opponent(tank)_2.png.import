@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/laserBlue07.png-e828ca6b6f632f2f335aab632a29fb17.stex"
+path="res://.import/opponent(tank)_2.png-939bc92eee4137e0c0e890581e639767.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/laserBlue07.png"
-dest_files=[ "res://.import/laserBlue07.png-e828ca6b6f632f2f335aab632a29fb17.stex" ]
+source_file="res://Assets/Sprites/Enemies/Tanks/opponent(tank)_2.png"
+dest_files=[ "res://.import/opponent(tank)_2.png-939bc92eee4137e0c0e890581e639767.stex" ]
 
 [params]
 

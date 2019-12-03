@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hole.png-0ead870e2d280e0aa041943b0989fa2c.stex"
+path="res://.import/laserBlue07.png-4bad528fa8daba2435782366f15d5bf3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/hole.png"
-dest_files=[ "res://.import/hole.png-0ead870e2d280e0aa041943b0989fa2c.stex" ]
+source_file="res://Assets/Sprites/Player/laserBlue07.png"
+dest_files=[ "res://.import/laserBlue07.png-4bad528fa8daba2435782366f15d5bf3.stex" ]
 
 [params]
 

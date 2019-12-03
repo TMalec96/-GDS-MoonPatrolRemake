@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/holesmall.png-164d55ddb48c44e53e80ab943762049b.stex"
+path="res://.import/holesmall.png-a31f4f571077e63855a762a2eba3ec1a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/holesmall.png"
-dest_files=[ "res://.import/holesmall.png-164d55ddb48c44e53e80ab943762049b.stex" ]
+source_file="res://Assets/Sprites/Enemies/Holes/holesmall.png"
+dest_files=[ "res://.import/holesmall.png-a31f4f571077e63855a762a2eba3ec1a.stex" ]
 
 [params]
 

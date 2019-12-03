@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rock.png-0c0219717541df45f349d6d40ca3fa00.stex"
+path="res://.import/ksiezyc_czysty_600.png-a2079f7b73cf5d4fea5646575c77470d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/rock.png"
-dest_files=[ "res://.import/rock.png-0c0219717541df45f349d6d40ca3fa00.stex" ]
+source_file="res://Assets/Sprites/Terrains/ksiezyc_czysty_600.png"
+dest_files=[ "res://.import/ksiezyc_czysty_600.png-a2079f7b73cf5d4fea5646575c77470d.stex" ]
 
 [params]
 

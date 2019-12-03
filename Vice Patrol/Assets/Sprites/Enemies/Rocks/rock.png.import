@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/terrain.png-262a93481fe4d2aba4889a2b4c473899.stex"
+path="res://.import/rock.png-00e1bff6c4c9cb61a7e7591e8733c346.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/terrain.png"
-dest_files=[ "res://.import/terrain.png-262a93481fe4d2aba4889a2b4c473899.stex" ]
+source_file="res://Assets/Sprites/Enemies/Rocks/rock.png"
+dest_files=[ "res://.import/rock.png-00e1bff6c4c9cb61a7e7591e8733c346.stex" ]
 
 [params]
 

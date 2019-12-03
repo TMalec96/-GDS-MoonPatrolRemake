@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/KSIEZYC_PIXEL_ART2.png-059d2c8cde4285f3568da22d2d25dd32.stex"
+path="res://.import/smaller_rock.png-15bfe4f6cdac91fbf7b2424cd8e2d039.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/KSIEZYC_PIXEL_ART2.png"
-dest_files=[ "res://.import/KSIEZYC_PIXEL_ART2.png-059d2c8cde4285f3568da22d2d25dd32.stex" ]
+source_file="res://Assets/Sprites/Enemies/Rocks/smaller_rock.png"
+dest_files=[ "res://.import/smaller_rock.png-15bfe4f6cdac91fbf7b2424cd8e2d039.stex" ]
 
 [params]
 

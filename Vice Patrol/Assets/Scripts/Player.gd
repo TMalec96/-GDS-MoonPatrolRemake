@@ -47,19 +47,7 @@ func _physics_process(delta):
 	for i in range(get_slide_count() - 1):
 #		ZAMIENIC NA FUNKCJE
 		var collision = get_slide_collision(i)
-		if "Enemy" in collision.collider.name:
-			if lifes >= 1:
-				self.hide()
-				velocity.x=0
-				velocity.y=0
-				position.x -= reversing_distance
-				yield(get_tree().create_timer(respawn_time),"timeout")
-				self.show()
-				lifes -= 1
-				print(lifes)
-			elif lifes == 0:
-				collision.collider.dead()
-				queue_free()
+		process_damage(collision)
 	
 
 func FireLoop():
@@ -78,7 +66,34 @@ func FireLoop():
 func dead():
 	is_dead = true
 	queue_free()
-
+#OPTYMALIZACJA FUNKCJI
+func process_damage(var collision):
+		if "Enemy" in collision.collider.name:
+			if lifes >= 1:
+				self.hide()
+				velocity.x=0
+				velocity.y=0
+				position.x -= reversing_distance
+				yield(get_tree().create_timer(respawn_time),"timeout")
+				self.show()
+				lifes -= 1
+				print(lifes)
+			elif lifes <= 0:
+				collision.collider.dead()
+				dead()
+func process_damage_enemy():
+			if lifes >= 1:
+				self.hide()
+				velocity.x=0
+				velocity.y=0
+				position.x -= reversing_distance
+				yield(get_tree().create_timer(respawn_time),"timeout")
+				self.show()
+				lifes -= 1
+				print(lifes)
+			elif lifes <= 0:
+				dead()
+	
 	
 
 
