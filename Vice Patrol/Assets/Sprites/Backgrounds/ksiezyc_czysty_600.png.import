@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/black bar.png-f3b5191d2987c2f332238b2dd3a0ae1c.stex"
+path="res://.import/ksiezyc_czysty_600.png-d010db2c0e658fea397b5a6eaba14573.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Backgrounds/black bar.png"
-dest_files=[ "res://.import/black bar.png-f3b5191d2987c2f332238b2dd3a0ae1c.stex" ]
+source_file="res://Assets/Sprites/Backgrounds/ksiezyc_czysty_600.png"
+dest_files=[ "res://.import/ksiezyc_czysty_600.png-d010db2c0e658fea397b5a6eaba14573.stex" ]
 
 [params]
 

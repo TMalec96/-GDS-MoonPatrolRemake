@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/2_960.png-9a8ace8bb8c38bd2139d5ebe67a4aa64.stex"
+path="res://.import/koła_fiolet_1klatka.png-ee63cbb73226f370fd7c4547cbd92a57.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Backgrounds/2_960.png"
-dest_files=[ "res://.import/2_960.png-9a8ace8bb8c38bd2139d5ebe67a4aa64.stex" ]
+source_file="res://Assets/Sprites/koła_fiolet_1klatka.png"
+dest_files=[ "res://.import/koła_fiolet_1klatka.png-ee63cbb73226f370fd7c4547cbd92a57.stex" ]
 
 [params]
 

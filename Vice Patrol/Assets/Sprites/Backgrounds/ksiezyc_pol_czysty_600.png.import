@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/koło_fiolet_1klatka.png-44dc27fb17567edd0daeca86599f486c.stex"
+path="res://.import/ksiezyc_pol_czysty_600.png-e6429821f8f7a9274c7daa07c50434f0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/koło_fiolet_1klatka.png"
-dest_files=[ "res://.import/koło_fiolet_1klatka.png-44dc27fb17567edd0daeca86599f486c.stex" ]
+source_file="res://Assets/Sprites/Backgrounds/ksiezyc_pol_czysty_600.png"
+dest_files=[ "res://.import/ksiezyc_pol_czysty_600.png-e6429821f8f7a9274c7daa07c50434f0.stex" ]
 
 [params]
 

@@ -1,0 +1,94 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/car1_fioletowy_2chłopków.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/koła_fiolet_1klatka.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/koła_fiolet_2klatka.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "tires",
+"speed": 4.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 13.2997
+
+[node name="Player" type="KinematicBody2D"]
+scale = Vector2( 2, 2 )
+collision_mask = 5
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+run_speed = 400
+jump_speed = -600
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, -200 )
+current = true
+limit_smoothed = true
+drag_margin_top = 1.0
+
+[node name="Player_Collider" type="CollisionPolygon2D" parent="."]
+position = Vector2( -7.17957, -2.78207 )
+polygon = PoolVector2Array( -33.1236, -18.7175, -3.03839, -16.1014, 37.9868, -1.59393, 49.1647, 4.82741, 49.0458, 9.70287, 30.6403, 16.8817, -20.5342, 16.7687, -37.2855, 5.54089, -36.2153, -2.30742 )
+
+[node name="TurnAxis" type="Position2D" parent="."]
+
+[node name="CastPoint1" type="Position2D" parent="TurnAxis"]
+position = Vector2( 20, -4 )
+
+[node name="CastPoint2" type="Position2D" parent="TurnAxis"]
+position = Vector2( -39.5052, -19.9229 )
+
+[node name="TiresPosition" type="Position2D" parent="."]
+
+[node name="LeftTire" type="Position2D" parent="TiresPosition"]
+position = Vector2( -25.6437, 7.45588 )
+
+[node name="RightTire" type="Position2D" parent="TiresPosition"]
+position = Vector2( 22.1417, 7.34292 )
+
+[node name="Tire_left" type="KinematicBody2D" parent="."]
+position = Vector2( -25.6029, 7.55896 )
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 2
+collision_mask = 6
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Tire_right_sprite" type="AnimatedSprite" parent="Tire_left"]
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "tires"
+frame = 1
+playing = true
+
+[node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_left"]
+shape = SubResource( 2 )
+
+[node name="Tire_right" type="KinematicBody2D" parent="."]
+position = Vector2( 22.433, 7.07127 )
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 2
+collision_mask = 6
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Tire_right_sprite" type="AnimatedSprite" parent="Tire_right"]
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "tires"
+frame = 1
+playing = true
+
+[node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_right"]
+shape = SubResource( 2 )
