@@ -21,13 +21,14 @@ radius = 13.2997
 scale = Vector2( 2, 2 )
 collision_mask = 5
 script = ExtResource( 1 )
-jump_speed = -600
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 0, -200 )
 current = true
 limit_smoothed = true
+drag_margin_left = 0.0
 drag_margin_top = 1.0
+drag_margin_right = 0.0
 
 [node name="Player_Collider" type="CollisionPolygon2D" parent="."]
 position = Vector2( -7.17957, -2.78207 )
@@ -65,7 +66,6 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
-frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_left"]
@@ -85,7 +85,6 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
-frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_right"]

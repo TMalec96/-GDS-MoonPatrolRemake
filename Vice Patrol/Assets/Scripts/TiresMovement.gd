@@ -1,14 +1,13 @@
 extends KinematicBody2D
 
 
-export (int) var gravity = 1200
+
 
 
 var velocity = Vector2()
-var jumping = false   
 
 func _physics_process(delta):
-		
+	var gravity = get_parent().gravity
 	velocity.y = delta*gravity
 	
 	
