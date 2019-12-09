@@ -40,6 +40,8 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -459.174, 317.984 )
+collision_mask = 21
 
 [node name="Terrains" type="Node" parent="."]
 editor/display_folded = true
@@ -89,10 +91,9 @@ texture = ExtResource( 4 )
 polygon = PoolVector2Array( -300.066, 299.966, 299.962, 299.962, 300.136, 174.803, 263.873, 177.904, 224.915, 172.242, 143.223, 171.433, 125.159, 175.208, 81.7512, 172.107, 22.4369, 175.073, 5.9906, 171.837, -26.6323, 174.264, -61.6817, 171.972, -91.3389, 170.489, -117.356, 172.511, -146.07, 170.085, -198.374, 173.59, -270.765, 175.342, -300.018, 173.86 )
 
 [node name="Rocks" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="BigRock_Enemy" type="StaticBody2D" parent="Rocks"]
-position = Vector2( 1528.98, 317.98 )
+position = Vector2( 1527.87, 649.281 )
 scale = Vector2( 2, 2 )
 collision_layer = 16
 collision_mask = 21
@@ -109,7 +110,7 @@ position = Vector2( -0.731506, -2.19453 )
 shape = SubResource( 1 )
 
 [node name="SmallRock_Enemy" type="StaticBody2D" parent="Rocks"]
-position = Vector2( 1717.39, 335.661 )
+position = Vector2( 1691.91, 632.613 )
 scale = Vector2( 2, 2 )
 collision_layer = 16
 collision_mask = 21
@@ -134,12 +135,11 @@ margin_right = 900.0
 margin_bottom = 240.0
 
 [node name="Holes" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="BigHole_Enemy" type="StaticBody2D" parent="Holes"]
-position = Vector2( 1186.08, 385.528 )
-collision_layer = 16
-collision_mask = 21
+position = Vector2( 1252.56, 666.968 )
+collision_layer = 32
+collision_mask = 33
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="Holes/BigHole_Enemy"]
@@ -150,10 +150,10 @@ texture = ExtResource( 9 )
 shape = SubResource( 3 )
 
 [node name="SmallHole_Enemy" type="StaticBody2D" parent="Holes"]
-position = Vector2( 412.598, 377.317 )
+position = Vector2( 410.382, 663.189 )
 scale = Vector2( 1.5, 1.5 )
-collision_layer = 16
-collision_mask = 21
+collision_layer = 32
+collision_mask = 33
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -168,4 +168,5 @@ shape = SubResource( 4 )
 [node name="Tanks" type="Node" parent="."]
 
 [node name="Tank_Enemy" parent="Tanks" instance=ExtResource( 11 )]
-position = Vector2( 848.433, 255.041 )
+position = Vector2( 818.516, 602.963 )
+rate_of_fire = 0.0

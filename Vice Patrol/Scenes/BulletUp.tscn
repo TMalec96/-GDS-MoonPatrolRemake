@@ -3,15 +3,14 @@
 [ext_resource path="res://Assets/Scripts/Bullet1.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Player/laserBlue07.png" type="Texture" id=2]
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 4.33693
 height = 29.5427
 
 [node name="Bullet" type="RigidBody2D"]
 rotation = -1.5708
-collision_layer = 16
-collision_mask = 20
+collision_layer = 512
+collision_mask = 528
 gravity_scale = 0.0
 contacts_reported = 1
 contact_monitor = true

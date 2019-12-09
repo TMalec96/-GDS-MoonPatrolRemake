@@ -9,9 +9,7 @@ var jumping = false
 
 func _physics_process(delta):
 		
-	velocity.y = delta*gravity
-	
-	
+	velocity.y = get_parent().velocity.y
 	
 #	if jumping and is_on_floor():
 #		 jumping = false	

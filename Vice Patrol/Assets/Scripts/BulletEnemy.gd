@@ -17,3 +17,5 @@ func _on_Bullet_body_entered(body):
 	if "Player" in body.name:
 		body.process_damage_enemy()
 	queue_free()
+func dead():
+	queue_free()
