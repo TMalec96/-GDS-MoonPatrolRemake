@@ -11,6 +11,11 @@ export(float) var camera_offset_back_drag = .02
  
 export (int) var start_delay = 4
 
+export (int) var spawn_enemy_distance = 300
+export (int) var spawn_enemy_time = 1
+export (int) var enemy_boost_time = 2
+export (bool) var spawn_enemy = false
+var enemy = preload("res://Scenes/BackAttack_Enemy.tscn")
 var velocity = Vector2()
 var jumping = false
 
@@ -28,6 +33,9 @@ export (int) var reversing_distance = 500
 var is_dead = false
 var is_respawning = false
 
+func _ready():
+	if spawn_enemy:
+		spawn_enemy_afer_time(spawn_enemy_time)
 
 func _respawn(var delay):
 	self.hide()
@@ -145,7 +153,12 @@ func process_damage_enemy():
 		is_respawning = false
 	elif lifes <= 0:
 		dead()
-	
+func spawn_enemy_afer_time(time):
+	var enemy_instance = enemy.instance()
+	yield(get_tree().create_timer(time), "timeout")
+	enemy_instance.position = Vector2(position.x -spawn_enemy_distance,position.y)
+	get_parent().add_child(enemy_instance)
+	enemy_instance.start_chase(velocity.x,max_player_speed,enemy_boost_time)
 	
 
 
