@@ -7,7 +7,7 @@ export (int) var gravity = 1200
 
 export(float) var camera_offset_drag = 100
 export(float) var camera_offset_drag_speed = 2
-export(float) var camera_offset_back_drag = .01
+export(float) var camera_offset_back_drag = .02
  
 export (int) var start_delay = 4
 

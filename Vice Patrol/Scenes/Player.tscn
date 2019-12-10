@@ -32,7 +32,7 @@ drag_margin_right = 0.0
 
 [node name="Player_Collider" type="CollisionPolygon2D" parent="."]
 position = Vector2( -7.17957, -2.78207 )
-polygon = PoolVector2Array( -28.2462, -19.879, 5.07773, -14.2172, 37.9868, -1.59393, 49.1647, 4.82741, 47.3108, 10.9425, 34.2666, 16.2129, -20.5454, 17.1353, -32.9308, 16.4765, -39.0845, -0.790547 )
+polygon = PoolVector2Array( -28.2462, -19.879, 5.07773, -14.2172, 37.9868, -1.59393, 49.1647, 4.82741, 47.3108, 10.9425, 31.4997, 16.3447, -19.623, 16.4765, -37.1471, 9.09791, -39.0845, -0.790547 )
 
 [node name="TurnAxis" type="Position2D" parent="."]
 editor/display_folded = true
