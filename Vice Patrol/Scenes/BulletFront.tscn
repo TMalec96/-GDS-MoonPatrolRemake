@@ -9,7 +9,7 @@ height = 32.0667
 
 [node name="Bullet" type="RigidBody2D"]
 collision_layer = 512
-collision_mask = 528
+collision_mask = 656
 gravity_scale = 0.0
 contacts_reported = 1
 contact_monitor = true

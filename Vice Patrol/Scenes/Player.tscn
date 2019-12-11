@@ -19,11 +19,12 @@ radius = 13.2997
 
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 2, 2 )
-collision_mask = 5
+collision_mask = 133
 script = ExtResource( 1 )
+gravity = 1300
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 0, -200 )
+offset = Vector2( 0, -350 )
 current = true
 limit_smoothed = true
 drag_margin_left = 0.0
@@ -57,6 +58,7 @@ position = Vector2( -25.6029, 7.55896 )
 scale = Vector2( 0.5, 0.5 )
 collision_layer = 128
 collision_mask = 132
+collision/safe_margin = 1.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -66,6 +68,7 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
+frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_left"]
@@ -76,6 +79,7 @@ position = Vector2( 22.433, 7.07127 )
 scale = Vector2( 0.5, 0.5 )
 collision_layer = 128
 collision_mask = 132
+collision/safe_margin = 1.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -85,6 +89,7 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
+frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_right"]
@@ -93,3 +98,15 @@ shape = SubResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, 1.00136e-005 )
 texture = ExtResource( 5 )
+
+[node name="groundray1" type="RayCast2D" parent="."]
+position = Vector2( 22.433, 7.07127 )
+enabled = true
+cast_to = Vector2( 0, 10 )
+collision_mask = 4101
+
+[node name="groundray2" type="RayCast2D" parent="."]
+position = Vector2( -25.987, 7.071 )
+enabled = true
+cast_to = Vector2( 0, 10 )
+collision_mask = 4101

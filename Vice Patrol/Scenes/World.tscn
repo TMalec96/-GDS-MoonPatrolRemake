@@ -23,7 +23,7 @@ height = 1.46686
 extents = Vector2( 8.41949, 6.00592 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 102.667, 62.6185 )
+extents = Vector2( 58.4871, 27.8315 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 49.3072, 29.9878 )
@@ -35,11 +35,14 @@ extents = Vector2( 49.3072, 29.9878 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( -459.174, 317.984 )
 collision_mask = 21
+gravity = 1200
+spawn_enemy_time = 20
+spawn_enemy = true
 
 [node name="Terrains" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Terrain5" type="StaticBody2D" parent="Terrains"]
+editor/display_folded = true
 scale = Vector2( 2, 2 )
 collision_layer = 4
 collision_mask = 4
@@ -51,9 +54,122 @@ __meta__ = {
 texture = ExtResource( 3 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrains/Terrain5"]
-polygon = PoolVector2Array( -299.962, 299.959, 299.971, 299.931, 300.033, 174.71, 261.687, 178.02, 243.514, 173.66, 195.977, 175.505, 173.841, 171.957, 162.773, 175.505, 142.907, 172.383, 112.256, 176.356, 91.8224, 175.363, 70.6792, 174.795, 52.0903, 175.079, 40.4544, 178.343, 3.13464, 172.667, -17.8666, 175.079, -38.5841, 172.525, -68.0994, 175.647, -89.1007, 170.822, -105.277, 174.086, -121.028, 172.525, -147.138, 178.627, -171.687, 173.093, -209.716, 178.769, -228.021, 175.221, -242.637, 179.052, -269.031, 174.653, -281.66, 177.066, -299.965, 173.802 )
+polygon = PoolVector2Array( -299.962, 299.959, 299.971, 299.931, 300.033, 174.71, 261.687, 178.02, 244.344, 173.465, 223.52, 172.302, 200.663, 175.789, 170.928, 171.624, 163.276, 174.046, 145.745, 170.656, 112.256, 176.356, 91.8224, 175.363, 75.6217, 176.467, 52.0903, 175.079, 40.9474, 178.211, 27.2907, 174.046, 6.17618, 171.431, -17.8666, 175.079, -38.5841, 172.525, -68.0994, 175.647, -89.1007, 170.822, -102.98, 174.53, -115.862, 170.947, -147.138, 178.627, -161.965, 174.24, -178.721, 172.787, -209.716, 178.769, -228.796, 175.208, -243.227, 179.664, -254.85, 175.305, -268.991, 175.111, -281.66, 177.066, -289.234, 173.368, -299.965, 173.802 )
+
+[node name="Terrain13" type="StaticBody2D" parent="Terrains"]
+editor/display_folded = true
+position = Vector2( 6000.06, -0.0485229 )
+scale = Vector2( 2, 2 )
+collision_layer = 4
+collision_mask = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terrains/Terrain13"]
+texture = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrains/Terrain13"]
+polygon = PoolVector2Array( -299.962, 299.959, 299.971, 299.931, 300.033, 174.71, 261.687, 178.02, 244.344, 173.465, 223.52, 172.302, 200.663, 175.789, 170.928, 171.624, 163.276, 174.046, 145.745, 170.656, 112.256, 176.356, 91.8224, 175.363, 75.6217, 176.467, 52.0903, 175.079, 40.9474, 178.211, 27.2907, 174.046, 6.17618, 171.431, -17.8666, 175.079, -38.5841, 172.525, -68.0994, 175.647, -89.1007, 170.822, -102.98, 174.53, -115.862, 170.947, -147.138, 178.627, -161.965, 174.24, -178.721, 172.787, -209.716, 178.769, -228.796, 175.208, -243.227, 179.664, -254.85, 175.305, -268.991, 175.111, -281.66, 177.066, -289.234, 173.368, -299.965, 173.802 )
+
+[node name="Terrain7" type="StaticBody2D" parent="Terrains"]
+editor/display_folded = true
+position = Vector2( 2400, 0 )
+scale = Vector2( 2, 2 )
+collision_layer = 4
+collision_mask = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terrains/Terrain7"]
+texture = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrains/Terrain7"]
+polygon = PoolVector2Array( -299.962, 299.959, 299.971, 299.931, 300.033, 174.71, 261.687, 178.02, 244.344, 173.465, 223.52, 172.302, 200.663, 175.789, 170.928, 171.624, 163.276, 174.046, 145.745, 170.656, 112.256, 176.356, 91.8224, 175.363, 75.6217, 176.467, 52.0903, 175.079, 40.9474, 178.211, 27.2907, 174.046, 6.17618, 171.431, -17.8666, 175.079, -38.5841, 172.525, -68.0994, 175.647, -89.1007, 170.822, -102.98, 174.53, -115.862, 170.947, -147.138, 178.627, -161.965, 174.24, -178.721, 172.787, -209.716, 178.769, -228.796, 175.208, -243.227, 179.664, -254.85, 175.305, -268.991, 175.111, -281.66, 177.066, -289.234, 173.368, -299.965, 173.802 )
+
+[node name="Terrain11" type="StaticBody2D" parent="Terrains"]
+editor/display_folded = true
+position = Vector2( 8400.06, -0.0485229 )
+scale = Vector2( 2, 2 )
+collision_layer = 4
+collision_mask = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terrains/Terrain11"]
+texture = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrains/Terrain11"]
+polygon = PoolVector2Array( -299.962, 299.959, 299.971, 299.931, 300.033, 174.71, 261.687, 178.02, 244.344, 173.465, 223.52, 172.302, 200.663, 175.789, 170.928, 171.624, 163.276, 174.046, 145.745, 170.656, 112.256, 176.356, 91.8224, 175.363, 75.6217, 176.467, 52.0903, 175.079, 40.9474, 178.211, 27.2907, 174.046, 6.17618, 171.431, -17.8666, 175.079, -38.5841, 172.525, -68.0994, 175.647, -89.1007, 170.822, -102.98, 174.53, -115.862, 170.947, -147.138, 178.627, -161.965, 174.24, -178.721, 172.787, -209.716, 178.769, -228.796, 175.208, -243.227, 179.664, -254.85, 175.305, -268.991, 175.111, -281.66, 177.066, -289.234, 173.368, -299.965, 173.802 )
+
+[node name="Terrain8" type="StaticBody2D" parent="Terrains"]
+editor/display_folded = true
+position = Vector2( 3600, 0 )
+scale = Vector2( 2, 2 )
+collision_layer = 4
+collision_mask = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terrains/Terrain8"]
+texture = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrains/Terrain8"]
+polygon = PoolVector2Array( -299.962, 299.959, 299.971, 299.931, 300.033, 174.71, 261.687, 178.02, 244.344, 173.465, 223.52, 172.302, 200.663, 175.789, 170.928, 171.624, 163.276, 174.046, 145.745, 170.656, 112.256, 176.356, 91.8224, 175.363, 75.6217, 176.467, 52.0903, 175.079, 40.9474, 178.211, 27.2907, 174.046, 6.17618, 171.431, -17.8666, 175.079, -38.5841, 172.525, -68.0994, 175.647, -89.1007, 170.822, -102.98, 174.53, -115.862, 170.947, -147.138, 178.627, -161.965, 174.24, -178.721, 172.787, -209.716, 178.769, -228.796, 175.208, -243.227, 179.664, -254.85, 175.305, -268.991, 175.111, -281.66, 177.066, -289.234, 173.368, -299.965, 173.802 )
+
+[node name="Terrain10" type="StaticBody2D" parent="Terrains"]
+editor/display_folded = true
+position = Vector2( 9600.06, -0.0485229 )
+scale = Vector2( 2, 2 )
+collision_layer = 4
+collision_mask = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terrains/Terrain10"]
+texture = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrains/Terrain10"]
+polygon = PoolVector2Array( -299.962, 299.959, 299.971, 299.931, 300.033, 174.71, 261.687, 178.02, 244.344, 173.465, 223.52, 172.302, 200.663, 175.789, 170.928, 171.624, 163.276, 174.046, 145.745, 170.656, 112.256, 176.356, 91.8224, 175.363, 75.6217, 176.467, 52.0903, 175.079, 40.9474, 178.211, 27.2907, 174.046, 6.17618, 171.431, -17.8666, 175.079, -38.5841, 172.525, -68.0994, 175.647, -89.1007, 170.822, -102.98, 174.53, -115.862, 170.947, -147.138, 178.627, -161.965, 174.24, -178.721, 172.787, -209.716, 178.769, -228.796, 175.208, -243.227, 179.664, -254.85, 175.305, -268.991, 175.111, -281.66, 177.066, -289.234, 173.368, -299.965, 173.802 )
+
+[node name="Terrain9" type="StaticBody2D" parent="Terrains"]
+editor/display_folded = true
+position = Vector2( 4800, 0 )
+scale = Vector2( 2, 2 )
+collision_layer = 4
+collision_mask = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terrains/Terrain9"]
+texture = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrains/Terrain9"]
+polygon = PoolVector2Array( -299.962, 299.959, 299.971, 299.931, 300.033, 174.71, 261.687, 178.02, 244.344, 173.465, 223.52, 172.302, 200.663, 175.789, 170.928, 171.624, 163.276, 174.046, 145.745, 170.656, 112.256, 176.356, 91.8224, 175.363, 75.6217, 176.467, 52.0903, 175.079, 40.9474, 178.211, 27.2907, 174.046, 6.17618, 171.431, -17.8666, 175.079, -38.5841, 172.525, -68.0994, 175.647, -89.1007, 170.822, -102.98, 174.53, -115.862, 170.947, -147.138, 178.627, -161.965, 174.24, -178.721, 172.787, -209.716, 178.769, -228.796, 175.208, -243.227, 179.664, -254.85, 175.305, -268.991, 175.111, -281.66, 177.066, -289.234, 173.368, -299.965, 173.802 )
+
+[node name="Terrain14" type="StaticBody2D" parent="Terrains"]
+editor/display_folded = true
+position = Vector2( 10800.1, -0.0485229 )
+scale = Vector2( 2, 2 )
+collision_layer = 4
+collision_mask = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terrains/Terrain14"]
+texture = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrains/Terrain14"]
+polygon = PoolVector2Array( -299.962, 299.959, 299.971, 299.931, 300.033, 174.71, 261.687, 178.02, 244.344, 173.465, 223.52, 172.302, 200.663, 175.789, 170.928, 171.624, 163.276, 174.046, 145.745, 170.656, 112.256, 176.356, 91.8224, 175.363, 75.6217, 176.467, 52.0903, 175.079, 40.9474, 178.211, 27.2907, 174.046, 6.17618, 171.431, -17.8666, 175.079, -38.5841, 172.525, -68.0994, 175.647, -89.1007, 170.822, -102.98, 174.53, -115.862, 170.947, -147.138, 178.627, -161.965, 174.24, -178.721, 172.787, -209.716, 178.769, -228.796, 175.208, -243.227, 179.664, -254.85, 175.305, -268.991, 175.111, -281.66, 177.066, -289.234, 173.368, -299.965, 173.802 )
 
 [node name="Terrain6" type="StaticBody2D" parent="Terrains"]
+editor/display_folded = true
 position = Vector2( 1200, 0 )
 scale = Vector2( 2, 2 )
 collision_layer = 4
@@ -66,10 +182,11 @@ __meta__ = {
 texture = ExtResource( 4 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrains/Terrain6"]
-polygon = PoolVector2Array( -300.066, 299.966, 299.962, 299.962, 300.136, 174.803, 263.873, 177.904, 224.915, 172.242, 143.223, 171.433, 125.159, 175.208, 81.7512, 172.107, 22.4369, 175.073, 5.9906, 171.837, -26.6323, 174.264, -61.6817, 171.972, -91.3389, 170.489, -117.356, 172.511, -146.07, 170.085, -198.374, 173.59, -270.765, 175.342, -300.018, 173.86 )
+polygon = PoolVector2Array( -300.066, 299.966, 299.962, 299.962, 300.04, 173.993, 259.502, 180.034, 244.32, 173.685, 217.913, 171.201, 143.223, 171.433, 125.159, 175.208, 81.7512, 172.107, 22.4369, 175.073, 5.9906, 171.837, -26.6323, 174.264, -61.6817, 171.972, -91.3389, 170.489, -117.356, 172.511, -146.07, 170.085, -198.374, 173.59, -270.765, 175.342, -300.018, 173.86 )
 
-[node name="Terrain7" type="StaticBody2D" parent="Terrains"]
-position = Vector2( 2400, 0 )
+[node name="Terrain12" type="StaticBody2D" parent="Terrains"]
+editor/display_folded = true
+position = Vector2( 7200.06, -0.0485229 )
 scale = Vector2( 2, 2 )
 collision_layer = 4
 collision_mask = 4
@@ -77,16 +194,16 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Terrains/Terrain7"]
+[node name="Sprite" type="Sprite" parent="Terrains/Terrain12"]
 texture = ExtResource( 4 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrains/Terrain7"]
-polygon = PoolVector2Array( -300.066, 299.966, 299.962, 299.962, 300.136, 174.803, 263.873, 177.904, 224.915, 172.242, 143.223, 171.433, 125.159, 175.208, 81.7512, 172.107, 22.4369, 175.073, 5.9906, 171.837, -26.6323, 174.264, -61.6817, 171.972, -91.3389, 170.489, -117.356, 172.511, -146.07, 170.085, -198.374, 173.59, -270.765, 175.342, -300.018, 173.86 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrains/Terrain12"]
+polygon = PoolVector2Array( -300.066, 299.966, 299.962, 299.962, 300.04, 173.993, 259.502, 180.034, 244.32, 173.685, 217.913, 171.201, 143.223, 171.433, 125.159, 175.208, 81.7512, 172.107, 22.4369, 175.073, 5.9906, 171.837, -26.6323, 174.264, -61.6817, 171.972, -91.3389, 170.489, -117.356, 172.511, -146.07, 170.085, -198.374, 173.59, -270.765, 175.342, -300.018, 173.86 )
 
 [node name="Rocks" type="Node" parent="."]
 
 [node name="BigRock_Enemy" type="StaticBody2D" parent="Rocks"]
-position = Vector2( 1527.87, 649.281 )
+position = Vector2( 1627.79, 321.882 )
 scale = Vector2( 2, 2 )
 collision_layer = 16
 collision_mask = 21
@@ -103,7 +220,7 @@ position = Vector2( -0.731506, -2.19453 )
 shape = SubResource( 1 )
 
 [node name="SmallRock_Enemy" type="StaticBody2D" parent="Rocks"]
-position = Vector2( 1691.91, 632.613 )
+position = Vector2( 2259.28, 334.131 )
 scale = Vector2( 2, 2 )
 collision_layer = 16
 collision_mask = 21
@@ -128,11 +245,10 @@ margin_right = 900.0
 margin_bottom = 240.0
 
 [node name="Holes" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="BigHole_Enemy" type="StaticBody2D" parent="Holes"]
-editor/display_folded = true
-position = Vector2( 64.6251, 678.709 )
+position = Vector2( 963.75, 375.086 )
+scale = Vector2( 1.6, 1.6 )
 collision_layer = 32
 collision_mask = 33
 script = ExtResource( 5 )
@@ -141,7 +257,6 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Holes/BigHole_Enemy"]
-scale = Vector2( 2, 2 )
 texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Holes/BigHole_Enemy"]
@@ -149,7 +264,7 @@ shape = SubResource( 3 )
 
 [node name="SmallHole_Enemy" type="StaticBody2D" parent="Holes"]
 editor/display_folded = true
-position = Vector2( 410.382, 663.189 )
+position = Vector2( 4071.21, 380.031 )
 scale = Vector2( 1.5, 1.5 )
 collision_layer = 32
 collision_mask = 33
@@ -165,10 +280,9 @@ texture = ExtResource( 10 )
 shape = SubResource( 4 )
 
 [node name="Tanks" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Tank_Enemy" parent="Tanks" instance=ExtResource( 11 )]
-position = Vector2( 818.516, 602.963 )
+position = Vector2( 3165.88, 267.174 )
 
 [node name="Palms" type="Node" parent="."]
 editor/display_folded = true

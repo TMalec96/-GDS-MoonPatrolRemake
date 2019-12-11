@@ -14,14 +14,16 @@ export (int) var start_delay = 4
 export (int) var spawn_enemy_distance = 300
 export (int) var spawn_enemy_time = 1
 export (int) var enemy_boost_time = 2
+export (int) var boost_duration_time = 2
 export (bool) var spawn_enemy = false
-var enemy = preload("res://Scenes/BackAttack_Enemy.tscn")
+var Enemy = preload("res://Scenes/BackAttack_Enemy.tscn")
 var velocity = Vector2()
 var jumping = false
 
 onready var camera = get_node("Camera2D")
 
-
+onready var ground_ray1 = get_node("groundray1")
+onready var ground_ray2 = get_node("groundray2")
 var bullet1 = preload("res://Scenes/BulletFront.tscn")
 var bullet2 = preload("res://Scenes/BulletUp.tscn")
 var can_fire =true
@@ -61,6 +63,7 @@ func _process_movement(var speed_increment,var old_speed,var new_speed):
 		
 		
 func get_input():
+	
 	if !is_respawning:
 		velocity.x = avg_player_speed
 		var right_pressed = Input.is_action_pressed('ui_right')
@@ -68,7 +71,7 @@ func get_input():
 		var left_released = Input.is_action_just_released('ui_left')
 		var left_pressed = Input.is_action_pressed('ui_left')
 		var jump = Input.is_action_just_pressed('ui_up')
-		if jump and is_on_floor():
+		if jump and (ground_ray1.is_colliding() or ground_ray2.is_colliding()):
 			jumping = true
 			velocity.y = -jump_speed
 			_set_wheels_position_global()
@@ -82,25 +85,23 @@ func get_input():
 				camera.offset.x += camera_offset_drag_speed
 		if left_released:
 			velocity.x = avg_player_speed
-			while(camera.offset.x != 0):
+			while(camera.offset.x >= 0):
 				camera.offset.x -= camera_offset_drag_speed
 				yield(get_tree().create_timer(camera_offset_back_drag), "timeout")
 		if right_released:
 			velocity.x = avg_player_speed
-			while(camera.offset.x != 0):
-				camera.offset.x += camera_offset_drag_speed
+			while(camera.offset.x >= 0):
+				camera.offset.x <= camera_offset_drag_speed
 				yield(get_tree().create_timer(camera_offset_back_drag), "timeout")
 func _physics_process(delta):
-		get_input()
-		velocity.y += gravity * delta
-		if jumping and is_on_floor():
-			jumping = false
-		velocity = move_and_slide(velocity, Vector2(0, -1),5,4,rad2deg(75))
-		for i in range(get_slide_count() - 1):
+	get_input()
+	velocity.y += gravity * delta
+	velocity = move_and_slide(velocity, Vector2(0, -1))
+	for i in range(get_slide_count() - 1):
 	#		ZAMIENIC NA FUNKCJE
-			var collision = get_slide_collision(i)
-			process_damage(collision)
-		_set_wheels_position_x()
+		var collision = get_slide_collision(i)
+		process_damage(collision)
+	_set_wheels_position_x()
 func _set_wheels_position_global():
 	var wheel_right_position = get_node("TiresPosition/RightTire").get_position()
 	var wheel_left_position = get_node("TiresPosition/LeftTire").get_position()
@@ -154,11 +155,11 @@ func process_damage_enemy():
 	elif lifes <= 0:
 		dead()
 func spawn_enemy_afer_time(time):
-	var enemy_instance = enemy.instance()
+	var Enemy_instance = Enemy.instance()
 	yield(get_tree().create_timer(time), "timeout")
-	enemy_instance.position = Vector2(position.x -spawn_enemy_distance,position.y)
-	get_parent().add_child(enemy_instance)
-	enemy_instance.start_chase(velocity.x,max_player_speed,enemy_boost_time)
+	Enemy_instance.position = Vector2(position.x -spawn_enemy_distance,position.y)
+	get_parent().add_child(Enemy_instance)
+	Enemy_instance.start_chase(velocity.x,max_player_speed,enemy_boost_time,boost_duration_time)
 	
 
 
