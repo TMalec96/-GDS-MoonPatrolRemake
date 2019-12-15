@@ -34,8 +34,8 @@ export (float) var respawn_delay = 2.0
 export (int) var reversing_distance = 500
 var is_dead = false
 var is_respawning = false
-
 func _ready():
+	GlobalVariables.playerLifes = lifes
 	if spawn_enemy:
 		spawn_enemy_afer_time(spawn_enemy_time)
 
@@ -46,7 +46,7 @@ func _respawn(var delay):
 	position.x -= reversing_distance
 	yield(get_tree().create_timer(respawn_delay),"timeout")
 	self.show()
-	lifes -= 1
+	GlobalVariables.playerLifes -= 1
 	is_respawning = false
 
 func _process(delta):
@@ -124,6 +124,7 @@ func FireLoop():
 		var bullet_instanceUp = bullet2.instance()
 		bullet_instanceFront.position = get_node("TurnAxis/CastPoint1").get_global_position()
 		bullet_instanceUp.position = get_node("TurnAxis/CastPoint2").get_global_position()
+		bullet_instanceUp.Initialize(velocity.x)
 #		bullet_instance.rotation = get_global_rotation()
 		get_parent().add_child(bullet_instanceFront)
 		get_parent().add_child(bullet_instanceUp)
@@ -132,27 +133,21 @@ func FireLoop():
 func dead():
 	is_dead = true
 	queue_free()
+	SceneLoader.goto_scene("res://Scenes/GameOverScene.tscn")
 #OPTYMALIZACJA FUNKCJI
 func process_damage(var collision):
 		if "Enemy" in collision.collider.name:
 			is_respawning = true
-			if lifes >= 1:
+			if GlobalVariables.playerLifes >= 1:
 				_respawn(respawn_delay)
-			elif lifes <= 0:
+			elif GlobalVariables.playerLifes<= 0:
 				collision.collider.dead()
 				dead()
 func process_damage_enemy():
 	is_respawning = true
-	if lifes >= 1:
-		self.hide()
-		velocity.x=0
-		velocity.y=0
-		position.x -= reversing_distance
-		yield(get_tree().create_timer(respawn_delay),"timeout")
-		self.show()
-		lifes -= 1
-		is_respawning = false
-	elif lifes <= 0:
+	if GlobalVariables.playerLifes >= 1:
+		_respawn(respawn_delay)
+	elif GlobalVariables.playerLifes <= 0:
 		dead()
 func spawn_enemy_afer_time(time):
 	var Enemy_instance = Enemy.instance()
