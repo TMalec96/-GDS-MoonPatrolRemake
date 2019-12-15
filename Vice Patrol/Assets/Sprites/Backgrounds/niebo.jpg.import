@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/thumb-1920-939716.png-b09302a259be24b97ad5671ae22d3591.stex"
+path="res://.import/niebo.jpg-7ee384654401e97422b4bbd9bc189ddb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Backgrounds/thumb-1920-939716.png"
-dest_files=[ "res://.import/thumb-1920-939716.png-b09302a259be24b97ad5671ae22d3591.stex" ]
+source_file="res://Assets/Sprites/Backgrounds/niebo.jpg"
+dest_files=[ "res://.import/niebo.jpg-7ee384654401e97422b4bbd9bc189ddb.stex" ]
 
 [params]
 

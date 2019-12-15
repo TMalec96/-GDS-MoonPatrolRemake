@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scenes/StartScene.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Scripts/StartScene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Backgrounds/titleBackround.jpg" type="Texture" id=2]
 [ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=3]
 

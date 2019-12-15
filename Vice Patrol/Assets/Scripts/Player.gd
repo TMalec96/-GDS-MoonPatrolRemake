@@ -24,6 +24,8 @@ onready var camera = get_node("Camera2D")
 
 onready var ground_ray1 = get_node("groundray1")
 onready var ground_ray2 = get_node("groundray2")
+onready var enemy_detector_ray = get_node("EnemyDetector")
+
 var bullet1 = preload("res://Scenes/BulletFront.tscn")
 var bullet2 = preload("res://Scenes/BulletUp.tscn")
 var can_fire =true
@@ -94,6 +96,7 @@ func get_input():
 				camera.offset.x <= camera_offset_drag_speed
 				yield(get_tree().create_timer(camera_offset_back_drag), "timeout")
 func _physics_process(delta):
+	_process_score()
 	get_input()
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2(0, -1))
@@ -102,6 +105,10 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		process_damage(collision)
 	_set_wheels_position_x()
+func _process_score():
+	if enemy_detector_ray.is_colliding():
+		enemy_detector_ray.get_collider().countScore()
+		
 func _set_wheels_position_global():
 	var wheel_right_position = get_node("TiresPosition/RightTire").get_position()
 	var wheel_left_position = get_node("TiresPosition/LeftTire").get_position()

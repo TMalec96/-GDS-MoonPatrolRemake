@@ -20,8 +20,8 @@ run/main_scene="res://Scenes/StartScene.tscn"
 
 [autoload]
 
-SceneLoader="*res://SceneLoader.gd"
-GlobalVariables="*res://GlobalVariables.gd"
+SceneLoader="*res://Assets/Scripts/SceneLoader.gd"
+GlobalVariables="*res://Assets/Scripts/GlobalVariables.gd"
 
 [display]
 

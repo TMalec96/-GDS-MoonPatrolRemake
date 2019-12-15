@@ -7,6 +7,9 @@ var is_spawned = false
 var max_speed = 0
 var boost_delay_time = 0
 var is_dead = false
+export (int) var scoreValue = 100
+var is_jumped = false
+
 
 func start_chase(velocity_x,max_player_speed,enemy_boost_time_delay, boost_duration_time):
 	velocity.x = velocity_x
@@ -24,7 +27,13 @@ func _physics_process(delta):
 func dead():
 	is_dead = true
 	$CollisionShape2D.disabled = true
+	GlobalVariables.playerScore += scoreValue
 	queue_free()
+func countScore():
+	if !is_jumped:
+		GlobalVariables.playerScore += scoreValue
+		is_jumped = true
+
 	
 	
 

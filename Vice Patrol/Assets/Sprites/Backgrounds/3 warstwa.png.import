@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ksiezyc_pol_czysty_600.png-e6429821f8f7a9274c7daa07c50434f0.stex"
+path="res://.import/3 warstwa.png-3088fe3f4299ae52a8af670d7c0d7531.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Backgrounds/ksiezyc_pol_czysty_600.png"
-dest_files=[ "res://.import/ksiezyc_pol_czysty_600.png-e6429821f8f7a9274c7daa07c50434f0.stex" ]
+source_file="res://Assets/Sprites/Backgrounds/3 warstwa.png"
+dest_files=[ "res://.import/3 warstwa.png-3088fe3f4299ae52a8af670d7c0d7531.stex" ]
 
 [params]
 

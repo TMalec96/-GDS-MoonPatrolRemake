@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/smaller_rock.png-221abdf52c1c0f239b5e30d7c90be754.stex"
+path="res://.import/4 warstwa.png-fcb7e2b6eb2298c15fc9141c97245e8c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Backgrounds/smaller_rock.png"
-dest_files=[ "res://.import/smaller_rock.png-221abdf52c1c0f239b5e30d7c90be754.stex" ]
+source_file="res://Assets/Sprites/Backgrounds/4 warstwa.png"
+dest_files=[ "res://.import/4 warstwa.png-fcb7e2b6eb2298c15fc9141c97245e8c.stex" ]
 
 [params]
 
