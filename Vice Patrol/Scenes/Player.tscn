@@ -19,12 +19,12 @@ radius = 13.2997
 
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 2, 2 )
-collision_mask = 133
+collision_mask = 5
 script = ExtResource( 1 )
 gravity = 1300
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 0, -350 )
+offset = Vector2( 200, -350 )
 current = true
 limit_smoothed = true
 drag_margin_left = 0.0
@@ -54,6 +54,7 @@ position = Vector2( -25.6437, 7.45588 )
 position = Vector2( 22.1417, 7.34292 )
 
 [node name="Tire_left" type="KinematicBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( -25.6029, 7.55896 )
 scale = Vector2( 0.5, 0.5 )
 collision_layer = 128
@@ -68,13 +69,13 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
-frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_left"]
 shape = SubResource( 2 )
 
 [node name="Tire_right" type="KinematicBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 22.433, 7.07127 )
 scale = Vector2( 0.5, 0.5 )
 collision_layer = 128
@@ -89,7 +90,6 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
-frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_right"]
@@ -115,3 +115,14 @@ collision_mask = 4101
 enabled = true
 cast_to = Vector2( 0, 70 )
 collision_mask = 16400
+
+[node name="SpawnPointsRoot" type="Position2D" parent="."]
+
+[node name="SpawnPointBehindPlayer" type="Position2D" parent="SpawnPointsRoot"]
+position = Vector2( -153.834, -120.017 )
+
+[node name="SpawnPointAbovePlayer" type="Position2D" parent="SpawnPointsRoot"]
+position = Vector2( -37.4695, -174.244 )
+
+[node name="SpawnPointBehindDownPlayer" type="Position2D" parent="SpawnPointsRoot"]
+position = Vector2( -201.482, -12.4318 )

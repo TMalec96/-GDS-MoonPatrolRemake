@@ -4,17 +4,23 @@
 [ext_resource path="res://Assets/Sprites/Enemies/BackEnemy/BackAttack_Enemy.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16.9273, 8.20452 )
+extents = Vector2( 13.9403, 8.20452 )
 
 [node name="BackAttack_Enemy" type="KinematicBody2D"]
 scale = Vector2( 2, 2 )
-collision_layer = 128
-collision_mask = 128
+collision_layer = 32768
+collision_mask = 32769
+collision/safe_margin = 0.001
 script = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Enemy_Back" type="CollisionShape2D" parent="."]
 position = Vector2( -1.97639, 3.68928 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
+
+[node name="Collision_detector" type="RayCast2D" parent="."]
+rotation = -1.5708
+enabled = true
+cast_to = Vector2( 0, 22.05 )

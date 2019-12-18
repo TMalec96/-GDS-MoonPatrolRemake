@@ -12,7 +12,7 @@
 [ext_resource path="res://Assets/Sprites/Enemies/Holes/holesmall.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Tank_Enemy.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Palm_Enemy.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Path2D.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/EnemySpawner.gd" type="Script" id=13]
 [ext_resource path="res://Scenes/Mine_Enemy.tscn" type="PackedScene" id=14]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -35,9 +35,6 @@ extents = Vector2( 49.3072, 29.9878 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 599.615, 298.553 )
 collision_mask = 21
-gravity = 1200
-spawn_enemy_time = 20
-spawn_enemy = true
 
 [node name="Canvas" type="CanvasLayer" parent="Player"]
 
@@ -47,6 +44,7 @@ margin_right = 900.0
 margin_bottom = 240.0
 
 [node name="Terrains" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Terrain5" type="StaticBody2D" parent="Terrains"]
 editor/display_folded = true
@@ -224,6 +222,7 @@ texture = ExtResource( 5 )
 polygon = PoolVector2Array( -300.066, 299.966, 299.962, 299.962, 300.04, 173.993, 259.502, 180.034, 244.32, 173.685, 217.913, 171.201, 143.223, 171.433, 125.159, 175.208, 81.7512, 172.107, 22.4369, 175.073, 5.9906, 171.837, -26.6323, 174.264, -61.6817, 171.972, -91.3389, 170.489, -117.356, 172.511, -146.07, 170.085, -198.374, 173.59, -270.765, 175.342, -300.018, 173.86 )
 
 [node name="Rocks" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="BigRock_Enemy" type="StaticBody2D" parent="Rocks"]
 position = Vector2( 1726.93, 335.787 )
@@ -297,20 +296,26 @@ shape = SubResource( 4 )
 [node name="Tanks" type="Node" parent="."]
 
 [node name="Tank_Enemy" parent="Tanks" instance=ExtResource( 11 )]
-position = Vector2( 3174.04, 590.943 )
+position = Vector2( 2827.28, 641.911 )
 
 [node name="Palms" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Palm_Enemy" parent="Palms" instance=ExtResource( 12 )]
 position = Vector2( 602.115, 692.966 )
 scale = Vector2( 0.2, 0.2 )
 
 [node name="FlyingEnemies" type="Node" parent="."]
-editor/display_folded = true
 
-[node name="Path2D" parent="FlyingEnemies" instance=ExtResource( 13 )]
+[node name="Spawner" type="RayCast2D" parent="FlyingEnemies"]
+position = Vector2( 1357.25, 131.492 )
+enabled = true
+cast_to = Vector2( 0, 200 )
+script = ExtResource( 13 )
+time_delay = 1
 
 [node name="Mines" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Mine_Enemy" parent="Mines" instance=ExtResource( 14 )]
 position = Vector2( 1275.26, 688.072 )

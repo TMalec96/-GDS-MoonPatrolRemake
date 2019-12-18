@@ -22,8 +22,8 @@ margin_right = -361.168
 margin_bottom = -2.93634
 
 [node name="Sprite" type="Sprite" parent="Control"]
-position = Vector2( 963.954, 610.894 )
-scale = Vector2( 2.02132, 2.44767 )
+position = Vector2( 959.194, 610.894 )
+scale = Vector2( 2.00545, 2.44767 )
 texture = ExtResource( 2 )
 
 [node name="StartGameButton" type="Button" parent="Control"]
