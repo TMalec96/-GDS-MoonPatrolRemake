@@ -7,7 +7,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 64, -64, 0, 0, 0, 0, 96, -128, 0, 0, 0, 0, -32, -192, 0, 0, 0, 0, -160, -160, 0, 0, 0, 0, -160, -64, 0, 0, 0, 0, -160, 64, 0, 0, 0, 0, 96, 128, 0, 0, 0, 0, 192, 0, 0, 0, 0, 0, 128, -32, 0, 0, 0, 0, 64, -64 )
+"points": PoolVector2Array( 0, 0, 0, 0, 334.238, -226.823, 0, 0, 0, 0, 217.603, -240.819, 0, 0, 0, 0, 54.3145, -199.997, 0, 0, 0, 0, 1.82886, -153.343, 0, 0, 0, 0, -16.8327, -68.2, 0, 0, 0, 0, 72.976, 64.7635, 0, 0, 0, 0, 208.272, 134.744, 0, 0, 0, 0, 386.723, 130.079, 0, 0, 0, 0, 489.362, 60.0981, 0, 0, 0, 0, 538.348, -35.5423, 0, 0, 0, 0, 483.53, -141.68, 0, 0, 0, 0, 393.721, -205.829, 0, 0, 0, 0, 334.238, -226.823 )
 }
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -20,15 +20,17 @@ curve = SubResource( 1 )
 script = ExtResource( 2 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 64, -64 )
+position = Vector2( 334.238, -226.823 )
 rotate = false
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="Path2D/PathFollow2D"]
+[node name="Enemy_flying1" type="KinematicBody2D" parent="Path2D/PathFollow2D"]
 scale = Vector2( 2, 2 )
+collision_layer = 16
+collision_mask = 17
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D/KinematicBody2D"]
+[node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D/Enemy_flying1"]
 texture = ExtResource( 4 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Enemy_flying1"]
 shape = SubResource( 2 )

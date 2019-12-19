@@ -222,7 +222,6 @@ texture = ExtResource( 5 )
 polygon = PoolVector2Array( -300.066, 299.966, 299.962, 299.962, 300.04, 173.993, 259.502, 180.034, 244.32, 173.685, 217.913, 171.201, 143.223, 171.433, 125.159, 175.208, 81.7512, 172.107, 22.4369, 175.073, 5.9906, 171.837, -26.6323, 174.264, -61.6817, 171.972, -91.3389, 170.489, -117.356, 172.511, -146.07, 170.085, -198.374, 173.59, -270.765, 175.342, -300.018, 173.86 )
 
 [node name="Rocks" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="BigRock_Enemy" type="StaticBody2D" parent="Rocks"]
 position = Vector2( 1726.93, 335.787 )
@@ -233,6 +232,7 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
+is_destroyable = true
 
 [node name="Sprite" type="Sprite" parent="Rocks/BigRock_Enemy"]
 texture = ExtResource( 7 )
@@ -250,6 +250,7 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
+is_destroyable = true
 
 [node name="Sprite" type="Sprite" parent="Rocks/SmallRock_Enemy"]
 texture = ExtResource( 8 )
@@ -261,7 +262,7 @@ shape = SubResource( 2 )
 [node name="Holes" type="Node" parent="."]
 
 [node name="BigHole_Enemy" type="StaticBody2D" parent="Holes"]
-position = Vector2( 1000.3, 713.942 )
+position = Vector2( 2357.81, 381.723 )
 scale = Vector2( 1.6, 1.6 )
 collision_layer = 16
 collision_mask = 17

@@ -26,7 +26,6 @@ gravity = 1300
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 200, -350 )
 current = true
-limit_smoothed = true
 drag_margin_left = 0.0
 drag_margin_top = 1.0
 drag_margin_right = 0.0
@@ -69,6 +68,7 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
+frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_left"]
@@ -90,6 +90,7 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
+frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_right"]

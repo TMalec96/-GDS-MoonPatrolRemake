@@ -59,11 +59,6 @@ func _process(delta):
 		FireLoop()
 	else:
 		yield(get_tree().create_timer(start_delay), "timeout")		
-func _process_movement(var speed_increment,var old_speed,var new_speed):
-	var incrementation = new_speed/ speed_increment
-	for i in range(speed_increment):
-		old_speed += incrementation
-	return old_speed	
 func get_input():
 	
 	if !is_respawning:
@@ -107,6 +102,7 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		process_damage(collision)
 	_set_wheels_position_x()
+	GlobalVariables.playerVelocity_x = velocity.x
 func _process_score():
 	if enemy_detector_ray.is_colliding():
 		enemy_detector_ray.get_collider().countScore()		
@@ -147,6 +143,7 @@ func process_damage(var collision):
 		if "Enemy" in collision.collider.name:
 			is_respawning = true
 			if GlobalVariables.playerLifes >= 1:
+				collision.collider.dead()
 				_respawn()
 			elif GlobalVariables.playerLifes<= 0:
 				collision.collider.dead()
@@ -177,6 +174,5 @@ func spawn_enemies(var spawn_position, var enemy_type, var number_of_enemies, va
 			enemy_instance.position = get_node("SpawnPointsRoot/SpawnPointBehindPlayer").get_global_position()
 		print("dupa")
 		get_parent().add_child(enemy_instance)
-		enemy_instance.start_chase(velocity.x)
 		yield(get_tree().create_timer(delay_between_spawns), "timeout")
 
