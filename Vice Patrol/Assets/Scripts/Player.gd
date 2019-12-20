@@ -36,7 +36,6 @@ export (int) var lifes = 3
 export (float) var respawn_delay = 2.0
 export (int) var reversing_distance = 500
 var is_dead = false
-var is_respawning = false
 
 #FLYING ENEMIES
 var flying_enemy_1 = preload("res://Scenes/Flying_Enemy_1.tscn")
@@ -53,15 +52,13 @@ func _respawn():
 	yield(get_tree().create_timer(respawn_delay),"timeout")
 	self.show()
 	GlobalVariables.playerLifes -= 1
-	is_respawning = false
+	GlobalVariables.is_player_respawning = false
 func _process(delta):
-	if !is_respawning:
-		FireLoop()
-	else:
-		yield(get_tree().create_timer(start_delay), "timeout")		
+	if !GlobalVariables.is_player_respawning:
+		FireLoop()	
 func get_input():
 	
-	if !is_respawning:
+	if !GlobalVariables.is_player_respawning:
 		velocity.x = avg_player_speed
 		var right_pressed = Input.is_action_pressed('ui_right')
 		var right_released = Input.is_action_just_released('ui_right')
@@ -141,7 +138,7 @@ func dead():
 #OPTYMALIZACJA FUNKCJI
 func process_damage(var collision):
 		if "Enemy" in collision.collider.name:
-			is_respawning = true
+			GlobalVariables.is_player_respawning = true
 			if GlobalVariables.playerLifes >= 1:
 				collision.collider.dead()
 				_respawn()
@@ -149,7 +146,7 @@ func process_damage(var collision):
 				collision.collider.dead()
 				dead()
 func process_damage_enemy():
-	is_respawning = true
+	GlobalVariables.is_player_respawning = true
 	if GlobalVariables.playerLifes >= 1:
 		_respawn()
 	elif GlobalVariables.playerLifes <= 0:
@@ -172,7 +169,6 @@ func spawn_enemies(var spawn_position, var enemy_type, var number_of_enemies, va
 			enemy_instance.position = get_node("SpawnPointsRoot/SpawnPointBehindDownPlayer").get_global_position()
 		elif spawn_position == GlobalVariables.SpawnPosition.Behind:
 			enemy_instance.position = get_node("SpawnPointsRoot/SpawnPointBehindPlayer").get_global_position()
-		print("dupa")
 		get_parent().add_child(enemy_instance)
 		yield(get_tree().create_timer(delay_between_spawns), "timeout")
 

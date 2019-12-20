@@ -2,9 +2,12 @@ extends RigidBody2D
 
 export (int) var projectile_speed = 400
 export (int) var life_time = 3
-
+export (bool) var direction_down = false
 func _ready():
-	apply_impulse(Vector2(),Vector2(-projectile_speed,0).rotated(rotation))
+	if !direction_down:
+		apply_impulse(Vector2(),Vector2(-projectile_speed,0).rotated(rotation))
+	else:
+		apply_impulse(Vector2(),Vector2(GlobalVariables.playerVelocity_x,projectile_speed).rotated(rotation))
 	SelfDestruct()
 
 func SelfDestruct():
