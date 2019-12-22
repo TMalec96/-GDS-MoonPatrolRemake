@@ -45,14 +45,12 @@ var flying_enemy_3 = preload("res://Scenes/Flying_Enemy_3.tscn")
 func _ready():
 	GlobalVariables.playerLifes = lifes
 func _respawn():
-	self.hide()
-	velocity.x=0
-	velocity.y=0
 	position.x -= reversing_distance
+	get_tree().paused = true
 	yield(get_tree().create_timer(respawn_delay),"timeout")
-	self.show()
 	GlobalVariables.playerLifes -= 1
 	GlobalVariables.is_player_respawning = false
+	get_tree().paused = false
 func _process(delta):
 	if !GlobalVariables.is_player_respawning:
 		FireLoop()	
@@ -132,8 +130,8 @@ func FireLoop():
 		yield(get_tree().create_timer(rate_of_fire), "timeout")
 		can_fire = true
 func dead():
-	is_dead = true
-	queue_free()
+	GlobalVariables.is_player_respawning = false
+	
 	SceneLoader.goto_scene("res://Scenes/GameOverScene.tscn")
 #OPTYMALIZACJA FUNKCJI
 func process_damage(var collision):
@@ -143,7 +141,6 @@ func process_damage(var collision):
 				collision.collider.dead()
 				_respawn()
 			elif GlobalVariables.playerLifes<= 0:
-				collision.collider.dead()
 				dead()
 func process_damage_enemy():
 	GlobalVariables.is_player_respawning = true
