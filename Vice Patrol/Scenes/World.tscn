@@ -51,7 +51,6 @@ margin_right = 900.0
 margin_bottom = 240.0
 
 [node name="Terrains" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Terrain5" type="StaticBody2D" parent="Terrains"]
 editor/display_folded = true
@@ -269,7 +268,7 @@ shape = SubResource( 2 )
 [node name="Holes" type="Node" parent="."]
 
 [node name="BigHole_Enemy" type="StaticBody2D" parent="Holes"]
-position = Vector2( 1283.08, 376.654 )
+position = Vector2( 986.357, 738.286 )
 scale = Vector2( 1.6, 1.6 )
 collision_layer = 16
 collision_mask = 17
@@ -317,11 +316,14 @@ scale = Vector2( 0.2, 0.2 )
 [node name="FlyingEnemies" type="Node" parent="."]
 
 [node name="Spawner" type="RayCast2D" parent="FlyingEnemies"]
-position = Vector2( 1395.31, 660.649 )
+position = Vector2( 903.862, 172.292 )
 enabled = true
 cast_to = Vector2( 0, 200 )
 script = ExtResource( 13 )
+spawn_position = 2
+enemy_type = 3
 time_delay = 1
+number_of_enemies = 1
 
 [node name="Mines" type="Node" parent="."]
 editor/display_folded = true
@@ -332,14 +334,17 @@ position = Vector2( 1275.26, 688.072 )
 [node name="ControlPoints" type="Node" parent="."]
 
 [node name="ControlPoint_A" type="Label" parent="ControlPoints"]
-margin_left = 2492.4
-margin_top = 386.828
-margin_right = 2532.4
-margin_bottom = 479.828
+margin_left = 2432.11
+margin_top = 766.677
+margin_right = 2472.11
+margin_bottom = 859.677
 custom_fonts/font = SubResource( 5 )
 text = "A
 "
 script = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="RayCast2D" type="RayCast2D" parent="ControlPoints/ControlPoint_A"]
 rotation = -3.14159
@@ -349,10 +354,10 @@ cast_to = Vector2( 0, 200 )
 [node name="EndPoints" type="Node" parent="."]
 
 [node name="EndlPoint_J" type="Label" parent="EndPoints"]
-margin_left = 2008.95
-margin_top = 356.789
-margin_right = 2023.95
-margin_bottom = 450.789
+margin_left = 2002.77
+margin_top = 727.693
+margin_right = 2017.77
+margin_bottom = 821.693
 custom_fonts/font = SubResource( 5 )
 text = "J
 "

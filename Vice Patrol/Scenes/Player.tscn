@@ -68,7 +68,6 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
-frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_left"]
@@ -90,7 +89,6 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
-frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_right"]
@@ -126,4 +124,4 @@ position = Vector2( -153.834, -120.017 )
 position = Vector2( -19.8888, -250.72 )
 
 [node name="SpawnPointBehindDownPlayer" type="Position2D" parent="SpawnPointsRoot"]
-position = Vector2( -201.482, -12.4318 )
+position = Vector2( -185.416, -9.66172 )
