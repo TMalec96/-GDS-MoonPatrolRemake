@@ -161,11 +161,11 @@ func spawn_enemies(var spawn_position, var enemy_type, var number_of_enemies, va
 			enemy_instance= flying_enemy_3.instance()
 			
 		if spawn_position == GlobalVariables.SpawnPosition.Above:
-			enemy_instance.position = get_node("SpawnPointsRoot/SpawnPointAbovePlayer").get_global_position()
+			enemy_instance.position = Vector2(get_node("Camera2D/SpawnPointsRoot/SpawnPointAbovePlayer").get_global_position().x, -144)
 		elif spawn_position == GlobalVariables.SpawnPosition.BehindDown:
-			enemy_instance.position = get_node("SpawnPointsRoot/SpawnPointBehindDownPlayer").get_global_position()
-		elif spawn_position == GlobalVariables.SpawnPosition.Behind:
-			enemy_instance.position = get_node("SpawnPointsRoot/SpawnPointBehindPlayer").get_global_position()
+			enemy_instance.position = Vector2(get_node("Camera2D/SpawnPointsRoot/SpawnPointBehindDownPlayer").get_global_position().x, 298)
+		elif spawn_position == GlobalVariables.SpawnPosition.BehindUp:
+			enemy_instance.position = Vector2(get_node("Camera2D/SpawnPointsRoot/SpawnPointBehindPlayer").get_global_position().x, -144)
 		get_parent().add_child(enemy_instance)
 		yield(get_tree().create_timer(delay_between_spawns), "timeout")
 

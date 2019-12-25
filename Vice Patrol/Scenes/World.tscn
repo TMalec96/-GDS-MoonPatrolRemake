@@ -51,6 +51,7 @@ margin_right = 900.0
 margin_bottom = 240.0
 
 [node name="Terrains" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Terrain5" type="StaticBody2D" parent="Terrains"]
 editor/display_folded = true
@@ -320,7 +321,6 @@ position = Vector2( 903.862, 172.292 )
 enabled = true
 cast_to = Vector2( 0, 200 )
 script = ExtResource( 13 )
-spawn_position = 2
 enemy_type = 3
 time_delay = 1
 number_of_enemies = 1
