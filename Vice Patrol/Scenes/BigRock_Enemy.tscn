@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Scripts/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/Enemies/Rocks/rock.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 13.4803
+height = 1.46686
+
+[node name="BigRock_Enemy" type="StaticBody2D"]
+editor/display_folded = true
+position = Vector2( 1685.57, 652.415 )
+scale = Vector2( 2, 2 )
+collision_layer = 16
+collision_mask = 21
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+is_destroyable = true
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.731506, -2.19453 )
+shape = SubResource( 1 )

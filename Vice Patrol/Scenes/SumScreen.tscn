@@ -1,8 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scenes/SumScreen.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Scripts/SumScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Sprites/Player/car1_fioletowy_2chłopków.png" type="Texture" id=3]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
