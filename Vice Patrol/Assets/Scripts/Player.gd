@@ -43,14 +43,18 @@ var flying_enemy_2 = preload("res://Scenes/Flying_Enemy_2.tscn")
 var flying_enemy_3 = preload("res://Scenes/Flying_Enemy_3.tscn")
 
 func _ready():
+	GlobalVariables.playerReversingDistance = reversing_distance
 	GlobalVariables.playerLifes = lifes
+	GlobalVariables.paused = false
 func _respawn():
+	GlobalVariables.paused = true
 	position.x -= reversing_distance
 	get_tree().paused = true
 	yield(get_tree().create_timer(respawn_delay),"timeout")
 	GlobalVariables.playerLifes -= 1
-	GlobalVariables.is_player_respawning = false
 	get_tree().paused = false
+	GlobalVariables.is_player_respawning = false
+	GlobalVariables.paused = false
 func _process(delta):
 	if !GlobalVariables.is_player_respawning:
 		FireLoop()	

@@ -7,7 +7,9 @@ func _ready():
 	if !direction_down:
 		apply_impulse(Vector2(),Vector2(-projectile_speed,0).rotated(rotation))
 	else:
-		apply_impulse(Vector2(),Vector2(GlobalVariables.playerVelocity_x,projectile_speed).rotated(rotation))
+		var xvelocity = GlobalVariables.playerVelocity_x+randi()%51-100
+		print(xvelocity)
+		apply_impulse(Vector2(),Vector2(xvelocity,projectile_speed).rotated(rotation))
 	SelfDestruct()
 
 func SelfDestruct():

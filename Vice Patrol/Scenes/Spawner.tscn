@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Assets/Scripts/EnemySpawner.gd" type="Script" id=1]
 
-
 [node name="Spawner" type="RayCast2D"]
 position = Vector2( 1085.81, 646.999 )
 enabled = true

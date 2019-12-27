@@ -8,7 +8,6 @@ radius = 13.4803
 height = 1.46686
 
 [node name="BigRock_Enemy" type="StaticBody2D"]
-editor/display_folded = true
 position = Vector2( 1685.57, 652.415 )
 scale = Vector2( 2, 2 )
 collision_layer = 16

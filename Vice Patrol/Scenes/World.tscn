@@ -1,38 +1,24 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Backgound.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Interface.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Sprites/Terrains/ksiezyc_czysty_600.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/Terrains/ksiezyc_pol_czysty_600.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Scripts/Enemy.gd" type="Script" id=6]
-[ext_resource path="res://Assets/Sprites/Enemies/Rocks/rock.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Sprites/Enemies/Rocks/smaller_rock.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Sprites/Enemies/Holes/hole.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sprites/Enemies/Holes/holesmall.png" type="Texture" id=10]
-[ext_resource path="res://Scenes/Tank_Enemy.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Palm_Enemy.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Assets/Scripts/EnemySpawner.gd" type="Script" id=13]
-[ext_resource path="res://Scenes/Mine_Enemy.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=15]
-[ext_resource path="res://Assets/Scripts/ControlPoint.gd" type="Script" id=16]
-
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 13.4803
-height = 1.46686
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8.41949, 6.00592 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 58.4871, 27.8315 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 49.3072, 29.9878 )
+[ext_resource path="res://Scenes/BigRock_Enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/SmallRock_Enemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/BigHole_Enemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/SmallHole_Enemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Tank_Enemy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Palm_Enemy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Spawner.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Mine_Enemy.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://Assets/Scripts/ControlPoint.gd" type="Script" id=15]
 
 [sub_resource type="DynamicFont" id=5]
 size = 45
-font_data = ExtResource( 15 )
+font_data = ExtResource( 14 )
 
 [node name="World" type="Node"]
 
@@ -50,7 +36,6 @@ margin_right = 900.0
 margin_bottom = 240.0
 
 [node name="Terrains" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Terrain5" type="StaticBody2D" parent="Terrains"]
 editor/display_folded = true
@@ -227,118 +212,57 @@ texture = ExtResource( 5 )
 polygon = PoolVector2Array( -300.066, 299.966, 299.962, 299.962, 300.04, 173.993, 259.502, 180.034, 244.32, 173.685, 217.913, 171.201, 143.223, 171.433, 125.159, 175.208, 81.7512, 172.107, 22.4369, 175.073, 5.9906, 171.837, -26.6323, 174.264, -61.6817, 171.972, -91.3389, 170.489, -117.356, 172.511, -146.07, 170.085, -198.374, 173.59, -270.765, 175.342, -300.018, 173.86 )
 
 [node name="Rocks" type="Node" parent="."]
-editor/display_folded = true
 
-[node name="BigRock_Enemy" type="StaticBody2D" parent="Rocks"]
-position = Vector2( 1685.57, 652.415 )
-scale = Vector2( 2, 2 )
-collision_layer = 16
-collision_mask = 21
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_group_": true
-}
-is_destroyable = true
+[node name="BigRock_Enemy" parent="Rocks" instance=ExtResource( 6 )]
+position = Vector2( 2974.22, 328.868 )
 
-[node name="Sprite" type="Sprite" parent="Rocks/BigRock_Enemy"]
-texture = ExtResource( 7 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rocks/BigRock_Enemy"]
-position = Vector2( -0.731506, -2.19453 )
-shape = SubResource( 1 )
-
-[node name="SmallRock_Enemy" type="StaticBody2D" parent="Rocks"]
-position = Vector2( 2267.03, 668.851 )
-scale = Vector2( 2, 2 )
-collision_layer = 16
-collision_mask = 21
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_group_": true
-}
-is_destroyable = true
-
-[node name="Sprite" type="Sprite" parent="Rocks/SmallRock_Enemy"]
-texture = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rocks/SmallRock_Enemy"]
-position = Vector2( 1.07025, 0 )
-shape = SubResource( 2 )
+[node name="SmallRock_Enemy" parent="Rocks" instance=ExtResource( 7 )]
+position = Vector2( 3918.53, 330.59 )
 
 [node name="Holes" type="Node" parent="."]
 
-[node name="BigHole_Enemy" type="StaticBody2D" parent="Holes"]
-position = Vector2( 907.045, 762.78 )
-scale = Vector2( 1.6, 1.6 )
-collision_layer = 16
-collision_mask = 17
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="BigHole_Enemy" parent="Holes" instance=ExtResource( 8 )]
+position = Vector2( 1863.24, 385.514 )
+scale = Vector2( 1.5, 1.6 )
 
-[node name="Sprite" type="Sprite" parent="Holes/BigHole_Enemy"]
-texture = ExtResource( 9 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Holes/BigHole_Enemy"]
-shape = SubResource( 3 )
-
-[node name="SmallHole_Enemy" type="StaticBody2D" parent="Holes"]
-editor/display_folded = true
-position = Vector2( 4068.49, 665.71 )
-scale = Vector2( 1.5, 1.5 )
-collision_layer = 32
-collision_mask = 33
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Holes/SmallHole_Enemy"]
-texture = ExtResource( 10 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Holes/SmallHole_Enemy"]
-shape = SubResource( 4 )
+[node name="SmallHole_Enemy" parent="Holes" instance=ExtResource( 9 )]
+position = Vector2( 1150.75, 378.76 )
 
 [node name="Tanks" type="Node" parent="."]
 editor/display_folded = true
 
-[node name="Tank_Enemy" parent="Tanks" instance=ExtResource( 11 )]
+[node name="Tank_Enemy" parent="Tanks" instance=ExtResource( 10 )]
 position = Vector2( 2827.28, 641.911 )
 
 [node name="Palms" type="Node" parent="."]
 
-[node name="Palm_Enemy" parent="Palms" instance=ExtResource( 12 )]
-position = Vector2( 1262.53, 364.425 )
+[node name="Palm_Enemy" parent="Palms" instance=ExtResource( 11 )]
+position = Vector2( 1422.52, 696.705 )
 
 [node name="FlyingEnemies" type="Node" parent="."]
 
-[node name="Spawner" type="RayCast2D" parent="FlyingEnemies"]
-position = Vector2( 1085.81, 646.999 )
-enabled = true
-cast_to = Vector2( 0, 200 )
-script = ExtResource( 13 )
-enemy_type = 3
-time_delay = 1
-number_of_enemies = 1
+[node name="Spawner" parent="FlyingEnemies" instance=ExtResource( 12 )]
+position = Vector2( 4237.27, 150.529 )
+enemy_type = 0
+number_of_enemies = 2
 
 [node name="Mines" type="Node" parent="."]
 editor/display_folded = true
 
-[node name="Mine_Enemy" parent="Mines" instance=ExtResource( 14 )]
+[node name="Mine_Enemy" parent="Mines" instance=ExtResource( 13 )]
 position = Vector2( 1275.26, 688.072 )
 
 [node name="ControlPoints" type="Node" parent="."]
 
 [node name="ControlPoint_A" type="Label" parent="ControlPoints"]
-margin_left = 2432.11
-margin_top = 766.677
-margin_right = 2472.11
-margin_bottom = 859.677
+margin_left = 2268.33
+margin_top = 354.6
+margin_right = 2308.33
+margin_bottom = 447.6
 custom_fonts/font = SubResource( 5 )
 text = "A
 "
-script = ExtResource( 16 )
+script = ExtResource( 15 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -348,23 +272,75 @@ rotation = -3.14159
 enabled = true
 cast_to = Vector2( 0, 200 )
 
+[node name="ControlPoint_B" type="Label" parent="ControlPoints"]
+margin_left = 3732.89
+margin_top = 358.095
+margin_right = 3772.89
+margin_bottom = 451.095
+custom_fonts/font = SubResource( 5 )
+text = "B
+"
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="ControlPoints/ControlPoint_B"]
+rotation = -3.14159
+enabled = true
+cast_to = Vector2( 0, 200 )
+
+[node name="ControlPoint_C" type="Label" parent="ControlPoints"]
+margin_left = 5109.12
+margin_top = 354.754
+margin_right = 5149.12
+margin_bottom = 447.754
+custom_fonts/font = SubResource( 5 )
+text = "C"
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="ControlPoints/ControlPoint_C"]
+rotation = -3.14159
+enabled = true
+cast_to = Vector2( 0, 200 )
+
+[node name="ControlPoint_D" type="Label" parent="ControlPoints"]
+margin_left = 6197.26
+margin_top = 356.425
+margin_right = 6237.26
+margin_bottom = 449.425
+custom_fonts/font = SubResource( 5 )
+text = "D"
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="ControlPoints/ControlPoint_D"]
+rotation = -3.14159
+enabled = true
+cast_to = Vector2( 0, 200 )
+
 [node name="EndPoints" type="Node" parent="."]
 
-[node name="EndlPoint_J" type="Label" parent="EndPoints"]
-margin_left = 2002.77
-margin_top = 727.693
-margin_right = 2017.77
-margin_bottom = 821.693
+[node name="EndlPoint_E" type="Label" parent="EndPoints"]
+margin_left = 7802.68
+margin_top = 343.74
+margin_right = 7826.68
+margin_bottom = 436.74
 custom_fonts/font = SubResource( 5 )
-text = "J
+text = "E
 "
-script = ExtResource( 16 )
+script = ExtResource( 15 )
 __meta__ = {
 "_edit_group_": true
 }
 is_endpoint = true
 
-[node name="RayCast2D" type="RayCast2D" parent="EndPoints/EndlPoint_J"]
+[node name="RayCast2D" type="RayCast2D" parent="EndPoints/EndlPoint_E"]
 rotation = -3.14159
 enabled = true
 cast_to = Vector2( 0, 200 )

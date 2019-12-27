@@ -3,15 +3,15 @@
 [ext_resource path="res://Assets/Scripts/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Enemies/Holes/holesmall.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 49.3072, 29.9878 )
 
 [node name="SmallHole_Enemy" type="StaticBody2D"]
 editor/display_folded = true
 position = Vector2( 4068.49, 665.71 )
 scale = Vector2( 1.5, 1.5 )
-collision_layer = 32
-collision_mask = 33
+collision_layer = 16
+collision_mask = 17
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -21,4 +21,4 @@ __meta__ = {
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 4 )
+shape = SubResource( 1 )

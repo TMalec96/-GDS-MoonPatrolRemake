@@ -4,7 +4,6 @@
 [ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Sprites/Player/car1_fioletowy_2chłopków.png" type="Texture" id=3]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 50
 font_data = ExtResource( 2 )
@@ -20,6 +19,9 @@ margin_left = -299.0
 margin_right = 301.0
 margin_bottom = 120.0
 script = ExtResource( 1 )
+bonus_points = 100
+average_time = 6
+top_record = 6
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -313.0
@@ -27,6 +29,116 @@ margin_top = -4.0
 margin_right = 916.0
 margin_bottom = 1220.0
 color = Color( 0.0745098, 0.0156863, 0.0156863, 1 )
+
+[node name="TimeToReach" type="Label" parent="ColorRect"]
+margin_left = 222.854
+margin_top = 408.905
+margin_right = 422.854
+margin_bottom = 511.905
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.992157, 0.0156863, 0.0156863, 1 )
+text = "TIME TO REACH POINT "
+valign = 1
+
+[node name="TopRecord" type="Label" parent="ColorRect"]
+margin_left = 221.422
+margin_top = 656.636
+margin_right = 541.422
+margin_bottom = 759.636
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.992157, 0.0156863, 0.0156863, 1 )
+text = "TOP RECORD:"
+valign = 1
+
+[node name="TopRecordValue" type="Label" parent="ColorRect"]
+margin_left = 434.786
+margin_top = 658.068
+margin_right = 754.786
+margin_bottom = 761.068
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.992157, 0.0156863, 0.0156863, 1 )
+text = "0"
+valign = 1
+
+[node name="YouBrokenRecord" type="Label" parent="ColorRect"]
+visible = false
+margin_left = 214.262
+margin_top = 844.225
+margin_right = 534.262
+margin_bottom = 947.225
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.992157, 0.0156863, 0.0156863, 1 )
+text = "YOU HAVE BROKEN A RECORD!"
+valign = 1
+
+[node name="YourTime" type="Label" parent="ColorRect"]
+margin_left = 219.99
+margin_top = 499.119
+margin_right = 539.99
+margin_bottom = 602.119
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0156863, 0.694118, 0.992157, 1 )
+text = "YOUR TIME:"
+valign = 1
+
+[node name="AverageTime" type="Label" parent="ColorRect"]
+margin_left = 219.99
+margin_top = 567.854
+margin_right = 539.99
+margin_bottom = 670.854
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0156863, 0.694118, 0.992157, 1 )
+text = "THE AVERAGE TIME:"
+valign = 1
+
+[node name="AverageTimeValue" type="Label" parent="ColorRect"]
+margin_left = 540.752
+margin_top = 564.99
+margin_right = 860.752
+margin_bottom = 667.99
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0156863, 0.694118, 0.992157, 1 )
+text = "0"
+valign = 1
+
+[node name="GoodBonusPoints" type="Label" parent="ColorRect"]
+margin_left = 219.99
+margin_top = 766.898
+margin_right = 539.99
+margin_bottom = 869.898
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0156863, 0.694118, 0.992157, 1 )
+text = "GOOD BONUS POINTS"
+valign = 1
+
+[node name="GoodBonusPointsValue" type="Label" parent="ColorRect"]
+margin_left = 547.912
+margin_top = 766.898
+margin_right = 867.912
+margin_bottom = 869.898
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0156863, 0.694118, 0.992157, 1 )
+text = "0"
+valign = 1
+
+[node name="TimeValue2" type="Label" parent="ColorRect"]
+margin_left = 428.898
+margin_top = 521.592
+margin_right = 544.898
+margin_bottom = 624.592
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "0
+"
+
+[node name="ControlPointValue3" type="Label" parent="ColorRect"]
+margin_left = 592.541
+margin_top = 430.168
+margin_right = 708.542
+margin_bottom = 533.168
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.972549, 0.0392157, 0.0392157, 1 )
+text = "A"
 
 [node name="MainArea" type="ColorRect" parent="."]
 margin_left = -300.0
@@ -96,9 +208,9 @@ text = "A"
 
 [node name="ControlPointValue2" type="Label" parent="MainArea/ExtraArea"]
 margin_left = -112.741
-margin_top = 3.6712
+margin_top = 40.9025
 margin_right = 3.25909
-margin_bottom = 106.671
+margin_bottom = 143.902
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "A"

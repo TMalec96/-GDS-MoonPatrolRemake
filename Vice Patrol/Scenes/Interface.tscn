@@ -53,8 +53,7 @@ margin_right = 295.487
 margin_bottom = 125.27
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.992157, 0.0156863, 0.0156863, 1 )
-text = "
-HISCORE"
+text = "HISCORE"
 
 [node name="Sprite" type="Sprite" parent="MainArea"]
 position = Vector2( 1006.9, 114.558 )
@@ -84,16 +83,14 @@ margin_right = 251.483
 margin_bottom = 100.64
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "A"
 
 [node name="ControlPointValue2" type="Label" parent="MainArea/ExtraArea"]
-margin_left = -112.741
-margin_top = 3.6712
-margin_right = 3.25909
-margin_bottom = 106.671
+margin_left = -111.633
+margin_top = -9.62525
+margin_right = 4.36718
+margin_bottom = 93.3745
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "A"
 
 [node name="TimeText" type="Label" parent="MainArea/ExtraArea"]
 margin_left = 24.0
