@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Scripts/EnemyShooting.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/Enemies/Tanks/Tank_enemy_200.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Enemies/Tanks/przeciwnik od przodu_cyjnakowy.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 42.3516, 10.8692 )

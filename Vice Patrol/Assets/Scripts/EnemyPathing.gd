@@ -9,7 +9,6 @@ func _ready():
 	var path_array  = [path_1,path_2,path_3,path_4]
 	set_process(true)
 	var index = randi()%3
-	print(index)
 	curve = path_array[index]
 	follow.loop = true
 func _process(delta):

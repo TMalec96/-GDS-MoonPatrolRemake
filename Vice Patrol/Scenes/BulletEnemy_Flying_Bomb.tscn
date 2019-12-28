@@ -1,13 +1,13 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Scripts/BulletEnemy.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/Bullets/pocisk z góry.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Bullets/pocisk z góry od typka z odrzutowcem.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/Effects/wybuch na ziemi.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/Effects/wybuch na ziemi1.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/Effects/wybuch na ziemi2.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.37904, 6.91908 )
+extents = Vector2( 8.40066, 7.37716 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -27,12 +27,12 @@ script = ExtResource( 1 )
 direction_down = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -1.79 )
+position = Vector2( 0, 5.58 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -1.87, 0 )
+position = Vector2( 0, -4.76 )
 rotation = 3.14159
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )

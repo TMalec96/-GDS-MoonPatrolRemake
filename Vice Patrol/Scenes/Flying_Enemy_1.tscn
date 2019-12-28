@@ -4,9 +4,10 @@
 [ext_resource path="res://Curves/Infinity_Curve4.tres" type="Curve2D" id=2]
 [ext_resource path="res://Assets/Scripts/EnemyPathing.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Scripts/EnemyOnPath.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Sprites/Enemies/FlyingEnemies/Flying_Enemy1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/Enemies/FlyingEnemies/przeciwnik latający(ufo)_cyjankowy.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 21.7557, 16.6148 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -20,7 +21,7 @@ position = Vector2( 155.086, -253.151 )
 rotate = false
 
 [node name="Enemy_flying1" type="KinematicBody2D" parent="Path2D/PathFollow2D"]
-scale = Vector2( 2, 2 )
+scale = Vector2( 1.5, 1.5 )
 collision_layer = 16
 collision_mask = 17
 script = ExtResource( 4 )
@@ -33,6 +34,7 @@ rate_of_fire = 15.0
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Enemy_flying1"]
+position = Vector2( 0, -1.83 )
 shape = SubResource( 1 )
 
 [node name="Position2D" type="Position2D" parent="Path2D/PathFollow2D/Enemy_flying1"]
