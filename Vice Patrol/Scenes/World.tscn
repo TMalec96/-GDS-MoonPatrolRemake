@@ -16,7 +16,7 @@
 [ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://Assets/Scripts/ControlPoint.gd" type="Script" id=15]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=1]
 size = 45
 font_data = ExtResource( 14 )
 
@@ -214,19 +214,19 @@ polygon = PoolVector2Array( -300.066, 299.966, 299.962, 299.962, 300.04, 173.993
 [node name="Rocks" type="Node" parent="."]
 
 [node name="BigRock_Enemy" parent="Rocks" instance=ExtResource( 6 )]
-position = Vector2( 2974.22, 328.868 )
+position = Vector2( 3057.73, 763.118 )
 
 [node name="SmallRock_Enemy" parent="Rocks" instance=ExtResource( 7 )]
-position = Vector2( 3918.53, 330.59 )
+position = Vector2( 3913.52, 786.552 )
 
 [node name="Holes" type="Node" parent="."]
 
 [node name="BigHole_Enemy" parent="Holes" instance=ExtResource( 8 )]
-position = Vector2( 1863.24, 385.514 )
+position = Vector2( 1863.24, 722.892 )
 scale = Vector2( 1.5, 1.6 )
 
 [node name="SmallHole_Enemy" parent="Holes" instance=ExtResource( 9 )]
-position = Vector2( 1150.75, 378.76 )
+position = Vector2( 1098.97, 729.5 )
 
 [node name="Tanks" type="Node" parent="."]
 editor/display_folded = true
@@ -242,7 +242,12 @@ position = Vector2( 1422.52, 696.705 )
 [node name="FlyingEnemies" type="Node" parent="."]
 
 [node name="Spawner" parent="FlyingEnemies" instance=ExtResource( 12 )]
-position = Vector2( 4237.27, 150.529 )
+position = Vector2( 1723.14, 154.57 )
+enemy_type = 0
+number_of_enemies = 2
+
+[node name="Spawner2" parent="FlyingEnemies" instance=ExtResource( 12 )]
+position = Vector2( 2928.87, 154.57 )
 enemy_type = 0
 number_of_enemies = 2
 
@@ -255,11 +260,11 @@ position = Vector2( 1275.26, 688.072 )
 [node name="ControlPoints" type="Node" parent="."]
 
 [node name="ControlPoint_A" type="Label" parent="ControlPoints"]
-margin_left = 2268.33
-margin_top = 354.6
-margin_right = 2308.33
-margin_bottom = 447.6
-custom_fonts/font = SubResource( 5 )
+margin_left = 2296.72
+margin_top = 808.892
+margin_right = 2336.72
+margin_bottom = 901.892
+custom_fonts/font = SubResource( 1 )
 text = "A
 "
 script = ExtResource( 15 )
@@ -273,11 +278,11 @@ enabled = true
 cast_to = Vector2( 0, 200 )
 
 [node name="ControlPoint_B" type="Label" parent="ControlPoints"]
-margin_left = 3732.89
-margin_top = 358.095
-margin_right = 3772.89
-margin_bottom = 451.095
-custom_fonts/font = SubResource( 5 )
+margin_left = 3639.36
+margin_top = 834.099
+margin_right = 3679.36
+margin_bottom = 927.099
+custom_fonts/font = SubResource( 1 )
 text = "B
 "
 script = ExtResource( 15 )
@@ -291,11 +296,11 @@ enabled = true
 cast_to = Vector2( 0, 200 )
 
 [node name="ControlPoint_C" type="Label" parent="ControlPoints"]
-margin_left = 5109.12
-margin_top = 354.754
-margin_right = 5149.12
-margin_bottom = 447.754
-custom_fonts/font = SubResource( 5 )
+margin_left = 4631.45
+margin_top = 859.151
+margin_right = 4671.45
+margin_bottom = 952.151
+custom_fonts/font = SubResource( 1 )
 text = "C"
 script = ExtResource( 15 )
 __meta__ = {
@@ -308,11 +313,11 @@ enabled = true
 cast_to = Vector2( 0, 200 )
 
 [node name="ControlPoint_D" type="Label" parent="ControlPoints"]
-margin_left = 6197.26
-margin_top = 356.425
-margin_right = 6237.26
-margin_bottom = 449.425
-custom_fonts/font = SubResource( 5 )
+margin_left = 5970.11
+margin_top = 844.121
+margin_right = 6010.11
+margin_bottom = 937.121
+custom_fonts/font = SubResource( 1 )
 text = "D"
 script = ExtResource( 15 )
 __meta__ = {
@@ -327,11 +332,11 @@ cast_to = Vector2( 0, 200 )
 [node name="EndPoints" type="Node" parent="."]
 
 [node name="EndlPoint_E" type="Label" parent="EndPoints"]
-margin_left = 7802.68
-margin_top = 343.74
-margin_right = 7826.68
-margin_bottom = 436.74
-custom_fonts/font = SubResource( 5 )
+margin_left = 7764.27
+margin_top = 838.116
+margin_right = 7788.27
+margin_bottom = 931.116
+custom_fonts/font = SubResource( 1 )
 text = "E
 "
 script = ExtResource( 15 )

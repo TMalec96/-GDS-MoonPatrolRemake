@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Scripts/FlyingEnemy.gd" type="Script" id=1]
-[ext_resource path="res://Curves/Infinity_Curve.tres" type="Curve2D" id=2]
+[ext_resource path="res://Curves/Infinity_Curve4.tres" type="Curve2D" id=2]
 [ext_resource path="res://Assets/Scripts/EnemyPathing.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Scripts/EnemyOnPath.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Sprites/Enemies/FlyingEnemies/Flying_Enemy1.png" type="Texture" id=5]
