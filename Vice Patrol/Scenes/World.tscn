@@ -244,7 +244,7 @@ position = Vector2( 1422.52, 696.705 )
 [node name="Spawner" parent="FlyingEnemies" instance=ExtResource( 12 )]
 position = Vector2( 1723.14, 154.57 )
 enemy_type = 2
-number_of_enemies = 2
+number_of_enemies = 5
 
 [node name="Spawner2" parent="FlyingEnemies" instance=ExtResource( 12 )]
 position = Vector2( 2928.87, 154.57 )
