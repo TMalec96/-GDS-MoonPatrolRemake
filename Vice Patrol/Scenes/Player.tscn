@@ -64,7 +64,6 @@ position = Vector2( -25.6437, 7.45588 )
 position = Vector2( 22.1417, 7.34292 )
 
 [node name="Tire_left" type="KinematicBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( -25.6029, 7.55896 )
 scale = Vector2( 0.5, 0.5 )
 collision_layer = 128

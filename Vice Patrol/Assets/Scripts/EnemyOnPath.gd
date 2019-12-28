@@ -25,7 +25,6 @@ func FireLoop():
 		var bullet_instance = null
 		if !is_bomber:
 			bullet_instance = bullet_normal.instance()
-			
 		else:
 			bullet_instance = bullet_bomb.instance()
 		bullet_instance.position = get_node("Position2D").get_position()
