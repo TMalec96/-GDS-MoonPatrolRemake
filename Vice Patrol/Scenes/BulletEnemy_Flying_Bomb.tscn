@@ -26,5 +26,5 @@ position = Vector2( 0, -4.76 )
 rotation = 3.14159
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
-[connection signal="body_entered" from="." to="." method="_on_BulletEnemy_FlyingType1_body_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_BulletEnemy_FlyingType1_body_entered"]
