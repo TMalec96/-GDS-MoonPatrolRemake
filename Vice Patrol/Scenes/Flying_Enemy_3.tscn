@@ -39,4 +39,4 @@ position = Vector2( 0, -1.83 )
 shape = SubResource( 1 )
 
 [node name="Position2D" type="Position2D" parent="Path2D/PathFollow2D/Enemy_flying1"]
-position = Vector2( 0.21463, 10.088 )
+position = Vector2( 14.0175, -1.23419 )

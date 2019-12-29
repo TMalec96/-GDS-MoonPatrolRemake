@@ -8,5 +8,3 @@ enabled = true
 cast_to = Vector2( 0, 200 )
 script = ExtResource( 1 )
 enemy_type = 3
-time_delay = 1
-number_of_enemies = 1

@@ -126,3 +126,4 @@ collision_mask = 4101
 enabled = true
 cast_to = Vector2( 0, 90 )
 collision_mask = 16400
+[connection signal="tree_exited" from="." to="." method="_on_Player_tree_exited"]

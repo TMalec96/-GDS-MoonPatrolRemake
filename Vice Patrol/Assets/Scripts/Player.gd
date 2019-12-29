@@ -42,6 +42,8 @@ var flying_enemy_1 = preload("res://Scenes/Flying_Enemy_1.tscn")
 var flying_enemy_2 = preload("res://Scenes/Flying_Enemy_2.tscn")
 var flying_enemy_3 = preload("res://Scenes/Flying_Enemy_3.tscn")
 
+#INTERFACE WARNINGS
+onready var interface = get_node("Canvas/Interface")
 func _ready():
 	GlobalVariables.playerReversingDistance = reversing_distance
 	GlobalVariables.playerLifes = lifes
@@ -49,17 +51,16 @@ func _ready():
 func _respawn():
 	GlobalVariables.paused = true
 	position.x -= reversing_distance
-	get_tree().paused = true
+	velocity.x = 0
+	velocity.y = 0
 	yield(get_tree().create_timer(respawn_delay),"timeout")
 	GlobalVariables.playerLifes -= 1
-	get_tree().paused = false
 	GlobalVariables.is_player_respawning = false
 	GlobalVariables.paused = false
 func _process(delta):
 	if !GlobalVariables.is_player_respawning:
 		FireLoop()	
 func get_input():
-	
 	if !GlobalVariables.is_player_respawning:
 		velocity.x = avg_player_speed
 		var right_pressed = Input.is_action_pressed('ui_right')
@@ -152,7 +153,9 @@ func process_damage_enemy():
 		_respawn()
 	elif GlobalVariables.playerLifes <= 0:
 		dead()
-func spawn_enemies(var spawn_position, var enemy_type, var number_of_enemies, var delay_between_spawns):
+func spawn_enemies(var spawn_position, var enemy_type, var number_of_enemies, var delay_between_spawns, var time_delay, var caution_direction):
+	create_warning(caution_direction,time_delay)
+	yield(get_tree().create_timer(time_delay), "timeout")
 	for i in range(number_of_enemies):
 		var enemy_instance =flying_enemy_1.instance()
 		if enemy_type ==GlobalVariables.EnemyType.Enemy_type1:
@@ -171,5 +174,11 @@ func spawn_enemies(var spawn_position, var enemy_type, var number_of_enemies, va
 		elif spawn_position == GlobalVariables.SpawnPosition.BehindUp:
 			enemy_instance.position = Vector2(get_node("Camera2D/SpawnPointsRoot/SpawnPointBehindPlayer").get_global_position().x, -144)
 		get_parent().add_child(enemy_instance)
+		enemy_instance.add_to_group("enemies",false)
 		yield(get_tree().create_timer(delay_between_spawns), "timeout")
+func create_warning(var caution_direction, var time):
+	interface.launch_warning(caution_direction, time)
 
+
+func _on_Player_tree_exited():
+	pass # Replace with function body.

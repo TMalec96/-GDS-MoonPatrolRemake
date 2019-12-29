@@ -27,6 +27,7 @@ font_data = ExtResource( 14 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 599.615, 298.553 )
 collision_mask = 21
+respawn_delay = 3.0
 
 [node name="Canvas" type="CanvasLayer" parent="Player"]
 
@@ -222,7 +223,7 @@ position = Vector2( 3913.52, 786.552 )
 [node name="Holes" type="Node" parent="."]
 
 [node name="BigHole_Enemy" parent="Holes" instance=ExtResource( 8 )]
-position = Vector2( 1863.24, 722.892 )
+position = Vector2( 1841.76, 707.14 )
 scale = Vector2( 1.5, 1.6 )
 
 [node name="SmallHole_Enemy" parent="Holes" instance=ExtResource( 9 )]
@@ -242,14 +243,12 @@ position = Vector2( 1422.52, 696.705 )
 [node name="FlyingEnemies" type="Node" parent="."]
 
 [node name="Spawner" parent="FlyingEnemies" instance=ExtResource( 12 )]
-position = Vector2( 1723.14, 154.57 )
+position = Vector2( 4050.11, 138.818 )
 enemy_type = 2
-number_of_enemies = 5
 
 [node name="Spawner2" parent="FlyingEnemies" instance=ExtResource( 12 )]
-position = Vector2( 2928.87, 154.57 )
+position = Vector2( 1506.91, 143.114 )
 enemy_type = 0
-number_of_enemies = 2
 
 [node name="Mines" type="Node" parent="."]
 editor/display_folded = true

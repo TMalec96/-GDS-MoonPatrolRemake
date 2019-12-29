@@ -14,6 +14,7 @@ var playerVelocity_x = 0
 var currentCheckpoint = ""
 enum EnemyType {Enemy_type1,Enemy_type2,Enemy_type3,Enemy_back}
 enum SpawnPosition {Above,BehindUp,BehindDown}
+enum CautionDirection {UP,MID,DOWN}
 func _process(delta):
 	if not paused:
 		GlobalVariables.time += delta * time_mult

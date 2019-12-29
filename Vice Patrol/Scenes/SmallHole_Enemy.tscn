@@ -4,12 +4,11 @@
 [ext_resource path="res://Assets/Sprites/Enemies/Holes/holesmall.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 49.3072, 29.9878 )
+extents = Vector2( 49.3072, 3.08325 )
 
 [node name="SmallHole_Enemy" type="StaticBody2D"]
-editor/display_folded = true
-position = Vector2( 4068.49, 665.71 )
 scale = Vector2( 1.5, 1.5 )
+z_index = 1
 collision_layer = 16
 collision_mask = 17
 script = ExtResource( 1 )
@@ -21,4 +20,5 @@ __meta__ = {
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -26.15 )
 shape = SubResource( 1 )

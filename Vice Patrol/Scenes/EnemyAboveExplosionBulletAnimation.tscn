@@ -7,14 +7,12 @@
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
-"loop": true,
+"loop": false,
 "name": "explosion",
-"speed": 2.0
+"speed": 3.0
 } ]
 
 [node name="AnimatedSprite" type="AnimatedSprite"]
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "explosion"
-frame = 1
-playing = true

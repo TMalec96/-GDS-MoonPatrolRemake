@@ -8,13 +8,15 @@ extents = Vector2( 8.40066, 7.37716 )
 
 [node name="BulletEnemy_FlyingType1" type="RigidBody2D"]
 collision_layer = 512
-collision_mask = 517
+collision_mask = 5
+mode = 2
 mass = 4.27
 gravity_scale = 0.0
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 1 )
 direction_down = true
+is_bomb = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 5.58 )
@@ -26,5 +28,8 @@ position = Vector2( 0, -4.76 )
 rotation = 3.14159
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
+
+[node name="Position2D" type="Position2D" parent="."]
 [connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
 [connection signal="body_entered" from="." to="." method="_on_BulletEnemy_FlyingType1_body_entered"]
+[connection signal="tree_exited" from="." to="." method="_on_BulletEnemy_FlyingType1_tree_exited"]

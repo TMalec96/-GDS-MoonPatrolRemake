@@ -6,6 +6,9 @@ onready var hiScoreLabel = get_node("MainArea/HiScore")
 onready var controlPointLabel1 = get_node("MainArea/ExtraArea/ControlPointValue")
 onready var controlPointLabel2 = get_node("MainArea/ExtraArea/ControlPointValue2")
 onready var progresBar = get_node("MainArea/ProgressBar")
+onready var cautionUp = get_node("MainArea/ExtraArea/CautionUpText")
+onready var cautionMid = get_node("MainArea/ExtraArea/CautionMidText")
+onready var cautionDown = get_node("MainArea/ExtraArea/CautionDownText")
 var last_control_point  = GlobalVariables.currentCheckpoint
 func _ready():
 	set_process(true)
@@ -26,3 +29,14 @@ func _changeControlPoint():
 		last_control_point = GlobalVariables.currentCheckpoint
 		controlPointLabel1.set_text(String(last_control_point))
 		controlPointLabel2.set_text(String(last_control_point))
+func launch_warning(var caution_direction, var time):
+	if caution_direction == GlobalVariables.CautionDirection.UP:
+		cautionUp.visible = true
+	elif caution_direction == GlobalVariables.CautionDirection.MID:
+		cautionMid.visible = true
+	else:
+		cautionDown.visible = true
+	yield(get_tree().create_timer(time), "timeout")
+	cautionUp.visible = false
+	cautionMid.visible = false
+	cautionDown.visible = false

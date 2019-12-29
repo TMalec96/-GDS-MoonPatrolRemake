@@ -14,3 +14,9 @@ func countScore():
 	if !is_jumped:
 		GlobalVariables.playerScore += scoreValue
 		is_jumped = true
+func hide():
+	$Sprite.visible = false
+	set_collision_mask_bit(1,false)
+func show():
+	$Sprite.visible = true
+	set_collision_mask_bit(1,true)

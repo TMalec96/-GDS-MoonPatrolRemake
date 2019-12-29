@@ -13,7 +13,6 @@ func _ready():
 		index = randi()%4
 	GlobalVariables._last_spawned_index  = index
 	curve = path_array[index]
-	print("index: " + String(index))
 	follow.loop = true
 func _process(delta):
 	follow.set_offset(follow.get_offset() + 200 *delta)
