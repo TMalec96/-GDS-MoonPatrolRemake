@@ -153,29 +153,31 @@ func process_damage_enemy():
 		_respawn()
 	elif GlobalVariables.playerLifes <= 0:
 		dead()
-func spawn_enemies(var spawn_position, var enemy_type, var number_of_enemies, var delay_between_spawns, var time_delay, var caution_direction):
+func spawn_enemies(var spawn_position, var enemy_type, var number_of_enemies, var delay_between_spawns, var time_delay, var caution_direction, var spawning):
 	create_warning(caution_direction,time_delay)
 	yield(get_tree().create_timer(time_delay), "timeout")
-	for i in range(number_of_enemies):
-		var enemy_instance =flying_enemy_1.instance()
-		if enemy_type ==GlobalVariables.EnemyType.Enemy_type1:
-			enemy_instance= flying_enemy_1.instance()
-		elif enemy_type == GlobalVariables.EnemyType.Enemy_back:
-			enemy_instance = back_enemy.instance()
-		elif enemy_type ==GlobalVariables.EnemyType.Enemy_type2:
-			enemy_instance= flying_enemy_2.instance()
-		elif enemy_type ==GlobalVariables.EnemyType.Enemy_type3:
-			enemy_instance= flying_enemy_3.instance()
-			
-		if spawn_position == GlobalVariables.SpawnPosition.Above:
-			enemy_instance.position = Vector2(get_node("Camera2D/SpawnPointsRoot/SpawnPointAbovePlayer").get_global_position().x, -144)
-		elif spawn_position == GlobalVariables.SpawnPosition.BehindDown:
-			enemy_instance.position = Vector2(get_node("Camera2D/SpawnPointsRoot/SpawnPointBehindDownPlayer").get_global_position().x, 298)
-		elif spawn_position == GlobalVariables.SpawnPosition.BehindUp:
-			enemy_instance.position = Vector2(get_node("Camera2D/SpawnPointsRoot/SpawnPointBehindPlayer").get_global_position().x, -144)
-		get_parent().add_child(enemy_instance)
-		enemy_instance.add_to_group("enemies",false)
-		yield(get_tree().create_timer(delay_between_spawns), "timeout")
+	if spawning:
+		for i in range(number_of_enemies):
+			if !GlobalVariables.is_player_respawning:
+				var enemy_instance =flying_enemy_1.instance()
+				if enemy_type ==GlobalVariables.EnemyType.Enemy_type1:
+					enemy_instance= flying_enemy_1.instance()
+				elif enemy_type == GlobalVariables.EnemyType.Enemy_back:
+					enemy_instance = back_enemy.instance()
+				elif enemy_type ==GlobalVariables.EnemyType.Enemy_type2:
+					enemy_instance= flying_enemy_2.instance()
+				elif enemy_type ==GlobalVariables.EnemyType.Enemy_type3:
+					enemy_instance= flying_enemy_3.instance()
+					
+				if spawn_position == GlobalVariables.SpawnPosition.Above:
+					enemy_instance.position = Vector2(get_node("Camera2D/SpawnPointsRoot/SpawnPointAbovePlayer").get_global_position().x, -144)
+				elif spawn_position == GlobalVariables.SpawnPosition.BehindDown:
+					enemy_instance.position = Vector2(get_node("Camera2D/SpawnPointsRoot/SpawnPointBehindDownPlayer").get_global_position().x, 298)
+				elif spawn_position == GlobalVariables.SpawnPosition.BehindUp:
+					enemy_instance.position = Vector2(get_node("Camera2D/SpawnPointsRoot/SpawnPointBehindPlayer").get_global_position().x, -144)
+				get_parent().add_child(enemy_instance)
+				enemy_instance.add_to_group("enemies",false)
+				yield(get_tree().create_timer(delay_between_spawns), "timeout")
 func create_warning(var caution_direction, var time):
 	interface.launch_warning(caution_direction, time)
 

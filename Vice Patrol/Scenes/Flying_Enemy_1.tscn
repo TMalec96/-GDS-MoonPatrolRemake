@@ -28,7 +28,6 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
-rate_of_fire = 15.0
 
 [node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D/Enemy_flying1"]
 texture = ExtResource( 5 )

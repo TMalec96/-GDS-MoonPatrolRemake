@@ -243,12 +243,13 @@ position = Vector2( 1422.52, 696.705 )
 [node name="FlyingEnemies" type="Node" parent="."]
 
 [node name="Spawner" parent="FlyingEnemies" instance=ExtResource( 12 )]
-position = Vector2( 4050.11, 138.818 )
+position = Vector2( 1448.2, 141.682 )
 enemy_type = 2
 
 [node name="Spawner2" parent="FlyingEnemies" instance=ExtResource( 12 )]
-position = Vector2( 1506.91, 143.114 )
+position = Vector2( 1637.22, 654.331 )
 enemy_type = 0
+time_delay = 1
 
 [node name="Mines" type="Node" parent="."]
 editor/display_folded = true

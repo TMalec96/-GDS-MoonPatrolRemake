@@ -9,7 +9,9 @@ onready var progresBar = get_node("MainArea/ProgressBar")
 onready var cautionUp = get_node("MainArea/ExtraArea/CautionUpText")
 onready var cautionMid = get_node("MainArea/ExtraArea/CautionMidText")
 onready var cautionDown = get_node("MainArea/ExtraArea/CautionDownText")
+onready var cautionText = get_node("MainArea/ExtraArea/CautionText_")
 var last_control_point  = GlobalVariables.currentCheckpoint
+var active_caution_direction = null
 func _ready():
 	set_process(true)
 
@@ -31,12 +33,20 @@ func _changeControlPoint():
 		controlPointLabel2.set_text(String(last_control_point))
 func launch_warning(var caution_direction, var time):
 	if caution_direction == GlobalVariables.CautionDirection.UP:
-		cautionUp.visible = true
+		active_caution_direction = cautionUp
 	elif caution_direction == GlobalVariables.CautionDirection.MID:
-		cautionMid.visible = true
+		active_caution_direction = cautionMid
 	else:
-		cautionDown.visible = true
-	yield(get_tree().create_timer(time), "timeout")
-	cautionUp.visible = false
-	cautionMid.visible = false
-	cautionDown.visible = false
+		active_caution_direction = cautionDown
+	_warning_animation(time)
+func _warning_animation(var time):
+	var index = 0 
+	var switch_time = time/3
+	while(index <3):
+		active_caution_direction.modulate = Color("ff0000")
+		cautionText.visible = true
+		yield(get_tree().create_timer(switch_time), "timeout")
+		active_caution_direction.modulate = Color("000000")
+		cautionText.visible = false
+		yield(get_tree().create_timer(switch_time), "timeout")
+		index += 1

@@ -15,10 +15,10 @@ func _ready():
 	else:
 		var xvelocity = 0
 		if is_bomb:
-			xvelocity = GlobalVariables.playerVelocity_x+randi()%51+100
+			xvelocity = GlobalVariables.playerVelocity_x+randi()%300+200
 		else:
-			xvelocity = GlobalVariables.playerVelocity_x+randi()%31+10
-		apply_impulse(Vector2(),Vector2(xvelocity,projectile_speed).rotated(rotation))
+			xvelocity = GlobalVariables.playerVelocity_x+randi()%300+100
+		add_force(Vector2(),Vector2(xvelocity,projectile_speed).rotated(rotation))
 	animationInstance = animation.instance()
 	holeInstance = hole.instance()
 	animationInstance.position = get_position()

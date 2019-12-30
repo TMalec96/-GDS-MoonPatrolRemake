@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Scripts/Interface.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Sprites/Player/car1_fioletowy_2chłopków.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/signal.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -80,34 +81,29 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "POINT
 "
 
-[node name="CautionUpText" type="Label" parent="MainArea/ExtraArea"]
-visible = false
-margin_left = 433.76
-margin_top = 0.360352
-margin_right = 549.76
-margin_bottom = 103.36
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "CAUTION"
+[node name="CautionUpText" type="Sprite" parent="MainArea/ExtraArea"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 380.491, 22.5786 )
+texture = ExtResource( 4 )
 
-[node name="CautionMidText" type="Label" parent="MainArea/ExtraArea"]
+[node name="CautionMidText" type="Sprite" parent="MainArea/ExtraArea"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 380.909, 62.7182 )
+texture = ExtResource( 4 )
+
+[node name="CautionDownText" type="Sprite" parent="MainArea/ExtraArea"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 380.909, 99.0948 )
+texture = ExtResource( 4 )
+
+[node name="CautionText_" type="Label" parent="MainArea/ExtraArea"]
 visible = false
 margin_left = 435.565
 margin_top = 40.0705
 margin_right = 551.565
 margin_bottom = 143.07
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "CAUTION"
-
-[node name="CautionDownText" type="Label" parent="MainArea/ExtraArea"]
-visible = false
-margin_left = 435.565
-margin_top = 83.3906
-margin_right = 551.565
-margin_bottom = 186.391
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "CAUTION"
 
 [node name="ControlPointValue" type="Label" parent="MainArea/ExtraArea"]

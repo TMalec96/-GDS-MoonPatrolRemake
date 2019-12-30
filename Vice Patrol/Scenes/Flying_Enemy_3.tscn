@@ -28,7 +28,8 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
-rate_of_fire = 15.0
+min_rate_of_fire = 8.0
+max_rate_of_fire = 13.0
 is_bomber = true
 
 [node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D/Enemy_flying1"]
