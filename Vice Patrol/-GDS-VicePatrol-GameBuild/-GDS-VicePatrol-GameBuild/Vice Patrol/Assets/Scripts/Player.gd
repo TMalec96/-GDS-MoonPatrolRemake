@@ -25,8 +25,10 @@ var back_enemy = preload("res://Scenes/BackAttack_Enemy.tscn")
 #PLAYER SHOOTING
 var bullet1 = preload("res://Scenes/BulletFront.tscn")
 var bullet2 = preload("res://Scenes/BulletUp.tscn")
-var can_fire =true
-var rate_of_fire = 0.4
+var can_fire_front =true
+var can_fire_up =true
+export (float) var rate_of_fire_front = 0.4
+export (float) var rate_of_fire_up = 0.3
 
 #PLAYER SCORING
 onready var enemy_detector_ray = get_node("EnemyDetector")
@@ -70,7 +72,8 @@ func _respawn():
 	animationInstance.visible = false
 func _process(delta):
 	if !GlobalVariables.is_player_respawning:
-		FireLoop()	
+		FireLoopUp()
+		FireLoopFront()	
 func get_input():
 	if !GlobalVariables.is_player_respawning:
 		velocity.x = avg_player_speed
@@ -131,20 +134,23 @@ func _set_wheels_position_x():
 	var right_tire = get_node("Tire_right")
 	left_tire.position.x = wheel_left_position
 	right_tire.position.x = wheel_right_position
-func FireLoop():
-	if Input.is_action_pressed("Shoot") and can_fire:
-		can_fire = false
-#		get_node("TurnAxis").rotation = get_angle_to(get_global_transform())
-		var bullet_instanceFront = bullet1.instance()
+func FireLoopUp():
+	if Input.is_action_pressed("Shoot") and can_fire_up:
+		can_fire_up = false
 		var bullet_instanceUp = bullet2.instance()
-		bullet_instanceFront.position = get_node("TurnAxis/CastPoint1").get_global_position()
 		bullet_instanceUp.position = get_node("TurnAxis/CastPoint2").get_global_position()
 		bullet_instanceUp.Initialize(velocity.x)
-#		bullet_instance.rotation = get_global_rotation()
-		get_parent().add_child(bullet_instanceFront)
 		get_parent().add_child(bullet_instanceUp)
-		yield(get_tree().create_timer(rate_of_fire), "timeout")
-		can_fire = true
+		yield(get_tree().create_timer(rate_of_fire_up), "timeout")
+		can_fire_up = true
+func FireLoopFront():
+	if Input.is_action_pressed("Shoot") and can_fire_front:
+		can_fire_front = false
+		var bullet_instanceFront = bullet1.instance()
+		bullet_instanceFront.position = get_node("TurnAxis/CastPoint1").get_global_position()
+		get_parent().add_child(bullet_instanceFront)
+		yield(get_tree().create_timer(rate_of_fire_front), "timeout")
+		can_fire_front = true
 func dead():
 	GlobalVariables.is_player_respawning = false
 	
