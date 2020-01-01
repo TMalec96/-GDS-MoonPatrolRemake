@@ -2,9 +2,9 @@ extends KinematicBody2D
 #PLAYER MOVEMENT
 onready var ground_ray1 = get_node("groundray1")
 onready var ground_ray2 = get_node("groundray2")
-export (int) var min_player_speed = 200 #Player speed
-export (int) var avg_player_speed = 300
-export (int) var max_player_speed = 400
+export (int) var min_player_speed = 250 #Player speed
+export (int) var avg_player_speed = 350
+export (int) var max_player_speed = 450
 export (int) var jump_speed = 600
 export (int) var gravity = 1200
 

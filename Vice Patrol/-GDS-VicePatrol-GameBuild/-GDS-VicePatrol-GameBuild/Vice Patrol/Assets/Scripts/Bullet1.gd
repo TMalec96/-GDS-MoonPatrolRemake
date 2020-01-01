@@ -1,7 +1,7 @@
 extends RigidBody2D
 
-export (int) var projectile_speed = 400
-export (int) var life_time = 3
+export (int) var projectile_speed = 900
+export (float) var life_time = 0.5
 export (bool) var is_up_bullet = false
 var parent_speed = Vector2()
 export (float) var animation_duration = 0.3

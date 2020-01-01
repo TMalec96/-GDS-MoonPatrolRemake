@@ -15,7 +15,6 @@ contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 1 )
 projectile_speed = 700
-life_time = 5
 is_up_bullet = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

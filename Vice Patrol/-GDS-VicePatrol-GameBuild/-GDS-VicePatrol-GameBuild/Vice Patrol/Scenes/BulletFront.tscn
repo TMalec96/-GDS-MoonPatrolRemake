@@ -13,8 +13,7 @@ gravity_scale = 0.0
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 1 )
-projectile_speed = 700
-life_time = 1
+projectile_speed = 1200
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
