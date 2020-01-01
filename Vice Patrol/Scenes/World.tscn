@@ -227,7 +227,7 @@ position = Vector2( 1841.76, 707.14 )
 scale = Vector2( 1.5, 1.6 )
 
 [node name="SmallHole_Enemy" parent="Holes" instance=ExtResource( 9 )]
-position = Vector2( 1098.97, 729.5 )
+position = Vector2( 1249.33, 378.665 )
 
 [node name="Tanks" type="Node" parent="."]
 editor/display_folded = true
@@ -243,8 +243,8 @@ position = Vector2( 1422.52, 696.705 )
 [node name="FlyingEnemies" type="Node" parent="."]
 
 [node name="Spawner" parent="FlyingEnemies" instance=ExtResource( 12 )]
-position = Vector2( 1448.2, 141.682 )
-enemy_type = 2
+position = Vector2( 1136.03, 642.875 )
+enemy_type = 0
 
 [node name="Spawner2" parent="FlyingEnemies" instance=ExtResource( 12 )]
 position = Vector2( 1637.22, 654.331 )

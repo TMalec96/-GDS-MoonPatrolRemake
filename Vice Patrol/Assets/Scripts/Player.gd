@@ -44,19 +44,30 @@ var flying_enemy_3 = preload("res://Scenes/Flying_Enemy_3.tscn")
 
 #INTERFACE WARNINGS
 onready var interface = get_node("Canvas/Interface")
+#DEATH ANIMATION
+onready var animation = preload("res://Scenes/PlayerDeathAnimation.tscn")
+var animationInstance
 func _ready():
 	GlobalVariables.playerReversingDistance = reversing_distance
 	GlobalVariables.playerLifes = lifes
 	GlobalVariables.paused = false
+	animationInstance = animation.instance()
+	add_child(animationInstance)
+	animationInstance.playing = false
+	animationInstance.visible = false
 func _respawn():
 	GlobalVariables.paused = true
 	position.x -= reversing_distance
 	velocity.x = 0
 	velocity.y = 0
+	animationInstance.playing = true
+	animationInstance.visible = true
 	yield(get_tree().create_timer(respawn_delay),"timeout")
 	GlobalVariables.playerLifes -= 1
 	GlobalVariables.is_player_respawning = false
 	GlobalVariables.paused = false
+	animationInstance.playing = false
+	animationInstance.visible = false
 func _process(delta):
 	if !GlobalVariables.is_player_respawning:
 		FireLoop()	
