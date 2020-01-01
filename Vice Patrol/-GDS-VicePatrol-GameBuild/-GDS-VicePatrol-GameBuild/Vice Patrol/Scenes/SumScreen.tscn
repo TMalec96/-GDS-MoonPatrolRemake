@@ -1,0 +1,305 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Scripts/SumScreen.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Sprites/Player/car1_fioletowy_2chłopków.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 34
+font_data = ExtResource( 2 )
+
+[node name="Interface" type="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -299.0
+margin_right = 301.0
+margin_bottom = 120.0
+script = ExtResource( 1 )
+bonus_points = 100
+average_time = 6
+top_record = 6
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -313.0
+margin_top = -4.0
+margin_right = 916.0
+margin_bottom = 1220.0
+color = Color( 0.0745098, 0.0156863, 0.0156863, 1 )
+
+[node name="TimeToReach" type="Label" parent="ColorRect"]
+margin_left = 222.854
+margin_top = 408.905
+margin_right = 422.854
+margin_bottom = 511.905
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.992157, 0.0156863, 0.0156863, 1 )
+text = "TIME TO REACH POINT "
+valign = 1
+
+[node name="TopRecord" type="Label" parent="ColorRect"]
+margin_left = 221.422
+margin_top = 656.636
+margin_right = 541.422
+margin_bottom = 759.636
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.992157, 0.0156863, 0.0156863, 1 )
+text = "TOP RECORD:"
+valign = 1
+
+[node name="TopRecordValue" type="Label" parent="ColorRect"]
+margin_left = 434.786
+margin_top = 658.068
+margin_right = 754.786
+margin_bottom = 761.068
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.992157, 0.0156863, 0.0156863, 1 )
+text = "0"
+valign = 1
+
+[node name="YouBrokenRecord" type="Label" parent="ColorRect"]
+visible = false
+margin_left = 214.262
+margin_top = 844.225
+margin_right = 534.262
+margin_bottom = 947.225
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.992157, 0.0156863, 0.0156863, 1 )
+text = "YOU HAVE BROKEN A RECORD!"
+valign = 1
+
+[node name="YourTime" type="Label" parent="ColorRect"]
+margin_left = 219.99
+margin_top = 499.119
+margin_right = 539.99
+margin_bottom = 602.119
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0156863, 0.694118, 0.992157, 1 )
+text = "YOUR TIME:"
+valign = 1
+
+[node name="AverageTime" type="Label" parent="ColorRect"]
+margin_left = 219.99
+margin_top = 567.854
+margin_right = 539.99
+margin_bottom = 670.854
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0156863, 0.694118, 0.992157, 1 )
+text = "THE AVERAGE TIME:"
+valign = 1
+
+[node name="AverageTimeValue" type="Label" parent="ColorRect"]
+margin_left = 540.752
+margin_top = 564.99
+margin_right = 860.752
+margin_bottom = 667.99
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0156863, 0.694118, 0.992157, 1 )
+text = "0"
+valign = 1
+
+[node name="GoodBonusPoints" type="Label" parent="ColorRect"]
+margin_left = 219.99
+margin_top = 766.898
+margin_right = 539.99
+margin_bottom = 869.898
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0156863, 0.694118, 0.992157, 1 )
+text = "GOOD BONUS POINTS"
+valign = 1
+
+[node name="GoodBonusPointsValue" type="Label" parent="ColorRect"]
+margin_left = 547.912
+margin_top = 766.898
+margin_right = 867.912
+margin_bottom = 869.898
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0156863, 0.694118, 0.992157, 1 )
+text = "0"
+valign = 1
+
+[node name="TimeValue2" type="Label" parent="ColorRect"]
+margin_left = 428.898
+margin_top = 521.592
+margin_right = 544.898
+margin_bottom = 624.592
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "0
+"
+
+[node name="ControlPointValue3" type="Label" parent="ColorRect"]
+margin_left = 592.541
+margin_top = 430.168
+margin_right = 708.542
+margin_bottom = 533.168
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.972549, 0.0392157, 0.0392157, 1 )
+text = "A"
+
+[node name="MainArea" type="ColorRect" parent="."]
+margin_left = -300.0
+margin_right = 900.0
+margin_bottom = 240.0
+color = Color( 0.156863, 0.227451, 0.780392, 1 )
+
+[node name="CurrentScoreValue" type="Label" parent="MainArea"]
+margin_left = 97.136
+margin_top = 139.952
+margin_right = 297.136
+margin_bottom = 266.952
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.945098, 0.976471, 0, 1 )
+text = "SCORE
+"
+
+[node name="LifesNumber" type="Label" parent="MainArea"]
+margin_left = 1063.15
+margin_top = 81.7651
+margin_right = 1249.15
+margin_bottom = 208.765
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.87451, 1, 0.00392157, 1 )
+text = "LIFES
+"
+
+[node name="HiScore" type="Label" parent="MainArea"]
+margin_left = 91.0
+margin_top = 24.0
+margin_right = 291.0
+margin_bottom = 127.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.992157, 0.0156863, 0.0156863, 1 )
+text = "
+HISCORE"
+
+[node name="Sprite" type="Sprite" parent="MainArea"]
+position = Vector2( 1006.9, 114.558 )
+texture = ExtResource( 3 )
+
+[node name="ExtraArea" type="ColorRect" parent="MainArea"]
+margin_left = 393.0
+margin_top = 33.0
+margin_right = 940.0
+margin_bottom = 155.0
+color = Color( 0.0431373, 0.701961, 0.960784, 1 )
+
+[node name="ControlPointText" type="Label" parent="MainArea/ExtraArea"]
+margin_left = 24.0
+margin_top = -1.0
+margin_right = 140.0
+margin_bottom = 102.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "POINT
+"
+
+[node name="ControlPointValue" type="Label" parent="MainArea/ExtraArea"]
+margin_left = 135.483
+margin_top = -2.36041
+margin_right = 251.483
+margin_bottom = 100.64
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "A"
+
+[node name="ControlPointValue2" type="Label" parent="MainArea/ExtraArea"]
+margin_left = -112.741
+margin_top = 40.9025
+margin_right = 3.25909
+margin_bottom = 143.902
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "A"
+
+[node name="TimeText" type="Label" parent="MainArea/ExtraArea"]
+margin_left = 24.0
+margin_top = 57.4961
+margin_right = 140.0
+margin_bottom = 160.496
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "TIME
+"
+
+[node name="TimeValue" type="Label" parent="MainArea/ExtraArea"]
+margin_left = 126.0
+margin_top = 55.0
+margin_right = 242.0
+margin_bottom = 158.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "0
+"
+
+[node name="ProgressBar" type="ProgressBar" parent="MainArea"]
+margin_left = 380.0
+margin_top = 201.0
+margin_right = 944.0
+margin_bottom = 223.0
+percent_visible = false
+
+[node name="ArrowContolPointText" type="Label" parent="MainArea/ProgressBar"]
+margin_left = -11.7176
+margin_top = -31.775
+margin_right = 104.282
+margin_bottom = 71.225
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.964706, 0.0352941, 0.0352941, 1 )
+text = "->
+"
+
+[node name="EContolPointText" type="Label" parent="MainArea/ProgressBar"]
+margin_left = 96.5825
+margin_top = -29.97
+margin_right = 212.582
+margin_bottom = 73.03
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.964706, 0.0352941, 0.0352941, 1 )
+text = "E
+"
+
+[node name="JContolPointText" type="Label" parent="MainArea/ProgressBar"]
+margin_left = 204.882
+margin_top = -30.8726
+margin_right = 320.882
+margin_bottom = 80.1274
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.964706, 0.0352941, 0.0352941, 1 )
+text = "J
+
+"
+
+[node name="OContolPointText" type="Label" parent="MainArea/ProgressBar"]
+margin_left = 322.207
+margin_top = -29.9701
+margin_right = 438.207
+margin_bottom = 81.0299
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.964706, 0.0352941, 0.0352941, 1 )
+text = "O
+
+"
+
+[node name="TContolPointText" type="Label" parent="MainArea/ProgressBar"]
+margin_left = 440.435
+margin_top = -29.9701
+margin_right = 556.435
+margin_bottom = 81.0299
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.964706, 0.0352941, 0.0352941, 1 )
+text = "T
+"
+
+[node name="ZContolPointText" type="Label" parent="MainArea/ProgressBar"]
+margin_left = 553.247
+margin_top = -30.8726
+margin_right = 669.247
+margin_bottom = 80.1274
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.964706, 0.0352941, 0.0352941, 1 )
+text = "Z
+"
