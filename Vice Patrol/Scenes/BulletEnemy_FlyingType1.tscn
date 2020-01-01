@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Scripts/BulletEnemy.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/Bullets/pocisk z góry.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4.73496, 8.51118 )
+
+[node name="BulletEnemy_FlyingType1" type="RigidBody2D"]
+collision_layer = 512
+collision_mask = 5
+mode = 2
+contacts_reported = 1
+contact_monitor = true
+script = ExtResource( 1 )
+direction_down = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -4.4 )
+scale = Vector2( 2, 2 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -1.81, 0 )
+rotation = 3.14159
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+[connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_BulletEnemy_FlyingType1_body_entered"]
