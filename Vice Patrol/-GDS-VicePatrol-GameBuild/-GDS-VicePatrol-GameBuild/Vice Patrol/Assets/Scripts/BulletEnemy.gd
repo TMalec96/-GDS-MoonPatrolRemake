@@ -19,7 +19,7 @@ func _ready():
 			xvelocity = GlobalVariables.playerVelocity_x+randi()%300+200
 			add_force(Vector2(),Vector2(xvelocity,projectile_speed).rotated(rotation))
 		else:
-			xvelocity = GlobalVariables.playerVelocity_x
+			xvelocity = GlobalVariables.playerVelocity_x+randi()%100-50
 			apply_impulse(Vector2(),Vector2(xvelocity,projectile_speed).rotated(rotation))
 		animationInstance = animation.instance()
 		holeInstance = hole.instance()
