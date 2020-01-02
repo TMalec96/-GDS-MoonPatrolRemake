@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Scripts/Interface.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Sprites/Player/car1_fioletowy_2chłopków.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/signal.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/FontSprites/game_over_galaxy.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -210,3 +211,8 @@ custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.964706, 0.0352941, 0.0352941, 1 )
 text = "Z
 "
+
+[node name="GameOverSprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 333.689, 674.45 )
+texture = ExtResource( 5 )

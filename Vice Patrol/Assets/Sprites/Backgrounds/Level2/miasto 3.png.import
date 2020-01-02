@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/niebo.jpg-7ee384654401e97422b4bbd9bc189ddb.stex"
+path="res://.import/miasto 3.png-2888d7d7a0f492ee9fcadc91396f276b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Backgrounds/niebo.jpg"
-dest_files=[ "res://.import/niebo.jpg-7ee384654401e97422b4bbd9bc189ddb.stex" ]
+source_file="res://Assets/Sprites/Backgrounds/Level2/miasto 3.png"
+dest_files=[ "res://.import/miasto 3.png-2888d7d7a0f492ee9fcadc91396f276b.stex" ]
 
 [params]
 

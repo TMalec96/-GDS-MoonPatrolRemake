@@ -1,0 +1,157 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Interface.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Sprites/Backgrounds/Level2/plaża czysta.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Backgrounds/Level2/plaża.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/BigRock_Enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/BigHole_Enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Tank_Enemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Palm_Enemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Spawner.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Mine_Enemy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Assets/Scripts/ControlPoint.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/Backgound2.tscn" type="PackedScene" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+font_data = ExtResource( 11 )
+
+[node name="World" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 599.615, 298.553 )
+collision_mask = 21
+respawn_delay = 3.0
+
+[node name="Canvas" type="CanvasLayer" parent="Player"]
+
+[node name="Interface" parent="Player/Canvas" instance=ExtResource( 2 )]
+margin_left = -300.0
+margin_right = 900.0
+margin_bottom = 240.0
+
+[node name="Terrains" type="Node" parent="."]
+
+[node name="Terrain2" type="StaticBody2D" parent="Terrains"]
+position = Vector2( 2400, 470 )
+scale = Vector2( 2, 2 )
+collision_layer = 4
+collision_mask = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terrains/Terrain2"]
+texture = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrains/Terrain2"]
+polygon = PoolVector2Array( 300, 64, -300, 64, -299.98, -63.0142, -287.943, -63.3964, -277.377, -59.4342, -253.559, -61.605, -243.278, -58.0202, -233.809, -61.1992, -216.358, -58.6289, -203.574, -57.4791, -173.949, -62.7548, -156.227, -61.3344, -145.676, -57.0732, -122.647, -62.9852, -79.3904, -63.8371, -58.6255, -60.0493, -38.4922, -63.8446, -15.134, -60.861, -1.87697, -63.7018, 32.6862, -60.3199, 42.6967, -57.7496, 52.3689, -61.4021, 71.24, -62.0108, 79.289, -58.5613, 87.4056, -60.9962, 117.166, -59.7111, 137.999, -64.1076, 153.15, -63.9723, 161.199, -61.0639, 168.03, -63.837, 183.79, -63.1607, 202.255, -60.658, 225.117, -64.2429, 245.138, -62.4843, 257.042, -56.3291, 270.773, -57.8172, 283.218, -59.914, 299.046, -62.146 )
+
+[node name="Terrain0" type="StaticBody2D" parent="Terrains"]
+position = Vector2( 0, 469.098 )
+scale = Vector2( 2, 2 )
+collision_layer = 4
+collision_mask = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terrains/Terrain0"]
+texture = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrains/Terrain0"]
+polygon = PoolVector2Array( 300, 64, -300, 64, -299.98, -63.0142, -287.943, -63.3964, -277.377, -59.4342, -253.559, -61.605, -243.278, -58.0202, -233.809, -61.1992, -216.358, -58.6289, -203.574, -57.4791, -173.949, -62.7548, -156.227, -61.3344, -145.676, -57.0732, -122.647, -62.9852, -79.3904, -63.8371, -58.6255, -60.0493, -38.4922, -63.8446, -15.134, -60.861, -1.87697, -63.7018, 32.6862, -60.3199, 42.6967, -57.7496, 52.3689, -61.4021, 71.24, -62.0108, 79.289, -58.5613, 87.4056, -60.9962, 117.166, -59.7111, 137.999, -64.1076, 153.15, -63.9723, 161.199, -61.0639, 168.03, -63.837, 183.79, -63.1607, 202.255, -60.658, 225.117, -64.2429, 245.138, -62.4843, 257.042, -56.3291, 270.773, -57.8172, 283.218, -59.914, 299.046, -62.146 )
+
+[node name="Terrain1" type="StaticBody2D" parent="Terrains"]
+position = Vector2( 1200, 470 )
+scale = Vector2( 2, 2 )
+collision_layer = 4
+collision_mask = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terrains/Terrain1"]
+texture = ExtResource( 4 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrains/Terrain1"]
+polygon = PoolVector2Array( 300, 64, -300, 64, -300.97, -62.2947, -249.2, -64, -244, -62.6, -236.566, -62.7142, -226.85, -60.7211, -215.142, -57.3164, -207.169, -58.6451, -172.043, -63.2954, -155.528, -60.642, -147.87, -56.8958, -131.435, -61.9668, -114.91, -64.0428, -83.9086, -64.0027, -59.0226, -60.8872, -39.2291, -64.0578, -20.8284, -62.1296, -11.2425, -62.3499, -0.554688, -64.1128, 28.6439, -62.1295, 42.0313, -57.8874, 53.8759, -61.6887, 70.4584, -62.1845, 79.3833, -59.2095, 97.784, -61.8539, 123.898, -59.2646, 138.001, -63.9474, 149.405, -63.6169, 159.762, -60.2563, 167.695, -63.8924, 189.897, -61.1929, 206.866, -61.3031, 222.512, -64.1127, 233.2, -63.0109, 244.438, -63.121, 256.118, -56.7304, 265.208, -56.1795, 273.527, -58.4933, 283.994, -59.2646, 300.026, -62.9558 )
+
+[node name="Rocks" type="Node" parent="."]
+
+[node name="BigRock_Enemy" parent="Rocks" instance=ExtResource( 5 )]
+position = Vector2( 221.047, 872.867 )
+
+[node name="Holes" type="Node" parent="."]
+
+[node name="BigHole_Enemy" parent="Holes" instance=ExtResource( 6 )]
+position = Vector2( 413.639, 872.438 )
+scale = Vector2( 1.5, 1.6 )
+
+[node name="Tanks" type="Node" parent="."]
+
+[node name="Tank_Enemy" parent="Tanks" instance=ExtResource( 7 )]
+position = Vector2( 557.905, 1082.33 )
+
+[node name="Palms" type="Node" parent="."]
+
+[node name="Palm_Enemy" parent="Palms" instance=ExtResource( 8 )]
+position = Vector2( 1422.52, 696.705 )
+
+[node name="FlyingEnemies" type="Node" parent="."]
+
+[node name="Spawner" parent="FlyingEnemies" instance=ExtResource( 9 )]
+position = Vector2( 846.87, 779.49 )
+enemy_type = 0
+number_of_enemies = 2
+
+[node name="Mines" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Mine_Enemy" parent="Mines" instance=ExtResource( 10 )]
+position = Vector2( 1275.26, 688.072 )
+
+[node name="ControlPoints" type="Node" parent="."]
+
+[node name="ControlPoint_A" type="Label" parent="ControlPoints"]
+margin_left = 972.462
+margin_top = 962.189
+margin_right = 1012.46
+margin_bottom = 1055.19
+custom_fonts/font = SubResource( 1 )
+text = "A
+"
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="ControlPoints/ControlPoint_A"]
+rotation = -3.14159
+enabled = true
+cast_to = Vector2( 0, 200 )
+
+[node name="EndPoints" type="Node" parent="."]
+
+[node name="EndlPoint_E" type="Label" parent="EndPoints"]
+margin_left = 36579.7
+margin_top = 364.194
+margin_right = 36603.7
+margin_bottom = 457.194
+custom_fonts/font = SubResource( 1 )
+text = "E
+"
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+is_endpoint = true
+
+[node name="RayCast2D" type="RayCast2D" parent="EndPoints/EndlPoint_E"]
+rotation = -3.14159
+enabled = true
+cast_to = Vector2( 0, 200 )
+
+[node name="Backgound" parent="." instance=ExtResource( 13 )]

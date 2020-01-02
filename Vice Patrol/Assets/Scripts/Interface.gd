@@ -23,6 +23,13 @@ func _process(delta):
 			GlobalVariables.hiScore = GlobalVariables.playerScore
 			hiScoreLabel.set_text(String(GlobalVariables.hiScore))
 	_changeControlPoint()
+	if GlobalVariables.playerLifes <= 0:
+		var index = 0 
+		while(index <3):
+			$GameOverSprite.visible = true
+			yield(get_tree().create_timer(1), "timeout")
+			$GameOverSprite.visible = false
+			index+=1
 	
 func _changeControlPoint():
 	if last_control_point != GlobalVariables.currentCheckpoint:

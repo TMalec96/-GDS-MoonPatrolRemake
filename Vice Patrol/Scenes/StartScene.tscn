@@ -1,17 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Scripts/StartScene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Backgrounds/titleBackround.jpg" type="Texture" id=2]
-[ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Assets/Fonts/full Pack 2025.ttf" type="DynamicFontData" id=4]
-
-[sub_resource type="DynamicFont" id=1]
-size = 72
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 75
-font_data = ExtResource( 4 )
+[ext_resource path="res://Assets/Sprites/FontSprites/start_game.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/FontSprites/exit.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/FontSprites/moon_patrol_galaxy_.png" type="Texture" id=5]
 
 [node name="StartScene" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -23,36 +16,41 @@ margin_right = -361.168
 margin_bottom = -2.93634
 
 [node name="Sprite" type="Sprite" parent="Control"]
-position = Vector2( 959.194, 610.894 )
-scale = Vector2( 2, 2.448 )
+position = Vector2( 961.342, 610.894 )
+scale = Vector2( 2.00716, 2.448 )
 texture = ExtResource( 2 )
 
 [node name="StartGameButton" type="Button" parent="Control"]
-margin_left = 833.304
-margin_top = 687.287
-margin_right = 1093.3
-margin_bottom = 765.287
-custom_fonts/font = SubResource( 1 )
-text = "Start game"
+margin_left = 833.0
+margin_top = 687.0
+margin_right = 1093.0
+margin_bottom = 722.0
+flat = true
+
+[node name="Sprite" type="Sprite" parent="Control/StartGameButton"]
+texture = ExtResource( 3 )
+centered = false
 
 [node name="ExitGameButton" type="Button" parent="Control"]
-margin_left = 829.512
-margin_top = 799.914
-margin_right = 1089.51
-margin_bottom = 877.914
-custom_fonts/font = SubResource( 1 )
-text = "Exit"
+anchor_bottom = 0.69
+margin_left = 920.0
+margin_top = 763.0
+margin_right = 1016.0
+margin_bottom = 798.0
+flat = true
 
-[node name="Title" type="Label" parent="Control"]
-margin_left = 581.168
-margin_top = 442.936
-margin_right = 1324.17
-margin_bottom = 607.936
-custom_fonts/font = SubResource( 2 )
-text = "Moon Patrol"
+[node name="Sprite" type="Sprite" parent="Control/ExitGameButton"]
+position = Vector2( -8.90131, 0.351196 )
+texture = ExtResource( 4 )
+centered = false
 
 [node name="Camera2D" type="Camera2D" parent="Control"]
 position = Vector2( 952.395, 615.793 )
 current = true
+
+[node name="Title" type="Sprite" parent="Control"]
+position = Vector2( 953.591, 531.535 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 5 )
 [connection signal="pressed" from="Control/StartGameButton" to="." method="_on_StartGameButton_pressed"]
 [connection signal="pressed" from="Control/ExitGameButton" to="." method="_on_ExitGameButton_pressed"]

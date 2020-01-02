@@ -27,7 +27,6 @@ font_data = ExtResource( 14 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 599.615, 298.553 )
 collision_mask = 21
-respawn_delay = 3.0
 
 [node name="Canvas" type="CanvasLayer" parent="Player"]
 
@@ -37,6 +36,7 @@ margin_right = 900.0
 margin_bottom = 240.0
 
 [node name="Terrains" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Terrain5" type="StaticBody2D" parent="Terrains"]
 editor/display_folded = true
@@ -649,7 +649,7 @@ position = Vector2( 20022, 384.264 )
 scale = Vector2( 1.5, 1.6 )
 
 [node name="SmallHole_Enemy" parent="Holes" instance=ExtResource( 9 )]
-position = Vector2( 1247.33, 451.665 )
+position = Vector2( 1250.19, 382.93 )
 
 [node name="SmallHole_Enemy2" parent="Holes" instance=ExtResource( 9 )]
 position = Vector2( 5117.75, 382.208 )

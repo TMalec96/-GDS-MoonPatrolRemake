@@ -23,7 +23,7 @@ func countScore():
 func FireLoop():
 	if 	can_fire:
 		can_fire = false
-		var time_delay_between_shoots = rand_range(min_rate_of_fire, max_rate_of_fire)
+		var time_delay_between_shoots = rand_range(min_rate_of_fire, max_rate_of_fire)+1
 		yield(get_tree().create_timer(time_delay_between_shoots), "timeout")
 		var bullet_instance = null
 		if !is_bomber:

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/5 warswa.png-aa912881863fb676d38523d40bf0aacd.stex"
+path="res://.import/5 warstwa.png-9b6308600b352a895f32adc4d1020220.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Backgrounds/5 warswa.png"
-dest_files=[ "res://.import/5 warswa.png-aa912881863fb676d38523d40bf0aacd.stex" ]
+source_file="res://Assets/Sprites/Backgrounds/5 warstwa.png"
+dest_files=[ "res://.import/5 warstwa.png-9b6308600b352a895f32adc4d1020220.stex" ]
 
 [params]
 

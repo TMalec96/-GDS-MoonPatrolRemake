@@ -15,7 +15,7 @@ func _ready():
 	curve = path_array[index]
 	follow.loop = true
 func _process(delta):
-	follow.set_offset(follow.get_offset() + 200 *delta)
+	follow.set_offset(follow.get_offset() + (200) *delta)
 	
 
 	#spaw CURVE 2D Resource

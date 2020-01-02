@@ -7,7 +7,7 @@ export (int) var avg_player_speed = 350
 export (int) var max_player_speed = 450
 export (int) var jump_speed = 600
 export (int) var gravity = 1200
-export (int) var speed_incrementation_sec = 1
+export (float) var speed_incrementation_sec = 1.5
 
 var velocity = Vector2()
 var jumping = false
@@ -29,14 +29,14 @@ var bullet2 = preload("res://Scenes/BulletUp.tscn")
 var can_fire_front =true
 var can_fire_up =true
 export (float) var rate_of_fire_front = 0.4
-export (float) var rate_of_fire_up = 0.3
+export (float) var rate_of_fire_up = 0.1
 
 #PLAYER SCORING
 onready var enemy_detector_ray = get_node("EnemyDetector")
 
 #PLAYER LIFES
 export (int) var lifes = 3
-export (float) var respawn_delay = 2.0
+export (float) var respawn_delay = 3.0
 export (int) var reversing_distance = 500
 var is_dead = false
 
@@ -51,6 +51,7 @@ onready var interface = get_node("Canvas/Interface")
 onready var animation = preload("res://Scenes/PlayerDeathAnimation.tscn")
 var animationInstance
 func _ready():
+	camera.offset.x = 300
 	GlobalVariables.playerReversingDistance = reversing_distance
 	GlobalVariables.playerLifes = lifes
 	GlobalVariables.paused = false
@@ -59,13 +60,20 @@ func _ready():
 	animationInstance.playing = false
 	animationInstance.visible = false
 func _respawn():
+	position.x -=50
 	GlobalVariables.paused = true
-	position.x -= reversing_distance
 	velocity.x = 0
 	velocity.y = 0
+	get_node("Tire_left").visible =false
+	get_node("Tire_right").visible =false
 	animationInstance.playing = true
 	animationInstance.visible = true
+	$Sprite.visible = false
 	yield(get_tree().create_timer(respawn_delay),"timeout")
+	get_node("Tire_left").visible =true
+	get_node("Tire_right").visible =true
+	$Sprite.visible = true
+	position.x -= reversing_distance
 	GlobalVariables.playerLifes -= 1
 	GlobalVariables.is_player_respawning = false
 	GlobalVariables.paused = false
@@ -77,8 +85,6 @@ func _process(delta):
 		FireLoopFront()	
 func get_input():
 	if !GlobalVariables.is_player_respawning:
-		if(velocity.x >= max_player_speed):
-			print('już')
 		var right_pressed = Input.is_action_pressed('ui_right')
 		var right_released = Input.is_action_just_released('ui_right')
 		var left_released = Input.is_action_just_released('ui_left')
@@ -94,18 +100,22 @@ func get_input():
 				velocity.x +=speed_incrementation_sec
 			if camera.offset.x>=camera_offset_drag_right:
 					camera.offset.x -= speed_incrementation_sec
-		elif left_pressed:
+		if left_pressed:
 			if(velocity.x >= min_player_speed):
 				velocity.x -= speed_incrementation_sec
+			else:
+				velocity.x += speed_incrementation_sec
 			if camera.offset.x <= camera_offset_drag_left:
 					camera.offset.x += speed_incrementation_sec
-		elif left_released:
+		if left_released:
 			if(velocity.x <= avg_player_speed):
 				velocity.x += speed_incrementation_sec
-		elif right_released:
+			else:
+				velocity.x += speed_incrementation_sec
+		if right_released:
 			if(velocity.x >= avg_player_speed):
 				velocity.x -= speed_incrementation_sec
-		else:
+		if !right_pressed and !left_pressed:
 			velocity.x = avg_player_speed
 			if(camera.offset.x >= 300):
 					camera.offset.x -= speed_incrementation_sec
@@ -140,7 +150,7 @@ func _set_wheels_position_x():
 	left_tire.position.x = wheel_left_position
 	right_tire.position.x = wheel_right_position
 func FireLoopUp():
-	if Input.is_action_pressed("Shoot") and can_fire_up:
+	if Input.is_action_just_pressed("Shoot") and can_fire_up:
 		can_fire_up = false
 		var bullet_instanceUp = bullet2.instance()
 		bullet_instanceUp.position = get_node("TurnAxis/CastPoint2").get_global_position()
@@ -149,7 +159,7 @@ func FireLoopUp():
 		yield(get_tree().create_timer(rate_of_fire_up), "timeout")
 		can_fire_up = true
 func FireLoopFront():
-	if Input.is_action_pressed("Shoot") and can_fire_front:
+	if Input.is_action_just_pressed("Shoot") and can_fire_front:
 		can_fire_front = false
 		var bullet_instanceFront = bullet1.instance()
 		bullet_instanceFront.position = get_node("TurnAxis/CastPoint1").get_global_position()
@@ -157,8 +167,8 @@ func FireLoopFront():
 		yield(get_tree().create_timer(rate_of_fire_front), "timeout")
 		can_fire_front = true
 func dead():
-	GlobalVariables.is_player_respawning = false
-	
+	GlobalVariables.is_player_respawning = true
+	yield(get_tree().create_timer(3), "timeout")
 	SceneLoader.goto_scene("res://Scenes/GameOverScene.tscn")
 #OPTYMALIZACJA FUNKCJI
 func process_damage(var collision):
@@ -198,8 +208,10 @@ func spawn_enemies(var spawn_position, var enemy_type, var number_of_enemies, va
 				elif spawn_position == GlobalVariables.SpawnPosition.BehindUp:
 					enemy_instance.position = Vector2(get_node("Camera2D/SpawnPointsRoot/SpawnPointBehindPlayer").get_global_position().x, -144)
 				get_parent().add_child(enemy_instance)
-				enemy_instance.add_to_group("enemies",false)
+				enemy_instance.add_to_group("enemies")
 				yield(get_tree().create_timer(delay_between_spawns), "timeout")
+	var enemies = get_tree().get_nodes_in_group("enemies")
+	get_tree().call_group("enemies", "end_wave")
 func create_warning(var caution_direction, var time):
 	interface.launch_warning(caution_direction, time)
 
