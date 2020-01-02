@@ -582,10 +582,9 @@ texture = ExtResource( 5 )
 polygon = PoolVector2Array( -300.066, 299.966, 299.962, 299.962, 300.04, 173.993, 259.502, 180.034, 244.32, 173.685, 217.913, 171.201, 143.223, 171.433, 125.159, 175.208, 81.7512, 172.107, 22.4369, 175.073, 5.9906, 171.837, -26.6323, 174.264, -61.6817, 171.972, -91.3389, 170.489, -117.356, 172.511, -146.07, 170.085, -198.374, 173.59, -270.765, 175.342, -300.018, 173.86 )
 
 [node name="Rocks" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="BigRock_Enemy" parent="Rocks" instance=ExtResource( 6 )]
-position = Vector2( 2625.43, 336.029 )
+position = Vector2( 2619.43, 468.029 )
 
 [node name="BigRock_Enemy4" parent="Rocks" instance=ExtResource( 6 )]
 position = Vector2( 16192.3, 338.749 )
@@ -606,16 +605,16 @@ position = Vector2( 24080.2, 341.443 )
 position = Vector2( 19787.1, 337.48 )
 
 [node name="BigRock_Enemy2" parent="Rocks" instance=ExtResource( 6 )]
-position = Vector2( 7434.91, 335.702 )
+position = Vector2( 7427.91, 517.702 )
 
 [node name="BigRock_Enemy3" parent="Rocks" instance=ExtResource( 6 )]
-position = Vector2( 10196.6, 338.216 )
+position = Vector2( 10252.6, 585.216 )
 
 [node name="SmallRock_Enemy" parent="Rocks" instance=ExtResource( 7 )]
-position = Vector2( 4512.31, 348.797 )
+position = Vector2( 4501.31, 481.797 )
 
 [node name="SmallRock_Enemy2" parent="Rocks" instance=ExtResource( 7 )]
-position = Vector2( 9466, 341.87 )
+position = Vector2( 9469, 481.87 )
 
 [node name="SmallRock_Enemy3" parent="Rocks" instance=ExtResource( 7 )]
 position = Vector2( 22118.3, 348.41 )
@@ -629,7 +628,7 @@ position = Vector2( 24991.7, 340.569 )
 [node name="Holes" type="Node" parent="."]
 
 [node name="BigHole_Enemy" parent="Holes" instance=ExtResource( 8 )]
-position = Vector2( 3707.88, 383.022 )
+position = Vector2( 3700.88, 512.022 )
 scale = Vector2( 1.5, 1.6 )
 
 [node name="BigHole_Enemy2" parent="Holes" instance=ExtResource( 8 )]
@@ -649,10 +648,10 @@ position = Vector2( 20022, 384.264 )
 scale = Vector2( 1.5, 1.6 )
 
 [node name="SmallHole_Enemy" parent="Holes" instance=ExtResource( 9 )]
-position = Vector2( 1250.33, 378.665 )
+position = Vector2( 1247.33, 451.665 )
 
 [node name="SmallHole_Enemy2" parent="Holes" instance=ExtResource( 9 )]
-position = Vector2( 5117.75, 382.208 )
+position = Vector2( 5099.75, 571.208 )
 
 [node name="SmallHole_Enemy3" parent="Holes" instance=ExtResource( 9 )]
 position = Vector2( 17161.3, 376.864 )
@@ -682,7 +681,7 @@ position = Vector2( 1422.52, 696.705 )
 [node name="FlyingEnemies" type="Node" parent="."]
 
 [node name="Spawner" parent="FlyingEnemies" instance=ExtResource( 12 )]
-position = Vector2( 7775.86, 170.124 )
+position = Vector2( 1939.6, 150.644 )
 enemy_type = 0
 number_of_enemies = 2
 
