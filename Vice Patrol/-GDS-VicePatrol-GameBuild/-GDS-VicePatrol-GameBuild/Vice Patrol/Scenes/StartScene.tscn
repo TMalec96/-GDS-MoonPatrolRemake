@@ -1,16 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Scripts/StartScene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Backgrounds/titleBackround.jpg" type="Texture" id=2]
 [ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Fonts/full Pack 2025.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 168
-font_data = ExtResource( 3 )
+size = 75
+font_data = ExtResource( 4 )
 
 [node name="StartScene" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -23,7 +24,7 @@ margin_bottom = -2.93634
 
 [node name="Sprite" type="Sprite" parent="Control"]
 position = Vector2( 959.194, 610.894 )
-scale = Vector2( 2.00545, 2.44767 )
+scale = Vector2( 2, 2.448 )
 texture = ExtResource( 2 )
 
 [node name="StartGameButton" type="Button" parent="Control"]
@@ -43,10 +44,10 @@ custom_fonts/font = SubResource( 1 )
 text = "Exit"
 
 [node name="Title" type="Label" parent="Control"]
-margin_left = 644.489
-margin_top = 400.288
-margin_right = 1253.49
-margin_bottom = 565.288
+margin_left = 581.168
+margin_top = 442.936
+margin_right = 1324.17
+margin_bottom = 607.936
 custom_fonts/font = SubResource( 2 )
 text = "Moon Patrol"
 

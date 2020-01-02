@@ -7,6 +7,7 @@ export (int) var avg_player_speed = 350
 export (int) var max_player_speed = 450
 export (int) var jump_speed = 600
 export (int) var gravity = 1200
+export (int) var speed_incrementation_sec = 1
 
 var velocity = Vector2()
 var jumping = false
@@ -76,7 +77,8 @@ func _process(delta):
 		FireLoopFront()	
 func get_input():
 	if !GlobalVariables.is_player_respawning:
-		velocity.x = avg_player_speed
+		if(velocity.x >= max_player_speed):
+			print('już')
 		var right_pressed = Input.is_action_pressed('ui_right')
 		var right_released = Input.is_action_just_released('ui_right')
 		var left_released = Input.is_action_just_released('ui_left')
@@ -86,26 +88,29 @@ func get_input():
 			jumping = true
 			velocity.y = -jump_speed
 			_set_wheels_position_global()
-			yield(get_tree().create_timer(1), "timeout")
 			jumping = false	
 		if right_pressed:
-			velocity.x = max_player_speed
-			if camera.offset.x>=camera_offset_drag_right:
-				camera.offset.x -= camera_offset_drag_speed
-		if left_pressed:
-			velocity.x = min_player_speed
-			if camera.offset.x <= camera_offset_drag_left:
-				camera.offset.x += camera_offset_drag_speed
-		if left_released:
+			if(velocity.x <= max_player_speed):
+				velocity.x +=speed_incrementation_sec
+				if camera.offset.x>=camera_offset_drag_right:
+					camera.offset.x -= camera_offset_drag_speed
+		elif left_pressed:
+			if(velocity.x >= min_player_speed):
+				velocity.x -= speed_incrementation_sec
+				if camera.offset.x <= camera_offset_drag_left:
+					camera.offset.x += camera_offset_drag_speed
+		elif left_released:
+			if(velocity.x <= avg_player_speed):
+				velocity.x += speed_incrementation_sec
+		elif right_released:
+			if(velocity.x >= avg_player_speed):
+				velocity.x -= speed_incrementation_sec
+		else:
 			velocity.x = avg_player_speed
-			while(camera.offset.x >= 300):
-				camera.offset.x -= camera_offset_drag_speed
-				yield(get_tree().create_timer(camera_offset_back_drag), "timeout")
-		if right_released:
-			velocity.x = avg_player_speed
-			while(camera.offset.x <= 300):
-				camera.offset.x += camera_offset_drag_speed
-				yield(get_tree().create_timer(camera_offset_back_drag), "timeout")
+			if(camera.offset.x >= 300):
+					camera.offset.x -= camera_offset_drag_speed
+			if(camera.offset.x <= 300):
+					camera.offset.x += camera_offset_drag_speed
 func _physics_process(delta):
 	_process_score()
 	get_input()

@@ -2,6 +2,8 @@ extends CanvasLayer
 
 func _on_StartGameButton_pressed():
 	SceneLoader.goto_scene("res://Scenes/World.tscn")
+	GlobalVariables.hiScore = GlobalVariables.playerScore
+	GlobalVariables.playerScore  = 0
 
 
 func _on_ExitGameButton_pressed():

@@ -649,7 +649,7 @@ position = Vector2( 20022, 384.264 )
 scale = Vector2( 1.5, 1.6 )
 
 [node name="SmallHole_Enemy" parent="Holes" instance=ExtResource( 9 )]
-position = Vector2( 1224.33, 378.665 )
+position = Vector2( 1247.33, 451.665 )
 
 [node name="SmallHole_Enemy2" parent="Holes" instance=ExtResource( 9 )]
 position = Vector2( 5117.75, 382.208 )
