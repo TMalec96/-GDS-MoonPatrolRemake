@@ -77,6 +77,8 @@ func _process(delta):
 		FireLoopFront()	
 func get_input():
 	if !GlobalVariables.is_player_respawning:
+		if(velocity.x >= max_player_speed):
+			print('już')
 		var right_pressed = Input.is_action_pressed('ui_right')
 		var right_released = Input.is_action_just_released('ui_right')
 		var left_released = Input.is_action_just_released('ui_left')
@@ -90,30 +92,25 @@ func get_input():
 		if right_pressed:
 			if(velocity.x <= max_player_speed):
 				velocity.x +=speed_incrementation_sec
-			if camera.offset.x>=camera_offset_drag_right:
-					camera.offset.x -= speed_incrementation_sec
-			else:
-				velocity.x = max_player_speed
-		if left_pressed:
+				if camera.offset.x>=camera_offset_drag_right:
+					camera.offset.x -= camera_offset_drag_speed
+		elif left_pressed:
 			if(velocity.x >= min_player_speed):
 				velocity.x -= speed_incrementation_sec
-			if camera.offset.x <= camera_offset_drag_left:
-					camera.offset.x += speed_incrementation_sec
-			else:
-				velocity.x = min_player_speed
-		if left_released:
+				if camera.offset.x <= camera_offset_drag_left:
+					camera.offset.x += camera_offset_drag_speed
+		elif left_released:
 			if(velocity.x <= avg_player_speed):
 				velocity.x += speed_incrementation_sec
-		if right_released:
+		elif right_released:
 			if(velocity.x >= avg_player_speed):
 				velocity.x -= speed_incrementation_sec
-		if !right_pressed and !left_pressed:
+		else:
 			velocity.x = avg_player_speed
 			if(camera.offset.x >= 300):
-					camera.offset.x -= speed_incrementation_sec
+					camera.offset.x -= camera_offset_drag_speed
 			if(camera.offset.x <= 300):
-					camera.offset.x += speed_incrementation_sec
-		print(velocity.x)
+					camera.offset.x += camera_offset_drag_speed
 func _physics_process(delta):
 	_process_score()
 	get_input()
