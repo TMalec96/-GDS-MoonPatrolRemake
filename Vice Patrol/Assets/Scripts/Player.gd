@@ -92,13 +92,13 @@ func get_input():
 		if right_pressed:
 			if(velocity.x <= max_player_speed):
 				velocity.x +=speed_incrementation_sec
-				if camera.offset.x>=camera_offset_drag_right:
-					camera.offset.x -= camera_offset_drag_speed
+			if camera.offset.x>=camera_offset_drag_right:
+					camera.offset.x -= speed_incrementation_sec
 		elif left_pressed:
 			if(velocity.x >= min_player_speed):
 				velocity.x -= speed_incrementation_sec
-				if camera.offset.x <= camera_offset_drag_left:
-					camera.offset.x += camera_offset_drag_speed
+			if camera.offset.x <= camera_offset_drag_left:
+					camera.offset.x += speed_incrementation_sec
 		elif left_released:
 			if(velocity.x <= avg_player_speed):
 				velocity.x += speed_incrementation_sec
@@ -108,9 +108,9 @@ func get_input():
 		else:
 			velocity.x = avg_player_speed
 			if(camera.offset.x >= 300):
-					camera.offset.x -= camera_offset_drag_speed
+					camera.offset.x -= speed_incrementation_sec
 			if(camera.offset.x <= 300):
-					camera.offset.x += camera_offset_drag_speed
+					camera.offset.x += speed_incrementation_sec
 func _physics_process(delta):
 	_process_score()
 	get_input()
