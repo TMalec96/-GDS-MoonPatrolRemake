@@ -15,3 +15,4 @@ animations = [ {
 [node name="AnimatedSprite" type="AnimatedSprite"]
 frames = SubResource( 1 )
 animation = "player explosion"
+speed_scale = 6.0

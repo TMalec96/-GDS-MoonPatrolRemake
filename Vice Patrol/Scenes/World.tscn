@@ -26,7 +26,8 @@ font_data = ExtResource( 14 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 599.615, 298.553 )
-collision_mask = 21
+min_player_speed = 300
+max_player_speed = 400
 
 [node name="Canvas" type="CanvasLayer" parent="Player"]
 

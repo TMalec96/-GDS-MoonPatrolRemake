@@ -26,7 +26,7 @@ margin_right = -361.168
 margin_bottom = -2.93634
 
 [node name="Sprite" type="Sprite" parent="Control"]
-position = Vector2( 964.971, 615.538 )
+position = Vector2( 964.971, 614.875 )
 scale = Vector2( 2.0146, 2.44032 )
 texture = ExtResource( 2 )
 

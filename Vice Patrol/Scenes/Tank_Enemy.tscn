@@ -13,11 +13,13 @@ collision_mask = 21
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+show_behind_parent = true
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 1.49956 )
+show_behind_parent = true
+position = Vector2( 0, 1.39224 )
 shape = SubResource( 1 )
 
 [node name="TurnAxis" type="Position2D" parent="."]

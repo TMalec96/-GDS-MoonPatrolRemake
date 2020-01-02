@@ -21,6 +21,7 @@ position = Vector2( 155.086, -253.151 )
 rotate = false
 
 [node name="Enemy_flying1" type="KinematicBody2D" parent="Path2D/PathFollow2D"]
+position = Vector2( 2.79718, -0.874115 )
 scale = Vector2( 1.5, 1.5 )
 collision_layer = 16
 collision_mask = 17
