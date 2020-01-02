@@ -8,11 +8,13 @@ extents = Vector2( 2.15828, 5.23399 )
 
 [node name="BulletEnemy" type="RigidBody2D"]
 collision_layer = 512
-collision_mask = 513
+mode = 2
 gravity_scale = 0.0
 contacts_reported = 1
 contact_monitor = true
+can_sleep = false
 script = ExtResource( 1 )
+life_time = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -23,4 +25,5 @@ shape = SubResource( 1 )
 position = Vector2( 2.26, 0 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
+[connection signal="body_entered" from="." to="." method="_on_BulletEnemy_body_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
