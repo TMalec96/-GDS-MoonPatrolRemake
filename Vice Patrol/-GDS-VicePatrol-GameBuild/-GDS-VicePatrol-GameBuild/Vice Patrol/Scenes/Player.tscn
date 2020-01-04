@@ -1,0 +1,129 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Scripts/TiresMovement.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sprites/Player/koła_fiolet_1klatka.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Player/koła_fiolet_2klatka.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/Player/car1_fioletowy_2chłopków.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "tires",
+"speed": 4.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 13.2997
+
+[node name="Player" type="KinematicBody2D"]
+scale = Vector2( 2, 2 )
+collision_mask = 5
+script = ExtResource( 1 )
+gravity = 1300
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 200, -350 )
+current = true
+drag_margin_left = 0.0
+drag_margin_top = 1.0
+drag_margin_right = 0.0
+
+[node name="SpawnPointsRoot" type="Position2D" parent="Camera2D"]
+
+[node name="SpawnPointBehindPlayer" type="Position2D" parent="Camera2D/SpawnPointsRoot"]
+position = Vector2( -187.075, -144.948 )
+
+[node name="SpawnPointAbovePlayer" type="Position2D" parent="Camera2D/SpawnPointsRoot"]
+position = Vector2( 77.6253, -211.616 )
+
+[node name="SpawnPointBehindDownPlayer" type="Position2D" parent="Camera2D/SpawnPointsRoot"]
+position = Vector2( -200.928, -10.092 )
+
+[node name="Player_Collider" type="CollisionPolygon2D" parent="."]
+position = Vector2( -7.17957, -2.78207 )
+polygon = PoolVector2Array( -28.2462, -19.879, 5.07773, -14.2172, 37.9868, -1.59393, 49.1647, 4.82741, 47.3108, 10.9425, 31.4997, 16.3447, -19.623, 16.4765, -37.1471, 9.09791, -39.0845, -0.790547 )
+
+[node name="TurnAxis" type="Position2D" parent="."]
+editor/display_folded = true
+
+[node name="CastPoint1" type="Position2D" parent="TurnAxis"]
+position = Vector2( 18.8676, -3.83823 )
+
+[node name="CastPoint2" type="Position2D" parent="TurnAxis"]
+position = Vector2( -35.1375, -22.3494 )
+
+[node name="TiresPosition" type="Position2D" parent="."]
+editor/display_folded = true
+
+[node name="LeftTire" type="Position2D" parent="TiresPosition"]
+position = Vector2( -25.6437, 7.45588 )
+
+[node name="RightTire" type="Position2D" parent="TiresPosition"]
+position = Vector2( 22.1417, 7.34292 )
+
+[node name="Tire_left" type="KinematicBody2D" parent="."]
+position = Vector2( -25.6029, 7.55896 )
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 128
+collision_mask = 132
+collision/safe_margin = 2.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Tire_right_sprite" type="AnimatedSprite" parent="Tire_left"]
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "tires"
+frame = 1
+playing = true
+
+[node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_left"]
+shape = SubResource( 2 )
+
+[node name="Tire_right" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 22.433, 7.07127 )
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 128
+collision_mask = 132
+collision/safe_margin = 2.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Tire_right_sprite" type="AnimatedSprite" parent="Tire_right"]
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "tires"
+frame = 1
+playing = true
+
+[node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_right"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 1.00136e-005 )
+texture = ExtResource( 5 )
+
+[node name="groundray1" type="RayCast2D" parent="."]
+position = Vector2( 22.433, 7.07127 )
+enabled = true
+cast_to = Vector2( 0, 10 )
+collision_mask = 4101
+
+[node name="groundray2" type="RayCast2D" parent="."]
+position = Vector2( -25.987, 7.071 )
+enabled = true
+cast_to = Vector2( 0, 10 )
+collision_mask = 4101
+
+[node name="EnemyDetector" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 90 )
+collision_mask = 16400
+[connection signal="tree_exited" from="." to="." method="_on_Player_tree_exited"]
