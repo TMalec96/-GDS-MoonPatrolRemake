@@ -37,7 +37,6 @@ margin_right = 900.0
 margin_bottom = 240.0
 
 [node name="Terrains" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Terrain5" type="StaticBody2D" parent="Terrains"]
 editor/display_folded = true
@@ -167,7 +166,6 @@ texture = ExtResource( 4 )
 polygon = PoolVector2Array( -299.962, 299.959, 299.971, 299.931, 300.033, 174.71, 261.687, 178.02, 244.344, 173.465, 223.52, 172.302, 200.663, 175.789, 170.928, 171.624, 163.276, 174.046, 145.745, 170.656, 112.256, 176.356, 91.8224, 175.363, 75.6217, 176.467, 52.0903, 175.079, 40.9474, 178.211, 27.2907, 174.046, 6.17618, 171.431, -17.8666, 175.079, -38.5841, 172.525, -68.0994, 175.647, -89.1007, 170.822, -102.98, 174.53, -115.862, 170.947, -147.138, 178.627, -161.965, 174.24, -178.721, 172.787, -209.716, 178.769, -228.796, 175.208, -243.227, 179.664, -254.85, 175.305, -268.991, 175.111, -281.66, 177.066, -289.234, 173.368, -299.965, 173.802 )
 
 [node name="Terrain14" type="StaticBody2D" parent="Terrains"]
-editor/display_folded = true
 position = Vector2( 10800.1, -0.0485229 )
 scale = Vector2( 2, 2 )
 collision_layer = 4
@@ -583,7 +581,6 @@ texture = ExtResource( 5 )
 polygon = PoolVector2Array( -300.066, 299.966, 299.962, 299.962, 300.04, 173.993, 259.502, 180.034, 244.32, 173.685, 217.913, 171.201, 143.223, 171.433, 125.159, 175.208, 81.7512, 172.107, 22.4369, 175.073, 5.9906, 171.837, -26.6323, 174.264, -61.6817, 171.972, -91.3389, 170.489, -117.356, 172.511, -146.07, 170.085, -198.374, 173.59, -270.765, 175.342, -300.018, 173.86 )
 
 [node name="Rocks" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="BigRock_Enemy" parent="Rocks" instance=ExtResource( 6 )]
 position = Vector2( 2625.43, 336.029 )
@@ -678,13 +675,18 @@ position = Vector2( 23609.9, 321.135 )
 [node name="Palms" type="Node" parent="."]
 
 [node name="Palm_Enemy" parent="Palms" instance=ExtResource( 11 )]
-position = Vector2( 1422.52, 696.705 )
+position = Vector2( 1422.12, 696.308 )
 
 [node name="FlyingEnemies" type="Node" parent="."]
 
 [node name="Spawner" parent="FlyingEnemies" instance=ExtResource( 12 )]
 position = Vector2( 7775.86, 170.124 )
 enemy_type = 0
+number_of_enemies = 2
+
+[node name="Spawner4" parent="FlyingEnemies" instance=ExtResource( 12 )]
+position = Vector2( 9002.45, 183.138 )
+enemy_type = 1
 number_of_enemies = 2
 
 [node name="Spawner3" parent="FlyingEnemies" instance=ExtResource( 12 )]

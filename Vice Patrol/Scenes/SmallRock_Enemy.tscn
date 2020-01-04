@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Scripts/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Enemies/Rocks/smaller_rock.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.41949, 6.00592 )
 
 [node name="SmallRock_Enemy" type="StaticBody2D"]
@@ -22,4 +22,4 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1.07025, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )

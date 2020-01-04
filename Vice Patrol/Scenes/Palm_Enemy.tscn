@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Sprites/Enemies/Palm/palma_2 klatka.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/Enemies/Palm/palma_3 klatka.png" type="Texture" id=4]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 60.9024, 63.9255 )
 
 [sub_resource type="SpriteFrames" id=2]
@@ -24,10 +24,11 @@ is_destroyable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 modulate = Color( 0.0588235, 0.0352941, 0.0352941, 1 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "palm"
+frame = 2
 playing = true
