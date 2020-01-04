@@ -1,5 +1,6 @@
 extends CanvasLayer
 var animating = false
+var godeMode = 0
 export (bool) var title_screen = false
 func _ready():
 	if title_screen:
@@ -8,6 +9,7 @@ func _process(delta):
 	if !animating:
 		_animate()
 	_get_input()
+	get_godMode_command()
 func _animate():
 	animating = true
 	for i in range(100):
@@ -31,3 +33,12 @@ func _get_input():
 		SceneLoader.goto_scene("res://Scenes/World.tscn")
 	if exit:
 		get_tree().quit()
+
+func get_godMode_command():
+	var up = Input.is_action_just_released('ui_up')
+	if up:
+		godeMode+=1
+	if godeMode == 3:
+		$Control/Title.modulate = Color("ff0000")
+		GlobalVariables.god_mode = true
+	print(godeMode)

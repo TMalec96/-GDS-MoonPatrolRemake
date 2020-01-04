@@ -47,6 +47,10 @@ onready var interface = get_node("Canvas/Interface")
 onready var animation = preload("res://Scenes/PlayerDeathAnimation.tscn")
 var animationInstance
 func _ready():
+	if GlobalVariables.god_mode:
+		set_collision_layer_bit(0,false)
+		
+		set_collision_mask_bit(4,false)
 	velocity.x = 350
 	camera.offset.x = 300
 	GlobalVariables.playerReversingDistance = reversing_distance

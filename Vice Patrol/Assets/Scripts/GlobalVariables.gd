@@ -1,4 +1,5 @@
 extends Node
+var god_mode = false
 var time = 0
 var _last_spawned_index = 0
 var progresBarvalue = 0

@@ -723,6 +723,7 @@ __meta__ = {
 rotation = -3.14159
 enabled = true
 cast_to = Vector2( 0, 200 )
+collision_mask = 262144
 
 [node name="ControlPoint_B" type="Label" parent="ControlPoints"]
 margin_left = 14992.4
@@ -741,6 +742,7 @@ __meta__ = {
 rotation = -3.14159
 enabled = true
 cast_to = Vector2( 0, 200 )
+collision_mask = 262144
 
 [node name="ControlPoint_C" type="Label" parent="ControlPoints"]
 margin_left = 22188.2
@@ -758,6 +760,7 @@ __meta__ = {
 rotation = -3.14159
 enabled = true
 cast_to = Vector2( 0, 200 )
+collision_mask = 262144
 
 [node name="ControlPoint_D" type="Label" parent="ControlPoints"]
 margin_left = 29384.8
@@ -775,6 +778,7 @@ __meta__ = {
 rotation = -3.14159
 enabled = true
 cast_to = Vector2( 0, 200 )
+collision_mask = 262144
 
 [node name="EndPoints" type="Node" parent="."]
 
@@ -796,3 +800,4 @@ is_endpoint = true
 rotation = -3.14159
 enabled = true
 cast_to = Vector2( 0, 200 )
+collision_mask = 262144

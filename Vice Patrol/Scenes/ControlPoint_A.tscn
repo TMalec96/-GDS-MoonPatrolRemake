@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Scripts/ControlPoint.gd" type="Script" id=2]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=1]
 size = 45
 font_data = ExtResource( 1 )
 
@@ -12,7 +12,7 @@ margin_left = 2432.11
 margin_top = 766.677
 margin_right = 2472.11
 margin_bottom = 859.677
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 text = "A
 "
 script = ExtResource( 2 )
@@ -24,3 +24,4 @@ __meta__ = {
 rotation = -3.14159
 enabled = true
 cast_to = Vector2( 0, 200 )
+collision_mask = 262144

@@ -19,6 +19,7 @@ radius = 13.2997
 
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 2, 2 )
+collision_layer = 262145
 collision_mask = 21
 script = ExtResource( 1 )
 gravity = 1300
