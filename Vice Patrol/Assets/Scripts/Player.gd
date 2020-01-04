@@ -13,12 +13,9 @@ var velocity = Vector2()
 var jumping = false
 #CAMERA MOVEMENT
 onready var camera = get_node("Camera2D")
-export(float) var camera_offset_drag_right = 150
-export(float) var camera_offset_drag_left = 400
-export(float) var camera_offset_drag_speed = 2
-export(float) var camera_offset_back_drag = .02
-#PLAYER START
-export (int) var start_delay = 4
+export(float) var camera_offset_drag_right = 200
+export(float) var camera_offset_drag_left = 350
+var camera_drag_speed = speed_incrementation_sec/4
 
 #BACK ATTACKING ENEMY
 var back_enemy = preload("res://Scenes/BackAttack_Enemy.tscn")
@@ -38,7 +35,6 @@ onready var enemy_detector_ray = get_node("EnemyDetector")
 export (int) var lifes = 3
 export (float) var respawn_delay = 3.0
 export (int) var reversing_distance = 500
-var is_dead = false
 
 #FLYING ENEMIES
 var flying_enemy_1 = preload("res://Scenes/Flying_Enemy_1.tscn")
@@ -51,6 +47,7 @@ onready var interface = get_node("Canvas/Interface")
 onready var animation = preload("res://Scenes/PlayerDeathAnimation.tscn")
 var animationInstance
 func _ready():
+	velocity.x = 350
 	camera.offset.x = 300
 	GlobalVariables.playerReversingDistance = reversing_distance
 	GlobalVariables.playerLifes = lifes
@@ -74,11 +71,11 @@ func _respawn():
 	get_node("Tire_right").visible =true
 	$Sprite.visible = true
 	position.x -= reversing_distance
-	GlobalVariables.playerLifes -= 1
 	GlobalVariables.is_player_respawning = false
 	GlobalVariables.paused = false
 	animationInstance.playing = false
 	animationInstance.visible = false
+	velocity.x = 350
 func _process(delta):
 	if !GlobalVariables.is_player_respawning:
 		FireLoopUp()
@@ -98,29 +95,26 @@ func get_input():
 		if right_pressed:
 			if(velocity.x <= max_player_speed):
 				velocity.x +=speed_incrementation_sec
+			else:
+				velocity.x = max_player_speed
 			if camera.offset.x>=camera_offset_drag_right:
-					camera.offset.x -= speed_incrementation_sec
+					camera.offset.x -= camera_drag_speed
 		if left_pressed:
 			if(velocity.x >= min_player_speed):
 				velocity.x -= speed_incrementation_sec
 			else:
-				velocity.x += speed_incrementation_sec
+				velocity.x = min_player_speed
 			if camera.offset.x <= camera_offset_drag_left:
-					camera.offset.x += speed_incrementation_sec
-		if left_released:
+					camera.offset.x += camera_drag_speed
+		if !right_pressed and !left_pressed:
 			if(velocity.x <= avg_player_speed):
 				velocity.x += speed_incrementation_sec
-			else:
-				velocity.x += speed_incrementation_sec
-		if right_released:
-			if(velocity.x >= avg_player_speed):
+			elif(velocity.x >= avg_player_speed):
 				velocity.x -= speed_incrementation_sec
-		if !right_pressed and !left_pressed:
-			velocity.x = avg_player_speed
 			if(camera.offset.x >= 300):
-					camera.offset.x -= speed_incrementation_sec
+					camera.offset.x -= camera_drag_speed
 			if(camera.offset.x <= 300):
-					camera.offset.x += speed_incrementation_sec
+					camera.offset.x += camera_drag_speed
 func _physics_process(delta):
 	_process_score()
 	get_input()
@@ -167,19 +161,23 @@ func FireLoopFront():
 		yield(get_tree().create_timer(rate_of_fire_front), "timeout")
 		can_fire_front = true
 func dead():
-	GlobalVariables.is_player_respawning = true
+	visible = false
+	velocity.x = 0
+	print('dead')
 	yield(get_tree().create_timer(3), "timeout")
 	SceneLoader.goto_scene("res://Scenes/GameOverScene.tscn")
 #OPTYMALIZACJA FUNKCJI
 func process_damage(var collision):
-		if "Enemy" in collision.collider.name:
-			GlobalVariables.is_player_respawning = true
-			if GlobalVariables.playerLifes >= 1:
-				collision.collider.dead()
-				_respawn()
-			elif GlobalVariables.playerLifes<= 0:
-				dead()
+	if "Enemy" in collision.collider.name:
+		GlobalVariables.playerLifes -= 1
+		GlobalVariables.is_player_respawning = true
+		if GlobalVariables.playerLifes >= 1:
+			collision.collider.dead()
+			_respawn()
+		elif GlobalVariables.playerLifes<= 0:
+			dead()
 func process_damage_enemy():
+	GlobalVariables.playerLifes -= 1
 	GlobalVariables.is_player_respawning = true
 	if GlobalVariables.playerLifes >= 1:
 		_respawn()

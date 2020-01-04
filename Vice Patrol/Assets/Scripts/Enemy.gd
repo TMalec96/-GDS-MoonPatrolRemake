@@ -6,6 +6,7 @@ var is_dead = false
 var is_jumped = false
 func dead():
 	if is_destroyable:
+		set_collision_layer_bit(9,false)
 		is_dead = true
 		GlobalVariables.playerScore += scoreValue
 		queue_free()

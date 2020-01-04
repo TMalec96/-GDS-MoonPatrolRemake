@@ -581,10 +581,9 @@ texture = ExtResource( 5 )
 polygon = PoolVector2Array( -300.066, 299.966, 299.962, 299.962, 300.04, 173.993, 259.502, 180.034, 244.32, 173.685, 217.913, 171.201, 143.223, 171.433, 125.159, 175.208, 81.7512, 172.107, 22.4369, 175.073, 5.9906, 171.837, -26.6323, 174.264, -61.6817, 171.972, -91.3389, 170.489, -117.356, 172.511, -146.07, 170.085, -198.374, 173.59, -270.765, 175.342, -300.018, 173.86 )
 
 [node name="Rocks" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="BigRock_Enemy" parent="Rocks" instance=ExtResource( 6 )]
-position = Vector2( 2574.17, 865.07 )
+position = Vector2( 1726.16, 327.113 )
 
 [node name="BigRock_Enemy4" parent="Rocks" instance=ExtResource( 6 )]
 position = Vector2( 16192.3, 338.749 )
@@ -648,7 +647,7 @@ position = Vector2( 20022, 384.264 )
 scale = Vector2( 1.5, 1.6 )
 
 [node name="SmallHole_Enemy" parent="Holes" instance=ExtResource( 9 )]
-position = Vector2( 1008.22, 368.576 )
+position = Vector2( 1217.38, 873.01 )
 
 [node name="SmallHole_Enemy2" parent="Holes" instance=ExtResource( 9 )]
 position = Vector2( 5031.63, 870.238 )
@@ -683,7 +682,7 @@ position = Vector2( 1422.52, 696.705 )
 [node name="FlyingEnemies" type="Node" parent="."]
 
 [node name="Spawner" parent="FlyingEnemies" instance=ExtResource( 12 )]
-position = Vector2( 1462.23, 161.922 )
+position = Vector2( 1681.64, 674.558 )
 enemy_type = 0
 number_of_enemies = 2
 
@@ -697,10 +696,9 @@ enemy_type = 0
 time_delay = 1
 
 [node name="Mines" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Mine_Enemy" parent="Mines" instance=ExtResource( 13 )]
-position = Vector2( 1275.26, 688.072 )
+position = Vector2( 1207.59, 702.426 )
 
 [node name="ControlPoints" type="Node" parent="."]
 editor/display_folded = true

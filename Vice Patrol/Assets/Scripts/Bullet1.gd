@@ -18,7 +18,9 @@ func _ready():
 		animationInstance.visible = false
 		animationInstance.playing = false
 		yield(get_tree().create_timer(life_time),"timeout")
-		SelfDestructWithAnimation()
+		if !sleeping:
+			apply_impulse(Vector2(0,0),Vector2(-projectile_speed,0).rotated(rotation))
+			SelfDestructWithAnimation()
 	else:
 		apply_impulse(Vector2(0,0),Vector2(projectile_speed,parent_speed.x).rotated(rotation))
 		yield(get_tree().create_timer(life_time),"timeout")
@@ -30,12 +32,14 @@ func SelfDestructWithAnimation():
 	$Sprite.visible = false
 	animationInstance.visible = true
 	animationInstance.playing = true
-	apply_impulse(Vector2(0,0),Vector2(-projectile_speed,0).rotated(rotation))
 	yield(get_tree().create_timer(animation_duration),"timeout")
 	queue_free()
 
 
 func _on_Bullet_body_entered(body):
 	if "Enemy" in body.name:
+		position.y +=15
+		mode = RigidBody2D.MODE_STATIC
+		sleeping = true
 		body.dead()
-	queue_free()
+	SelfDestructWithAnimation()
