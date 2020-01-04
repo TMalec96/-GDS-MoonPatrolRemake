@@ -19,7 +19,6 @@ func goto_scene(path):
 
 
 func _deferred_goto_scene(path):
-	print("dupa")
 	current_scene.queue_free()
 	var s = ResourceLoader.load(path)
 	current_scene = s.instance()

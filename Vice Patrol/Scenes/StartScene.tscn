@@ -1,13 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Scripts/StartScene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Backgrounds/titleBackround.jpg" type="Texture" id=2]
-[ext_resource path="res://Assets/Sprites/FontSprites/start_game.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Sprites/FontSprites/exit.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sprites/FontSprites/moon_patrol_galaxy_.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/FontSprites/moon_patrol_galaxy_.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/FontSprites/start_game.png" type="Texture" id=4]
 
 [node name="StartScene" type="CanvasLayer"]
 script = ExtResource( 1 )
+title_screen = true
 
 [node name="Control" type="Control" parent="."]
 margin_left = -361.168
@@ -20,30 +20,6 @@ position = Vector2( 961.342, 610.894 )
 scale = Vector2( 2.00716, 2.448 )
 texture = ExtResource( 2 )
 
-[node name="StartGameButton" type="Button" parent="Control"]
-margin_left = 833.0
-margin_top = 687.0
-margin_right = 1093.0
-margin_bottom = 722.0
-flat = true
-
-[node name="Sprite" type="Sprite" parent="Control/StartGameButton"]
-texture = ExtResource( 3 )
-centered = false
-
-[node name="ExitGameButton" type="Button" parent="Control"]
-anchor_bottom = 0.69
-margin_left = 920.0
-margin_top = 763.0
-margin_right = 1016.0
-margin_bottom = 798.0
-flat = true
-
-[node name="Sprite" type="Sprite" parent="Control/ExitGameButton"]
-position = Vector2( -8.90131, 0.351196 )
-texture = ExtResource( 4 )
-centered = false
-
 [node name="Camera2D" type="Camera2D" parent="Control"]
 position = Vector2( 952.395, 615.793 )
 current = true
@@ -51,6 +27,10 @@ current = true
 [node name="Title" type="Sprite" parent="Control"]
 position = Vector2( 953.591, 531.535 )
 scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 5 )
-[connection signal="pressed" from="Control/StartGameButton" to="." method="_on_StartGameButton_pressed"]
-[connection signal="pressed" from="Control/ExitGameButton" to="." method="_on_ExitGameButton_pressed"]
+texture = ExtResource( 3 )
+
+[node name="StartGame" type="Sprite" parent="Control"]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 833, 700 )
+texture = ExtResource( 4 )
+centered = false

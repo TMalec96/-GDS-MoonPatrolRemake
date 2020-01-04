@@ -81,7 +81,6 @@ func _process(delta):
 		FireLoopUp()
 		FireLoopFront()	
 func get_input():
-	if !GlobalVariables.is_player_respawning:
 		var right_pressed = Input.is_action_pressed('ui_right')
 		var right_released = Input.is_action_just_released('ui_right')
 		var left_released = Input.is_action_just_released('ui_left')
@@ -117,14 +116,15 @@ func get_input():
 					camera.offset.x += camera_drag_speed
 func _physics_process(delta):
 	_process_score()
-	get_input()
-	velocity.y += gravity * delta
-	velocity = move_and_slide(velocity, Vector2(0, -1))
-	for i in range(get_slide_count() - 1):
+	if !GlobalVariables.is_player_respawning:
+		get_input()
+		velocity.y += gravity * delta
+		velocity = move_and_slide(velocity, Vector2(0, -1))
+		for i in range(get_slide_count() - 1):
 	#		ZAMIENIC NA FUNKCJE
-		var collision = get_slide_collision(i)
-		process_damage(collision)
-	_set_wheels_position_x()
+			var collision = get_slide_collision(i)
+			process_damage(collision)
+		_set_wheels_position_x()
 	GlobalVariables.playerVelocity_x = velocity.x
 func _process_score():
 	if enemy_detector_ray.is_colliding():
@@ -162,8 +162,7 @@ func FireLoopFront():
 		can_fire_front = true
 func dead():
 	visible = false
-	velocity.x = 0
-	print('dead')
+	position.y+=10
 	yield(get_tree().create_timer(3), "timeout")
 	SceneLoader.goto_scene("res://Scenes/GameOverScene.tscn")
 #OPTYMALIZACJA FUNKCJI
