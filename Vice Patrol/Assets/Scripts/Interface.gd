@@ -13,6 +13,8 @@ onready var cautionText = get_node("MainArea/ExtraArea/CautionText_")
 var last_control_point  = GlobalVariables.currentCheckpoint
 var active_caution_direction = null
 func _ready():
+	GlobalVariables.time = 0
+	hiScoreLabel.set_text(String(GlobalVariables.hiScore))
 	set_process(true)
 
 func _process(delta):
@@ -23,7 +25,11 @@ func _process(delta):
 			GlobalVariables.hiScore = GlobalVariables.playerScore
 			hiScoreLabel.set_text(String(GlobalVariables.hiScore))
 	_changeControlPoint()
-	if GlobalVariables.playerLifes <= 0:
+	if GlobalVariables.playerLifes == 0:
+		$MainArea/LifeIcon.visible = false
+		$MainArea/LifesNumber.visible = false
+		GlobalVariables.playerLifes -= 1
+		_playAudio("res://Assets/Music/game_over2.wav")
 		var index = 0 
 		while(index <3):
 			$GameOverSprite.visible = true
@@ -57,3 +63,10 @@ func _warning_animation(var time):
 		cautionText.visible = false
 		yield(get_tree().create_timer(switch_time), "timeout")
 		index += 1
+func _playAudio(var patch):
+	var music_file = patch
+	var stream = AudioStream.new()
+	var music_player =  get_node("AudioStream")
+	var music = load(music_file)
+	music_player.stream = music
+	music_player.play()

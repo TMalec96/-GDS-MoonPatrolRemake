@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/podliczanie_punktow.wav-a2598979fe4cb96579499329dff8073f.sample"
+
+[deps]
+
+source_file="res://Assets/Music/podliczanie_punktow.wav"
+dest_files=[ "res://.import/podliczanie_punktow.wav-a2598979fe4cb96579499329dff8073f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

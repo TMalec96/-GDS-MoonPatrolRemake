@@ -47,6 +47,8 @@ onready var interface = get_node("Canvas/Interface")
 onready var animation = preload("res://Scenes/PlayerDeathAnimation.tscn")
 var animationInstance
 func _ready():
+	GlobalVariables.is_player_respawning = false
+	GlobalVariables.playerScore = 0
 	if GlobalVariables.god_mode:
 		set_collision_layer_bit(0,false)
 		
@@ -167,28 +169,30 @@ func FireLoopFront():
 func dead():
 	visible = false
 	position.y+=10
-	yield(get_tree().create_timer(3), "timeout")
 	SceneLoader.goto_scene("res://Scenes/GameOverScene.tscn")
 #OPTYMALIZACJA FUNKCJI
 func process_damage(var collision):
 	if "Enemy" in collision.collider.name:
+		print(collision.collider.name)
 		GlobalVariables.playerLifes -= 1
 		GlobalVariables.is_player_respawning = true
-		if GlobalVariables.playerLifes >= 1:
-			collision.collider.dead()
-			_respawn()
-		elif GlobalVariables.playerLifes<= 0:
+		collision.collider.dead()
+		_respawn()
+		if GlobalVariables.playerLifes<= 0:
+			yield(get_tree().create_timer(3), "timeout")
 			dead()
 func process_damage_enemy():
+	print('kapsko')
 	GlobalVariables.playerLifes -= 1
 	GlobalVariables.is_player_respawning = true
-	if GlobalVariables.playerLifes >= 1:
-		_respawn()
-	elif GlobalVariables.playerLifes <= 0:
+	_respawn()
+	if GlobalVariables.playerLifes<= 0:
+		yield(get_tree().create_timer(3), "timeout")
 		dead()
 func spawn_enemies(var spawn_position, var enemy_type, var number_of_enemies, var delay_between_spawns, var time_delay, var caution_direction, var spawning):
 	create_warning(caution_direction,time_delay)
 	yield(get_tree().create_timer(time_delay), "timeout")
+	_playAudio("res://Assets/Music/enemy_attack.wav")
 	if spawning:
 		for i in range(number_of_enemies):
 			if !GlobalVariables.is_player_respawning:
@@ -201,7 +205,6 @@ func spawn_enemies(var spawn_position, var enemy_type, var number_of_enemies, va
 					enemy_instance= flying_enemy_2.instance()
 				elif enemy_type ==GlobalVariables.EnemyType.Enemy_type3:
 					enemy_instance= flying_enemy_3.instance()
-					
 				if spawn_position == GlobalVariables.SpawnPosition.Above:
 					enemy_instance.position = Vector2(get_node("Camera2D/SpawnPointsRoot/SpawnPointAbovePlayer").get_global_position().x, -144)
 				elif spawn_position == GlobalVariables.SpawnPosition.BehindDown:
@@ -216,6 +219,10 @@ func spawn_enemies(var spawn_position, var enemy_type, var number_of_enemies, va
 func create_warning(var caution_direction, var time):
 	interface.launch_warning(caution_direction, time)
 
-
-func _on_Player_tree_exited():
-	pass # Replace with function body.
+func _playAudio(var patch):
+	var music_file = patch
+	var stream = AudioStream.new()
+	var music_player =  get_node("AudioStream")
+	var music = load(music_file)
+	music_player.stream = music
+	music_player.play()
