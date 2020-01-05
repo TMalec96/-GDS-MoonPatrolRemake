@@ -5,8 +5,6 @@ export (bool) var title_screen = false
 func _ready():
 	if title_screen:
 		_animate_title()
-	if !title_screen:
-		$Control/Score.text =  String(GlobalVariables.playerScore)
 func _process(delta):
 	if !animating:
 		_animate()
@@ -43,3 +41,4 @@ func get_godMode_command():
 	if godeMode == 3:
 		$Control/Title.modulate = Color("ff0000")
 		GlobalVariables.god_mode = true
+	print(godeMode)

@@ -583,10 +583,7 @@ polygon = PoolVector2Array( -300.066, 299.966, 299.962, 299.962, 300.04, 173.993
 [node name="Rocks" type="Node" parent="."]
 
 [node name="BigRock_Enemy" parent="Rocks" instance=ExtResource( 6 )]
-position = Vector2( 1517.49, 312.583 )
-
-[node name="BigRock_Enemy10" parent="Rocks" instance=ExtResource( 6 )]
-position = Vector2( 1167.09, 307.774 )
+position = Vector2( 1726.16, 327.113 )
 
 [node name="BigRock_Enemy4" parent="Rocks" instance=ExtResource( 6 )]
 position = Vector2( 16192.3, 338.749 )
@@ -630,7 +627,7 @@ position = Vector2( 24991.7, 340.569 )
 [node name="Holes" type="Node" parent="."]
 
 [node name="BigHole_Enemy" parent="Holes" instance=ExtResource( 8 )]
-position = Vector2( 1974.63, 380.119 )
+position = Vector2( 3547.94, 934.619 )
 scale = Vector2( 1.5, 1.6 )
 
 [node name="BigHole_Enemy2" parent="Holes" instance=ExtResource( 8 )]
@@ -650,7 +647,7 @@ position = Vector2( 20022, 384.264 )
 scale = Vector2( 1.5, 1.6 )
 
 [node name="SmallHole_Enemy" parent="Holes" instance=ExtResource( 9 )]
-position = Vector2( 1220.72, 968.21 )
+position = Vector2( 1217.38, 873.01 )
 
 [node name="SmallHole_Enemy2" parent="Holes" instance=ExtResource( 9 )]
 position = Vector2( 5031.63, 870.238 )
@@ -677,14 +674,15 @@ editor/display_folded = true
 position = Vector2( 23609.9, 321.135 )
 
 [node name="Palms" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Palm_Enemy" parent="Palms" instance=ExtResource( 11 )]
-position = Vector2( 1459.57, 944.47 )
+position = Vector2( 1422.52, 696.705 )
 
 [node name="FlyingEnemies" type="Node" parent="."]
 
 [node name="Spawner" parent="FlyingEnemies" instance=ExtResource( 12 )]
-position = Vector2( 1738.78, 788.829 )
+position = Vector2( 1681.64, 674.558 )
 enemy_type = 0
 number_of_enemies = 2
 
@@ -693,14 +691,14 @@ position = Vector2( 25275.6, 193.084 )
 enemy_type = 0
 
 [node name="Spawner2" parent="FlyingEnemies" instance=ExtResource( 12 )]
-position = Vector2( 2290.96, 140.987 )
+position = Vector2( 9709.56, 190.247 )
 enemy_type = 0
 time_delay = 1
 
 [node name="Mines" type="Node" parent="."]
 
 [node name="Mine_Enemy" parent="Mines" instance=ExtResource( 13 )]
-position = Vector2( 972.877, 940.169 )
+position = Vector2( 1207.59, 702.426 )
 
 [node name="ControlPoints" type="Node" parent="."]
 editor/display_folded = true

@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scripts/TiresMovement.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Sprites/Player/koła_fiolet_1klatka.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/Player/koła_fiolet_2klatka.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/Player/car1_fioletowy_2chłopków.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Music/enemy_attack.wav" type="AudioStream" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -80,6 +79,7 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
+frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_left"]
@@ -101,6 +101,7 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
+frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_right"]
@@ -126,7 +127,4 @@ collision_mask = 4101
 enabled = true
 cast_to = Vector2( 0, 90 )
 collision_mask = 16400
-
-[node name="AudioStream" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
 [connection signal="tree_exited" from="." to="." method="_on_Player_tree_exited"]

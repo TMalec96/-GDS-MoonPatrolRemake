@@ -3,11 +3,11 @@
 [ext_resource path="res://Assets/Scripts/StartScene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Backgrounds/titleBackround.jpg" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/FontSprites/game_over_galaxy.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Fonts/full Pack 2025.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Assets/Sprites/FontSprites/start_game.png" type="Texture" id=5]
 
-[sub_resource type="DynamicFont" id=1]
-size = 35
+[sub_resource type="DynamicFont" id=2]
+size = 86
 font_data = ExtResource( 4 )
 
 [node name="GameOverScene" type="CanvasLayer"]
@@ -24,18 +24,17 @@ position = Vector2( 964.971, 614.875 )
 scale = Vector2( 2.0146, 2.44032 )
 texture = ExtResource( 2 )
 
-[node name="Title" type="Sprite" parent="Control"]
+[node name="GameOverLabel" type="Sprite" parent="Control"]
 position = Vector2( 960.856, 484.008 )
 texture = ExtResource( 3 )
 
 [node name="Score" type="Label" parent="Control"]
-margin_left = 870.358
-margin_top = 586.143
-margin_right = 1037.36
-margin_bottom = 672.143
-custom_fonts/font = SubResource( 1 )
+margin_left = 719.675
+margin_top = 526.132
+margin_right = 1328.67
+margin_bottom = 691.132
+custom_fonts/font = SubResource( 2 )
 text = "Score:"
-align = 1
 
 [node name="Camera2D" type="Camera2D" parent="Control"]
 position = Vector2( 952.395, 615.793 )
