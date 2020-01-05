@@ -30,7 +30,6 @@ shape = SubResource( 1 )
 frames = SubResource( 2 )
 animation = "back_enemy_anim"
 frame = 1
-speed_scale = 10.0
 playing = true
 
 [node name="Collision_detector" type="RayCast2D" parent="."]
