@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/przeciwnik cyjankowy(gostek z tyłu z miną, 3 klatka).png-a63298533dc9245b2f4f63818574d0b7.stex"
+path="res://.import/frame-1.png-2984ba140b739ecb6ce496a6538cc7ac.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/BackEnemy/przeciwnik cyjankowy(gostek z tyłu z miną, 3 klatka).png"
-dest_files=[ "res://.import/przeciwnik cyjankowy(gostek z tyłu z miną, 3 klatka).png-a63298533dc9245b2f4f63818574d0b7.stex" ]
+source_file="res://Assets/Sprites/Enemies/Palm/frame-1.png"
+dest_files=[ "res://.import/frame-1.png-2984ba140b739ecb6ce496a6538cc7ac.stex" ]
 
 [params]
 

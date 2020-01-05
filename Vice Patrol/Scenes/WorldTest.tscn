@@ -583,10 +583,10 @@ polygon = PoolVector2Array( -300.066, 299.966, 299.962, 299.962, 300.04, 173.993
 [node name="Rocks" type="Node" parent="."]
 
 [node name="BigRock_Enemy" parent="Rocks" instance=ExtResource( 6 )]
-position = Vector2( 1418.95, 758.521 )
+position = Vector2( 1517.49, 312.583 )
 
 [node name="BigRock_Enemy10" parent="Rocks" instance=ExtResource( 6 )]
-position = Vector2( 1195.48, 828.87 )
+position = Vector2( 1167.09, 307.774 )
 
 [node name="BigRock_Enemy4" parent="Rocks" instance=ExtResource( 6 )]
 position = Vector2( 16192.3, 338.749 )
@@ -630,7 +630,7 @@ position = Vector2( 24991.7, 340.569 )
 [node name="Holes" type="Node" parent="."]
 
 [node name="BigHole_Enemy" parent="Holes" instance=ExtResource( 8 )]
-position = Vector2( 1690.62, 694.28 )
+position = Vector2( 1974.63, 380.119 )
 scale = Vector2( 1.5, 1.6 )
 
 [node name="BigHole_Enemy2" parent="Holes" instance=ExtResource( 8 )]
@@ -679,7 +679,7 @@ position = Vector2( 23609.9, 321.135 )
 [node name="Palms" type="Node" parent="."]
 
 [node name="Palm_Enemy" parent="Palms" instance=ExtResource( 11 )]
-position = Vector2( 2011.15, 780.01 )
+position = Vector2( 1459.57, 944.47 )
 
 [node name="FlyingEnemies" type="Node" parent="."]
 
@@ -693,10 +693,9 @@ position = Vector2( 25275.6, 193.084 )
 enemy_type = 0
 
 [node name="Spawner2" parent="FlyingEnemies" instance=ExtResource( 12 )]
-position = Vector2( 1250.1, 160.027 )
-spawn_position = 2
-caution_direction = 2
-number_of_enemies = 1
+position = Vector2( 2290.96, 140.987 )
+enemy_type = 0
+time_delay = 1
 
 [node name="Mines" type="Node" parent="."]
 

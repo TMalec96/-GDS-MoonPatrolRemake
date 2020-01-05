@@ -6,9 +6,9 @@ var max_speed = 0
 var boost_delay_time = 1
 var is_dead = false
 export (int) var scoreValue = 100
-export (float) var enemy_boost_time_delay = 3
-export (float) var boost_duration_time = 1.5
-export (float) var boost_speed_value = 500
+export (float) var enemy_boost_time_delay = 1
+export (float) var boost_duration_time = 1
+export (float) var boost_speed_value = 200
 var is_jumped = false
 onready var collision_detector = get_node("Collision_detector")
 
@@ -19,7 +19,6 @@ func start_chase():
 	boost_delay_time = enemy_boost_time_delay
 	yield(get_tree().create_timer(boost_delay_time),"timeout")
 	velocity.x += boost_speed_value
-	$Sprite.animation = "active"
 	yield(get_tree().create_timer(boost_duration_time),"timeout")
 	velocity.x = GlobalVariables.playerVelocity_x
 	
