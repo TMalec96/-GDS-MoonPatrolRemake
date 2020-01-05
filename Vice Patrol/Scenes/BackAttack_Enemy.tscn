@@ -31,8 +31,13 @@ script = ExtResource( 1 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.17482, 0.174828 )
 frames = SubResource( 2 )
+<<<<<<< HEAD
 animation = "normal"
 frame = 1
+=======
+animation = "back_enemy_anim"
+speed_scale = 10.0
+>>>>>>> ed287316490bd5d7a076d45a68f4c30af33e71d7
 playing = true
 
 [node name="Enemy_Back" type="CollisionShape2D" parent="."]

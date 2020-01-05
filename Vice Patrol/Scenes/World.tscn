@@ -26,7 +26,6 @@ font_data = ExtResource( 14 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 599.615, 298.553 )
-min_player_speed = 300
 max_player_speed = 400
 
 [node name="Canvas" type="CanvasLayer" parent="Player"]
@@ -696,6 +695,16 @@ enemy_type = 0
 [node name="Spawner2" parent="FlyingEnemies" instance=ExtResource( 12 )]
 position = Vector2( 9709.56, 190.247 )
 enemy_type = 0
+time_delay = 1
+
+[node name="Spawner5" parent="FlyingEnemies" instance=ExtResource( 12 )]
+position = Vector2( 15443.1, 211.883 )
+enemy_type = 1
+time_delay = 1
+
+[node name="Spawner6" parent="FlyingEnemies" instance=ExtResource( 12 )]
+position = Vector2( 10194.8, 218.065 )
+enemy_type = 2
 time_delay = 1
 
 [node name="Mines" type="Node" parent="."]

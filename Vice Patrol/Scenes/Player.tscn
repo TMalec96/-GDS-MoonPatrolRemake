@@ -23,10 +23,17 @@ scale = Vector2( 2, 2 )
 collision_layer = 262145
 collision_mask = 21
 script = ExtResource( 1 )
+min_player_speed = 300
+avg_player_speed = 400
+max_player_speed = 500
 gravity = 1300
+speed_incrementation_sec = 5.66
+camera_offset_drag_right = 150.0
+camera_offset_drag_left = 300.0
+rate_of_fire_up = 0.15
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 200, -350 )
+offset = Vector2( 300, -350 )
 current = true
 drag_margin_left = 0.0
 drag_margin_top = 1.0
@@ -80,6 +87,7 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
+frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_left"]
@@ -101,6 +109,7 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
+frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_right"]
