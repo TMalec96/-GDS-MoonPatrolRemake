@@ -1,11 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Scripts/StartScene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Backgrounds/titleBackround.jpg" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/FontSprites/moon_patrol_galaxy_.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/FontSprites/start_game.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Music/MiamiVice.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Assets/Scripts/MusicPlayer.gd" type="Script" id=6]
 
 [node name="StartScene" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -36,7 +34,3 @@ modulate = Color( 1, 1, 1, 0.392157 )
 position = Vector2( 833, 700 )
 texture = ExtResource( 4 )
 centered = false
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
-script = ExtResource( 6 )

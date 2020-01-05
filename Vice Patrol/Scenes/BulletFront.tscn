@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Sprites/Bullets/pocisk gracza (przedni).png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3.67366, 4.08586 )
+extents = Vector2( 2.03956, 4.08586 )
 
 [node name="Bullet" type="RigidBody2D"]
 collision_layer = 512

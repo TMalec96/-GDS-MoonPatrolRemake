@@ -16,13 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Vice Patrol"
-run/main_scene="res://Scenes/StartScene.tscn"
+run/main_scene="res://Scenes/WorldTest.tscn"
 
 [autoload]
 
 SceneLoader="*res://Assets/Scripts/SceneLoader.gd"
 GlobalVariables="*res://Assets/Scripts/GlobalVariables.gd"
-MusicPlayer="*res://Assets/Scripts/MusicPlayer.gd"
 
 [display]
 

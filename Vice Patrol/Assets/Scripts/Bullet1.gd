@@ -11,12 +11,12 @@ func Initialize(speed):
 		parent_speed.x = speed
 		
 func _ready():
-	animationInstance = animation.instance()
-	add_child(animationInstance)
-	animationInstance.visible = false
-	animationInstance.playing = false
 	if !is_up_bullet:
 		apply_impulse(Vector2(0,0),Vector2(projectile_speed,0).rotated(rotation))
+		animationInstance = animation.instance()
+		add_child(animationInstance)
+		animationInstance.visible = false
+		animationInstance.playing = false
 		yield(get_tree().create_timer(life_time),"timeout")
 		if !sleeping:
 			apply_impulse(Vector2(0,0),Vector2(-projectile_speed,0).rotated(rotation))
