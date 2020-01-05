@@ -41,7 +41,7 @@ position = Vector2( -187.075, -144.948 )
 position = Vector2( 77.6253, -211.616 )
 
 [node name="SpawnPointBehindDownPlayer" type="Position2D" parent="Camera2D/SpawnPointsRoot"]
-position = Vector2( -200.928, -10.092 )
+position = Vector2( -93.6246, -7.17614 )
 
 [node name="Player_Collider" type="CollisionPolygon2D" parent="."]
 position = Vector2( -7.17957, -2.78207 )

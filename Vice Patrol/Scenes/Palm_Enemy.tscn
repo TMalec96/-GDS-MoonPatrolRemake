@@ -1,19 +1,20 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Scripts/Palm.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Enemies/Palm/palma.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/Enemies/Palm/palma_2 klatka.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/Enemies/Palm/palma_3 klatka.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/Enemies/Palm/palma_4 klatka.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 60.9024, 63.9255 )
+extents = Vector2( 60.9024, 51.1961 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "palm",
-"speed": 3.0
+"speed": 4.0
 } ]
 
 [node name="Palm_Enemy" type="StaticBody2D"]
@@ -24,11 +25,10 @@ is_destroyable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 modulate = Color( 0.0588235, 0.0352941, 0.0352941, 1 )
+position = Vector2( 0, -9.52 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "palm"
-frame = 2
-playing = true

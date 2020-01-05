@@ -6,17 +6,23 @@ export (int) var scoreValue = 100
 export (bool) var is_destroyable = false
 var is_jumped = false
 var is_dead = false
+var modyfing = false
 onready var collision_shape = get_node("CollisionShape2D")
 onready var anim = get_node("AnimatedSprite")
 
 
 	
 func _modify_collision_shape(interval):
+	modyfing = true
+	$AnimatedSprite.playing = true
 	collision_shape.set_scale(Vector2(1,colider_scale))
 	yield(get_tree().create_timer(interval), "timeout")
 	collision_shape.set_scale(Vector2(1,1))
+	$AnimatedSprite.playing = false
+	modyfing = false
 func _process(delta):
-	_modify_collision_shape(interval)
+	if !modyfing:
+		_modify_collision_shape(interval)
 func dead():
 	if is_destroyable:
 		is_dead = true

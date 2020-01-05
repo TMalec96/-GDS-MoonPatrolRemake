@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frame-2.png-d534af79ebeb47763b3c9abfbbbae5eb.stex"
+path="res://.import/palma_4 klatka.png-b83b964ae8c97ea36b3df60785561ffb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/Palm/frame-2.png"
-dest_files=[ "res://.import/frame-2.png-d534af79ebeb47763b3c9abfbbbae5eb.stex" ]
+source_file="res://Assets/Sprites/Enemies/Palm/palma_4 klatka.png"
+dest_files=[ "res://.import/palma_4 klatka.png-b83b964ae8c97ea36b3df60785561ffb.stex" ]
 
 [params]
 
@@ -20,15 +20,15 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
