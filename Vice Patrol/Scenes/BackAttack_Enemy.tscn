@@ -29,7 +29,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "back_enemy_anim"
-frame = 1
+speed_scale = 10.0
 playing = true
 
 [node name="Collision_detector" type="RayCast2D" parent="."]
