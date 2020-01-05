@@ -8,6 +8,7 @@ extents = Vector2( 4.61573, 5.01165 )
 
 [node name="BulletEnemy" type="RigidBody2D"]
 collision_layer = 512
+collision_mask = 513
 mode = 2
 gravity_scale = 0.0
 contacts_reported = 1

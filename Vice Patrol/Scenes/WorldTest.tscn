@@ -650,7 +650,7 @@ position = Vector2( 20022, 384.264 )
 scale = Vector2( 1.5, 1.6 )
 
 [node name="SmallHole_Enemy" parent="Holes" instance=ExtResource( 9 )]
-position = Vector2( 1495.21, 389.074 )
+position = Vector2( 1371.11, 786.858 )
 
 [node name="SmallHole_Enemy2" parent="Holes" instance=ExtResource( 9 )]
 position = Vector2( 5031.63, 870.238 )
@@ -671,15 +671,14 @@ position = Vector2( 23458.9, 383.969 )
 position = Vector2( 30243.1, 378.858 )
 
 [node name="Tanks" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Tank_Enemy" parent="Tanks" instance=ExtResource( 10 )]
-position = Vector2( 23609.9, 321.135 )
+position = Vector2( 1904.71, 318.006 )
 
 [node name="Palms" type="Node" parent="."]
 
 [node name="Palm_Enemy" parent="Palms" instance=ExtResource( 11 )]
-position = Vector2( 1482.55, 380.369 )
+position = Vector2( 1475.9, 826.906 )
 
 [node name="FlyingEnemies" type="Node" parent="."]
 

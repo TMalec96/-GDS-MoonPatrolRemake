@@ -8,7 +8,7 @@ extents = Vector2( 3.67366, 4.08586 )
 
 [node name="Bullet" type="RigidBody2D"]
 collision_layer = 512
-collision_mask = 32912
+collision_mask = 33424
 gravity_scale = 0.0
 contacts_reported = 1
 contact_monitor = true
