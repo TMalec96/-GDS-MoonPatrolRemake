@@ -28,21 +28,9 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-<<<<<<< HEAD
-<<<<<<< HEAD
-animation = "normal"
-=======
 animation = "back_enemy_anim"
->>>>>>> parent of 8693082... Palm/Backenemy
 frame = 1
-=======
-animation = "back_enemy_anim"
-<<<<<<< HEAD
 speed_scale = 10.0
->>>>>>> ed287316490bd5d7a076d45a68f4c30af33e71d7
-=======
-frame = 1
->>>>>>> parent of ed28731... troche porobiłem, lista problemów zaraz na Trello
 playing = true
 
 [node name="Collision_detector" type="RayCast2D" parent="."]
