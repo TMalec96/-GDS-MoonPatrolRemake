@@ -703,7 +703,7 @@ enemy_type = 1
 time_delay = 1
 
 [node name="Spawner6" parent="FlyingEnemies" instance=ExtResource( 12 )]
-position = Vector2( 10194.8, 218.065 )
+position = Vector2( 10194.8, 216.478 )
 enemy_type = 2
 time_delay = 1
 
