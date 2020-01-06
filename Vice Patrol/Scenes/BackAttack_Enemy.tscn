@@ -23,10 +23,12 @@ animations = [ {
 } ]
 
 [node name="BackAttack_Enemy" type="KinematicBody2D"]
+position = Vector2( -509.696, -29.4467 )
 collision_layer = 32768
 collision_mask = 32769
 collision/safe_margin = 0.001
 script = ExtResource( 1 )
+boost_speed_value = 500.0
 
 [node name="Enemy_Back" type="CollisionShape2D" parent="."]
 position = Vector2( -12.77, 0 )
@@ -34,11 +36,13 @@ scale = Vector2( 0.87, 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( -17.0466, -1.93712 )
 frames = SubResource( 2 )
 animation = "start"
+offset = Vector2( 0.69, 0 )
 
 [node name="Collision_detector" type="RayCast2D" parent="."]
-position = Vector2( -26.67, 0 )
+position = Vector2( -26.84, 0 )
 rotation = -1.5708
 enabled = true
 cast_to = Vector2( 0, 67.06 )

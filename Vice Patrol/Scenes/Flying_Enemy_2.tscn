@@ -11,13 +11,15 @@ extents = Vector2( 17.5167, 16.2669 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 1 )
+duration_time = 10.0
 
 [node name="Path2D" type="Path2D" parent="."]
+position = Vector2( -226.793, 202.18 )
 curve = ExtResource( 2 )
 script = ExtResource( 3 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 155.086, -253.151 )
+position = Vector2( 170.069, -258.245 )
 rotate = false
 
 [node name="Enemy_flying1" type="KinematicBody2D" parent="Path2D/PathFollow2D"]

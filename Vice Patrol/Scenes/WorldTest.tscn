@@ -616,7 +616,7 @@ position = Vector2( 24991.7, 340.569 )
 [node name="Holes" type="Node" parent="."]
 
 [node name="BigHole_Enemy" parent="Holes" instance=ExtResource( 9 )]
-position = Vector2( 2002.56, 687.387 )
+position = Vector2( 1385.47, 712 )
 scale = Vector2( 1.5, 1.6 )
 
 [node name="BigHole_Enemy2" parent="Holes" instance=ExtResource( 9 )]
@@ -664,7 +664,7 @@ position = Vector2( 2025.49, 1091.41 )
 [node name="Palms" type="Node" parent="."]
 
 [node name="Palm_Enemy" parent="Palms" instance=ExtResource( 12 )]
-position = Vector2( 1475.9, 826.906 )
+position = Vector2( 1546.22, 848.003 )
 
 [node name="FlyingEnemies" type="Node" parent="."]
 

@@ -10,10 +10,13 @@
 extents = Vector2( 21.952, 21.9474 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
+position = Vector2( -642.874, -117.471 )
 script = ExtResource( 1 )
+duration_time = 10.0
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2( 566.759, -6.80313 )
+position = Vector2( 78.7574, 77.3322 )
+scale = Vector2( 1.03446, 0.986298 )
 curve = ExtResource( 2 )
 script = ExtResource( 3 )
 

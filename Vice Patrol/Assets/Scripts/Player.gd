@@ -4,7 +4,7 @@ onready var ground_ray1 = get_node("groundray1")
 onready var ground_ray2 = get_node("groundray2")
 export (int) var min_player_speed = 250 #Player speed
 export (int) var avg_player_speed = 350
-export (int) var max_player_speed = 450
+export (int) var max_player_speed = 500
 export (int) var jump_speed = 600
 export (int) var gravity = 1200
 export (float) var speed_incrementation_sec = 1.5
@@ -15,7 +15,7 @@ var jumping = false
 onready var camera = get_node("Camera2D")
 export(float) var camera_offset_drag_right = 200
 export(float) var camera_offset_drag_left = 400
-var camera_drag_speed = speed_incrementation_sec/2
+var camera_drag_speed = speed_incrementation_sec/1.5
 
 #BACK ATTACKING ENEMY
 var back_enemy = preload("res://Scenes/BackAttack_Enemy.tscn")

@@ -5,7 +5,7 @@ var is_dead = false
 export (int) var scoreValue = 100
 export (float) var time_before_feint = 3
 export (float) var boost_time_delay = 1
-export (float) var boost_duration_time = 1.5
+export (float) var boost_duration_time = 1
 export (float) var boost_speed_value = 450
 var is_jumped = false
 onready var collision_detector = get_node("Collision_detector")
@@ -50,7 +50,7 @@ func start_chase():
 	if stage1:
 		velocity = move_and_slide(Vector2(GlobalVariables.playerVelocity_x,0), Vector2(0, -1),5,4,rad2deg(75))
 	elif stage2:
-		velocity = move_and_slide(Vector2(GlobalVariables.playerVelocity_x+60,0), Vector2(0, -1),5,4,rad2deg(75))
+		velocity = move_and_slide(Vector2(GlobalVariables.playerVelocity_x+30,0), Vector2(0, -1),5,4,rad2deg(75))
 	elif stage2andhalf:
 		velocity = move_and_slide(Vector2(GlobalVariables.playerVelocity_x-60,0), Vector2(0, -1),5,4,rad2deg(75))
 	elif stage3:

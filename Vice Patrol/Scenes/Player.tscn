@@ -7,9 +7,6 @@
 [ext_resource path="res://Assets/Sprites/Player/samochodzik2.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Music/enemy_attack.wav" type="AudioStream" id=6]
 
-
-
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
@@ -28,9 +25,9 @@ collision_mask = 21
 script = ExtResource( 1 )
 min_player_speed = 300
 avg_player_speed = 400
-max_player_speed = 500
 gravity = 1300
-speed_incrementation_sec = 6.0
+speed_incrementation_sec = 30.0
+camera_offset_drag_right = 150.0
 rate_of_fire_up = 0.15
 
 [node name="Camera2D" type="Camera2D" parent="."]
