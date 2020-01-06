@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Sprites/Bullets/pocisk przeciwnika (czołga).png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4.61573, 5.01165 )
+extents = Vector2( 3.64431, 5.01165 )
 
 [node name="BulletEnemy" type="RigidBody2D"]
 collision_layer = 512
@@ -18,13 +18,12 @@ script = ExtResource( 1 )
 life_time = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-modulate = Color( 0.403922, 0.254902, 0.254902, 1 )
 rotation = 1.5708
 scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 2.26, 0 )
+position = Vector2( -2.29, 27.61 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 [connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
