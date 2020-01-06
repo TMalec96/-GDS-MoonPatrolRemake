@@ -19,9 +19,6 @@ margin_left = -299.0
 margin_right = 301.0
 margin_bottom = 120.0
 script = ExtResource( 1 )
-bonus_points = 100
-average_time = 6
-top_record = 6
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -313.0
@@ -31,114 +28,67 @@ margin_bottom = 1220.0
 color = Color( 0.0745098, 0.0156863, 0.0156863, 1 )
 
 [node name="TimeToReach" type="Label" parent="ColorRect"]
-margin_left = 222.854
-margin_top = 408.905
-margin_right = 422.854
-margin_bottom = 511.905
+margin_left = 100.0
+margin_top = 409.0
+margin_right = 1100.0
+margin_bottom = 512.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.992157, 0.0156863, 0.0156863, 1 )
-text = "TIME TO REACH POINT "
+align = 1
 valign = 1
+autowrap = true
 
 [node name="TopRecord" type="Label" parent="ColorRect"]
-margin_left = 221.422
+margin_left = 100.0
 margin_top = 656.636
-margin_right = 541.422
+margin_right = 1100.0
 margin_bottom = 759.636
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.992157, 0.0156863, 0.0156863, 1 )
-text = "TOP RECORD:"
-valign = 1
-
-[node name="TopRecordValue" type="Label" parent="ColorRect"]
-margin_left = 434.786
-margin_top = 658.068
-margin_right = 754.786
-margin_bottom = 761.068
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.992157, 0.0156863, 0.0156863, 1 )
-text = "0"
+align = 1
 valign = 1
 
 [node name="YouBrokenRecord" type="Label" parent="ColorRect"]
 visible = false
-margin_left = 214.262
+margin_left = 100.0
 margin_top = 844.225
-margin_right = 534.262
+margin_right = 1100.0
 margin_bottom = 947.225
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.992157, 0.0156863, 0.0156863, 1 )
 text = "YOU HAVE BROKEN A RECORD!"
+align = 1
 valign = 1
 
 [node name="YourTime" type="Label" parent="ColorRect"]
-margin_left = 219.99
-margin_top = 499.119
-margin_right = 539.99
-margin_bottom = 602.119
+margin_left = 100.0
+margin_top = 499.0
+margin_right = 1100.0
+margin_bottom = 602.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.0156863, 0.694118, 0.992157, 1 )
-text = "YOUR TIME:"
+align = 1
 valign = 1
 
 [node name="AverageTime" type="Label" parent="ColorRect"]
-margin_left = 219.99
-margin_top = 567.854
-margin_right = 539.99
-margin_bottom = 670.854
+margin_left = 100.0
+margin_top = 568.0
+margin_right = 1100.0
+margin_bottom = 671.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.0156863, 0.694118, 0.992157, 1 )
-text = "THE AVERAGE TIME:"
-valign = 1
-
-[node name="AverageTimeValue" type="Label" parent="ColorRect"]
-margin_left = 540.752
-margin_top = 564.99
-margin_right = 860.752
-margin_bottom = 667.99
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.0156863, 0.694118, 0.992157, 1 )
-text = "0"
+align = 1
 valign = 1
 
 [node name="GoodBonusPoints" type="Label" parent="ColorRect"]
-margin_left = 219.99
+margin_left = 100.0
 margin_top = 766.898
-margin_right = 539.99
+margin_right = 1100.0
 margin_bottom = 869.898
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.0156863, 0.694118, 0.992157, 1 )
-text = "GOOD BONUS POINTS"
+align = 1
 valign = 1
-
-[node name="GoodBonusPointsValue" type="Label" parent="ColorRect"]
-margin_left = 547.912
-margin_top = 766.898
-margin_right = 867.912
-margin_bottom = 869.898
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.0156863, 0.694118, 0.992157, 1 )
-text = "0"
-valign = 1
-
-[node name="TimeValue2" type="Label" parent="ColorRect"]
-margin_left = 428.898
-margin_top = 521.592
-margin_right = 544.898
-margin_bottom = 624.592
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 0, 0, 1 )
-text = "0
-"
-
-[node name="ControlPointValue3" type="Label" parent="ColorRect"]
-margin_left = 592.541
-margin_top = 430.168
-margin_right = 708.542
-margin_bottom = 533.168
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.972549, 0.0392157, 0.0392157, 1 )
-text = "A"
 
 [node name="MainArea" type="ColorRect" parent="."]
 margin_left = -300.0
@@ -249,8 +199,7 @@ margin_right = 104.282
 margin_bottom = 71.225
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.964706, 0.0352941, 0.0352941, 1 )
-text = "->
-"
+text = "->"
 
 [node name="EContolPointText" type="Label" parent="MainArea/ProgressBar"]
 margin_left = 96.5825
@@ -259,8 +208,7 @@ margin_right = 212.582
 margin_bottom = 73.03
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.964706, 0.0352941, 0.0352941, 1 )
-text = "E
-"
+text = "E"
 
 [node name="JContolPointText" type="Label" parent="MainArea/ProgressBar"]
 margin_left = 204.882
@@ -269,9 +217,7 @@ margin_right = 320.882
 margin_bottom = 80.1274
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.964706, 0.0352941, 0.0352941, 1 )
-text = "J
-
-"
+text = "J"
 
 [node name="OContolPointText" type="Label" parent="MainArea/ProgressBar"]
 margin_left = 322.207
@@ -281,7 +227,6 @@ margin_bottom = 81.0299
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.964706, 0.0352941, 0.0352941, 1 )
 text = "O
-
 "
 
 [node name="TContolPointText" type="Label" parent="MainArea/ProgressBar"]
@@ -291,8 +236,7 @@ margin_right = 556.435
 margin_bottom = 81.0299
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.964706, 0.0352941, 0.0352941, 1 )
-text = "T
-"
+text = "T"
 
 [node name="ZContolPointText" type="Label" parent="MainArea/ProgressBar"]
 margin_left = 553.247
@@ -301,5 +245,4 @@ margin_right = 669.247
 margin_bottom = 80.1274
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.964706, 0.0352941, 0.0352941, 1 )
-text = "Z
-"
+text = "Z"

@@ -721,8 +721,7 @@ margin_top = 366.771
 margin_right = 7832.66
 margin_bottom = 459.771
 custom_fonts/font = SubResource( 1 )
-text = "A
-"
+text = "A"
 script = ExtResource( 15 )
 __meta__ = {
 "_edit_group_": true
@@ -740,8 +739,7 @@ margin_top = 369.97
 margin_right = 15032.4
 margin_bottom = 462.97
 custom_fonts/font = SubResource( 1 )
-text = "B
-"
+text = "B"
 script = ExtResource( 15 )
 __meta__ = {
 "_edit_group_": true
@@ -797,8 +795,7 @@ margin_top = 364.194
 margin_right = 36603.7
 margin_bottom = 457.194
 custom_fonts/font = SubResource( 1 )
-text = "E
-"
+text = "E"
 script = ExtResource( 15 )
 __meta__ = {
 "_edit_group_": true

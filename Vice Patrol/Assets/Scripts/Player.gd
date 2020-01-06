@@ -48,7 +48,6 @@ onready var animation = preload("res://Scenes/PlayerDeathAnimation.tscn")
 var animationInstance
 func _ready():
 	GlobalVariables.is_player_respawning = false
-	GlobalVariables.playerScore = 0
 	if GlobalVariables.god_mode:
 		set_collision_layer_bit(0,false)
 		
@@ -123,7 +122,6 @@ func get_input():
 					camera.offset.x -= camera_drag_speed
 			if(camera.offset.x <= 300):
 					camera.offset.x += camera_drag_speed
-		print(camera.offset.x)
 func _physics_process(delta):
 	_process_score()
 	if !GlobalVariables.is_player_respawning:

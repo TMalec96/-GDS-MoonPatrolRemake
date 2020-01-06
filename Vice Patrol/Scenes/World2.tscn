@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Interface.tscn" type="PackedScene" id=2]
@@ -6,19 +6,23 @@
 [ext_resource path="res://Assets/Sprites/Backgrounds/Level2/plaża.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/BigRock_Enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/BigHole_Enemy.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Tank_Enemy.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Palm_Enemy.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Spawner.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Mine_Enemy.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=11]
-[ext_resource path="res://Assets/Scripts/ControlPoint.gd" type="Script" id=12]
-[ext_resource path="res://Scenes/Backgound2.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/hole.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/SmallRock_Enemy.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Scripts/Enemy.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Sprites/Enemies/Holes/holesmall.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Tank_Enemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Palm_Enemy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Spawner.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Mine_Enemy.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://Assets/Scripts/ControlPoint.gd" type="Script" id=14]
+[ext_resource path="res://Scenes/Backgound2.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/SmallRock_Enemy.tscn" type="PackedScene" id=16]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 49.3072, 30.0778 )
+
+[sub_resource type="DynamicFont" id=2]
 size = 45
-font_data = ExtResource( 11 )
+font_data = ExtResource( 13 )
 
 [node name="World" type="Node"]
 
@@ -549,70 +553,86 @@ scale = Vector2( 1.5, 1.6 )
 position = Vector2( 7135.7, 380.715 )
 scale = Vector2( 1.5, 1.6 )
 
+[node name="SmallHole_Enemy" type="StaticBody2D" parent="Holes"]
+position = Vector2( 1857.49, 361.988 )
+scale = Vector2( 1.5, 1.5 )
+z_index = 1
+collision_layer = 16
+collision_mask = 17
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Holes/SmallHole_Enemy"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Holes/SmallHole_Enemy"]
+shape = SubResource( 1 )
+
 [node name="Tanks" type="Node" parent="."]
 
-[node name="Tank_Enemy" parent="Tanks" instance=ExtResource( 7 )]
+[node name="Tank_Enemy" parent="Tanks" instance=ExtResource( 9 )]
 position = Vector2( 5813.07, 296.169 )
 
-[node name="Tank_Enemy2" parent="Tanks" instance=ExtResource( 7 )]
+[node name="Tank_Enemy2" parent="Tanks" instance=ExtResource( 9 )]
 position = Vector2( 7886.72, 296.052 )
 
 [node name="Palms" type="Node" parent="."]
-editor/display_folded = true
 
-[node name="Palm_Enemy" parent="Palms" instance=ExtResource( 8 )]
+[node name="Palm_Enemy" parent="Palms" instance=ExtResource( 10 )]
 position = Vector2( 7145.32, 351.827 )
 
-[node name="Palm_Enemy2" parent="Palms" instance=ExtResource( 8 )]
+[node name="Palm_Enemy2" parent="Palms" instance=ExtResource( 10 )]
 position = Vector2( 3003.42, 341.304 )
 
 [node name="FlyingEnemies" type="Node" parent="."]
 editor/display_folded = true
 
-[node name="Spawner" parent="FlyingEnemies" instance=ExtResource( 9 )]
+[node name="Spawner" parent="FlyingEnemies" instance=ExtResource( 11 )]
 position = Vector2( 18021, 191.989 )
 enemy_type = 0
 number_of_enemies = 2
 
-[node name="Spawner2" parent="FlyingEnemies" instance=ExtResource( 9 )]
+[node name="Spawner2" parent="FlyingEnemies" instance=ExtResource( 11 )]
 position = Vector2( 22194.9, 260.95 )
 enemy_type = 0
 number_of_enemies = 2
 
-[node name="Spawner3" parent="FlyingEnemies" instance=ExtResource( 9 )]
+[node name="Spawner3" parent="FlyingEnemies" instance=ExtResource( 11 )]
 position = Vector2( 29381.9, 242.608 )
 enemy_type = 0
 number_of_enemies = 2
 
 [node name="Mines" type="Node" parent="."]
 
-[node name="Mine_Enemy" parent="Mines" instance=ExtResource( 10 )]
+[node name="Mine_Enemy" parent="Mines" instance=ExtResource( 12 )]
 position = Vector2( 8161.58, 316.195 )
 
-[node name="Mine_Enemy2" parent="Mines" instance=ExtResource( 10 )]
+[node name="Mine_Enemy2" parent="Mines" instance=ExtResource( 12 )]
 position = Vector2( 8590.06, 319.701 )
 
-[node name="Mine_Enemy3" parent="Mines" instance=ExtResource( 10 )]
+[node name="Mine_Enemy3" parent="Mines" instance=ExtResource( 12 )]
 position = Vector2( 8635.1, 319.521 )
 
-[node name="Mine_Enemy4" parent="Mines" instance=ExtResource( 10 )]
+[node name="Mine_Enemy4" parent="Mines" instance=ExtResource( 12 )]
 position = Vector2( 9609.23, 314.519 )
 
-[node name="Mine_Enemy5" parent="Mines" instance=ExtResource( 10 )]
+[node name="Mine_Enemy5" parent="Mines" instance=ExtResource( 12 )]
 position = Vector2( 10204.5, 319.408 )
 
-[node name="Mine_Enemy6" parent="Mines" instance=ExtResource( 10 )]
+[node name="Mine_Enemy6" parent="Mines" instance=ExtResource( 12 )]
 position = Vector2( 10251.6, 319.354 )
 
-[node name="Mine_Enemy7" parent="Mines" instance=ExtResource( 10 )]
+[node name="Mine_Enemy7" parent="Mines" instance=ExtResource( 12 )]
 position = Vector2( 10596.1, 314.354 )
 
-[node name="Spawner" parent="Mines/Mine_Enemy7" instance=ExtResource( 9 )]
+[node name="Spawner" parent="Mines/Mine_Enemy7" instance=ExtResource( 11 )]
 position = Vector2( 3739.84, -140.807 )
 spawn_position = 2
 number_of_enemies = 1
 
-[node name="Spawner2" parent="Mines/Mine_Enemy7" instance=ExtResource( 9 )]
+[node name="Spawner2" parent="Mines/Mine_Enemy7" instance=ExtResource( 11 )]
 position = Vector2( 2.94971, -144.928 )
 spawn_position = 1
 enemy_type = 2
@@ -625,10 +645,10 @@ margin_left = 7789.11
 margin_top = 363.677
 margin_right = 7829.11
 margin_bottom = 456.677
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "F
 "
-script = ExtResource( 12 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -643,10 +663,10 @@ margin_left = 14988.7
 margin_top = 359.455
 margin_right = 15028.7
 margin_bottom = 452.455
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "G
 "
-script = ExtResource( 12 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -661,10 +681,10 @@ margin_left = 22185.6
 margin_top = 348.406
 margin_right = 22225.6
 margin_bottom = 441.406
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "H
 "
-script = ExtResource( 12 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -679,10 +699,10 @@ margin_left = 29372.8
 margin_top = 349.633
 margin_right = 29412.8
 margin_bottom = 442.633
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "I
 "
-script = ExtResource( 12 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -697,10 +717,10 @@ margin_left = 36569.3
 margin_top = 341.891
 margin_right = 36609.3
 margin_bottom = 434.891
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "J
 "
-script = ExtResource( 12 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -712,10 +732,7 @@ cast_to = Vector2( 0, 200 )
 
 [node name="EndPoints" type="Node" parent="."]
 
-[node name="Backgound" parent="." instance=ExtResource( 13 )]
+[node name="Backgound" parent="." instance=ExtResource( 15 )]
 
-[node name="hole2" parent="." instance=ExtResource( 14 )]
-position = Vector2( 1896.89, 350.835 )
-
-[node name="SmallRock_Enemy" parent="." instance=ExtResource( 15 )]
+[node name="SmallRock_Enemy" parent="." instance=ExtResource( 16 )]
 position = Vector2( 2284.59, 319.911 )
