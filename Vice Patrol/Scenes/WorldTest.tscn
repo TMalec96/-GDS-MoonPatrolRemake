@@ -586,7 +586,7 @@ polygon = PoolVector2Array( -300.066, 299.966, 299.962, 299.962, 300.04, 173.993
 position = Vector2( 1638.08, 747.332 )
 
 [node name="BigRock_Enemy10" parent="Rocks" instance=ExtResource( 6 )]
-position = Vector2( 1087.76, 737.762 )
+position = Vector2( 1146.26, 322.848 )
 
 [node name="BigRock_Enemy4" parent="Rocks" instance=ExtResource( 6 )]
 position = Vector2( 16192.3, 338.749 )

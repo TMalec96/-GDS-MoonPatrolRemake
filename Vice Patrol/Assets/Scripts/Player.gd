@@ -77,10 +77,12 @@ func _respawn():
 	get_node("Tire_right").visible =true
 	$Sprite.visible = true
 	position.x -= reversing_distance
-	GlobalVariables.is_player_respawning = false
-	GlobalVariables.paused = false
 	animationInstance.playing = false
 	animationInstance.visible = false
+	yield(get_tree().create_timer(1),"timeout")
+	GlobalVariables.is_player_respawning = false
+	GlobalVariables.paused = false
+	
 	velocity.x = 350
 func _process(delta):
 	if !GlobalVariables.is_player_respawning:
