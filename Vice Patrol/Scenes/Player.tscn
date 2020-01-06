@@ -2,10 +2,13 @@
 
 [ext_resource path="res://Assets/Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scripts/TiresMovement.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Sprites/Player/koła_fiolet_1klatka.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Sprites/Player/koła_fiolet_2klatka.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sprites/Player/car1_fioletowy_2chłopków.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/Player/koło1_1klatka.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Player/koło1_2klatka.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/Player/samochodzik2.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Music/enemy_attack.wav" type="AudioStream" id=6]
+
+
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {

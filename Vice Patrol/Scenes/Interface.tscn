@@ -2,9 +2,10 @@
 
 [ext_resource path="res://Assets/Scripts/Interface.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Assets/Sprites/Player/car1_fioletowy_2chłopków.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Player/samochodzik2.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/signal.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/FontSprites/game_over_galaxy.png" type="Texture" id=5]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 50

@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/BigRock_Enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/BigHole_Enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Scripts/Enemy.gd" type="Script" id=7]
-[ext_resource path="res://Assets/Sprites/Enemies/Holes/holesmall.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/Enemies/Holes/holesmall2.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Tank_Enemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Palm_Enemy.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Spawner.tscn" type="PackedScene" id=11]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Assets/Scripts/ControlPoint.gd" type="Script" id=14]
 [ext_resource path="res://Scenes/Backgound2.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/SmallRock_Enemy.tscn" type="PackedScene" id=16]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 49.3072, 30.0778 )
