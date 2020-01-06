@@ -586,7 +586,7 @@ polygon = PoolVector2Array( -300.066, 299.966, 299.962, 299.962, 300.04, 173.993
 position = Vector2( 1638.08, 747.332 )
 
 [node name="BigRock_Enemy10" parent="Rocks" instance=ExtResource( 6 )]
-position = Vector2( 1146.26, 322.848 )
+position = Vector2( 989.813, 672.464 )
 
 [node name="BigRock_Enemy4" parent="Rocks" instance=ExtResource( 6 )]
 position = Vector2( 16192.3, 338.749 )
@@ -693,9 +693,14 @@ enemy_type = 0
 
 [node name="Spawner2" parent="FlyingEnemies" instance=ExtResource( 12 )]
 position = Vector2( 1288.59, 151.049 )
-spawn_position = 2
-caution_direction = 2
-number_of_enemies = 1
+spawn_position = 1
+enemy_type = 1
+
+[node name="Spawner4" parent="FlyingEnemies" instance=ExtResource( 12 )]
+position = Vector2( 2268.06, 159.211 )
+spawn_position = 1
+enemy_type = 1
+spawning = false
 
 [node name="Mines" type="Node" parent="."]
 
