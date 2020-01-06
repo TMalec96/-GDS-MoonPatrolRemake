@@ -29,3 +29,8 @@ func _ready():
 func _count_extra_points():
 	if (int(average_time) - int(GlobalVariables.time) > 0):
 		bonus_points += (int(average_time) - int(GlobalVariables.time))*100
+func _change_scene():
+	if GlobalVariables.currentCheckpoint =="E":
+		SceneLoader.goto_scene("res://Scenes/World2.tscn")
+	if GlobalVariables.currentCheckpoint =="J":
+		SceneLoader.goto_scene("res://Scenes/GameOverScene.tscn")
