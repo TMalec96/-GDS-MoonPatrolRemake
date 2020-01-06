@@ -77,6 +77,7 @@ func _respawn():
 	get_node("Tire_right").visible =true
 	$Sprite.visible = true
 	position.x -= reversing_distance
+	_set_wheels_position_global()
 	animationInstance.playing = false
 	animationInstance.visible = false
 	yield(get_tree().create_timer(1),"timeout")
