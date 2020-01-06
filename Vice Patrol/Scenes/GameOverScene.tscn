@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Scripts/StartScene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Backgrounds/titleBackround.jpg" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/FontSprites/game_over_galaxy.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Fonts/full Pack 2025.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Assets/Sprites/FontSprites/start_game.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Interface.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -44,3 +45,6 @@ current = true
 [node name="StartGame" type="Sprite" parent="Control"]
 position = Vector2( 950.422, 700 )
 texture = ExtResource( 5 )
+
+[node name="Interface" parent="." instance=ExtResource( 6 )]
+is_end_screen = true

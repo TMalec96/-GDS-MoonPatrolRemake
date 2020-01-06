@@ -12,11 +12,17 @@ onready var cautionDown = get_node("MainArea/ExtraArea/CautionDownText")
 onready var cautionText = get_node("MainArea/ExtraArea/CautionText_")
 var last_control_point  = GlobalVariables.currentCheckpoint
 var active_caution_direction = null
+export(bool)var is_end_screen = false
 func _ready():
-	GlobalVariables.time = 0
-	hiScoreLabel.set_text(String(GlobalVariables.hiScore))
-	progresBar.value = GlobalVariables.progresBarvalue
-	set_process(true)
+	if !is_end_screen:
+		GlobalVariables.time = 0
+		hiScoreLabel.set_text(String(GlobalVariables.hiScore))
+		progresBar.value = GlobalVariables.progresBarvalue
+		set_process(true)
+	else:
+		$MainArea/LifeIcon.visible = false
+		$MainArea/LifesNumber.visible = false
+		_changeControlPoint()
 
 func _process(delta):
 	timer.set_text(String(int(GlobalVariables.time)))
@@ -41,6 +47,11 @@ func _process(delta):
 func _changeControlPoint():
 	if last_control_point != GlobalVariables.currentCheckpoint:
 		GlobalVariables.progresBarvalue += 4
+		progresBar.value = GlobalVariables.progresBarvalue
+		last_control_point = GlobalVariables.currentCheckpoint
+		controlPointLabel1.set_text(String(last_control_point))
+		controlPointLabel2.set_text(String(last_control_point))
+	if  is_end_screen:
 		progresBar.value = GlobalVariables.progresBarvalue
 		last_control_point = GlobalVariables.currentCheckpoint
 		controlPointLabel1.set_text(String(last_control_point))

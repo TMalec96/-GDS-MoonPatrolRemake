@@ -33,14 +33,13 @@ margin_bottom = 240.0
 color = Color( 0.156863, 0.227451, 0.780392, 1 )
 
 [node name="CurrentScoreValue" type="Label" parent="MainArea"]
-margin_left = 97.2925
+margin_left = 96.0001
 margin_top = 162.295
-margin_right = 297.292
+margin_right = 296.0
 margin_bottom = 265.295
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.945098, 0.976471, 0, 1 )
-text = "SCORE
-"
+text = "0"
 
 [node name="LifesNumber" type="Label" parent="MainArea"]
 margin_left = 1063.15
@@ -49,7 +48,7 @@ margin_right = 1249.15
 margin_bottom = 208.765
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.87451, 1, 0.00392157, 1 )
-text = "LIFES
+text = "3
 "
 
 [node name="HiScore" type="Label" parent="MainArea"]
@@ -59,7 +58,7 @@ margin_right = 295.487
 margin_bottom = 125.27
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.992157, 0.0156863, 0.0156863, 1 )
-text = "HISCORE"
+text = "0"
 
 [node name="LifeIcon" type="Sprite" parent="MainArea"]
 position = Vector2( 1006.9, 114.558 )
