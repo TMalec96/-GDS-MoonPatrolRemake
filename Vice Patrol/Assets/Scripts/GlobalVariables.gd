@@ -5,6 +5,7 @@ var _last_spawned_index = 0
 var progresBarvalue = 0
 var playerReversingDistance = 0
 var paused = true
+var bomber_shoot_interval = 0
 var playerLifes = 0
 var playerScore = 0
 var gameTime = 0

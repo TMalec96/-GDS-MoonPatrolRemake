@@ -16,8 +16,10 @@ func _ready():
 	else:
 		var xvelocity = 0
 		if is_bomb:
-			xvelocity = GlobalVariables.playerVelocity_x+randi()%300+200
-			add_force(Vector2(),Vector2(xvelocity,projectile_speed).rotated(rotation))
+			xvelocity = GlobalVariables.playerVelocity_x+randi()%200+400
+			add_force(Vector2(),Vector2(xvelocity,0).rotated(rotation))
+			yield(get_tree().create_timer(1),"timeout")
+			add_force(Vector2(),Vector2(-xvelocity,projectile_speed).rotated(rotation))
 		else:
 			xvelocity = GlobalVariables.playerVelocity_x
 			apply_impulse(Vector2(),Vector2(xvelocity,projectile_speed).rotated(rotation))
@@ -56,7 +58,7 @@ func _on_BulletEnemy_FlyingType1_body_entered(body):
 			print(position_bomb.global_position)
 			body.add_child(holeInstance)
 			holeInstance.scale = Vector2(1,1)
-			holeInstance.global_position = position_bomb.global_position - Vector2(0,-70)
+			holeInstance.global_position = position_bomb.global_position - Vector2(0,-64)
 			
 		else:
 			animationInstance.playing = true
@@ -72,7 +74,7 @@ func _on_BulletEnemy_body_entered(body):
 			print(position_bomb.global_position)
 			body.add_child(holeInstance)
 			holeInstance.scale = Vector2(1,1)
-			holeInstance.global_position = position_bomb.global_position - Vector2(0,-70)
+			holeInstance.global_position = position_bomb.global_position - Vector2(0,-64)
 			
 		else:
 			animationInstance.playing = true

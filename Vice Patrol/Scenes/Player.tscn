@@ -45,7 +45,7 @@ drag_margin_right = 0.0
 position = Vector2( -187.075, -144.948 )
 
 [node name="SpawnPointAbovePlayer" type="Position2D" parent="Camera2D/SpawnPointsRoot"]
-position = Vector2( 77.6253, -211.616 )
+position = Vector2( -61.5497, -216.841 )
 
 [node name="SpawnPointBehindDownPlayer" type="Position2D" parent="Camera2D/SpawnPointsRoot"]
 position = Vector2( -200.928, -10.092 )
