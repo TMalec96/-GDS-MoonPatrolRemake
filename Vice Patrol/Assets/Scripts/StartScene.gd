@@ -33,6 +33,7 @@ func _get_input():
 	var exit = Input.is_action_just_released('ui_exit')
 	if enter:
 		SceneLoader.goto_scene("res://Scenes/World.tscn")
+		GlobalVariables.progresBarvalue = 0
 	if exit:
 		get_tree().quit()
 

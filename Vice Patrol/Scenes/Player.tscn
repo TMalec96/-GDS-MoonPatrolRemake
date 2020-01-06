@@ -28,8 +28,6 @@ avg_player_speed = 400
 max_player_speed = 500
 gravity = 1300
 speed_incrementation_sec = 5.66
-camera_offset_drag_right = 150.0
-camera_offset_drag_left = 300.0
 rate_of_fire_up = 0.15
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -48,7 +46,7 @@ position = Vector2( -187.075, -144.948 )
 position = Vector2( -61.5497, -216.841 )
 
 [node name="SpawnPointBehindDownPlayer" type="Position2D" parent="Camera2D/SpawnPointsRoot"]
-position = Vector2( -200.928, -10.092 )
+position = Vector2( -135.378, -14.367 )
 
 [node name="Player_Collider" type="CollisionPolygon2D" parent="."]
 position = Vector2( -7.17957, -2.78207 )

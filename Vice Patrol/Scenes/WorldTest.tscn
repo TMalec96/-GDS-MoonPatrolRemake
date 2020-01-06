@@ -692,9 +692,10 @@ position = Vector2( 25275.6, 193.084 )
 enemy_type = 0
 
 [node name="Spawner2" parent="FlyingEnemies" instance=ExtResource( 12 )]
-position = Vector2( 1454.39, 146.527 )
-spawn_position = 1
-enemy_type = 2
+position = Vector2( 1288.59, 151.049 )
+spawn_position = 2
+caution_direction = 2
+number_of_enemies = 1
 
 [node name="Mines" type="Node" parent="."]
 

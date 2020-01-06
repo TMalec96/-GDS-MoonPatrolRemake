@@ -7,6 +7,10 @@ export (bool) var spawning = true
 export (int) var time_delay = 3
 export (int) var number_of_enemies = 3
 export (float) var delay_between_spawns = 1
+
+func _ready():
+	if enemy_type == GlobalVariables.EnemyType.Enemy_type3:
+		GlobalVariables.bomber_shoot_interval = 0
 func _process(delta):
 	if is_colliding() and !was_spawned:
 		get_collider().spawn_enemies(spawn_position,enemy_type,number_of_enemies,delay_between_spawns,time_delay,caution_direction, spawning)

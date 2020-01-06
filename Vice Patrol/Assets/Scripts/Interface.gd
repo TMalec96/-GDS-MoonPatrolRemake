@@ -15,6 +15,7 @@ var active_caution_direction = null
 func _ready():
 	GlobalVariables.time = 0
 	hiScoreLabel.set_text(String(GlobalVariables.hiScore))
+	progresBar.value = GlobalVariables.progresBarvalue
 	set_process(true)
 
 func _process(delta):

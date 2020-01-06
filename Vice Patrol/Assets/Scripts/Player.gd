@@ -14,8 +14,8 @@ var jumping = false
 #CAMERA MOVEMENT
 onready var camera = get_node("Camera2D")
 export(float) var camera_offset_drag_right = 200
-export(float) var camera_offset_drag_left = 350
-var camera_drag_speed = speed_incrementation_sec/4
+export(float) var camera_offset_drag_left = 400
+var camera_drag_speed = speed_incrementation_sec/2
 
 #BACK ATTACKING ENEMY
 var back_enemy = preload("res://Scenes/BackAttack_Enemy.tscn")
