@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/Sprites/Enemies/FlyingEnemies/przeciwnik latający(trzeci)cyjankowy.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 17.5167, 16.2669 )
+extents = Vector2( 15.381, 16.2669 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 1 )

@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/Sprites/Enemies/FlyingEnemies/przeciwnik latający(odrzutowiec)cyjankowy.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 21.952, 21.9474 )
+extents = Vector2( 15.747, 21.9474 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 position = Vector2( -642.874, -117.471 )

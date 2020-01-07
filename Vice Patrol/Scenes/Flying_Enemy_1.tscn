@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/Sprites/Enemies/FlyingEnemies/przeciwnik latający(ufo)_cyjankowy.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 21.7557, 16.6148 )
+extents = Vector2( 19.8723, 16.6148 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 position = Vector2( -142.839, -27.2075 )

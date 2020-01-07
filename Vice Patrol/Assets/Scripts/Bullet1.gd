@@ -30,6 +30,7 @@ func SelfDestruct():
 	queue_free()
 func SelfDestructWithAnimation():
 	$Sprite.visible = false
+	$CollisionShape2D.disabled = true
 	animationInstance.visible = true
 	animationInstance.playing = true
 	yield(get_tree().create_timer(animation_duration),"timeout")
