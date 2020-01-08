@@ -40,10 +40,10 @@ drag_margin_right = 0.0
 [node name="SpawnPointsRoot" type="Position2D" parent="Camera2D"]
 
 [node name="SpawnPointBehindPlayer" type="Position2D" parent="Camera2D/SpawnPointsRoot"]
-position = Vector2( 27.625, -196.723 )
+position = Vector2( -150.975, -175.823 )
 
 [node name="SpawnPointAbovePlayer" type="Position2D" parent="Camera2D/SpawnPointsRoot"]
-position = Vector2( 273.8, -198.791 )
+position = Vector2( 169.079, -290.818 )
 
 [node name="SpawnPointBehindDownPlayer" type="Position2D" parent="Camera2D/SpawnPointsRoot"]
 position = Vector2( -135.378, -14.367 )
@@ -85,7 +85,6 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
-frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_left"]
@@ -107,7 +106,6 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
-frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_right"]

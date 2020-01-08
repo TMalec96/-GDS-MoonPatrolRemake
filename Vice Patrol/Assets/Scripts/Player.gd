@@ -183,7 +183,6 @@ func process_damage(var collision):
 			yield(get_tree().create_timer(3), "timeout")
 			dead()
 func process_damage_enemy():
-	print('kapsko')
 	GlobalVariables.playerLifes -= 1
 	GlobalVariables.is_player_respawning = true
 	_respawn()
@@ -207,10 +206,13 @@ func spawn_enemies(var spawn_position, var enemy_type, var number_of_enemies, va
 				elif enemy_type ==GlobalVariables.EnemyType.Enemy_type3:
 					enemy_instance= flying_enemy_3.instance()
 				if spawn_position == GlobalVariables.SpawnPosition.Above:
+					enemy_instance.set_spawn_position(GlobalVariables.SpawnPosition.Above)
 					enemy_instance.position = Vector2(get_node("Camera2D/SpawnPointsRoot/SpawnPointAbovePlayer").get_global_position().x, -144)
 				elif spawn_position == GlobalVariables.SpawnPosition.BehindDown:
+					enemy_instance.set_spawn_position(GlobalVariables.SpawnPosition.BehindDown)
 					enemy_instance.position = Vector2(get_node("Camera2D/SpawnPointsRoot/SpawnPointBehindDownPlayer").get_global_position().x, 298)
 				elif spawn_position == GlobalVariables.SpawnPosition.BehindUp:
+					enemy_instance.set_spawn_position(GlobalVariables.SpawnPosition.BehindUp)
 					enemy_instance.position = Vector2(get_node("Camera2D/SpawnPointsRoot/SpawnPointBehindPlayer").get_global_position().x, -144)
 				get_parent().add_child(enemy_instance)
 				enemy_instance.add_to_group("enemies")

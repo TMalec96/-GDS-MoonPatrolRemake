@@ -49,7 +49,6 @@ func SelfDead():
 	queue_free()
 
 func _on_BulletEnemy_FlyingType1_body_entered(body):
-	print(body.name)
 	if "Player" in body.name:
 		body.process_damage_enemy()
 	elif "Terrain" in body.name:

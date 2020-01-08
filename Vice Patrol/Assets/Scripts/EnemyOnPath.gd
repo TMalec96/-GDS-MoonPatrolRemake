@@ -16,6 +16,11 @@ func dead():
 func _process(delta):
 	FireLoop()
 
+func _ready():
+	$Sprite. visible = false
+	yield(get_tree().create_timer(0.2), "timeout")
+	$Sprite. visible = true
+	
 func countScore():
 	if !is_jumped:
 		GlobalVariables.playerScore += scoreValue

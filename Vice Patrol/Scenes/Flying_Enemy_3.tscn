@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Scripts/FlyingEnemy.gd" type="Script" id=1]
-[ext_resource path="res://Curves/Infinity_Curve4.tres" type="Curve2D" id=2]
+[ext_resource path="res://Curves/Above_Curve1.tres" type="Curve2D" id=2]
 [ext_resource path="res://Assets/Scripts/EnemyPathing.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Scripts/EnemyOnPath.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Sprites/Enemies/FlyingEnemies/przeciwnik latający(odrzutowiec)cyjankowy.png" type="Texture" id=5]
@@ -15,13 +15,11 @@ script = ExtResource( 1 )
 duration_time = 10.0
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2( 78.7574, 77.3322 )
-scale = Vector2( 1.03446, 0.986298 )
 curve = ExtResource( 2 )
 script = ExtResource( 3 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 170.069, -258.245 )
+position = Vector2( 155.086, -253.151 )
 rotate = false
 
 [node name="Enemy_flying1" type="KinematicBody2D" parent="Path2D/PathFollow2D"]

@@ -1,6 +1,7 @@
 extends Node
 var god_mode = false
 var time = 0
+var enemy_spawn_position
 var _last_spawned_index = 0
 var progresBarvalue = 0
 var playerReversingDistance = 0

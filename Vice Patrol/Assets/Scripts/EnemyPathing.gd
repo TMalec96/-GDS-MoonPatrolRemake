@@ -1,16 +1,25 @@
 extends Path2D
 
 onready var follow = get_node("PathFollow2D")
-var path_2= preload("res://Curves/Infinity_Curve2.tres")
-var path_1 = preload("res://Curves/Infinity_Curve.tres")
-var path_3= preload("res://Curves/Infinity_Curve3.tres")
-var path_4= preload("res://Curves/Infinity_Curve4.tres")
+var path_1 = preload("res://Curves/Above_Curve1.tres")
+var path_2= preload("res://Curves/Above_Curve2.tres")
+var path_3= preload("res://Curves/Above_Curve3.tres")
+var path_4= preload("res://Curves/Behind_Curve1.tres")
+var path_5= preload("res://Curves/Behind_Curve2.tres")
+var path_6= preload("res://Curves/Behind_Curve3.tres")
+var spawn_position = GlobalVariables.SpawnPosition.Above
+var path_array
 func _ready():
-	var path_array  = [path_1,path_2,path_3,path_4]
+	spawn_position = GlobalVariables.enemy_spawn_position
+	if spawn_position == GlobalVariables.SpawnPosition.Above:
+		path_array  = [path_1,path_2,path_3]
+	else:
+		path_array = [path_4,path_5,path_6]
 	set_process(true)
 	var index = 0
 	while(GlobalVariables._last_spawned_index == index):
-		index = randi()%4
+		index =randi()%path_array.size()
+	print(index)
 	GlobalVariables._last_spawned_index  = index
 	curve = path_array[index]
 	follow.loop = true

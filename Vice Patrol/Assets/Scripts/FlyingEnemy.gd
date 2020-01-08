@@ -2,7 +2,8 @@ extends KinematicBody2D
 var velocity = Vector2()
 export (float) var duration_time = 15
 var wave_ended = false
-
+func set_spawn_position(var position):
+	GlobalVariables.enemy_spawn_position = position
 func _process(delta):
 	if !wave_ended and !GlobalVariables.is_player_respawning:
 		velocity.x = GlobalVariables.playerVelocity_x

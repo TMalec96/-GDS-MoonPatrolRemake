@@ -678,9 +678,13 @@ position = Vector2( 25275.6, 193.084 )
 enemy_type = 0
 
 [node name="Spawner2" parent="FlyingEnemies" instance=ExtResource( 13 )]
-position = Vector2( 1271.16, 154.552 )
-spawn_position = 1
+position = Vector2( 1315.48, 155.718 )
 enemy_type = 2
+time_delay = 1
+
+[node name="Spawner5" parent="FlyingEnemies" instance=ExtResource( 13 )]
+position = Vector2( 1722.54, 158.051 )
+enemy_type = 0
 time_delay = 1
 
 [node name="Spawner4" parent="FlyingEnemies" instance=ExtResource( 13 )]
