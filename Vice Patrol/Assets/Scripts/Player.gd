@@ -175,7 +175,6 @@ func dead():
 #OPTYMALIZACJA FUNKCJI
 func process_damage(var collision):
 	if "Enemy" in collision.collider.name:
-		print(collision.collider.name)
 		GlobalVariables.playerLifes -= 1
 		GlobalVariables.is_player_respawning = true
 		collision.collider.dead()

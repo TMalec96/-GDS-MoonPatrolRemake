@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-export (int) var projectile_speed = 400
+export (int) var projectile_speed = 200
 export (int) var life_time = 1.5
 export (bool) var direction_down = false
 var animation = preload ("res://Scenes/EnemyAboveExplosionBulletAnimation.tscn")
@@ -21,10 +21,10 @@ func _ready():
 		animationInstance.playing = false
 		var xvelocity = 0
 		if is_bomb:
-			xvelocity = GlobalVariables.playerVelocity_x+randi()%200+400
-			add_force(Vector2(),Vector2(xvelocity,0).rotated(rotation))
-			yield(get_tree().create_timer(1),"timeout")
-			add_force(Vector2(),Vector2(-xvelocity,projectile_speed).rotated(rotation))
+			xvelocity = GlobalVariables.playerVelocity_x+randi()%100+200
+			add_force(Vector2(),Vector2(xvelocity,projectile_speed).rotated(rotation))
+#			yield(get_tree().create_timer(1),"timeout")
+#			add_force(Vector2(),Vector2(-xvelocity,projectile_speed).rotated(rotation))
 		else:
 			xvelocity = GlobalVariables.playerVelocity_x
 			apply_impulse(Vector2(),Vector2(xvelocity,projectile_speed).rotated(rotation))
@@ -49,21 +49,25 @@ func SelfDead():
 	queue_free()
 
 func _on_BulletEnemy_FlyingType1_body_entered(body):
+	print(body.name)
 	if "Player" in body.name:
 		body.process_damage_enemy()
 	elif "Terrain" in body.name:
-		if is_bomb and !was_aimed_to_hole:
-			print(position_bomb.global_position)
+		if !was_aimed_to_hole and is_bomb:
+			holeInstance = hole.instance()
 			body.add_child(holeInstance)
 			holeInstance.scale = Vector2(1,1)
 			holeInstance.global_position = position_bomb.global_position - Vector2(0,-64)
 		else:
 			animationInstance.playing = true
 			animationInstance.visible = true
-	elif "Enemy" in body.name:
+	elif "Hole" in body.name:
+		$CollisionShape2D.disabled = true
+		set_collision_mask_bit(4,false)
 		was_aimed_to_hole = true
 		animationInstance.playing = true
 		animationInstance.visible = true
+		queue_free()
 	SelfDestruct()
 	
 func _on_BulletEnemy_body_entered(body):
@@ -72,11 +76,9 @@ func _on_BulletEnemy_body_entered(body):
 		dead()
 	elif "Terrain" in body.name:
 		if is_bomb:
-			print(position_bomb.global_position)
 			body.add_child(holeInstance)
 			holeInstance.scale = Vector2(1,1)
-			holeInstance.global_position = position_bomb.global_position - Vector2(0,-64)
-			
+			holeInstance.global_position = position_bomb.global_position - Vector2(0,-64)		
 		else:
 			animationInstance.playing = true
 			animationInstance.visible = true
