@@ -208,7 +208,6 @@ func spawn_enemies(var spawn_position, var enemy_type, var number_of_enemies, va
 				if spawn_position == GlobalVariables.SpawnPosition.Above:
 					enemy_instance.set_spawn_position(GlobalVariables.SpawnPosition.Above)
 					enemy_instance.position = Vector2(get_node("Camera2D/SpawnPointsRoot/SpawnPointAbovePlayer").get_global_position().x, -144)
-				elif spawn_position == GlobalVariables.SpawnPosition.BehindDown:
 					enemy_instance.set_spawn_position(GlobalVariables.SpawnPosition.BehindDown)
 					enemy_instance.position = Vector2(get_node("Camera2D/SpawnPointsRoot/SpawnPointBehindDownPlayer").get_global_position().x, 298)
 				elif spawn_position == GlobalVariables.SpawnPosition.BehindUp:

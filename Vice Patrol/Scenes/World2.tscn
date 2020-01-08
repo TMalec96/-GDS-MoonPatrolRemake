@@ -550,6 +550,18 @@ position = Vector2( 18594, 293.475 )
 position = Vector2( 3013.83, 346.135 )
 scale = Vector2( 1.5, 1.6 )
 
+[node name="BigHole_Enemy2" parent="Holes" instance=ExtResource( 6 )]
+position = Vector2( 16321.5, 349.236 )
+scale = Vector2( 1.5, 1.6 )
+
+[node name="BigHole_Enemy4" parent="Holes" instance=ExtResource( 6 )]
+position = Vector2( 22981.7, 342.318 )
+scale = Vector2( 1.5, 1.6 )
+
+[node name="BigHole_Enemy5" parent="Holes" instance=ExtResource( 6 )]
+position = Vector2( 24641.9, 338.978 )
+scale = Vector2( 1.5, 1.6 )
+
 [node name="BigHole_Enemy3" parent="Holes" instance=ExtResource( 6 )]
 position = Vector2( 7135.19, 337.641 )
 scale = Vector2( 1.5, 1.6 )
@@ -571,28 +583,74 @@ texture = ExtResource( 8 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Holes/SmallHole_Enemy"]
 shape = SubResource( 1 )
 
+[node name="SmallHole_Enemy2" type="StaticBody2D" parent="Holes"]
+position = Vector2( 19152.7, 341.445 )
+scale = Vector2( 1.5, 1.5 )
+z_index = 1
+collision_layer = 16
+collision_mask = 17
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Holes/SmallHole_Enemy2"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Holes/SmallHole_Enemy2"]
+shape = SubResource( 1 )
+
+[node name="SmallHole_Enemy3" type="StaticBody2D" parent="Holes"]
+position = Vector2( 20682.5, 340.217 )
+scale = Vector2( 1.5, 1.5 )
+z_index = 1
+collision_layer = 16
+collision_mask = 17
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Holes/SmallHole_Enemy3"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Holes/SmallHole_Enemy3"]
+shape = SubResource( 1 )
+
 [node name="Tanks" type="Node" parent="."]
 
 [node name="Tank_Enemy" parent="Tanks" instance=ExtResource( 9 )]
 position = Vector2( 5807.42, 273.936 )
 
 [node name="Tank_Enemy2" parent="Tanks" instance=ExtResource( 9 )]
-position = Vector2( 7887.75, 275.359 )
+position = Vector2( 8054.72, 279.042 )
+
+[node name="Tank_Enemy3" parent="Tanks" instance=ExtResource( 9 )]
+position = Vector2( 22594.5, 272.218 )
 
 [node name="Palms" type="Node" parent="."]
 
 [node name="Palm_Enemy" parent="Palms" instance=ExtResource( 10 )]
 position = Vector2( 7137.11, 269.861 )
 
+[node name="Palm_Enemy3" parent="Palms" instance=ExtResource( 10 )]
+position = Vector2( 19141.5, 273.799 )
+
+[node name="Palm_Enemy4" parent="Palms" instance=ExtResource( 10 )]
+position = Vector2( 22973.4, 272.467 )
+
+[node name="Palm_Enemy5" parent="Palms" instance=ExtResource( 10 )]
+position = Vector2( 24634.6, 271.687 )
+
 [node name="Palm_Enemy2" parent="Palms" instance=ExtResource( 10 )]
-position = Vector2( 3000.85, 277.855 )
+position = Vector2( 3009.05, 275.804 )
 
 [node name="FlyingEnemies" type="Node" parent="."]
 
-[node name="Spawner" parent="FlyingEnemies" instance=ExtResource( 11 )]
-position = Vector2( 18016.3, 257.305 )
-enemy_type = 0
-number_of_enemies = 2
+[node name="Spawner4" parent="FlyingEnemies" instance=ExtResource( 11 )]
+position = Vector2( 19155.5, 203.229 )
+spawn_position = 2
+number_of_enemies = 1
 
 [node name="Spawner2" parent="FlyingEnemies" instance=ExtResource( 11 )]
 position = Vector2( 22194.9, 380.95 )
@@ -615,6 +673,27 @@ position = Vector2( 8590.06, 298.887 )
 [node name="Mine_Enemy3" parent="Mines" instance=ExtResource( 12 )]
 position = Vector2( 8638.69, 297.68 )
 
+[node name="Mine_Enemy8" parent="Mines" instance=ExtResource( 12 )]
+position = Vector2( 23390.5, 295.716 )
+
+[node name="Mine_Enemy9" parent="Mines" instance=ExtResource( 12 )]
+position = Vector2( 23990, 294.549 )
+
+[node name="Mine_Enemy10" parent="Mines" instance=ExtResource( 12 )]
+position = Vector2( 23917.7, 292.217 )
+
+[node name="Mine_Enemy11" parent="Mines" instance=ExtResource( 12 )]
+position = Vector2( 26140.3, 298.048 )
+
+[node name="Mine_Enemy12" parent="Mines" instance=ExtResource( 12 )]
+position = Vector2( 25305.7, 295.716 )
+
+[node name="Mine_Enemy13" parent="Mines" instance=ExtResource( 12 )]
+position = Vector2( 25350, 299.215 )
+
+[node name="Mine_Enemy14" parent="Mines" instance=ExtResource( 12 )]
+position = Vector2( 25399, 296.882 )
+
 [node name="Mine_Enemy4" parent="Mines" instance=ExtResource( 12 )]
 position = Vector2( 9609.23, 292.678 )
 
@@ -627,14 +706,13 @@ position = Vector2( 10258.8, 298.026 )
 [node name="Mine_Enemy7" parent="Mines" instance=ExtResource( 12 )]
 position = Vector2( 10594, 294.053 )
 
-[node name="Spawner" parent="Mines/Mine_Enemy7" instance=ExtResource( 11 )]
-position = Vector2( 3731.29, -46.7214 )
-spawn_position = 2
-number_of_enemies = 1
-
 [node name="Spawner2" parent="Mines/Mine_Enemy7" instance=ExtResource( 11 )]
 position = Vector2( 2.94971, -144.928 )
 spawn_position = 1
+enemy_type = 2
+
+[node name="Spawner3" parent="Mines/Mine_Enemy7" instance=ExtResource( 11 )]
+position = Vector2( 12523.3, -132.869 )
 enemy_type = 2
 
 [node name="ControlPoints" type="Node" parent="."]
@@ -694,10 +772,10 @@ enabled = true
 cast_to = Vector2( 0, 200 )
 
 [node name="ControlPoint_A4" type="Label" parent="ControlPoints"]
-margin_left = 29372.8
-margin_top = 208.633
-margin_right = 29412.8
-margin_bottom = 301.633
+margin_left = 29378.1
+margin_top = 330.738
+margin_right = 29418.1
+margin_bottom = 423.738
 custom_fonts/font = SubResource( 2 )
 text = "I
 "

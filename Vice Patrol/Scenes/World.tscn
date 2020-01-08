@@ -26,7 +26,8 @@ font_data = ExtResource( 14 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 597.908, 323.901 )
-max_player_speed = 400
+min_player_speed = 350
+speed_incrementation_sec = 5.0
 
 [node name="Canvas" type="CanvasLayer" parent="Player"]
 
@@ -586,19 +587,19 @@ position = Vector2( 2625.43, 336.029 )
 position = Vector2( 16192.3, 338.749 )
 
 [node name="BigRock_Enemy5" parent="Rocks" instance=ExtResource( 6 )]
-position = Vector2( 17786.6, 332.289 )
+position = Vector2( 17796.4, 333.104 )
 
 [node name="BigRock_Enemy6" parent="Rocks" instance=ExtResource( 6 )]
-position = Vector2( 19356.3, 339.556 )
+position = Vector2( 13219.1, 336.131 )
 
 [node name="BigRock_Enemy8" parent="Rocks" instance=ExtResource( 6 )]
-position = Vector2( 20706.1, 334.458 )
+position = Vector2( 26679.4, 335.581 )
 
 [node name="BigRock_Enemy9" parent="Rocks" instance=ExtResource( 6 )]
 position = Vector2( 24080.2, 341.443 )
 
 [node name="BigRock_Enemy7" parent="Rocks" instance=ExtResource( 6 )]
-position = Vector2( 19787.1, 337.48 )
+position = Vector2( 13170.2, 336.505 )
 
 [node name="BigRock_Enemy2" parent="Rocks" instance=ExtResource( 6 )]
 position = Vector2( 7434.91, 335.702 )
@@ -607,7 +608,7 @@ position = Vector2( 7434.91, 335.702 )
 position = Vector2( 10196.6, 338.216 )
 
 [node name="SmallRock_Enemy" parent="Rocks" instance=ExtResource( 7 )]
-position = Vector2( 4512.31, 348.797 )
+position = Vector2( 6009.69, 333.86 )
 
 [node name="SmallRock_Enemy2" parent="Rocks" instance=ExtResource( 7 )]
 position = Vector2( 9465, 341.87 )
@@ -616,10 +617,10 @@ position = Vector2( 9465, 341.87 )
 position = Vector2( 8687.02, 335.731 )
 
 [node name="SmallRock_Enemy3" parent="Rocks" instance=ExtResource( 7 )]
-position = Vector2( 22118.3, 348.41 )
+position = Vector2( 22800.1, 336.539 )
 
 [node name="SmallRock_Enemy4" parent="Rocks" instance=ExtResource( 7 )]
-position = Vector2( 22869.4, 348.41 )
+position = Vector2( 25931.6, 348.41 )
 
 [node name="SmallRock_Enemy5" parent="Rocks" instance=ExtResource( 7 )]
 position = Vector2( 24991.7, 340.569 )
@@ -631,7 +632,7 @@ position = Vector2( 3707.88, 383.022 )
 scale = Vector2( 1.5, 1.6 )
 
 [node name="BigHole_Enemy2" parent="Holes" instance=ExtResource( 8 )]
-position = Vector2( 16686.9, 385.508 )
+position = Vector2( 13777.3, 380.655 )
 scale = Vector2( 1.5, 1.6 )
 
 [node name="BigHole_Enemy4" parent="Holes" instance=ExtResource( 8 )]
@@ -643,7 +644,7 @@ position = Vector2( 29098.1, 381.062 )
 scale = Vector2( 1.5, 1.6 )
 
 [node name="BigHole_Enemy3" parent="Holes" instance=ExtResource( 8 )]
-position = Vector2( 20022, 384.264 )
+position = Vector2( 11587.5, 388.937 )
 scale = Vector2( 1.5, 1.6 )
 
 [node name="SmallHole_Enemy" parent="Holes" instance=ExtResource( 9 )]
@@ -656,10 +657,10 @@ position = Vector2( 5117.75, 382.208 )
 position = Vector2( 17682, 384.084 )
 
 [node name="SmallHole_Enemy5" parent="Holes" instance=ExtResource( 9 )]
-position = Vector2( 21515.5, 376.648 )
+position = Vector2( 12422.9, 378.508 )
 
 [node name="SmallHole_Enemy7" parent="Holes" instance=ExtResource( 9 )]
-position = Vector2( 23458.9, 383.969 )
+position = Vector2( 22711.7, 381.366 )
 
 [node name="SmallHole_Enemy6" parent="Holes" instance=ExtResource( 9 )]
 position = Vector2( 30243.1, 378.858 )
@@ -681,6 +682,7 @@ position = Vector2( 16843.4, 901.303 )
 
 [node name="Spawner4" parent="FlyingEnemies" instance=ExtResource( 12 )]
 position = Vector2( 7299.02, 201.236 )
+spawn_position = 1
 enemy_type = 0
 number_of_enemies = 2
 
@@ -688,8 +690,14 @@ number_of_enemies = 2
 position = Vector2( 25275.6, 193.084 )
 enemy_type = 0
 
+[node name="Spawner7" parent="FlyingEnemies" instance=ExtResource( 12 )]
+position = Vector2( 30202.6, 212.131 )
+spawn_position = 1
+enemy_type = 1
+
 [node name="Spawner2" parent="FlyingEnemies" instance=ExtResource( 12 )]
-position = Vector2( 11740.4, 216.189 )
+position = Vector2( 17405, 224.305 )
+spawn_position = 1
 enemy_type = 2
 time_delay = 1
 
@@ -698,16 +706,40 @@ position = Vector2( 15604.1, 198.929 )
 enemy_type = 1
 time_delay = 1
 
-[node name="Spawner6" parent="FlyingEnemies" instance=ExtResource( 12 )]
-position = Vector2( 10194.8, 216.478 )
-enemy_type = 1
-time_delay = 1
-
 [node name="Mines" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Mine_Enemy" parent="Mines" instance=ExtResource( 13 )]
-position = Vector2( 1275.26, 688.072 )
+position = Vector2( 30724.6, 348.079 )
+
+[node name="Mine_Enemy2" parent="Mines" instance=ExtResource( 13 )]
+position = Vector2( 30771.6, 347.079 )
+
+[node name="Mine_Enemy3" parent="Mines" instance=ExtResource( 13 )]
+position = Vector2( 31475.6, 335.079 )
+
+[node name="Mine_Enemy4" parent="Mines" instance=ExtResource( 13 )]
+position = Vector2( 32148.6, 336.079 )
+
+[node name="Mine_Enemy5" parent="Mines" instance=ExtResource( 13 )]
+position = Vector2( 32204.6, 336.079 )
+
+[node name="Mine_Enemy6" parent="Mines" instance=ExtResource( 13 )]
+position = Vector2( 32988.6, 342.079 )
+
+[node name="Mine_Enemy7" parent="Mines" instance=ExtResource( 13 )]
+position = Vector2( 33872.6, 335.079 )
+
+[node name="Mine_Enemy8" parent="Mines" instance=ExtResource( 13 )]
+position = Vector2( 34707.6, 337.079 )
+
+[node name="Mine_Enemy9" parent="Mines" instance=ExtResource( 13 )]
+position = Vector2( 34759.6, 338.079 )
+
+[node name="Mine_Enemy10" parent="Mines" instance=ExtResource( 13 )]
+position = Vector2( 34813.6, 338.079 )
+
+[node name="Mine_Enemy11" parent="Mines" instance=ExtResource( 13 )]
+position = Vector2( 35631.6, 339.079 )
 
 [node name="ControlPoints" type="Node" parent="."]
 
