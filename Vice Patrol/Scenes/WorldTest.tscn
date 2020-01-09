@@ -572,7 +572,7 @@ polygon = PoolVector2Array( -300.066, 299.966, 299.962, 299.962, 300.04, 173.993
 position = Vector2( 1638.08, 747.332 )
 
 [node name="BigRock_Enemy10" parent="Rocks" instance=ExtResource( 7 )]
-position = Vector2( 1173.39, 768.568 )
+position = Vector2( 1230.45, 682.254 )
 
 [node name="BigRock_Enemy4" parent="Rocks" instance=ExtResource( 7 )]
 position = Vector2( 16192.3, 338.749 )
@@ -616,7 +616,7 @@ position = Vector2( 24991.7, 340.569 )
 [node name="Holes" type="Node" parent="."]
 
 [node name="BigHole_Enemy" parent="Holes" instance=ExtResource( 9 )]
-position = Vector2( 1352.82, 514.886 )
+position = Vector2( 1369.14, 1020.94 )
 scale = Vector2( 1.5, 1.6 )
 
 [node name="BigHole_Enemy2" parent="Holes" instance=ExtResource( 9 )]
@@ -636,7 +636,7 @@ position = Vector2( 20022, 384.264 )
 scale = Vector2( 1.5, 1.6 )
 
 [node name="SmallHole_Enemy" parent="Holes" instance=ExtResource( 10 )]
-position = Vector2( 1740.03, 656.468 )
+position = Vector2( 1605.35, 933.984 )
 
 [node name="SmallHole_Enemy2" parent="Holes" instance=ExtResource( 10 )]
 position = Vector2( 5031.63, 870.238 )
@@ -659,12 +659,12 @@ position = Vector2( 30243.1, 378.858 )
 [node name="Tanks" type="Node" parent="."]
 
 [node name="Tank_Enemy" parent="Tanks" instance=ExtResource( 11 )]
-position = Vector2( 2025.49, 1091.41 )
+position = Vector2( 2009.17, 1171.67 )
 
 [node name="Palms" type="Node" parent="."]
 
 [node name="Palm_Enemy" parent="Palms" instance=ExtResource( 12 )]
-position = Vector2( 1924.32, 716.825 )
+position = Vector2( 1518.05, 685.725 )
 
 [node name="FlyingEnemies" type="Node" parent="."]
 
@@ -678,14 +678,13 @@ position = Vector2( 25275.6, 193.084 )
 enemy_type = 0
 
 [node name="Spawner2" parent="FlyingEnemies" instance=ExtResource( 13 )]
-position = Vector2( 1315.48, 155.718 )
-enemy_type = 2
-time_delay = 1
+position = Vector2( 1275.1, 156.212 )
+enemy_type = 1
 
 [node name="Spawner5" parent="FlyingEnemies" instance=ExtResource( 13 )]
-position = Vector2( 1722.54, 158.051 )
-enemy_type = 0
-time_delay = 1
+position = Vector2( 1886.84, 706.722 )
+spawn_position = 2
+number_of_enemies = 1
 
 [node name="Spawner4" parent="FlyingEnemies" instance=ExtResource( 13 )]
 position = Vector2( 2258.09, 719.875 )

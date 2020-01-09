@@ -5,6 +5,7 @@ var is_dead = false
 var is_jumped = false
 var bullet_normal = preload("res://Scenes/BulletEnemy_FlyingType1.tscn")
 var bullet_bomb = preload ("res://Scenes/BulletEnemy_Flying_Bomb.tscn")
+onready var ground_ray1 = get_node("RayCast2D")
 export (float) var min_rate_of_fire = 3
 export (float) var max_rate_of_fire = 6
 export (bool) var is_bomber = false
@@ -15,6 +16,9 @@ func dead():
 	queue_free()
 func _process(delta):
 	FireLoop()
+	if ground_ray1.is_colliding():
+		print('koliding')
+		queue_free()
 
 func _ready():
 	$Sprite. visible = false

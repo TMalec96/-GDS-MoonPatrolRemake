@@ -5,9 +5,12 @@ var is_dead = false
 export (int) var scoreValue = 100
 export (float) var time_before_feint = 3
 export (float) var boost_time_delay = 1
-export (float) var boost_duration_time = 1
-export (float) var boost_speed_value = 450
+export (float) var boost_duration_time = 1.2
+export (float) var boost_speed_value = 400
 var is_jumped = false
+var animationInstance = null
+export (float) var animation_duration = 0.5
+var animation = preload ("res://Scenes/EnemyAboveExplosionBulletAnimation.tscn")
 onready var collision_detector = get_node("Collision_detector")
 var stage1 = false #take player x velocity
 var stage2 = false #forward movement
@@ -15,6 +18,10 @@ var stage2andhalf = false #backward movement
 var stage3 = false #boost
 var stage4 = false  #before boost
 func _ready():
+	animationInstance = animation.instance()
+	add_child(animationInstance)
+	animationInstance.visible = false
+	animationInstance.playing = false
 	$Sprite.animation = "start"
 	$Sprite.playing = true
 	stage1 = true
@@ -52,7 +59,7 @@ func start_chase():
 	elif stage2:
 		velocity = move_and_slide(Vector2(GlobalVariables.playerVelocity_x+30,0), Vector2(0, -1),5,4,rad2deg(75))
 	elif stage2andhalf:
-		velocity = move_and_slide(Vector2(GlobalVariables.playerVelocity_x-60,0), Vector2(0, -1),5,4,rad2deg(75))
+		velocity = move_and_slide(Vector2(GlobalVariables.playerVelocity_x-30,0), Vector2(0, -1),5,4,rad2deg(75))
 	elif stage3:
 		velocity = move_and_slide(Vector2(GlobalVariables.playerVelocity_x+boost_speed_value,0), Vector2(0, -1),5,4,rad2deg(75))
 		$Sprite.animation = "chase"

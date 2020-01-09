@@ -213,6 +213,8 @@ func spawn_enemies(var spawn_position, var enemy_type, var number_of_enemies, va
 				elif spawn_position == GlobalVariables.SpawnPosition.BehindUp:
 					enemy_instance.set_spawn_position(GlobalVariables.SpawnPosition.BehindUp)
 					enemy_instance.position = Vector2(get_node("Camera2D/SpawnPointsRoot/SpawnPointBehindPlayer").get_global_position().x, -144)
+				if i == (number_of_enemies-1) and enemy_type !=GlobalVariables.EnemyType.Enemy_back:
+					enemy_instance.piking()
 				get_parent().add_child(enemy_instance)
 				enemy_instance.add_to_group("enemies")
 				yield(get_tree().create_timer(delay_between_spawns), "timeout")

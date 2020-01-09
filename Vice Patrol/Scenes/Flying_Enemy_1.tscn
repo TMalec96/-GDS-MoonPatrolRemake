@@ -24,7 +24,7 @@ rotate = false
 [node name="Enemy_flying1" type="KinematicBody2D" parent="Path2D/PathFollow2D"]
 scale = Vector2( 1.5, 1.5 )
 collision_layer = 16
-collision_mask = 17
+collision_mask = 21
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
@@ -39,3 +39,8 @@ shape = SubResource( 1 )
 
 [node name="Position2D" type="Position2D" parent="Path2D/PathFollow2D/Enemy_flying1"]
 position = Vector2( 0.21463, 10.088 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Path2D/PathFollow2D/Enemy_flying1"]
+enabled = true
+cast_to = Vector2( 0, 17.8 )
+collision_mask = 4
