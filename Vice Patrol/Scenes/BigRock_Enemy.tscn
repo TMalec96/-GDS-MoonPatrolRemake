@@ -3,9 +3,8 @@
 [ext_resource path="res://Assets/Scripts/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Enemies/Rocks/rock.png" type="Texture" id=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 13.4803
-height = 1.46686
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 14.4812, 12.6304 )
 
 [node name="BigRock_Enemy" type="StaticBody2D"]
 scale = Vector2( 2, 2 )
@@ -18,8 +17,9 @@ __meta__ = {
 is_destroyable = true
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.731506, -2.19453 )
+position = Vector2( -0.732, -3.105 )
 shape = SubResource( 1 )

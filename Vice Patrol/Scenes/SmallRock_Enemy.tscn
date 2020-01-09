@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Sprites/Enemies/Rocks/smaller_rock.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.41949, 6.00592 )
+extents = Vector2( 9.18054, 5.04102 )
 
 [node name="SmallRock_Enemy" type="StaticBody2D"]
 position = Vector2( 1556.19, 803.722 )
@@ -18,8 +18,9 @@ __meta__ = {
 is_destroyable = true
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1.07025, 0 )
+position = Vector2( 0.48, -2.21 )
 shape = SubResource( 1 )

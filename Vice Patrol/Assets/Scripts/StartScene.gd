@@ -43,5 +43,5 @@ func get_godMode_command():
 	if up:
 		godeMode+=1
 	if godeMode == 3:
-		$Control/Title.modulate = Color("ff0000")
+		$Control/Title.modulate = Color("ff4ba0")
 		GlobalVariables.god_mode = true

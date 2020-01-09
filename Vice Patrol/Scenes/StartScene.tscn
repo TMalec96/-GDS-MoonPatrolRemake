@@ -22,13 +22,13 @@ font_data = ExtResource( 6 )
 size = 41
 font_data = ExtResource( 6 )
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.141176, 0.462745, 0.792157, 1 )
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 1, 0.294118, 0.627451, 1 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=5]
 size = 44
 font_data = ExtResource( 6 )
 
@@ -153,8 +153,8 @@ margin_left = 323.136
 margin_top = 197.123
 margin_right = 887.136
 margin_bottom = 219.123
-custom_styles/fg = SubResource( 4 )
-custom_styles/bg = SubResource( 5 )
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
 percent_visible = false
 
 [node name="ArrowContolPointText" type="Label" parent="Control/Interface/MainArea/ProgressBar"]
@@ -162,7 +162,7 @@ margin_left = -5.18009
 margin_top = -45.3125
 margin_right = 110.82
 margin_bottom = 57.6875
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = ">
 "
@@ -172,7 +172,7 @@ margin_left = 97.5825
 margin_top = -39.8975
 margin_right = 213.582
 margin_bottom = 63.1025
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "E
 "
@@ -182,7 +182,7 @@ margin_left = 207.0
 margin_top = -41.0
 margin_right = 255.0
 margin_bottom = 3.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "J"
 
@@ -191,7 +191,7 @@ margin_left = 325.207
 margin_top = -41.0775
 margin_right = 441.207
 margin_bottom = 105.923
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "O
 
@@ -202,7 +202,7 @@ margin_left = 441.533
 margin_top = -40.8001
 margin_right = 557.533
 margin_bottom = 70.1999
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "T
 "
@@ -212,7 +212,7 @@ margin_left = 555.076
 margin_top = -42.0147
 margin_right = 671.076
 margin_bottom = 68.9853
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Z
 "
