@@ -1,27 +1,36 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Scripts/StartScene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Backgrounds/titleBackround.jpg" type="Texture" id=2]
-[ext_resource path="res://Assets/Sprites/FontSprites/moon_patrol_galaxy_.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/FontSprites/vice_patrol.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/FontSprites/start_game.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://Assets/Sprites/Player/samochodzik2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/Interface/tło_2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Assets/Sprites/signal.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Sprites/FontSprites/game_over_galaxy.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Music/MiamiVice.ogg" type="AudioStream" id=9]
-[ext_resource path="res://Assets/Scripts/MusicPlayer.gd" type="Script" id=10]
+[ext_resource path="res://Assets/Sprites/Interface/tabelka 3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/Interface/samochodzik.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/Interface/tło_1.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/FontSprites/game_over_galaxy.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Music/MiamiVice.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Scripts/MusicPlayer.gd" type="Script" id=13]
 
 [sub_resource type="DynamicFont" id=1]
-size = 50
-font_data = ExtResource( 5 )
+size = 70
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 41
-font_data = ExtResource( 5 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.141176, 0.462745, 0.792157, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 0.294118, 0.627451, 1 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 34
-font_data = ExtResource( 5 )
+size = 44
+font_data = ExtResource( 6 )
 
 [node name="StartScene" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -61,95 +70,58 @@ margin_right = 301.0
 margin_bottom = 120.0
 
 [node name="MainArea" type="ColorRect" parent="Control/Interface"]
-margin_left = 658.62
-margin_top = -3.05176e-005
-margin_right = 1858.62
-margin_bottom = 240.0
-color = Color( 0.156863, 0.227451, 0.780392, 1 )
+margin_left = 656.174
+margin_top = 3.62794
+margin_right = 1856.17
+margin_bottom = 243.628
+color = Color( 0.145098, 0.0156863, 0.160784, 1 )
 
-[node name="CurrentScoreValue" type="Label" parent="Control/Interface/MainArea"]
-margin_left = 96.0001
-margin_top = 162.295
-margin_right = 296.0
-margin_bottom = 265.295
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.945098, 0.976471, 0, 1 )
-text = "0"
-
-[node name="LifesNumber" type="Label" parent="Control/Interface/MainArea"]
-margin_left = 1063.15
-margin_top = 81.7651
-margin_right = 1249.15
-margin_bottom = 208.765
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.87451, 1, 0.00392157, 1 )
-text = "3
-"
-
-[node name="HiScore" type="Label" parent="Control/Interface/MainArea"]
-margin_left = 95.4875
-margin_top = 22.27
-margin_right = 295.487
-margin_bottom = 125.27
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.992157, 0.0156863, 0.0156863, 1 )
-text = "0"
-
-[node name="LifeIcon" type="Sprite" parent="Control/Interface/MainArea"]
-position = Vector2( 1006.9, 114.558 )
-texture = ExtResource( 6 )
-
-[node name="ExtraArea" type="ColorRect" parent="Control/Interface/MainArea"]
-margin_left = 393.0
-margin_top = 33.0
-margin_right = 940.0
-margin_bottom = 155.0
-color = Color( 0.0431373, 0.701961, 0.960784, 1 )
+[node name="ExtraArea" type="Sprite" parent="Control/Interface/MainArea"]
+position = Vector2( 593.528, 87.8209 )
+scale = Vector2( 1.06875, 1.03235 )
+texture = ExtResource( 5 )
 
 [node name="ControlPointText" type="Label" parent="Control/Interface/MainArea/ExtraArea"]
-margin_left = 24.0
-margin_top = -1.0
-margin_right = 140.0
-margin_bottom = 102.0
+margin_left = -249.832
+margin_top = -65.103
+margin_right = -111.832
+margin_bottom = 3.89698
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "POINT
-"
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "POINT"
 
 [node name="CautionUpText" type="Sprite" parent="Control/Interface/MainArea/ExtraArea"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 380.491, 22.5786 )
+position = Vector2( 72, -47.326 )
 texture = ExtResource( 7 )
 
 [node name="CautionMidText" type="Sprite" parent="Control/Interface/MainArea/ExtraArea"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 380.909, 62.7182 )
+position = Vector2( 72, -0.888 )
 texture = ExtResource( 7 )
 
 [node name="CautionDownText" type="Sprite" parent="Control/Interface/MainArea/ExtraArea"]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 380.909, 99.0948 )
+position = Vector2( 72, 44.205 )
 texture = ExtResource( 7 )
 
 [node name="CautionText_" type="Label" parent="Control/Interface/MainArea/ExtraArea"]
 visible = false
-margin_left = 435.565
-margin_top = 40.0705
-margin_right = 551.565
-margin_bottom = 143.07
+margin_left = 130.631
+margin_top = -15.5807
+margin_right = 220.631
+margin_bottom = 25.4193
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "CAUTION"
 
 [node name="ControlPointValue" type="Label" parent="Control/Interface/MainArea/ExtraArea"]
-margin_left = 135.483
-margin_top = -2.36041
-margin_right = 251.483
-margin_bottom = 100.64
+margin_left = -102.325
+margin_top = -67.3626
+margin_right = 13.6752
+margin_bottom = 1.63739
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 
 [node name="ControlPointValue2" type="Label" parent="Control/Interface/MainArea/ExtraArea"]
+visible = false
 margin_left = -111.633
 margin_top = -9.62525
 margin_right = 4.36718
@@ -158,99 +130,178 @@ custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="TimeText" type="Label" parent="Control/Interface/MainArea/ExtraArea"]
-margin_left = 24.0
-margin_top = 57.4961
-margin_right = 140.0
-margin_bottom = 160.496
+margin_left = -249.352
+margin_top = 4.17953
+margin_right = -133.352
+margin_bottom = 73.1795
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 0, 0, 1 )
-text = "TIME
-"
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "TIME"
 
 [node name="TimeValue" type="Label" parent="Control/Interface/MainArea/ExtraArea"]
-margin_left = 126.0
-margin_top = 55.0
-margin_right = 242.0
-margin_bottom = 158.0
+margin_left = -104.365
+margin_top = 0.544044
+margin_right = 11.6355
+margin_bottom = 69.544
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 0, 0, 1 )
-text = "0
-"
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
 
 [node name="ProgressBar" type="ProgressBar" parent="Control/Interface/MainArea"]
-margin_left = 380.0
-margin_top = 201.0
-margin_right = 944.0
-margin_bottom = 223.0
+modulate = Color( 0.941176, 0.92549, 0.92549, 1 )
+margin_left = 323.136
+margin_top = 197.123
+margin_right = 887.136
+margin_bottom = 219.123
+custom_styles/fg = SubResource( 4 )
+custom_styles/bg = SubResource( 5 )
 percent_visible = false
 
 [node name="ArrowContolPointText" type="Label" parent="Control/Interface/MainArea/ProgressBar"]
-margin_left = -11.7176
-margin_top = -31.775
-margin_right = 104.282
-margin_bottom = 71.225
+margin_left = -5.18009
+margin_top = -45.3125
+margin_right = 110.82
+margin_bottom = 57.6875
 custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.964706, 0.0352941, 0.0352941, 1 )
-text = "->
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = ">
 "
 
 [node name="EContolPointText" type="Label" parent="Control/Interface/MainArea/ProgressBar"]
-margin_left = 96.5825
-margin_top = -29.97
-margin_right = 212.582
-margin_bottom = 73.03
+margin_left = 97.5825
+margin_top = -39.8975
+margin_right = 213.582
+margin_bottom = 63.1025
 custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.964706, 0.0352941, 0.0352941, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "E
 "
 
 [node name="JContolPointText" type="Label" parent="Control/Interface/MainArea/ProgressBar"]
-margin_left = 204.882
-margin_top = -30.8726
-margin_right = 320.882
-margin_bottom = 80.1274
+margin_left = 207.0
+margin_top = -41.0
+margin_right = 255.0
+margin_bottom = 3.0
 custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.964706, 0.0352941, 0.0352941, 1 )
-text = "J
-
-"
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "J"
 
 [node name="OContolPointText" type="Label" parent="Control/Interface/MainArea/ProgressBar"]
-margin_left = 322.207
-margin_top = -29.9701
-margin_right = 438.207
-margin_bottom = 81.0299
+margin_left = 325.207
+margin_top = -41.0775
+margin_right = 441.207
+margin_bottom = 105.923
 custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.964706, 0.0352941, 0.0352941, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "O
 
 "
 
 [node name="TContolPointText" type="Label" parent="Control/Interface/MainArea/ProgressBar"]
-margin_left = 440.435
-margin_top = -29.9701
-margin_right = 556.435
-margin_bottom = 81.0299
+margin_left = 441.533
+margin_top = -40.8001
+margin_right = 557.533
+margin_bottom = 70.1999
 custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.964706, 0.0352941, 0.0352941, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "T
 "
 
 [node name="ZContolPointText" type="Label" parent="Control/Interface/MainArea/ProgressBar"]
-margin_left = 553.247
-margin_top = -30.8726
-margin_right = 669.247
-margin_bottom = 80.1274
+margin_left = 555.076
+margin_top = -42.0147
+margin_right = 671.076
+margin_bottom = 68.9853
 custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.964706, 0.0352941, 0.0352941, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Z
 "
+
+[node name="ColorRect" type="ColorRect" parent="Control/Interface/MainArea/ProgressBar"]
+margin_left = 101.0
+margin_right = 104.0
+margin_bottom = 11.0
+
+[node name="ColorRect3" type="ColorRect" parent="Control/Interface/MainArea/ProgressBar"]
+margin_left = 212.076
+margin_top = 0.157791
+margin_right = 215.076
+margin_bottom = 11.1578
+
+[node name="ColorRect4" type="ColorRect" parent="Control/Interface/MainArea/ProgressBar"]
+margin_left = 330.037
+margin_top = -0.270645
+margin_right = 333.037
+margin_bottom = 10.7294
+
+[node name="ColorRect5" type="ColorRect" parent="Control/Interface/MainArea/ProgressBar"]
+margin_left = 448.043
+margin_top = -0.270645
+margin_right = 451.043
+margin_bottom = 10.7294
+
+[node name="ColorRect6" type="ColorRect" parent="Control/Interface/MainArea/ProgressBar"]
+margin_left = 560.63
+margin_top = -0.445465
+margin_right = 563.63
+margin_bottom = 10.5545
+
+[node name="ColorRect2" type="ColorRect" parent="Control/Interface/MainArea/ProgressBar"]
+margin_left = 0.211121
+margin_top = 0.121262
+margin_right = 3.21112
+margin_bottom = 11.1213
+
+[node name="LifesArea" type="Sprite" parent="Control/Interface/MainArea"]
+position = Vector2( 1042.13, 119.961 )
+texture = ExtResource( 8 )
+
+[node name="LifesNumber" type="Label" parent="Control/Interface/MainArea/LifesArea"]
+margin_left = -16.1055
+margin_top = -91.0647
+margin_right = 19.8945
+margin_bottom = -22.0647
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "3"
+align = 1
+
+[node name="LifeIcon" type="Sprite" parent="Control/Interface/MainArea/LifesArea"]
+position = Vector2( 7.10632, 39.0345 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="ScoreArea" type="Sprite" parent="Control/Interface/MainArea"]
+position = Vector2( 156.013, 119.641 )
+texture = ExtResource( 10 )
+
+[node name="HiScore" type="Label" parent="Control/Interface/MainArea/ScoreArea"]
+margin_left = -70.3971
+margin_top = -68.1873
+margin_right = 66.6029
+margin_bottom = 0.812721
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+align = 1
+
+[node name="CurrentScoreValue" type="Label" parent="Control/Interface/MainArea/ScoreArea"]
+margin_left = -102.204
+margin_top = 1.45245
+margin_right = 97.7962
+margin_bottom = 70.4525
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+align = 1
 
 [node name="GameOverSprite" type="Sprite" parent="Control/Interface"]
 visible = false
 position = Vector2( 333.689, 674.45 )
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
+
+[node name="AudioStream" type="AudioStreamPlayer" parent="Control/Interface"]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
-script = ExtResource( 10 )
+stream = ExtResource( 12 )
+script = ExtResource( 13 )

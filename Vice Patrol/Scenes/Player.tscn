@@ -85,6 +85,7 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
+frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_left"]
@@ -106,6 +107,7 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
+frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_right"]
@@ -116,13 +118,13 @@ position = Vector2( 0, 1.00136e-005 )
 texture = ExtResource( 5 )
 
 [node name="groundray1" type="RayCast2D" parent="."]
-position = Vector2( 22.433, 7.07127 )
+position = Vector2( 22.433, 10.631 )
 enabled = true
 cast_to = Vector2( 0, 10 )
 collision_mask = 4101
 
 [node name="groundray2" type="RayCast2D" parent="."]
-position = Vector2( -25.987, 7.071 )
+position = Vector2( -25.987, 12.181 )
 enabled = true
 cast_to = Vector2( 0, 10 )
 collision_mask = 4101

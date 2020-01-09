@@ -1,8 +1,8 @@
 extends Control
 onready var timer = get_node("MainArea/ExtraArea/TimeValue")
-onready var lifesLabel = get_node("MainArea/LifesNumber")
-onready var scoreLabel = get_node("MainArea/CurrentScoreValue")
-onready var hiScoreLabel = get_node("MainArea/HiScore")
+onready var lifesLabel = get_node("MainArea/LifesArea/LifesNumber")
+onready var scoreLabel = get_node("MainArea/ScoreArea/CurrentScoreValue")
+onready var hiScoreLabel = get_node("MainArea/ScoreArea/HiScore")
 onready var controlPointLabel1 = get_node("MainArea/ExtraArea/ControlPointValue")
 onready var controlPointLabel2 = get_node("MainArea/ExtraArea/ControlPointValue2")
 onready var progresBar = get_node("MainArea/ProgressBar")
@@ -20,8 +20,8 @@ func _ready():
 		progresBar.value = GlobalVariables.progresBarvalue
 		set_process(true)
 	else:
-		$MainArea/LifeIcon.visible = false
-		$MainArea/LifesNumber.visible = false
+		$MainArea/LifesArea/LifeIcon.visible = false
+		$MainArea/LifesArea/LifesNumber.visible = false
 		_changeControlPoint()
 
 func _process(delta):
@@ -33,8 +33,8 @@ func _process(delta):
 			hiScoreLabel.set_text(String(GlobalVariables.hiScore))
 	_changeControlPoint()
 	if GlobalVariables.playerLifes == 0:
-		$MainArea/LifeIcon.visible = false
-		$MainArea/LifesNumber.visible = false
+		$MainArea/LifesArea/LifeIcon.visible = false
+		$MainArea/LifesArea/LifesNumber.visible = false
 		GlobalVariables.playerLifes -= 1
 		_playAudio("res://Assets/Music/game_over2.wav")
 		var index = 0 
@@ -68,10 +68,10 @@ func _warning_animation(var time):
 	var index = 0 
 	var switch_time = time/3
 	while(index <3):
-		active_caution_direction.modulate = Color("ff0000")
+		active_caution_direction.modulate = Color("ff4ba0")
 		cautionText.visible = true
 		yield(get_tree().create_timer(switch_time), "timeout")
-		active_caution_direction.modulate = Color("000000")
+		active_caution_direction.modulate = Color("ffffff")
 		cautionText.visible = false
 		yield(get_tree().create_timer(switch_time), "timeout")
 		index += 1
