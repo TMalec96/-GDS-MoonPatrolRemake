@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Scripts/StartScene.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/Backgrounds/titleBackround.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Backgrounds/to_menu_i_podsumowania.jpg" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/FontSprites/game_over_galaxy.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Fonts/full Pack 2025.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Assets/Sprites/FontSprites/start_game.png" type="Texture" id=5]
@@ -21,19 +21,19 @@ margin_right = -361.168
 margin_bottom = -2.93634
 
 [node name="Sprite" type="Sprite" parent="Control"]
-position = Vector2( 964.971, 614.875 )
-scale = Vector2( 2.0146, 2.44032 )
+position = Vector2( 959.697, 732.667 )
+scale = Vector2( 1.99702, 1.96915 )
 texture = ExtResource( 2 )
 
 [node name="Title" type="Sprite" parent="Control"]
-position = Vector2( 960.856, 484.008 )
+position = Vector2( 967.888, 580.703 )
 texture = ExtResource( 3 )
 
 [node name="Score" type="Label" parent="Control"]
 margin_left = 870.358
-margin_top = 586.143
+margin_top = 651.192
 margin_right = 1037.36
-margin_bottom = 672.143
+margin_bottom = 737.192
 custom_fonts/font = SubResource( 1 )
 text = "Score:"
 align = 1
@@ -43,7 +43,7 @@ position = Vector2( 952.395, 615.793 )
 current = true
 
 [node name="StartGame" type="Sprite" parent="Control"]
-position = Vector2( 950.422, 700 )
+position = Vector2( 957.454, 768.565 )
 texture = ExtResource( 5 )
 
 [node name="Interface" parent="." instance=ExtResource( 6 )]
