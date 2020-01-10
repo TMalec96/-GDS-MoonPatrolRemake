@@ -46,7 +46,7 @@ position = Vector2( -150.975, -175.823 )
 position = Vector2( 169.079, -290.818 )
 
 [node name="SpawnPointBehindDownPlayer" type="Position2D" parent="Camera2D/SpawnPointsRoot"]
-position = Vector2( -121.528, -11.5969 )
+position = Vector2( -141.218, -22.021 )
 
 [node name="Player_Collider" type="CollisionPolygon2D" parent="."]
 position = Vector2( -7.17957, -2.78207 )
@@ -74,7 +74,7 @@ position = Vector2( -25.4982, 7.55896 )
 scale = Vector2( 0.5, 0.5 )
 collision_layer = 128
 collision_mask = 132
-collision/safe_margin = 2.0
+collision/safe_margin = 0.001
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -84,7 +84,6 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
-frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_left"]
@@ -96,7 +95,7 @@ position = Vector2( 22.433, 7.07127 )
 scale = Vector2( 0.5, 0.5 )
 collision_layer = 128
 collision_mask = 132
-collision/safe_margin = 2.0
+collision/safe_margin = 0.001
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -106,7 +105,6 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
-frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_right"]

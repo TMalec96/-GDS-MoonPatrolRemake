@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Backgound.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Scenes/Mine_Enemy.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=15]
 [ext_resource path="res://Assets/Scripts/ControlPoint.gd" type="Script" id=16]
+[ext_resource path="res://Respawner.tscn" type="PackedScene" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 45
@@ -31,8 +32,8 @@ position = Vector2( 599.615, 298.553 )
 [node name="Canvas" type="CanvasLayer" parent="Player"]
 
 [node name="Interface" parent="Player/Canvas" instance=ExtResource( 3 )]
-margin_left = -300.0
-margin_right = 900.0
+margin_left = -300.774
+margin_right = 899.226
 margin_bottom = 240.0
 
 [node name="Terrains" type="Node" parent="."]
@@ -572,7 +573,7 @@ polygon = PoolVector2Array( -300.066, 299.966, 299.962, 299.962, 300.04, 173.993
 position = Vector2( 1638.08, 747.332 )
 
 [node name="BigRock_Enemy10" parent="Rocks" instance=ExtResource( 7 )]
-position = Vector2( 1230.45, 682.254 )
+position = Vector2( 2111.58, 332.318 )
 
 [node name="BigRock_Enemy4" parent="Rocks" instance=ExtResource( 7 )]
 position = Vector2( 16192.3, 338.749 )
@@ -678,7 +679,7 @@ position = Vector2( 25275.6, 193.084 )
 enemy_type = 0
 
 [node name="Spawner2" parent="FlyingEnemies" instance=ExtResource( 13 )]
-position = Vector2( 1275.1, 156.212 )
+position = Vector2( 1280.14, 168.8 )
 enemy_type = 1
 
 [node name="Spawner5" parent="FlyingEnemies" instance=ExtResource( 13 )]
@@ -789,3 +790,6 @@ is_endpoint = true
 rotation = -3.14159
 enabled = true
 cast_to = Vector2( 0, 200 )
+
+[node name="ReSpawnPoint" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1438.04, 305.839 )

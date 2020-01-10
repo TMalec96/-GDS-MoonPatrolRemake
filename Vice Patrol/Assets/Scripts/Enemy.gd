@@ -5,11 +5,13 @@ export (bool) var is_destroyable = false
 export (float) var animation_duration = 0.5
 var is_dead = false
 var is_jumped = false
+export (bool) var is_rock = false
 var animation = preload ("res://Scenes/EnemyAboveExplosionBulletAnimation.tscn")
 var animationInstance = null
 func _ready():
 	if is_destroyable:
 		animationInstance = animation.instance()
+		animationInstance.position.y +=5
 		add_child(animationInstance)
 		animationInstance.visible = false
 		animationInstance.playing = false

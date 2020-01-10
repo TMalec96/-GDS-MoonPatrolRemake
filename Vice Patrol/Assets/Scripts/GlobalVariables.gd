@@ -2,6 +2,8 @@ extends Node
 var god_mode = false
 var time = 0
 var respawn_position = Vector2(0,0)
+var respawn_position_for_enemies_back
+var respawn_position_for_enemies_above
 var enemy_spawn_position
 var _last_spawned_index = 0
 var progresBarvalue = 0

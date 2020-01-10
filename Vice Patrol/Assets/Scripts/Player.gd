@@ -79,14 +79,16 @@ func _respawn():
 	$Sprite.visible = true
 	position = GlobalVariables.respawn_position
 	_set_wheels_position_global()
+	GlobalVariables.respawn_position_for_enemies_back = get_node("Camera2D/SpawnPointsRoot/SpawnPointBehindPlayer").get_global_position()
+	GlobalVariables.respawn_position_for_enemies_above = get_node("Camera2D/SpawnPointsRoot/SpawnPointAbovePlayer").get_global_position()
 	animationInstance.playing = false
 	animationInstance.visible = false
 	yield(get_tree().create_timer(1),"timeout")
-	GlobalVariables.is_player_respawning = false
 	GlobalVariables.paused = false
-	
+	GlobalVariables.is_player_respawning = false
 	velocity.x = 350
 func _process(delta):
+	print(GlobalVariables.is_player_respawning)
 	if game_begening:
 		yield(get_tree().create_timer(2),"timeout")
 	if !GlobalVariables.is_player_respawning:
@@ -183,7 +185,8 @@ func process_damage(var collision):
 	if "Enemy" in collision.collider.name:
 		GlobalVariables.playerLifes -= 1
 		GlobalVariables.is_player_respawning = true
-		collision.collider.dead()
+		if !"Rock" in collision.collider.name:
+			collision.collider.dead()
 		_respawn()
 		if GlobalVariables.playerLifes<= 0:
 			yield(get_tree().create_timer(3), "timeout")
