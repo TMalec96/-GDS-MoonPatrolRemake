@@ -892,6 +892,8 @@ cast_to = Vector2( 0, 200 )
 [node name="EndPoints" type="Node" parent="."]
 
 [node name="Backgound" parent="." instance=ExtResource( 16 )]
+offset = Vector2( 0, -9.05 )
+transform = Transform2D( 1, 0, 0, 1, 0, -9.05 )
 
 [node name="SmallRock_Enemy" parent="." instance=ExtResource( 17 )]
 position = Vector2( 2286.13, 300.637 )

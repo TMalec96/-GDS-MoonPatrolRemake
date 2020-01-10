@@ -774,10 +774,10 @@ cast_to = Vector2( 0, 200 )
 [node name="EndPoints" type="Node" parent="."]
 
 [node name="EndlPoint_E" type="Label" parent="EndPoints"]
-margin_left = 917.624
-margin_top = 771.212
-margin_right = 931.624
-margin_bottom = 864.212
+margin_left = 919.675
+margin_top = 346.75
+margin_right = 933.675
+margin_bottom = 439.75
 custom_fonts/font = SubResource( 1 )
 text = "E"
 script = ExtResource( 16 )
