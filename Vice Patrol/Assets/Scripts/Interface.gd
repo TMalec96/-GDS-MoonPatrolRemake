@@ -15,7 +15,7 @@ var active_caution_direction = null
 export(bool)var is_end_screen = false
 func _ready():
 	if !is_end_screen:
-		GlobalVariables.time = 0
+		GlobalVariables.time = 0 
 		hiScoreLabel.set_text(String(GlobalVariables.hiScore))
 		progresBar.value = GlobalVariables.progresBarvalue
 		set_process(true)

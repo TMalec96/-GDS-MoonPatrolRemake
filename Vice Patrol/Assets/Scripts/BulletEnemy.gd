@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-export (int) var projectile_speed = 100
+export (int) var projectile_speed = 50
 export (int) var life_time = 1.5
 export (bool) var direction_down = false
 var animation = preload ("res://Scenes/EnemyAboveExplosionBulletAnimation.tscn")

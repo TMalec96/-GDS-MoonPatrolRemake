@@ -10,10 +10,10 @@ extents = Vector2( 8.40066, 7.37716 )
 collision_layer = 512
 collision_mask = 133
 mode = 2
+mass = 1.66327
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 1 )
-projectile_speed = 50
 direction_down = true
 is_bomb = true
 
