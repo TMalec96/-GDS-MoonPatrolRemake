@@ -48,4 +48,4 @@ position = Vector2( 14.0175, -1.23419 )
 [node name="RayCast2D" type="RayCast2D" parent="Path2D/PathFollow2D/Enemy_flying3"]
 scale = Vector2( 1, 0.46 )
 enabled = true
-collision_mask = 2
+collision_mask = 4
