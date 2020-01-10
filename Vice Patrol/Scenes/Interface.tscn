@@ -1,30 +1,31 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/Scripts/Interface.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Interface/tło_2.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Fonts/Pixel Digivolve.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/Sprites/signal.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sprites/Interface/tabelka 3.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sprites/Interface/samochodzik.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sprites/Interface/tło_1.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Sprites/FontSprites/game_over_galaxy.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Assets/Sprites/Interface/tabelka 3.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/Interface/samochodzik.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/Interface/tło_1.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/FontSprites/game_over_galaxy.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
-size = 70
+size = 50
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 41
-font_data = ExtResource( 3 )
+font_data = ExtResource( 5 )
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.141176, 0.462745, 0.792157, 1 )
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 1, 0.294118, 0.627451, 1 )
 
-[sub_resource type="DynamicFont" id=3]
-size = 44
+[sub_resource type="DynamicFont" id=5]
+size = 31
 font_data = ExtResource( 3 )
 
 [node name="Interface" type="Control"]
@@ -79,9 +80,9 @@ text = "CAUTION"
 
 [node name="ControlPointValue" type="Label" parent="MainArea/ExtraArea"]
 margin_left = -102.325
-margin_top = -67.3626
+margin_top = -62.1173
 margin_right = 13.6752
-margin_bottom = 1.63739
+margin_bottom = 6.88271
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 
@@ -96,18 +97,18 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="TimeText" type="Label" parent="MainArea/ExtraArea"]
 margin_left = -249.352
-margin_top = 4.17953
-margin_right = -133.352
-margin_bottom = 73.1795
+margin_top = -0.191579
+margin_right = -132.352
+margin_bottom = 68.8084
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "TIME"
 
 [node name="TimeValue" type="Label" parent="MainArea/ExtraArea"]
-margin_left = -104.365
-margin_top = 0.544044
-margin_right = 11.6355
-margin_bottom = 69.544
+margin_left = -106.898
+margin_top = -1.20438
+margin_right = 9.10215
+margin_bottom = 67.7956
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "0"
@@ -118,16 +119,16 @@ margin_left = 323.136
 margin_top = 197.123
 margin_right = 887.136
 margin_bottom = 219.123
-custom_styles/fg = SubResource( 4 )
-custom_styles/bg = SubResource( 5 )
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
 percent_visible = false
 
 [node name="ArrowContolPointText" type="Label" parent="MainArea/ProgressBar"]
 margin_left = -5.18009
-margin_top = -45.3125
-margin_right = 110.82
-margin_bottom = 57.6875
-custom_fonts/font = SubResource( 3 )
+margin_top = -39.8975
+margin_right = 99.4299
+margin_bottom = 63.1025
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = ">
 "
@@ -137,7 +138,7 @@ margin_left = 97.5825
 margin_top = -39.8975
 margin_right = 213.582
 margin_bottom = 63.1025
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "E
 "
@@ -147,7 +148,7 @@ margin_left = 207.0
 margin_top = -41.0
 margin_right = 255.0
 margin_bottom = 3.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "J"
 
@@ -156,7 +157,7 @@ margin_left = 325.207
 margin_top = -41.0775
 margin_right = 441.207
 margin_bottom = 105.923
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "O
 
@@ -167,7 +168,7 @@ margin_left = 441.533
 margin_top = -40.8001
 margin_right = 557.533
 margin_bottom = 70.1999
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "T
 "
@@ -177,7 +178,7 @@ margin_left = 555.076
 margin_top = -42.0147
 margin_right = 671.076
 margin_bottom = 68.9853
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Z
 "
@@ -219,12 +220,12 @@ margin_bottom = 11.1213
 
 [node name="LifesArea" type="Sprite" parent="MainArea"]
 position = Vector2( 1042.13, 119.961 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="LifesNumber" type="Label" parent="MainArea/LifesArea"]
-margin_left = -16.1055
+margin_left = -17.9104
 margin_top = -91.0647
-margin_right = 19.8945
+margin_right = 18.0896
 margin_bottom = -22.0647
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -234,11 +235,11 @@ align = 1
 [node name="LifeIcon" type="Sprite" parent="MainArea/LifesArea"]
 position = Vector2( 7.10632, 39.0345 )
 z_index = 1
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="ScoreArea" type="Sprite" parent="MainArea"]
 position = Vector2( 156.013, 119.641 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="HiScore" type="Label" parent="MainArea/ScoreArea"]
 margin_left = -70.3971
@@ -263,6 +264,6 @@ align = 1
 [node name="GameOverSprite" type="Sprite" parent="."]
 visible = false
 position = Vector2( 333.689, 674.45 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 
 [node name="AudioStream" type="AudioStreamPlayer" parent="."]

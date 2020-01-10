@@ -22,7 +22,7 @@ script = ExtResource( 3 )
 position = Vector2( 155.086, -253.151 )
 rotate = false
 
-[node name="Enemy_flying1" type="KinematicBody2D" parent="Path2D/PathFollow2D"]
+[node name="Enemy_flying3" type="KinematicBody2D" parent="Path2D/PathFollow2D"]
 scale = Vector2( 1.5, 1.5 )
 collision_layer = 16
 collision_mask = 21
@@ -30,22 +30,22 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
-min_rate_of_fire = 5.0
-max_rate_of_fire = 13.0
+min_rate_of_fire = 4.0
+max_rate_of_fire = 8.0
 is_bomber = true
 
-[node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D/Enemy_flying1"]
+[node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D/Enemy_flying3"]
 texture = ExtResource( 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Enemy_flying1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Enemy_flying3"]
 position = Vector2( 0, -1.83 )
 shape = SubResource( 1 )
 one_way_collision_margin = 2.2
 
-[node name="Position2D" type="Position2D" parent="Path2D/PathFollow2D/Enemy_flying1"]
+[node name="Position2D" type="Position2D" parent="Path2D/PathFollow2D/Enemy_flying3"]
 position = Vector2( 14.0175, -1.23419 )
 
-[node name="RayCast2D" type="RayCast2D" parent="Path2D/PathFollow2D/Enemy_flying1"]
+[node name="RayCast2D" type="RayCast2D" parent="Path2D/PathFollow2D/Enemy_flying3"]
 scale = Vector2( 1, 0.46 )
 enabled = true
 collision_mask = 2

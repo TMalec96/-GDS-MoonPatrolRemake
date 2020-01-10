@@ -11,6 +11,8 @@ export (float) var speed_incrementation_sec = 1.5
 
 var velocity = Vector2()
 var jumping = false
+
+var game_begening = true
 #CAMERA MOVEMENT
 onready var camera = get_node("Camera2D")
 export(float) var camera_offset_drag_right = 200
@@ -52,7 +54,7 @@ func _ready():
 		set_collision_layer_bit(0,false)
 		
 		set_collision_mask_bit(4,false)
-	velocity.x = 350
+#	velocity.x = 350
 	camera.offset.x = 300
 	GlobalVariables.playerReversingDistance = reversing_distance
 	GlobalVariables.playerLifes = lifes
@@ -75,7 +77,7 @@ func _respawn():
 	get_node("Tire_left").visible =true
 	get_node("Tire_right").visible =true
 	$Sprite.visible = true
-	position.x -= reversing_distance
+	position = GlobalVariables.respawn_position
 	_set_wheels_position_global()
 	animationInstance.playing = false
 	animationInstance.visible = false
@@ -85,6 +87,8 @@ func _respawn():
 	
 	velocity.x = 350
 func _process(delta):
+	if game_begening:
+		yield(get_tree().create_timer(2),"timeout")
 	if !GlobalVariables.is_player_respawning:
 		FireLoopUp()
 		FireLoopFront()	
@@ -123,6 +127,8 @@ func get_input():
 			if(camera.offset.x <= 300):
 					camera.offset.x += camera_drag_speed
 func _physics_process(delta):
+	if game_begening:
+		yield(get_tree().create_timer(2),"timeout")
 	_process_score()
 	if !GlobalVariables.is_player_respawning:
 		get_input()

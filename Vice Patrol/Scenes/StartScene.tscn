@@ -1,26 +1,27 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Assets/Scripts/StartScene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Backgrounds/titleBackround.jpg" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/FontSprites/vice_patrol.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/FontSprites/start_game.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/Interface/tło_2.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Assets/Fonts/Pixel Digivolve.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://Assets/Sprites/signal.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Sprites/Interface/tabelka 3.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Sprites/Interface/samochodzik.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sprites/Interface/tło_1.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Sprites/FontSprites/game_over_galaxy.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Music/MiamiVice.ogg" type="AudioStream" id=12]
-[ext_resource path="res://Assets/Scripts/MusicPlayer.gd" type="Script" id=13]
+[ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Assets/Sprites/Interface/tabelka 3.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/Interface/samochodzik.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/Interface/tło_1.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/FontSprites/game_over_galaxy.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Music/MiamiVice.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Assets/Scripts/MusicPlayer.gd" type="Script" id=14]
 
 [sub_resource type="DynamicFont" id=1]
-size = 70
+size = 50
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 41
-font_data = ExtResource( 6 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.141176, 0.462745, 0.792157, 1 )
@@ -29,7 +30,7 @@ bg_color = Color( 0.141176, 0.462745, 0.792157, 1 )
 bg_color = Color( 1, 0.294118, 0.627451, 1 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 44
+size = 34
 font_data = ExtResource( 6 )
 
 [node name="StartScene" type="CanvasLayer"]
@@ -82,9 +83,9 @@ scale = Vector2( 1.06875, 1.03235 )
 texture = ExtResource( 5 )
 
 [node name="ControlPointText" type="Label" parent="Control/Interface/MainArea/ExtraArea"]
-margin_left = -249.832
+margin_left = -250.453
 margin_top = -65.103
-margin_right = -111.832
+margin_right = -95.4528
 margin_bottom = 3.89698
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -139,10 +140,10 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "TIME"
 
 [node name="TimeValue" type="Label" parent="Control/Interface/MainArea/ExtraArea"]
-margin_left = -104.365
-margin_top = 0.544044
-margin_right = 11.6355
-margin_bottom = 69.544
+margin_left = -97.5368
+margin_top = 2.47195
+margin_right = 18.4637
+margin_bottom = 71.4719
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "0"
@@ -158,10 +159,10 @@ custom_styles/bg = SubResource( 4 )
 percent_visible = false
 
 [node name="ArrowContolPointText" type="Label" parent="Control/Interface/MainArea/ProgressBar"]
-margin_left = -5.18009
-margin_top = -45.3125
-margin_right = 110.82
-margin_bottom = 57.6875
+margin_left = -2.5264
+margin_top = -40.6685
+margin_right = 113.474
+margin_bottom = 62.3315
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = ">
@@ -253,14 +254,15 @@ margin_right = 3.21112
 margin_bottom = 11.1213
 
 [node name="LifesArea" type="Sprite" parent="Control/Interface/MainArea"]
-position = Vector2( 1042.13, 119.961 )
-texture = ExtResource( 8 )
+position = Vector2( 1042.13, 117.389 )
+scale = Vector2( 1, 1.02547 )
+texture = ExtResource( 9 )
 
 [node name="LifesNumber" type="Label" parent="Control/Interface/MainArea/LifesArea"]
-margin_left = -16.1055
-margin_top = -91.0647
-margin_right = 19.8945
-margin_bottom = -22.0647
+margin_left = -18.0959
+margin_top = -85.0939
+margin_right = 17.9041
+margin_bottom = -16.0939
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "3"
@@ -269,11 +271,11 @@ align = 1
 [node name="LifeIcon" type="Sprite" parent="Control/Interface/MainArea/LifesArea"]
 position = Vector2( 7.10632, 39.0345 )
 z_index = 1
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="ScoreArea" type="Sprite" parent="Control/Interface/MainArea"]
 position = Vector2( 156.013, 119.641 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 
 [node name="HiScore" type="Label" parent="Control/Interface/MainArea/ScoreArea"]
 margin_left = -70.3971
@@ -298,10 +300,10 @@ align = 1
 [node name="GameOverSprite" type="Sprite" parent="Control/Interface"]
 visible = false
 position = Vector2( 333.689, 674.45 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 
 [node name="AudioStream" type="AudioStreamPlayer" parent="Control/Interface"]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 12 )
-script = ExtResource( 13 )
+stream = ExtResource( 13 )
+script = ExtResource( 14 )

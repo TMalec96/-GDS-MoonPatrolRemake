@@ -53,13 +53,12 @@ position = Vector2( -7.17957, -2.78207 )
 polygon = PoolVector2Array( -28.2462, -19.879, 5.07773, -14.2172, 37.9868, -1.59393, 49.1647, 4.82741, 47.3108, 10.9425, 31.4997, 16.3447, -19.623, 16.4765, -37.1471, 9.09791, -39.0845, -0.790547 )
 
 [node name="TurnAxis" type="Position2D" parent="."]
-editor/display_folded = true
 
 [node name="CastPoint1" type="Position2D" parent="TurnAxis"]
 position = Vector2( 18.8676, -3.83823 )
 
 [node name="CastPoint2" type="Position2D" parent="TurnAxis"]
-position = Vector2( -35.1375, -22.3494 )
+position = Vector2( -34.248, -22.149 )
 
 [node name="TiresPosition" type="Position2D" parent="."]
 editor/display_folded = true
@@ -71,7 +70,7 @@ position = Vector2( -25.6437, 7.45588 )
 position = Vector2( 22.1417, 7.34292 )
 
 [node name="Tire_left" type="KinematicBody2D" parent="."]
-position = Vector2( -25.6029, 7.55896 )
+position = Vector2( -25.4982, 7.55896 )
 scale = Vector2( 0.5, 0.5 )
 collision_layer = 128
 collision_mask = 132
@@ -85,6 +84,7 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
+frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_left"]
@@ -106,6 +106,7 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
+frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_right"]

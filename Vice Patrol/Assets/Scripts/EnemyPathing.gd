@@ -8,6 +8,7 @@ var path_4= preload("res://Curves/Behind_Curve1.tres")
 var path_5= preload("res://Curves/Behind_Curve2.tres")
 var path_6= preload("res://Curves/Behind_Curve3.tres")
 var spawn_position = GlobalVariables.SpawnPosition.Above
+export (int) var speed_on_path = 300
 var path_array
 func _ready():
 	spawn_position = GlobalVariables.enemy_spawn_position
@@ -24,7 +25,7 @@ func _ready():
 	curve = path_array[index]
 	follow.loop = true
 func _process(delta):
-	follow.set_offset(follow.get_offset() + (200) *delta)
+	follow.set_offset(follow.get_offset() + (speed_on_path) *delta)
 	
 
 	#spaw CURVE 2D Resource
