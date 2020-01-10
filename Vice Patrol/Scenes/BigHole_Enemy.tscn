@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Sprites/Enemies/Holes/hole2.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 58.4871, 27.8315 )
+extents = Vector2( 58.4871, 11.6787 )
 
 [node name="BigHole_Enemy" type="StaticBody2D"]
 scale = Vector2( 1.6, 1.7 )
@@ -19,4 +19,5 @@ __meta__ = {
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -19.64 )
 shape = SubResource( 1 )

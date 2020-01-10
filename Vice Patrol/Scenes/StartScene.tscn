@@ -114,10 +114,10 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "CAUTION"
 
 [node name="ControlPointValue" type="Label" parent="Control/Interface/MainArea/ExtraArea"]
-margin_left = -102.325
+margin_left = -77.7021
 margin_top = -67.3626
-margin_right = 13.6752
-margin_bottom = 1.63739
+margin_right = 38.2981
+margin_bottom = 1.63738
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 

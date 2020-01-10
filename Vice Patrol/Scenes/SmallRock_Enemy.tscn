@@ -3,8 +3,8 @@
 [ext_resource path="res://Assets/Scripts/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Enemies/Rocks/smaller_rock.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9.18054, 5.04102 )
+[sub_resource type="CircleShape2D" id=1]
+radius = 7.20101
 
 [node name="SmallRock_Enemy" type="StaticBody2D"]
 position = Vector2( 1556.19, 803.722 )
@@ -12,9 +12,6 @@ scale = Vector2( 2, 2 )
 collision_layer = 144
 collision_mask = 21
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 is_destroyable = true
 is_rock = true
 
@@ -23,5 +20,5 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.48, -2.21 )
+position = Vector2( 0.605122, -1.20863 )
 shape = SubResource( 1 )

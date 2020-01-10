@@ -20,7 +20,6 @@ func _ready():
 	var index = 0
 	while(GlobalVariables._last_spawned_index == index):
 		index =randi()%path_array.size()
-	print(index)
 	GlobalVariables._last_spawned_index  = index
 	curve = path_array[index]
 	follow.loop = true

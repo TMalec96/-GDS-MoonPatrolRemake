@@ -36,7 +36,6 @@ onready var enemy_detector_ray = get_node("EnemyDetector")
 #PLAYER LIFES
 export (int) var lifes = 3
 export (float) var respawn_delay = 3.0
-export (int) var reversing_distance = 500
 
 #FLYING ENEMIES
 var flying_enemy_1 = preload("res://Scenes/Flying_Enemy_1.tscn")
@@ -56,7 +55,6 @@ func _ready():
 		set_collision_mask_bit(4,false)
 #	velocity.x = 350
 	camera.offset.x = 300
-	GlobalVariables.playerReversingDistance = reversing_distance
 	GlobalVariables.playerLifes = lifes
 	GlobalVariables.paused = false
 	animationInstance = animation.instance()
@@ -79,8 +77,6 @@ func _respawn():
 	$Sprite.visible = true
 	position = GlobalVariables.respawn_position
 	_set_wheels_position_global()
-	GlobalVariables.respawn_position_for_enemies_back = get_node("Camera2D/SpawnPointsRoot/SpawnPointBehindPlayer").get_global_position()
-	GlobalVariables.respawn_position_for_enemies_above = get_node("Camera2D/SpawnPointsRoot/SpawnPointAbovePlayer").get_global_position()
 	animationInstance.playing = false
 	animationInstance.visible = false
 	yield(get_tree().create_timer(1),"timeout")
@@ -88,7 +84,6 @@ func _respawn():
 	GlobalVariables.is_player_respawning = false
 	velocity.x = 350
 func _process(delta):
-	print(GlobalVariables.is_player_respawning)
 	if game_begening:
 		yield(get_tree().create_timer(2),"timeout")
 	if !GlobalVariables.is_player_respawning:
@@ -140,7 +135,7 @@ func _physics_process(delta):
 	#		ZAMIENIC NA FUNKCJE
 			var collision = get_slide_collision(i)
 			process_damage(collision)
-		_set_wheels_position_x()
+	_set_wheels_position_x()
 	GlobalVariables.playerVelocity_x = velocity.x
 func _process_score():
 	if enemy_detector_ray.is_colliding():

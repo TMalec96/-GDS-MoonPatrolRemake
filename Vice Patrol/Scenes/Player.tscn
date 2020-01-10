@@ -22,6 +22,7 @@ radius = 13.2997
 scale = Vector2( 2, 2 )
 collision_layer = 262145
 collision_mask = 21
+collision/safe_margin = 0.07
 script = ExtResource( 1 )
 min_player_speed = 300
 avg_player_speed = 400
@@ -50,7 +51,7 @@ position = Vector2( -141.218, -22.021 )
 
 [node name="Player_Collider" type="CollisionPolygon2D" parent="."]
 position = Vector2( -7.17957, -2.78207 )
-polygon = PoolVector2Array( -28.2462, -19.879, 5.07773, -14.2172, 37.9868, -1.59393, 49.1647, 4.82741, 47.3108, 10.9425, 31.4997, 16.3447, -19.623, 16.4765, -37.1471, 9.09791, -39.0845, -0.790547 )
+polygon = PoolVector2Array( -28.2462, -19.879, 5.07773, -14.2172, 37.9868, -1.59393, 49.3287, 6.84219, 45.9031, 15.0092, 30.5638, 15.5776, -19.4221, 15.7394, -37.7505, 15.2714, -38.0128, 8.80291, -39.0845, -0.790547 )
 
 [node name="TurnAxis" type="Position2D" parent="."]
 
@@ -72,9 +73,9 @@ position = Vector2( 22.1417, 7.34292 )
 [node name="Tire_left" type="KinematicBody2D" parent="."]
 position = Vector2( -25.4982, 7.55896 )
 scale = Vector2( 0.5, 0.5 )
-collision_layer = 128
-collision_mask = 132
-collision/safe_margin = 0.001
+collision_layer = 524288
+collision_mask = 524292
+collision/safe_margin = 0.5
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -84,6 +85,7 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
+frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_left"]
@@ -93,9 +95,9 @@ shape = SubResource( 2 )
 editor/display_folded = true
 position = Vector2( 22.433, 7.07127 )
 scale = Vector2( 0.5, 0.5 )
-collision_layer = 128
-collision_mask = 132
-collision/safe_margin = 0.001
+collision_layer = 524288
+collision_mask = 524292
+collision/safe_margin = 0.5
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -105,6 +107,7 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "tires"
+frame = 1
 playing = true
 
 [node name="Tire_right_collision_shape" type="CollisionShape2D" parent="Tire_right"]
