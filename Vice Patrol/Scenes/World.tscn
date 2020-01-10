@@ -313,7 +313,7 @@ __meta__ = {
 texture = ExtResource( 4 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrains/Terrain24"]
-polygon = PoolVector2Array( -299.962, 299.959, 299.971, 299.931, 300.181, 173.979, 269.155, 178.493, 243.597, 175.787, 223.375, 175.743, 200.663, 175.789, 176.56, 175.787, 163.276, 174.046, 145.745, 170.656, 112.256, 176.356, 91.8224, 175.363, 75.6217, 176.467, 52.0903, 175.079, 40.9474, 178.211, 27.2907, 174.046, 6.17618, 171.431, -17.8666, 175.079, -38.5841, 172.525, -68.0994, 175.647, -89.1007, 170.822, -102.98, 174.53, -115.862, 170.947, -147.138, 178.627, -161.965, 174.24, -178.721, 172.787, -209.716, 178.769, -228.796, 175.208, -243.227, 179.664, -254.85, 175.305, -268.991, 175.111, -281.66, 177.066, -289.234, 173.368, -299.965, 173.802 )
+polygon = PoolVector2Array( -299.962, 299.959, 299.971, 299.931, 299.997, 173.842, 269.155, 178.493, 243.597, 175.787, 223.375, 175.743, 200.663, 175.789, 176.56, 175.787, 163.276, 174.046, 145.745, 170.656, 112.256, 176.356, 91.8224, 175.363, 75.6217, 176.467, 52.0903, 175.079, 27.2907, 174.046, 6.17618, 171.431, -17.8666, 175.079, -38.5841, 172.525, -68.0994, 175.647, -89.1007, 170.822, -102.98, 174.53, -115.862, 170.947, -147.138, 178.627, -161.965, 174.24, -178.721, 172.787, -209.716, 178.769, -228.796, 175.208, -243.227, 179.664, -254.85, 175.305, -268.991, 175.111, -281.66, 177.066, -289.234, 173.368, -299.965, 173.802 )
 
 [node name="Terrain25" type="StaticBody2D" parent="Terrains"]
 position = Vector2( 22792.4, 0.814484 )
@@ -820,64 +820,64 @@ collision_mask = 262144
 [node name="RespawnPoints" type="Node" parent="."]
 
 [node name="ReSpawnPoint_1" parent="RespawnPoints" instance=ExtResource( 15 )]
-position = Vector2( 896.556, 314.577 )
+position = Vector2( 896.556, 310.049 )
 
 [node name="ReSpawnPoint_2" parent="RespawnPoints" instance=ExtResource( 15 )]
-position = Vector2( 2303.58, 312.321 )
+position = Vector2( 2303.58, 310.049 )
 
 [node name="ReSpawnPoint_3" parent="RespawnPoints" instance=ExtResource( 15 )]
-position = Vector2( 4722.4, 314.637 )
+position = Vector2( 4722.4, 310.049 )
 
 [node name="ReSpawnPoint_4" parent="RespawnPoints" instance=ExtResource( 15 )]
-position = Vector2( 6727.21, 320.525 )
+position = Vector2( 6727.21, 310.049 )
 
 [node name="ReSpawnPoint_5" parent="RespawnPoints" instance=ExtResource( 15 )]
-position = Vector2( 8324.24, 310.507 )
+position = Vector2( 8324.24, 310.049 )
 
 [node name="ReSpawnPoint_6" parent="RespawnPoints" instance=ExtResource( 15 )]
-position = Vector2( 9767.76, 316.472 )
+position = Vector2( 9767.76, 310.049 )
 
 [node name="ReSpawnPoint_7" parent="RespawnPoints" instance=ExtResource( 15 )]
-position = Vector2( 11220.3, 312.405 )
+position = Vector2( 11220.3, 310.049 )
 
 [node name="ReSpawnPoint_8" parent="RespawnPoints" instance=ExtResource( 15 )]
-position = Vector2( 12681.2, 344.469 )
+position = Vector2( 12681.2, 310.049 )
 
 [node name="ReSpawnPoint_10" parent="RespawnPoints" instance=ExtResource( 15 )]
-position = Vector2( 17190, 313.12 )
+position = Vector2( 17190, 310.049 )
 
 [node name="ReSpawnPoint_11" parent="RespawnPoints" instance=ExtResource( 15 )]
-position = Vector2( 19392.9, 320.395 )
+position = Vector2( 19392.9, 310.049 )
 
 [node name="ReSpawnPoint_12" parent="RespawnPoints" instance=ExtResource( 15 )]
-position = Vector2( 20943.7, 318.82 )
+position = Vector2( 20943.7, 310.049 )
 
 [node name="ReSpawnPoint_13" parent="RespawnPoints" instance=ExtResource( 15 )]
-position = Vector2( 22035.3, 324.735 )
+position = Vector2( 22035.3, 310.049 )
 
 [node name="ReSpawnPoint_14" parent="RespawnPoints" instance=ExtResource( 15 )]
-position = Vector2( 22955, 319.98 )
+position = Vector2( 22955, 310.049 )
 
 [node name="ReSpawnPoint_16" parent="RespawnPoints" instance=ExtResource( 15 )]
-position = Vector2( 26304.9, 317.071 )
+position = Vector2( 26304.9, 310.049 )
 
 [node name="ReSpawnPoint_17" parent="RespawnPoints" instance=ExtResource( 15 )]
-position = Vector2( 28040.1, 319.462 )
+position = Vector2( 28040.1, 310.049 )
 
 [node name="ReSpawnPoint_18" parent="RespawnPoints" instance=ExtResource( 15 )]
-position = Vector2( 29902.5, 320.574 )
+position = Vector2( 29902.5, 310.049 )
 
 [node name="ReSpawnPoint_19" parent="RespawnPoints" instance=ExtResource( 15 )]
-position = Vector2( 31103, 314.404 )
+position = Vector2( 31103, 310.049 )
 
 [node name="ReSpawnPoint_21" parent="RespawnPoints" instance=ExtResource( 15 )]
-position = Vector2( 32220.3, 315.75 )
+position = Vector2( 32220.3, 310.049 )
 
 [node name="ReSpawnPoint_22" parent="RespawnPoints" instance=ExtResource( 15 )]
-position = Vector2( 33395.1, 309.677 )
+position = Vector2( 33395.1, 310.049 )
 
 [node name="ReSpawnPoint_23" parent="RespawnPoints" instance=ExtResource( 15 )]
-position = Vector2( 35155.5, 312.228 )
+position = Vector2( 35155.5, 310.049 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 498.967, 286.222 )

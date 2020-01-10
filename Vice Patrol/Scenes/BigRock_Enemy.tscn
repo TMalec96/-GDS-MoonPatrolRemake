@@ -3,8 +3,8 @@
 [ext_resource path="res://Assets/Scripts/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Enemies/Rocks/rock.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 14.4812, 12.6304 )
+[sub_resource type="CircleShape2D" id=1]
+radius = 14.6007
 
 [node name="BigRock_Enemy" type="StaticBody2D"]
 scale = Vector2( 2, 2 )

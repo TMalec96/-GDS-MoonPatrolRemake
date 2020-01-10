@@ -24,7 +24,7 @@ func dead():
 		set_collision_layer_bit(9,false)
 		is_dead = true
 		GlobalVariables.playerScore += scoreValue
-		_playAudio("res://Assets/Music/enemy_attack.wav") #smierc wroga
+		_playAudio("res://Assets/Music/enemy_dead.wav") #smierc wroga
 		yield(get_tree().create_timer(animation_duration),"timeout")
 		queue_free()
 

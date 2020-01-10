@@ -66,7 +66,7 @@ func _respawn():
 	GlobalVariables.paused = true
 	velocity.x = 0
 	velocity.y = 0
-	_playAudio("res://Assets/Music/enemy_attack.wav") # wybuch gracza
+	_playAudio("res://Assets/Music/wybuch_gracza.wav") # wybuch gracza
 	get_node("Tire_left").visible =false
 	get_node("Tire_right").visible =false
 	animationInstance.playing = true
@@ -100,7 +100,7 @@ func get_input():
 			jumping = true
 			velocity.y = -jump_speed
 			_set_wheels_position_global()
-			_playAudio("res://Assets/Music/enemy_attack.wav") #skok
+			_playAudio("res://Assets/Music/jump.wav") #skok
 			jumping = false	
 		if right_pressed:
 			if(velocity.x <= max_player_speed):

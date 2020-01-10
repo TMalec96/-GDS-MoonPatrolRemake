@@ -3,8 +3,9 @@
 [ext_resource path="res://Assets/Scripts/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Enemies/Holes/holesmall2.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 49.3072, 14.6838 )
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 12.4042
+height = 79.2347
 
 [node name="SmallHole_Enemy" type="StaticBody2D"]
 scale = Vector2( 1.5, 1.5 )
@@ -21,4 +22,5 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.88, -17.29 )
+rotation = 1.5708
 shape = SubResource( 1 )

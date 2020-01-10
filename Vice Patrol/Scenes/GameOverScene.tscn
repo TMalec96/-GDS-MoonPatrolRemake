@@ -21,8 +21,8 @@ margin_right = -361.168
 margin_bottom = -2.93634
 
 [node name="Sprite" type="Sprite" parent="Control"]
-position = Vector2( 959.697, 732.667 )
-scale = Vector2( 1.99702, 1.96915 )
+position = Vector2( 958.818, 730.03 )
+scale = Vector2( 2.01167, 1.97267 )
 texture = ExtResource( 2 )
 
 [node name="Title" type="Sprite" parent="Control"]
@@ -47,4 +47,6 @@ position = Vector2( 957.454, 768.565 )
 texture = ExtResource( 5 )
 
 [node name="Interface" parent="." instance=ExtResource( 6 )]
+margin_left = -301.0
+margin_right = 160.0
 is_end_screen = true
