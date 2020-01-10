@@ -44,3 +44,5 @@ position = Vector2( 0.21463, 10.088 )
 enabled = true
 cast_to = Vector2( 0, 18.51 )
 collision_mask = 4
+
+[node name="AudioStream" type="AudioStreamPlayer" parent="Path2D/PathFollow2D/Enemy_flying1"]

@@ -13,6 +13,7 @@ export (float) var min_rate_of_fire = 3
 export (float) var max_rate_of_fire = 6
 export (bool) var is_bomber = false
 func dead():
+	_playAudio("res://Assets/Music/enemy_attack.wav") #smierc wroga
 	is_dead = true
 	$CollisionShape2D.disabled = true
 	GlobalVariables.playerScore += scoreValue
@@ -26,6 +27,7 @@ func _process(delta):
 #		animationInstance.visible = true
 #		animationInstance.playing = true
 #		set_collision_layer_bit(9,false)
+		_playAudio("res://Assets/Music/enemy_attack.wav") #smierc wroga
 		yield(get_tree().create_timer(animation_duration),"timeout")
 		queue_free()
 
@@ -57,4 +59,10 @@ func FireLoop():
 		bullet_instance.position = get_node("Position2D").get_position()
 		get_parent().add_child(bullet_instance)
 		can_fire = true
-
+func _playAudio(var patch):
+	var music_file = patch
+	var stream = AudioStream.new()
+	var music_player =  get_node("AudioStream")
+	var music = load(music_file)
+	music_player.stream = music
+	music_player.play()

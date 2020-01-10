@@ -49,3 +49,5 @@ position = Vector2( 14.0175, -1.23419 )
 scale = Vector2( 1, 0.46 )
 enabled = true
 collision_mask = 4
+
+[node name="AudioStream" type="AudioStreamPlayer" parent="Path2D/PathFollow2D/Enemy_flying3"]

@@ -22,7 +22,6 @@ run/main_scene="res://Scenes/StartScene.tscn"
 
 SceneLoader="*res://Assets/Scripts/SceneLoader.gd"
 GlobalVariables="*res://Assets/Scripts/GlobalVariables.gd"
-MusicPlayer="*res://Assets/Scripts/MusicPlayer.gd"
 
 [display]
 

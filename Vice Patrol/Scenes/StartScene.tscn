@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Scripts/StartScene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Backgrounds/titleBackround.jpg" type="Texture" id=2]
@@ -12,8 +12,7 @@
 [ext_resource path="res://Assets/Sprites/Interface/samochodzik.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sprites/Interface/tło_1.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sprites/FontSprites/game_over_galaxy.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Music/MiamiVice.ogg" type="AudioStream" id=13]
-[ext_resource path="res://Assets/Scripts/MusicPlayer.gd" type="Script" id=14]
+[ext_resource path="res://Scenes/MusicPlayer.tscn" type="PackedScene" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -302,8 +301,4 @@ visible = false
 position = Vector2( 333.689, 674.45 )
 texture = ExtResource( 12 )
 
-[node name="AudioStream" type="AudioStreamPlayer" parent="Control/Interface"]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 13 )
-script = ExtResource( 14 )
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource( 13 )]

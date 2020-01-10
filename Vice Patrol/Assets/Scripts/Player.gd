@@ -66,6 +66,7 @@ func _respawn():
 	GlobalVariables.paused = true
 	velocity.x = 0
 	velocity.y = 0
+	_playAudio("res://Assets/Music/enemy_attack.wav") # wybuch gracza
 	get_node("Tire_left").visible =false
 	get_node("Tire_right").visible =false
 	animationInstance.playing = true
@@ -80,8 +81,8 @@ func _respawn():
 	animationInstance.playing = false
 	animationInstance.visible = false
 	yield(get_tree().create_timer(1),"timeout")
-	GlobalVariables.paused = false
 	GlobalVariables.is_player_respawning = false
+	GlobalVariables.paused = false
 	velocity.x = 350
 func _process(delta):
 	if game_begening:
@@ -99,6 +100,7 @@ func get_input():
 			jumping = true
 			velocity.y = -jump_speed
 			_set_wheels_position_global()
+			_playAudio("res://Assets/Music/enemy_attack.wav") #skok
 			jumping = false	
 		if right_pressed:
 			if(velocity.x <= max_player_speed):
@@ -196,7 +198,7 @@ func process_damage_enemy():
 func spawn_enemies(var spawn_position, var enemy_type, var number_of_enemies, var delay_between_spawns, var time_delay, var caution_direction, var spawning):
 	create_warning(caution_direction,time_delay)
 	yield(get_tree().create_timer(time_delay), "timeout")
-	_playAudio("res://Assets/Music/enemy_attack.wav")
+	_playAudio("res://Assets/Music/enemy_attack.wav") #spawnowanie wrogow
 	if spawning:
 		for i in range(number_of_enemies):
 			if !GlobalVariables.is_player_respawning:

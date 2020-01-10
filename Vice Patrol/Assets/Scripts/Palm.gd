@@ -42,6 +42,7 @@ func dead():
 	animationInstance.scale =Vector2(2,2)
 	set_collision_layer_bit(9,false)
 	is_dead = true
+	_playAudio("res://Assets/Music/enemy_attack.wav") #smierc wroga
 	GlobalVariables.playerScore += scoreValue
 	yield(get_tree().create_timer(animation_duration),"timeout")
 	queue_free()
@@ -50,3 +51,10 @@ func countScore():
 	if !is_jumped:
 		GlobalVariables.playerScore += scoreValue
 		is_jumped = true
+func _playAudio(var patch):
+	var music_file = patch
+	var stream = AudioStream.new()
+	var music_player =  get_node("AudioStream")
+	var music = load(music_file)
+	music_player.stream = music
+	music_player.play()

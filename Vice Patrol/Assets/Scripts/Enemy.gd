@@ -24,6 +24,7 @@ func dead():
 		set_collision_layer_bit(9,false)
 		is_dead = true
 		GlobalVariables.playerScore += scoreValue
+		_playAudio("res://Assets/Music/enemy_attack.wav") #smierc wroga
 		yield(get_tree().create_timer(animation_duration),"timeout")
 		queue_free()
 
@@ -39,3 +40,11 @@ func hide():
 func show():
 	$Sprite.visible = true
 	set_collision_mask_bit(0,true)
+
+func _playAudio(var patch):
+	var music_file = patch
+	var stream = AudioStream.new()
+	var music_player =  get_node("AudioStream")
+	var music = load(music_file)
+	music_player.stream = music
+	music_player.play()

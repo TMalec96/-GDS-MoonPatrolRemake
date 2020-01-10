@@ -20,9 +20,16 @@ func dead():
 	is_dead = true
 	$CollisionShape2D.disabled = true
 	GlobalVariables.playerScore += scoreValue
+	_playAudio("res://Assets/Music/enemy_attack.wav") #smierc wroga
 	queue_free()
 func countScore():
 	if !is_jumped:
 		GlobalVariables.playerScore += scoreValue
 		is_jumped = true
-	
+func _playAudio(var patch):
+	var music_file = patch
+	var stream = AudioStream.new()
+	var music_player =  get_node("AudioStream")
+	var music = load(music_file)
+	music_player.stream = music
+	music_player.play()

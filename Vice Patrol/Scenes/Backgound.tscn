@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/Sprites/Backgrounds/nieba/niebo 4.jpg" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/Backgrounds/7 warstwa.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/Backgrounds/6 warstwa.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sprites/Backgrounds/5 warstwa.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/Backgrounds/4 warstwa.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Sprites/Backgrounds/3 warstwa.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Sprites/Backgrounds/2 warstwa.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Sprites/Backgrounds/1 warstwa.png" type="Texture" id=10]
@@ -31,7 +31,7 @@ position = Vector2( 0, -432.2 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "skyAnimation"
-frame = 1
+frame = 3
 speed_scale = 0.5
 playing = true
 centered = false

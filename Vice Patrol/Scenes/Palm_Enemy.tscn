@@ -32,3 +32,5 @@ scale = Vector2( 2, 2 )
 z_index = 2
 frames = SubResource( 2 )
 animation = "palm"
+
+[node name="AudioStream" type="AudioStreamPlayer" parent="."]

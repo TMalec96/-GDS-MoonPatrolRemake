@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Backgound.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Assets/Scripts/ControlPoint.gd" type="Script" id=14]
 [ext_resource path="res://Respawner.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/Sprites/gas station.png" type="Texture" id=16]
+[ext_resource path="res://Scenes/MusicPlayer.tscn" type="PackedScene" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 45
@@ -882,3 +883,5 @@ position = Vector2( 35155.5, 312.228 )
 position = Vector2( 498.967, 286.222 )
 z_index = -1
 texture = ExtResource( 16 )
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource( 17 )]

@@ -26,3 +26,5 @@ shape = SubResource( 1 )
 
 [node name="CastPoint1" type="Position2D" parent="TurnAxis"]
 position = Vector2( -7.22296, -3.5957 )
+
+[node name="AudioStream" type="AudioStreamPlayer" parent="."]

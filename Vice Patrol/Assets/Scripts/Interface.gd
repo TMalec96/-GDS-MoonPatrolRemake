@@ -47,6 +47,7 @@ func _process(delta):
 func _changeControlPoint():
 	if last_control_point != GlobalVariables.currentCheckpoint:
 		GlobalVariables.progresBarvalue += 4
+		_playAudio("res://Assets/Music/game_over2.wav") #dzwiek zmiany checkpointa
 		progresBar.value = GlobalVariables.progresBarvalue
 		last_control_point = GlobalVariables.currentCheckpoint
 		controlPointLabel1.set_text(String(last_control_point))

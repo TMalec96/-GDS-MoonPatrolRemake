@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Interface.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Assets/Scripts/ControlPoint.gd" type="Script" id=15]
 [ext_resource path="res://Scenes/Backgound2.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/SmallRock_Enemy.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/MusicPlayer.tscn" type="PackedScene" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 49.3072, 30.0778 )
@@ -894,3 +895,5 @@ cast_to = Vector2( 0, 200 )
 
 [node name="SmallRock_Enemy" parent="." instance=ExtResource( 17 )]
 position = Vector2( 2286.13, 300.637 )
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource( 18 )]
