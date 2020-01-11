@@ -35,6 +35,7 @@ __meta__ = {
 position = Vector2( 600.604, 276.952 )
 min_player_speed = 350
 speed_incrementation_sec = 5.0
+rate_of_fire_front = 0.35
 
 [node name="Canvas" type="CanvasLayer" parent="Player"]
 
@@ -556,6 +557,18 @@ scale = Vector2( 1.5, 1.6 )
 position = Vector2( 16321.5, 349.236 )
 scale = Vector2( 1.5, 1.6 )
 
+[node name="BigHole_Enemy6" parent="Holes" instance=ExtResource( 6 )]
+position = Vector2( 28200.9, 343.579 )
+scale = Vector2( 1.5, 1.6 )
+
+[node name="BigHole_Enemy7" parent="Holes" instance=ExtResource( 6 )]
+position = Vector2( 31462.1, 335.094 )
+scale = Vector2( 1.5, 1.6 )
+
+[node name="BigHole_Enemy8" parent="Holes" instance=ExtResource( 6 )]
+position = Vector2( 32534.1, 343.094 )
+scale = Vector2( 1.5, 1.6 )
+
 [node name="BigHole_Enemy4" parent="Holes" instance=ExtResource( 6 )]
 position = Vector2( 22981.7, 342.318 )
 scale = Vector2( 1.5, 1.6 )
@@ -583,6 +596,23 @@ __meta__ = {
 texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Holes/SmallHole_Enemy"]
+shape = SubResource( 1 )
+
+[node name="SmallHole_Enemy4" type="StaticBody2D" parent="Holes"]
+position = Vector2( 4304.33, 343.981 )
+scale = Vector2( 1.5, 1.5 )
+z_index = 1
+collision_layer = 16
+collision_mask = 17
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Holes/SmallHole_Enemy4"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Holes/SmallHole_Enemy4"]
 shape = SubResource( 1 )
 
 [node name="SmallHole_Enemy2" type="StaticBody2D" parent="Holes"]
@@ -621,38 +651,29 @@ shape = SubResource( 1 )
 
 [node name="Tanks" type="Node" parent="."]
 
-[node name="Tank_Enemy" parent="Tanks" instance=ExtResource( 9 )]
-position = Vector2( 5807.42, 273.936 )
-
 [node name="Tank_Enemy2" parent="Tanks" instance=ExtResource( 9 )]
-position = Vector2( 8054.72, 279.042 )
+position = Vector2( 14661.9, 277.586 )
 
 [node name="Tank_Enemy3" parent="Tanks" instance=ExtResource( 9 )]
-position = Vector2( 22594.5, 272.218 )
+position = Vector2( 22315.5, 282.218 )
 
 [node name="Palms" type="Node" parent="."]
 
 [node name="Palm_Enemy" parent="Palms" instance=ExtResource( 10 )]
 position = Vector2( 7137.11, 269.861 )
 
-[node name="Palm_Enemy3" parent="Palms" instance=ExtResource( 10 )]
-position = Vector2( 19141.5, 273.799 )
-
 [node name="Palm_Enemy4" parent="Palms" instance=ExtResource( 10 )]
 position = Vector2( 22973.4, 272.467 )
-
-[node name="Palm_Enemy5" parent="Palms" instance=ExtResource( 10 )]
-position = Vector2( 24634.6, 271.687 )
 
 [node name="Palm_Enemy2" parent="Palms" instance=ExtResource( 10 )]
 position = Vector2( 3009.05, 275.804 )
 
 [node name="FlyingEnemies" type="Node" parent="."]
 
-[node name="Spawner4" parent="FlyingEnemies" instance=ExtResource( 11 )]
-position = Vector2( 19155.5, 203.229 )
-spawn_position = 2
-number_of_enemies = 1
+[node name="Spawner5" parent="FlyingEnemies" instance=ExtResource( 11 )]
+position = Vector2( 23503.5, 191.229 )
+spawn_position = 1
+enemy_type = 2
 
 [node name="Spawner2" parent="FlyingEnemies" instance=ExtResource( 11 )]
 position = Vector2( 22194.9, 380.95 )
@@ -709,9 +730,9 @@ position = Vector2( 10258.8, 298.026 )
 position = Vector2( 10594, 294.053 )
 
 [node name="Spawner2" parent="Mines/Mine_Enemy7" instance=ExtResource( 11 )]
-position = Vector2( 2.94971, -144.928 )
+position = Vector2( -978.515, -123.243 )
 spawn_position = 1
-enemy_type = 2
+enemy_type = 1
 
 [node name="Node" type="Node" parent="Mines/Mine_Enemy7/Spawner2"]
 
@@ -793,9 +814,174 @@ position = Vector2( 36974.3, 267.601 )
 [node name="ReSpawnPoint2" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
 position = Vector2( 1070.03, 265.6 )
 
-[node name="Spawner3" parent="Mines/Mine_Enemy7" instance=ExtResource( 11 )]
-position = Vector2( 12523.3, -132.869 )
-enemy_type = 2
+[node name="Spawner4" parent="Mines/Mine_Enemy7" instance=ExtResource( 11 )]
+position = Vector2( 2928.49, -145.871 )
+enemy_type = 0
+
+[node name="Node" type="Node" parent="Mines/Mine_Enemy7/Spawner4"]
+
+[node name="ReSpawnPoint" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 2599.92, 275.621 )
+
+[node name="ReSpawnPoint3" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 4600.79, 272.259 )
+
+[node name="ReSpawnPoint4" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 6666.8, 274.589 )
+
+[node name="ReSpawnPoint5" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 8799.62, 275.919 )
+
+[node name="ReSpawnPoint6" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 10759.5, 279.265 )
+
+[node name="ReSpawnPoint7" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 11788.2, 271.934 )
+
+[node name="ReSpawnPoint8" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 12986.1, 269.601 )
+
+[node name="ReSpawnPoint9" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 14194.4, 272.266 )
+
+[node name="ReSpawnPoint11" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 15403.9, 272.266 )
+
+[node name="ReSpawnPoint13" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 16597.1, 273.433 )
+
+[node name="ReSpawnPoint15" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 17797.3, 266.435 )
+
+[node name="ReSpawnPoint18" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 20193.4, 275.599 )
+
+[node name="ReSpawnPoint20" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 21390.8, 272.266 )
+
+[node name="ReSpawnPoint22" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 23553.2, 276.932 )
+
+[node name="ReSpawnPoint24" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 24977.3, 269.934 )
+
+[node name="ReSpawnPoint25" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 25592, 273.433 )
+
+[node name="ReSpawnPoint27" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 27387, 271.1 )
+
+[node name="ReSpawnPoint29" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 28583.6, 271.1 )
+
+[node name="ReSpawnPoint32" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 29781.5, 267.601 )
+
+[node name="ReSpawnPoint34" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 30979.3, 271.1 )
+
+[node name="ReSpawnPoint36" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 32167.8, 269.934 )
+
+[node name="ReSpawnPoint38" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 33375, 268.767 )
+
+[node name="ReSpawnPoint40" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 34577.5, 265.268 )
+
+[node name="ReSpawnPoint41" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 35775.3, 266.435 )
+
+[node name="ReSpawnPoint43" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 36974.3, 267.601 )
+
+[node name="ReSpawnPoint2" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
+position = Vector2( 1070.03, 265.6 )
+
+[node name="Spawner5" parent="Mines/Mine_Enemy7" instance=ExtResource( 11 )]
+position = Vector2( 12525.6, -113.118 )
+spawn_position = 2
+number_of_enemies = 1
+
+[node name="Node" type="Node" parent="Mines/Mine_Enemy7/Spawner5"]
+
+[node name="ReSpawnPoint" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 2599.92, 275.621 )
+
+[node name="ReSpawnPoint3" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 4600.79, 272.259 )
+
+[node name="ReSpawnPoint4" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 6666.8, 274.589 )
+
+[node name="ReSpawnPoint5" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 8799.62, 275.919 )
+
+[node name="ReSpawnPoint6" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 10759.5, 279.265 )
+
+[node name="ReSpawnPoint7" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 11788.2, 271.934 )
+
+[node name="ReSpawnPoint8" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 12986.1, 269.601 )
+
+[node name="ReSpawnPoint9" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 14194.4, 272.266 )
+
+[node name="ReSpawnPoint11" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 15403.9, 272.266 )
+
+[node name="ReSpawnPoint13" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 16597.1, 273.433 )
+
+[node name="ReSpawnPoint15" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 17797.3, 266.435 )
+
+[node name="ReSpawnPoint18" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 20193.4, 275.599 )
+
+[node name="ReSpawnPoint20" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 21390.8, 272.266 )
+
+[node name="ReSpawnPoint22" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 23553.2, 276.932 )
+
+[node name="ReSpawnPoint24" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 24977.3, 269.934 )
+
+[node name="ReSpawnPoint25" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 25592, 273.433 )
+
+[node name="ReSpawnPoint27" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 27387, 271.1 )
+
+[node name="ReSpawnPoint29" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 28583.6, 271.1 )
+
+[node name="ReSpawnPoint32" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 29781.5, 267.601 )
+
+[node name="ReSpawnPoint34" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 30979.3, 271.1 )
+
+[node name="ReSpawnPoint36" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 32167.8, 269.934 )
+
+[node name="ReSpawnPoint38" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 33375, 268.767 )
+
+[node name="ReSpawnPoint40" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 34577.5, 265.268 )
+
+[node name="ReSpawnPoint41" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 35775.3, 266.435 )
+
+[node name="ReSpawnPoint43" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 36974.3, 267.601 )
+
+[node name="ReSpawnPoint2" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
+position = Vector2( 1070.03, 265.6 )
 
 [node name="ControlPoints" type="Node" parent="."]
 

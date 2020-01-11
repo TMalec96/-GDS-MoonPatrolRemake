@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Scripts/Bullet1.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Music/pisk.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Music/bullet_front_new.wav" type="AudioStream" id=2]
 [ext_resource path="res://Assets/Sprites/Bullets/pocisk gracza (górny).png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -26,6 +26,8 @@ shape = SubResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CollisionShape2D"]
 stream = ExtResource( 2 )
+volume_db = -0.13
+pitch_scale = 0.7
 autoplay = true
 
 [node name="Sprite" type="Sprite" parent="."]

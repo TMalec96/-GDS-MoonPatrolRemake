@@ -29,7 +29,7 @@ font_data = ExtResource( 13 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 717.49, 313.232 )
 min_player_speed = 350
-speed_incrementation_sec = 5.0
+speed_incrementation_sec = 4.0
 
 [node name="Canvas" type="CanvasLayer" parent="Player"]
 
@@ -568,7 +568,7 @@ position = Vector2( 16192.3, 338.749 )
 position = Vector2( 16813.7, 334.869 )
 
 [node name="BigRock_Enemy6" parent="Rocks" instance=ExtResource( 6 )]
-position = Vector2( 13232.2, 320.242 )
+position = Vector2( 13221.6, 336.505 )
 
 [node name="BigRock_Enemy8" parent="Rocks" instance=ExtResource( 6 )]
 position = Vector2( 26679.4, 335.581 )
@@ -577,7 +577,7 @@ position = Vector2( 26679.4, 335.581 )
 position = Vector2( 24080.2, 341.443 )
 
 [node name="BigRock_Enemy7" parent="Rocks" instance=ExtResource( 6 )]
-position = Vector2( 13109.8, 323.397 )
+position = Vector2( 13176.3, 336.832 )
 
 [node name="BigRock_Enemy2" parent="Rocks" instance=ExtResource( 6 )]
 position = Vector2( 7434.91, 335.702 )
@@ -646,7 +646,7 @@ position = Vector2( 30243.1, 378.858 )
 [node name="Tanks" type="Node" parent="."]
 
 [node name="Tank_Enemy" parent="Tanks" instance=ExtResource( 10 )]
-position = Vector2( 29704.8, 315.834 )
+position = Vector2( 30071.1, 317.955 )
 
 [node name="Tank_Enemy2" parent="Tanks" instance=ExtResource( 10 )]
 position = Vector2( 28511.5, 317.95 )
