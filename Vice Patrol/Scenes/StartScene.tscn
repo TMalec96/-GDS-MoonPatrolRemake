@@ -303,3 +303,4 @@ position = Vector2( 333.689, 674.45 )
 texture = ExtResource( 12 )
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource( 13 )]
+autoplay = true

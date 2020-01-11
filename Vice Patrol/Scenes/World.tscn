@@ -557,6 +557,7 @@ texture = ExtResource( 5 )
 polygon = PoolVector2Array( -300.066, 299.966, 299.962, 299.962, 300.04, 173.993, 259.502, 180.034, 244.32, 173.685, 217.913, 171.201, 143.223, 171.433, 125.159, 175.208, 81.7512, 172.107, 22.4369, 175.073, 5.9906, 171.837, -26.6323, 174.264, -61.6817, 171.972, -91.3389, 170.489, -117.356, 172.511, -146.07, 170.085, -201.559, 177.804, -273.247, 177.804, -300.018, 173.86 )
 
 [node name="Rocks" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="BigRock_Enemy" parent="Rocks" instance=ExtResource( 6 )]
 position = Vector2( 2625.43, 336.029 )
@@ -604,6 +605,7 @@ position = Vector2( 25931.6, 348.41 )
 position = Vector2( 24991.7, 340.569 )
 
 [node name="Holes" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="BigHole_Enemy" parent="Holes" instance=ExtResource( 8 )]
 position = Vector2( 3707.88, 383.022 )
@@ -723,6 +725,7 @@ position = Vector2( 34813.6, 338.079 )
 position = Vector2( 35631.6, 339.079 )
 
 [node name="ControlPoints" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="ControlPoint_A" type="Label" parent="ControlPoints"]
 margin_left = 7789.75
@@ -797,6 +800,7 @@ cast_to = Vector2( 0, 300 )
 collision_mask = 262144
 
 [node name="EndPoints" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="EndlPoint_E" type="Label" parent="EndPoints"]
 margin_left = 36598.4
@@ -818,6 +822,7 @@ cast_to = Vector2( 0, 300 )
 collision_mask = 262144
 
 [node name="RespawnPoints" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="ReSpawnPoint_1" parent="RespawnPoints" instance=ExtResource( 15 )]
 position = Vector2( 896.556, 310.049 )
@@ -885,3 +890,4 @@ z_index = -1
 texture = ExtResource( 16 )
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource( 17 )]
+autoplay = true
