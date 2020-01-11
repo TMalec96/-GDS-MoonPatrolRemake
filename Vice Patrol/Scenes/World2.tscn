@@ -12,19 +12,19 @@
 [ext_resource path="res://Scenes/Palm_Enemy.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Spawner.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Mine_Enemy.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Respawner.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=14]
-[ext_resource path="res://Assets/Scripts/ControlPoint.gd" type="Script" id=15]
-[ext_resource path="res://Scenes/Backgound2.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/SmallRock_Enemy.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/MusicPlayer.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://Assets/Scripts/ControlPoint.gd" type="Script" id=14]
+[ext_resource path="res://Scenes/Backgound2.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/SmallRock_Enemy.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/MusicPlayer.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Respawner.tscn" type="PackedScene" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 49.3072, 30.0778 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 45
-font_data = ExtResource( 14 )
+font_data = ExtResource( 13 )
 
 [node name="World" type="Node"]
 __meta__ = {
@@ -734,254 +734,14 @@ position = Vector2( -978.515, -123.243 )
 spawn_position = 1
 enemy_type = 1
 
-[node name="Node" type="Node" parent="Mines/Mine_Enemy7/Spawner2"]
-
-[node name="ReSpawnPoint" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 2599.92, 275.621 )
-
-[node name="ReSpawnPoint3" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 4600.79, 272.259 )
-
-[node name="ReSpawnPoint4" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 6666.8, 274.589 )
-
-[node name="ReSpawnPoint5" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 8799.62, 275.919 )
-
-[node name="ReSpawnPoint6" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 10759.5, 279.265 )
-
-[node name="ReSpawnPoint7" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 11788.2, 271.934 )
-
-[node name="ReSpawnPoint8" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 12986.1, 269.601 )
-
-[node name="ReSpawnPoint9" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 14194.4, 272.266 )
-
-[node name="ReSpawnPoint11" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 15403.9, 272.266 )
-
-[node name="ReSpawnPoint13" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 16597.1, 273.433 )
-
-[node name="ReSpawnPoint15" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 17797.3, 266.435 )
-
-[node name="ReSpawnPoint18" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 20193.4, 275.599 )
-
-[node name="ReSpawnPoint20" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 21390.8, 272.266 )
-
-[node name="ReSpawnPoint22" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 23553.2, 276.932 )
-
-[node name="ReSpawnPoint24" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 24977.3, 269.934 )
-
-[node name="ReSpawnPoint25" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 25592, 273.433 )
-
-[node name="ReSpawnPoint27" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 27387, 271.1 )
-
-[node name="ReSpawnPoint29" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 28583.6, 271.1 )
-
-[node name="ReSpawnPoint32" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 29781.5, 267.601 )
-
-[node name="ReSpawnPoint34" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 30979.3, 271.1 )
-
-[node name="ReSpawnPoint36" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 32167.8, 269.934 )
-
-[node name="ReSpawnPoint38" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 33375, 268.767 )
-
-[node name="ReSpawnPoint40" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 34577.5, 265.268 )
-
-[node name="ReSpawnPoint41" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 35775.3, 266.435 )
-
-[node name="ReSpawnPoint43" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 36974.3, 267.601 )
-
-[node name="ReSpawnPoint2" parent="Mines/Mine_Enemy7/Spawner2/Node" instance=ExtResource( 13 )]
-position = Vector2( 1070.03, 265.6 )
-
 [node name="Spawner4" parent="Mines/Mine_Enemy7" instance=ExtResource( 11 )]
 position = Vector2( 2928.49, -145.871 )
 enemy_type = 0
 
-[node name="Node" type="Node" parent="Mines/Mine_Enemy7/Spawner4"]
-
-[node name="ReSpawnPoint" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 2599.92, 275.621 )
-
-[node name="ReSpawnPoint3" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 4600.79, 272.259 )
-
-[node name="ReSpawnPoint4" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 6666.8, 274.589 )
-
-[node name="ReSpawnPoint5" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 8799.62, 275.919 )
-
-[node name="ReSpawnPoint6" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 10759.5, 279.265 )
-
-[node name="ReSpawnPoint7" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 11788.2, 271.934 )
-
-[node name="ReSpawnPoint8" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 12986.1, 269.601 )
-
-[node name="ReSpawnPoint9" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 14194.4, 272.266 )
-
-[node name="ReSpawnPoint11" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 15403.9, 272.266 )
-
-[node name="ReSpawnPoint13" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 16597.1, 273.433 )
-
-[node name="ReSpawnPoint15" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 17797.3, 266.435 )
-
-[node name="ReSpawnPoint18" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 20193.4, 275.599 )
-
-[node name="ReSpawnPoint20" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 21390.8, 272.266 )
-
-[node name="ReSpawnPoint22" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 23553.2, 276.932 )
-
-[node name="ReSpawnPoint24" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 24977.3, 269.934 )
-
-[node name="ReSpawnPoint25" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 25592, 273.433 )
-
-[node name="ReSpawnPoint27" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 27387, 271.1 )
-
-[node name="ReSpawnPoint29" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 28583.6, 271.1 )
-
-[node name="ReSpawnPoint32" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 29781.5, 267.601 )
-
-[node name="ReSpawnPoint34" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 30979.3, 271.1 )
-
-[node name="ReSpawnPoint36" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 32167.8, 269.934 )
-
-[node name="ReSpawnPoint38" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 33375, 268.767 )
-
-[node name="ReSpawnPoint40" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 34577.5, 265.268 )
-
-[node name="ReSpawnPoint41" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 35775.3, 266.435 )
-
-[node name="ReSpawnPoint43" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 36974.3, 267.601 )
-
-[node name="ReSpawnPoint2" parent="Mines/Mine_Enemy7/Spawner4/Node" instance=ExtResource( 13 )]
-position = Vector2( 1070.03, 265.6 )
-
 [node name="Spawner5" parent="Mines/Mine_Enemy7" instance=ExtResource( 11 )]
-position = Vector2( 12525.6, -113.118 )
+position = Vector2( 12561, -117.983 )
 spawn_position = 2
 number_of_enemies = 1
-
-[node name="Node" type="Node" parent="Mines/Mine_Enemy7/Spawner5"]
-
-[node name="ReSpawnPoint" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 2599.92, 275.621 )
-
-[node name="ReSpawnPoint3" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 4600.79, 272.259 )
-
-[node name="ReSpawnPoint4" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 6666.8, 274.589 )
-
-[node name="ReSpawnPoint5" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 8799.62, 275.919 )
-
-[node name="ReSpawnPoint6" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 10759.5, 279.265 )
-
-[node name="ReSpawnPoint7" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 11788.2, 271.934 )
-
-[node name="ReSpawnPoint8" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 12986.1, 269.601 )
-
-[node name="ReSpawnPoint9" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 14194.4, 272.266 )
-
-[node name="ReSpawnPoint11" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 15403.9, 272.266 )
-
-[node name="ReSpawnPoint13" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 16597.1, 273.433 )
-
-[node name="ReSpawnPoint15" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 17797.3, 266.435 )
-
-[node name="ReSpawnPoint18" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 20193.4, 275.599 )
-
-[node name="ReSpawnPoint20" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 21390.8, 272.266 )
-
-[node name="ReSpawnPoint22" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 23553.2, 276.932 )
-
-[node name="ReSpawnPoint24" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 24977.3, 269.934 )
-
-[node name="ReSpawnPoint25" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 25592, 273.433 )
-
-[node name="ReSpawnPoint27" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 27387, 271.1 )
-
-[node name="ReSpawnPoint29" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 28583.6, 271.1 )
-
-[node name="ReSpawnPoint32" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 29781.5, 267.601 )
-
-[node name="ReSpawnPoint34" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 30979.3, 271.1 )
-
-[node name="ReSpawnPoint36" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 32167.8, 269.934 )
-
-[node name="ReSpawnPoint38" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 33375, 268.767 )
-
-[node name="ReSpawnPoint40" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 34577.5, 265.268 )
-
-[node name="ReSpawnPoint41" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 35775.3, 266.435 )
-
-[node name="ReSpawnPoint43" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 36974.3, 267.601 )
-
-[node name="ReSpawnPoint2" parent="Mines/Mine_Enemy7/Spawner5/Node" instance=ExtResource( 13 )]
-position = Vector2( 1070.03, 265.6 )
 
 [node name="ControlPoints" type="Node" parent="."]
 
@@ -993,7 +753,7 @@ margin_bottom = 417.705
 custom_fonts/font = SubResource( 2 )
 text = "F
 "
-script = ExtResource( 15 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1011,7 +771,7 @@ margin_bottom = 430.373
 custom_fonts/font = SubResource( 2 )
 text = "G
 "
-script = ExtResource( 15 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1029,7 +789,7 @@ margin_bottom = 421.706
 custom_fonts/font = SubResource( 2 )
 text = "H
 "
-script = ExtResource( 15 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1047,7 +807,7 @@ margin_bottom = 423.738
 custom_fonts/font = SubResource( 2 )
 text = "I
 "
-script = ExtResource( 15 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1065,7 +825,7 @@ margin_bottom = 484.891
 custom_fonts/font = SubResource( 2 )
 text = "J
 "
-script = ExtResource( 15 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1077,11 +837,91 @@ cast_to = Vector2( 0, 200 )
 
 [node name="EndPoints" type="Node" parent="."]
 
-[node name="Backgound" parent="." instance=ExtResource( 16 )]
+[node name="Backgound" parent="." instance=ExtResource( 15 )]
 offset = Vector2( 0, -9.05 )
 transform = Transform2D( 1, 0, 0, 1, 0, -9.05 )
 
-[node name="SmallRock_Enemy" parent="." instance=ExtResource( 17 )]
+[node name="SmallRock_Enemy" parent="." instance=ExtResource( 16 )]
 position = Vector2( 2286.13, 300.637 )
 
-[node name="AudioStreamPlayer2D" parent="." instance=ExtResource( 18 )]
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource( 17 )]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="ReSpawnPoint" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 2599.92, 275.621 )
+
+[node name="ReSpawnPoint3" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 4600.79, 272.259 )
+
+[node name="ReSpawnPoint4" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 6666.8, 274.589 )
+
+[node name="ReSpawnPoint5" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 8799.62, 275.919 )
+
+[node name="ReSpawnPoint6" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 10759.5, 279.265 )
+
+[node name="ReSpawnPoint7" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 11788.2, 271.934 )
+
+[node name="ReSpawnPoint8" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 12986.1, 269.601 )
+
+[node name="ReSpawnPoint9" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 14194.4, 272.266 )
+
+[node name="ReSpawnPoint11" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 15403.9, 272.266 )
+
+[node name="ReSpawnPoint13" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 16597.1, 273.433 )
+
+[node name="ReSpawnPoint15" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 17797.3, 266.435 )
+
+[node name="ReSpawnPoint18" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 20193.4, 275.599 )
+
+[node name="ReSpawnPoint20" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 21390.8, 272.266 )
+
+[node name="ReSpawnPoint22" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 23553.2, 276.932 )
+
+[node name="ReSpawnPoint24" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 24977.3, 269.934 )
+
+[node name="ReSpawnPoint25" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 25592, 273.433 )
+
+[node name="ReSpawnPoint27" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 27387, 271.1 )
+
+[node name="ReSpawnPoint29" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 28583.6, 271.1 )
+
+[node name="ReSpawnPoint32" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 29781.5, 267.601 )
+
+[node name="ReSpawnPoint34" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 30979.3, 271.1 )
+
+[node name="ReSpawnPoint36" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 32167.8, 269.934 )
+
+[node name="ReSpawnPoint38" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 33375, 268.767 )
+
+[node name="ReSpawnPoint40" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 34577.5, 265.268 )
+
+[node name="ReSpawnPoint41" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 35775.3, 266.435 )
+
+[node name="ReSpawnPoint43" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 36974.3, 267.601 )
+
+[node name="ReSpawnPoint2" parent="Node" instance=ExtResource( 18 )]
+position = Vector2( 1070.03, 265.6 )
