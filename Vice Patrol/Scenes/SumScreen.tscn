@@ -1,0 +1,335 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Assets/Scripts/SumScreen.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/Backgrounds/to_menu_i_podsumowania.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/Fonts/Pixel Digivolve.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Sprites/Interface/tło_2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/signal.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Fonts/stardate_81316.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Assets/Sprites/Interface/tabelka 3.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/Interface/samochodzik.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/Interface/tło_1.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 27
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 41
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.141176, 0.462745, 0.792157, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 0.294118, 0.627451, 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 31
+font_data = ExtResource( 3 )
+
+[node name="Interface" type="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -299.0
+margin_right = 301.0
+margin_bottom = 120.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="Sprite" parent="."]
+position = Vector2( 297.015, 726.2 )
+scale = Vector2( 2.00641, 1.99232 )
+z_index = -2
+texture = ExtResource( 2 )
+
+[node name="TimeToReach" type="Label" parent="ColorRect"]
+margin_left = -305.82
+margin_top = -232.584
+margin_right = 298.794
+margin_bottom = -129.584
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="TopRecord" type="Label" parent="ColorRect"]
+margin_left = -305.82
+margin_top = 15.0522
+margin_right = 298.794
+margin_bottom = 118.052
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+valign = 1
+
+[node name="YouBrokenRecord" type="Label" parent="ColorRect"]
+margin_left = -414.0
+margin_top = 116.0
+margin_right = 360.0
+margin_bottom = 212.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "YOU HAVE BROKEN A RECORD!"
+align = 1
+valign = 1
+
+[node name="YourTime" type="Label" parent="ColorRect"]
+margin_left = -305.82
+margin_top = -142.584
+margin_right = 298.794
+margin_bottom = -39.5837
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+valign = 1
+
+[node name="AverageTime" type="Label" parent="ColorRect"]
+margin_left = -305.82
+margin_top = -73.5837
+margin_right = 298.794
+margin_bottom = 29.4163
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+valign = 1
+
+[node name="GoodBonusPoints" type="Label" parent="ColorRect"]
+margin_left = -304.621
+margin_top = 44.8851
+margin_right = 299.993
+margin_bottom = 147.885
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+valign = 1
+
+[node name="MainArea" type="ColorRect" parent="."]
+margin_left = -305.0
+margin_top = 2.0
+margin_right = 900.0
+margin_bottom = 242.0
+color = Color( 0.145098, 0.0156863, 0.160784, 1 )
+
+[node name="ExtraArea" type="Sprite" parent="MainArea"]
+position = Vector2( 593.528, 87.8209 )
+scale = Vector2( 1.06875, 1.03235 )
+texture = ExtResource( 4 )
+
+[node name="ControlPointText" type="Label" parent="MainArea/ExtraArea"]
+margin_left = -249.832
+margin_top = -65.103
+margin_right = -111.832
+margin_bottom = 3.89698
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "POINT"
+
+[node name="CautionUpText" type="Sprite" parent="MainArea/ExtraArea"]
+position = Vector2( 72, -47.326 )
+texture = ExtResource( 5 )
+
+[node name="CautionMidText" type="Sprite" parent="MainArea/ExtraArea"]
+position = Vector2( 72, -0.888 )
+texture = ExtResource( 5 )
+
+[node name="CautionDownText" type="Sprite" parent="MainArea/ExtraArea"]
+position = Vector2( 72, 44.205 )
+texture = ExtResource( 5 )
+
+[node name="CautionText_" type="Label" parent="MainArea/ExtraArea"]
+visible = false
+margin_left = 130.631
+margin_top = -15.5807
+margin_right = 220.631
+margin_bottom = 25.4193
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "CAUTION"
+
+[node name="ControlPointValue" type="Label" parent="MainArea/ExtraArea"]
+margin_left = -83.9901
+margin_top = -62.1173
+margin_right = 32.0101
+margin_bottom = 6.88271
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+
+[node name="ControlPointValue2" type="Label" parent="MainArea/ExtraArea"]
+visible = false
+margin_left = -111.633
+margin_top = -9.62525
+margin_right = 4.36718
+margin_bottom = 93.3745
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+
+[node name="TimeText" type="Label" parent="MainArea/ExtraArea"]
+margin_left = -249.352
+margin_top = -0.191579
+margin_right = -132.352
+margin_bottom = 68.8084
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "TIME"
+
+[node name="TimeValue" type="Label" parent="MainArea/ExtraArea"]
+margin_left = -106.898
+margin_top = -1.20438
+margin_right = 9.10215
+margin_bottom = 67.7956
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+
+[node name="ProgressBar" type="ProgressBar" parent="MainArea"]
+modulate = Color( 0.941176, 0.92549, 0.92549, 1 )
+margin_left = 323.136
+margin_top = 197.123
+margin_right = 887.136
+margin_bottom = 219.123
+custom_styles/fg = SubResource( 4 )
+custom_styles/bg = SubResource( 5 )
+percent_visible = false
+
+[node name="ArrowContolPointText" type="Label" parent="MainArea/ProgressBar"]
+margin_left = -5.18009
+margin_top = -39.8975
+margin_right = 99.4299
+margin_bottom = 63.1025
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = ">
+"
+
+[node name="EContolPointText" type="Label" parent="MainArea/ProgressBar"]
+margin_left = 97.5825
+margin_top = -39.8975
+margin_right = 213.582
+margin_bottom = 63.1025
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "E
+"
+
+[node name="JContolPointText" type="Label" parent="MainArea/ProgressBar"]
+margin_left = 207.0
+margin_top = -41.0
+margin_right = 255.0
+margin_bottom = 3.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "J"
+
+[node name="OContolPointText" type="Label" parent="MainArea/ProgressBar"]
+margin_left = 325.207
+margin_top = -41.0775
+margin_right = 441.207
+margin_bottom = 105.923
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "O
+
+"
+
+[node name="TContolPointText" type="Label" parent="MainArea/ProgressBar"]
+margin_left = 441.533
+margin_top = -40.8001
+margin_right = 557.533
+margin_bottom = 70.1999
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "T
+"
+
+[node name="ZContolPointText" type="Label" parent="MainArea/ProgressBar"]
+margin_left = 555.076
+margin_top = -42.0147
+margin_right = 671.076
+margin_bottom = 68.9853
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Z
+"
+
+[node name="ColorRect" type="ColorRect" parent="MainArea/ProgressBar"]
+margin_left = 101.0
+margin_right = 104.0
+margin_bottom = 11.0
+
+[node name="ColorRect3" type="ColorRect" parent="MainArea/ProgressBar"]
+margin_left = 212.076
+margin_top = 0.157791
+margin_right = 215.076
+margin_bottom = 11.1578
+
+[node name="ColorRect4" type="ColorRect" parent="MainArea/ProgressBar"]
+margin_left = 330.037
+margin_top = -0.270645
+margin_right = 333.037
+margin_bottom = 10.7294
+
+[node name="ColorRect5" type="ColorRect" parent="MainArea/ProgressBar"]
+margin_left = 448.043
+margin_top = -0.270645
+margin_right = 451.043
+margin_bottom = 10.7294
+
+[node name="ColorRect6" type="ColorRect" parent="MainArea/ProgressBar"]
+margin_left = 560.63
+margin_top = -0.445465
+margin_right = 563.63
+margin_bottom = 10.5545
+
+[node name="ColorRect2" type="ColorRect" parent="MainArea/ProgressBar"]
+margin_left = 0.211121
+margin_top = 0.121262
+margin_right = 3.21112
+margin_bottom = 11.1213
+
+[node name="LifesArea" type="Sprite" parent="MainArea"]
+position = Vector2( 1042.13, 119.961 )
+texture = ExtResource( 7 )
+
+[node name="LifesNumber" type="Label" parent="MainArea/LifesArea"]
+margin_left = -17.9104
+margin_top = -91.0647
+margin_right = 18.0896
+margin_bottom = -22.0647
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "3"
+align = 1
+
+[node name="LifeIcon" type="Sprite" parent="MainArea/LifesArea"]
+position = Vector2( 7.10632, 39.0345 )
+z_index = 1
+texture = ExtResource( 8 )
+
+[node name="ScoreArea" type="Sprite" parent="MainArea"]
+position = Vector2( 156.013, 119.641 )
+texture = ExtResource( 9 )
+
+[node name="HiScore" type="Label" parent="MainArea/ScoreArea"]
+margin_left = -70.3971
+margin_top = -68.1873
+margin_right = 66.6029
+margin_bottom = 0.812721
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+align = 1
+
+[node name="CurrentScoreValue" type="Label" parent="MainArea/ScoreArea"]
+margin_left = -102.204
+margin_top = 1.45245
+margin_right = 97.7962
+margin_bottom = 70.4525
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+align = 1

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/level_complete_or_period.wav-71ba2a373f5809b19695f6eac383678f.sample"
+
+[deps]
+
+source_file="res://Assets/Music/level_complete_or_period.wav"
+dest_files=[ "res://.import/level_complete_or_period.wav-71ba2a373f5809b19695f6eac383678f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

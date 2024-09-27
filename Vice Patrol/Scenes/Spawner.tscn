@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Scripts/EnemySpawner.gd" type="Script" id=1]
+
+[node name="Spawner" type="RayCast2D"]
+position = Vector2( 1085.81, 646.999 )
+enabled = true
+cast_to = Vector2( 0, 200 )
+collision_mask = 262144
+script = ExtResource( 1 )
+enemy_type = 3
